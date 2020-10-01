@@ -102,10 +102,10 @@ yb_csdm_mode
 
 Enables or disables CSDM / FFA mode for bots.
 
-If set to ``0``, CSDM / FFA mode is auto-detected.
-If set to ``1``, CSDM mode is enabled, but FFA is disabled.
-If set to ``2``, CSDM and FFA mode is enabled.
-If set to ``3``, CSDM and FFA mode is disabled.
+* If set to ``0``, CSDM / FFA mode is auto-detected.
+* If set to ``1``, CSDM mode is enabled, but FFA is disabled.
+* If set to ``2``, CSDM and FFA mode is enabled.
+* If set to ``3``, CSDM and FFA mode is disabled.
 
 Minimum value is ``0``, Maximum value is ``3``, Default value is ``0``.
    
@@ -170,6 +170,7 @@ yb_difficulty
 Specifies the difficulty of all bots. Changing at runtime will affect already created bots.
 
 List of bot difficulties:
+
 * ``0`` - Newbie,
 * ``1`` - Average,
 * ``2`` - Normal,
