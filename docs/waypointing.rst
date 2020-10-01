@@ -247,6 +247,7 @@ Although there are two entries in the "\ :green:`Waypoint Type`\ " menu ("\ :gre
 
 When a bot approaches the depicted :cyan:`Camp` waypoint, it will turn to face the direction of the Camp start marker first. Then it will scan the area between this marker and the Camp end marker by changing every few seconds the direction it is facing from one to the other. An enemy moving outside the two markers may escape the bot's attention, unless it hears the enemy coming. In the piture above, both markers are pointing to the same height. However, you can also specify different heights for each marker. This is very useful for making bots monitor a ramp, a slope, a stairway or other uneven surfaces.
 So far, so good. But how to set a working camp waypoint? Follow these steps:
+
 #. Go to the exact position where you want bots to camp (of course, a dark corner or similar locations are best suited for camping, but whom do I tell this?)
 #. If you want bots to stand while they are camping, remain standing upright. If you want them to crouch while camping (more precise aiming!), crouch yourself while adding the point
 #. Point your crosshair at the exact direction and height where you want your bots to start looking.
