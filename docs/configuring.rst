@@ -46,6 +46,7 @@ yb_botskin_t
 Specifies the bots wanted skin for Terrorists team.
 
 Allowed values:
+
 * ``0`` - Any class
 * ``1`` - Phoenix Connexion
 * ``2`` - Elite Crew
@@ -62,6 +63,7 @@ yb_botskin_ct
 Specifies the bots wanted skin for Counter-Terrorists team.
 
 Allowed values:
+
 * ``0`` - Any class
 * ``1`` - Seal Team 6
 * ``2`` - GSG-9
