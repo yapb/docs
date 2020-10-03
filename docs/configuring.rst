@@ -529,7 +529,7 @@ Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
 General configuration
 ================================
-Main config whene most stuff regarding weapon handling is defined. The filename is ``general.cfg`` and located at ``addons/yapb/conf`` directory.
+Main config whene most stuff regarding weapon handling is defined. The filename is ``weapon.cfg`` and located at ``addons/yapb/conf`` directory.
 
 To edit this file you need to know the weapon numbering.
 
