@@ -527,7 +527,7 @@ Enable some non-human reaction timers allowing beat almost every player on this 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
 
-General configuration
+Weapons Configuration
 ================================
 Main config whene most stuff regarding weapon handling is defined. The filename is ``weapon.cfg`` and located at ``addons/yapb/conf`` directory.
 
