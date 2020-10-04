@@ -367,7 +367,7 @@ So let's first have a look at these - afterwards you can read how to add and rem
 Two-way (bidirectional) connections
 -------------------------------------------
 
-The vast majority of all connections in a waypoint set will be :yellow:`bidirectional`. Obviously, these connections enable bots to walk both from point A to point B and back from point B to point A. :yellow:`The colour of bidirectional paths is yellow`, as you can see in the picture below.
+The vast majority of all connections in a waypoint set will be :gold:`bidirectional`. Obviously, these connections enable bots to walk both from point A to point B and back from point B to point A. :gold:`The colour of bidirectional paths is yellow`, as you can see in the picture below.
 
 .. figure:: images/bidirectional_path.png
     :align: center

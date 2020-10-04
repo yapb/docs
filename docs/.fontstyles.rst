@@ -13,6 +13,7 @@
 .. role:: fuchsia
 .. role:: pink
 .. role:: orange
+.. role:: gold
 .. role:: yellow
 .. role:: lime
 .. role:: lightgreen
