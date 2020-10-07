@@ -101,6 +101,10 @@ The following Graph commands are available (note these ARE case sensitive):
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g iterate_camp``     | Allows to go through all camp points on map.                                                                                   |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | ``yb g acquire_editor``   | Acquires rights to edit graph on dedicated server. (see below)                                                                 |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | ``yb g release_editor``   | Releases graph editing rights.                                                                                                 |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 To use the graph commands, you will have to use the console. Use the ``~`` key to bring down the console. Enter the console commands that you wish, then use the ``~`` key again to return to the game.
 
@@ -114,11 +118,11 @@ Using ``yb g save`` will save the waypoint data to the graph file. The graph fil
 
 You can also save the waypoint in ``.pwf`` format for older versions of YaPB or PODBot by typing in the console ``yb g save old``.
 
-Using ``yb g load`` will clear out all waypoints in the current map and load them from the waypoint file in the maps folder. This is a good way to "undo" a bunch of waypoints that you have created but do not wish to save. There is no way to ``undo`` a single waypoint. You will have to use the ``yb wp delete`` command to remove waypoints one-by-one.
+Using ``yb g load`` will clear out all waypoints in the current map and load them from the waypoint file in the maps folder. This is a good way to "undo" a bunch of waypoints that you have created but do not wish to save. There is no way to ``undo`` a single waypoint. You will have to use the ``yb g delete`` command to remove waypoints one-by-one.
 
 The ``yb g on auto`` command allows you to automatically drop waypoints as you run around in a map. As you run around the level waypoints will be dropped every 200 units automatically. No waypoint will be dropped if another waypoint is already within 200 units of your current position. So if you want to place lots of waypoints fairly close together you may have to manually place some of the waypoints using the ``yb g add`` command. Autowaypointing keeps track of where the last waypoint was dropped (either manually or from autowaypointing) and will place another waypoint when you are 200 units from the last waypoint. If you don't like where autowaypointing placed a waypoint and want to move it a little bit, you can delete the waypoint using ``yb g delete`` (but turn off autowaypointing before, since it will place a new waypoint otherwise). 
 
-When using autowaypointing, try to stay in the center of narrow hallways and always place a waypoint on BOTH sides of a door. You may have to place some of these waypoints manually using ``yb wp add`` since places like intersections of hallways and doorway entrances and exits don't usually fall exactly at the location where autowaypoint would want to place a waypoint.
+When using autowaypointing, try to stay in the center of narrow hallways and always place a waypoint on BOTH sides of a door. You may have to place some of these waypoints manually using ``yb g add`` since places like intersections of hallways and doorway entrances and exits don't usually fall exactly at the location where autowaypoint would want to place a waypoint.
 
 Whenever you get close to a waypoint yellow or white lines will be drawn to all of the other waypoints that the bot would consider to be "reachable". If the connection is a two-way connection the line is yellow, one-way connections appear white. These "reachable" waypoints would be waypoints that are clearly visible from the current location. Certain waypoints will be disallowed as reachable for one reason or another. For example, waypoints suspended in mid-air above the bot would not be considered reachable since the bot couldn't jump high enough to get to them. Also waypoints that are too far away from the current location would not be considered reachable. You may have waypoints that are close enough to each other, but across a wide gap that would be too wide to jump. If the far waypoint is close enough and clearly visible, it would still show as "reachable" since currently we have no method to determine if the bot can get to that waypoint or not.
 
@@ -130,6 +134,7 @@ The actual Waypoint Number you're standing on will be shown in the upper corner 
 
 The ``yb g path_delete`` command is just like the "create" command except that it removes a path (connection) from the starting point to the ending point. This is necessary in some cases where you may have a door that opens from one side and allows you to go through but once the door closes you can't go back through the other way.
 
+The ``yb g acquire_editor`` command allows you to edit graph on dedicated server. Before you can use this, the ``yb_password`` and ``yb_password_key`` cvars must be configured on the server.
 
 Adding waypoints
 =========================
