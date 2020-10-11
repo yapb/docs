@@ -137,7 +137,7 @@ yb_debug
 
 If not zero, enables useful messages about bot states. Not required for end users.
 
-Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
+Minimum value is ``0``, Maximum value is ``4``, Default value is ``0``.
 
 
 yb_debug_goal
@@ -526,10 +526,17 @@ Enable some non-human reaction timers allowing beat almost every player on this 
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
+Map specific configuration
+================================
+Map specific configs where user-configured cvars are stored. The filename is ``mapname.cfg`` where "mapname" is name of the map for which this config was created eg: ``de_dust.cfg`` for de_dust map. This file located at ``addons/yapb/conf/maps`` directory.
+
+You can use the cvars shown above to write in this config. They will be executed automatically when you start a map specified in the name of this config.
+
+By default YaPB does not have any configs for maps.
 
 Weapons Configuration
 ================================
-Main config whene most stuff regarding weapon handling is defined. The filename is ``weapon.cfg`` and located at ``addons/yapb/conf`` directory.
+Main config where most stuff regarding weapon handling is defined. The filename is ``weapon.cfg`` and located at ``addons/yapb/conf`` directory.
 
 To edit this file you need to know the weapon numbering.
 
