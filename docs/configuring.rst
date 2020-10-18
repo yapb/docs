@@ -207,7 +207,7 @@ Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 yb_display_welcome_text
 --------------------------------
 
-Specifies if the bot dll will display welcome text on first listenserver startup.
+Specifies if the bot dll will display welcome text when adding bots.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 
@@ -275,7 +275,7 @@ Minimum value is ``-``, Maximum value is ``-``, Default value is ``yb_quota,yb_a
 yb_ignore_enemies
 --------------------------------
 
-If not zero, bots will run all over the map, and doing golas but will not search for enemies.
+If not zero, bots will run all over the map, and doing goals but will not search for enemies.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
@@ -291,7 +291,7 @@ Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 yb_join_after_player
 --------------------------------
 
-If not zero, bots will join he server only when some human player already joined the team.
+If not zero, bots will join the server only when some human player already joined the team.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
@@ -447,7 +447,7 @@ yb_shoots_thru_walls
 
 Determines the method how bots checks if wall/obstacle is penetrable.
 
-If set to ``1`` bots will try too shoot thru walls more active, even unrealistically.
+If set to ``1`` bots will try to shoot thru walls more active, even unrealistically.
 If set to ``2`` bots will use algorithm from original PODBot, and shoot thru walls less.
 
 The ``2`` method is consuming a bit more CPU power than the ``1`` method.
@@ -498,7 +498,7 @@ Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 yb_user_follow_percent
 --------------------------------
 
-Determines how many bots will try to automatically follow the leader. Bots treats bomb guy, vip and human players as leader.
+Determines percentage of bots that will try to automatically follow the leader. Bots treats bomb guy, vip and human players as leader.
 
 Minimum value is ``0``, Maximum value is ``100``, Default value is ``20``.
 
@@ -596,17 +596,17 @@ Specifies economics values for buying the weapons.
 
 From left to right::
 
-    1 - If bot's money more than the value specified here. He can buy the primary weapon.
-    2 - If bot's money more than the value specified here he will not buy SMGs (MP5,  MAC10, TMP, P90, UMP45, SCOUT) (only for CTs) (+ 8/9/10)
-    3 - If bot's money more than the value specified here it will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for Ts) (+ 8/9/10))
-    4 - If bot's money more than the value specified here he can buy shotguns (M3, XM1014).
-    5 - If bot's money less than the value specified here he cannot buy shotguns (M3, XM1014).
-    6 - If bot's money more than the value specified here he can buy AWM, SG550, G3SG1, M249.
-    7 - If bot's money less than the value specified here he cannot buy AWM, SG550, G3SG1, M249.
+    1 - If bot's money more than the value specified here, he can buy the primary weapon.
+    2 - If bot's money more than the value specified here, he will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for CTs) (+ 8/9/10)
+    3 - If bot's money more than the value specified here, he will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for Ts) (+ 8/9/10))
+    4 - If bot's money more than the value specified here, he can buy shotguns (M3, XM1014).
+    5 - If bot's money less than the value specified here, he cannot buy shotguns (M3, XM1014).
+    6 - If bot's money more than the value specified here, he can buy AWM, SG550, G3SG1, M249.
+    7 - If bot's money less than the value specified here, he cannot buy AWM, SG550, G3SG1, M249.
     8 - How much money bot leaves a prostock, at purchase of the primary weapon (only for type of behaviour - Normal)
     9 - How much money bot leaves a prostock, at purchase of the primary weapon (only for type of behaviour - Rusher).
     10 - How much money bot leaves a prostock, at purchase of the primary weapon  (only for type of behaviour - Careful).
-    11 - If bot's money more than the value specified here. He can buy the shield.
+    11 - If bot's money more than the value specified here, he can buy the shield.
 
 Example::
 
@@ -645,7 +645,7 @@ Numbering of the weapons::
     24 - M249
     25 - SHIELD
 
-From left to right. Top right values is a most wanted bot weapon. Top left value is most worst weapon.
+From left to right. Top right value is a most wanted bot weapon. Top left value is most worst weapon.
 
 .. Note:: Knife should most "worst" weapon in this tables, otherwise things are messed up.
 
