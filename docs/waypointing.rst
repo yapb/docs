@@ -95,9 +95,9 @@ The following Graph commands are available (note these ARE case sensitive):
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g path_create_in``   | Creating incoming path connection from cached (faced) to nearest node.                                                         |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb g path_create_out``  | Creating outgoing path connection from cached (faced) to nearest node.                                                         |
+   | ``yb g path_create_out``  | Creating outgoing path connection from nearest to cached (faced) node.                                                         |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb g path_create_both`` | Creating both-ways path connection from cached (faced) to nearest node.                                                        |
+   | ``yb g path_create_both`` | Creating both-ways path connection between cached (faced) and nearest node.                                                        |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g iterate_camp``     | Allows to go through all camp points on map.                                                                                   |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
