@@ -123,9 +123,9 @@ yb_communication_type
 
 Specifies the way bots are talking to each other and player. 
 
-If set to ``0`` bots will not communicate at all.
-If set to ``1`` bots will use only the radio.
-If set to ``2`` bots will use chatter.
+* If set to ``0`` bots will not communicate at all.
+* If set to ``1`` bots will use only the radio.
+* If set to ``2`` bots will use chatter.
 
 .. Note::  Chatter will be used only if bot will find valid wave files in specified in ``yb_chatter_path`` directory.
 
@@ -323,9 +323,11 @@ Valid values: ``ru``, ``en``, ``de``, ``chs``, Default value is ``en``.
 yb_latency_display
 --------------------------------
 
-If set to ``0`` there will be no anything in scoreboard about bot ping.
-If set to ``1`` there will be "BOT" displayed for every bot in scoreboard.
-If set to  `2`` there will be "fake" ping displayed for every bot in scoreboard.
+Determines the type of bots ping displayed.
+
+* If set to ``0`` there will be no anything in scoreboard about bot ping.
+* If set to ``1`` there will be "BOT" displayed for every bot in scoreboard.
+* If set to  `2`` there will be "fake" ping displayed for every bot in scoreboard.
 
 Minimum value is ``0``, Maximum value is ``2``, Default value is ``2``.
 
@@ -385,9 +387,9 @@ yb_quota_mode
 
 Determines the type of how ``yb_quota`` works.
 
-If set ``fill``, the server will adjust bots to keep N players in the game, where N is ``yb_quota``.
-If set ``match``, the server will maintain a 1:N ratio of humans to bots, where N is ``yb_quota``.
-If set ``normal``, this variable does not affect ``yb_quota``.
+* If set ``fill``, the server will adjust bots to keep N players in the game, where N is ``yb_quota``.
+* If set ``match``, the server will maintain a 1:N ratio of humans to bots, where N is ``yb_quota``.
+* If set ``normal``, this variable does not affect ``yb_quota``.
 
 Allowed values is ``normal``, ``fill`` and ``match``, Default value is ``normal``.
 
