@@ -116,7 +116,7 @@ Using ``yb g delete`` will remove the waypoint closest to the player. The waypoi
 
 Using ``yb g save`` will save the waypoint data to the graph file. The graph file will have the same name as the current map with an extension of ``.graph``. The file will be saved into the ``cstrike/addons/yapb/data/graph`` Folder. Your current player name will be saved as the waypoint file author.
 
-You can also save the waypoint in ``.pwf`` format for older versions of YaPB or PODBot by typing in the console ``yb g save old``.
+You can also save the waypoint in ``.pwf`` format for older versions of YaPB or PODBot by typing in the console ``yb g save old``. Please note that you can save a waypoint in this format only when the number of nodes does not exceed 1024.
 
 Using ``yb g load`` will clear out all waypoints in the current map and load them from the graph file in the graph folder. This is a good way to "undo" a bunch of waypoints that you have created but do not wish to save. There is no way to ``undo`` a single waypoint. You will have to use the ``yb g delete`` command to remove waypoints one-by-one.
 
@@ -212,8 +212,7 @@ Ladder waypoints
 Some general hints and notes concerning ladder waypoints:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Waypoint ladders AFTER you waypointed the areas above and below them! If you waypoint ladders first, all waypoints in reach of a ladder waypoint will be connected with it and have their radius reduced to zero automatically!
-#. It doesn't matter whether you place the top or the bottom :chocolate:`Ladder` waypoint first.
+#. Waypoint ladders AFTER you waypointed the areas above and below them! If you waypoint ladders first, all waypoints in reach of a ladder waypoint will be connected with it and have their radius reduced to zero automatically! It doesn't matter whether you place the top or the bottom :chocolate:`Ladder` waypoint first.
 #. If the ladder is very long, you can place additional :chocolate:`Ladder` waypoints between the bottom and the top end.
 #. The bottom waypoint will automatically get connected with the nearest waypoint, independent of current AutoPath Max Distance settings.
 #. The top waypoint will usually get a connection towards it automatically, but you will have to add a connection leading away from it manually.
