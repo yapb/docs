@@ -327,7 +327,7 @@ Determines the type of bots ping displayed.
 
 * If set to ``0`` there will be no anything in scoreboard about bot ping.
 * If set to ``1`` there will be "BOT" displayed for every bot in scoreboard.
-* If set to  `2`` there will be "fake" ping displayed for every bot in scoreboard.
+* If set to ``2`` there will be "fake" ping displayed for every bot in scoreboard.
 
 Minimum value is ``0``, Maximum value is ``2``, Default value is ``2``.
 
