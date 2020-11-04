@@ -235,7 +235,7 @@ In the editor, rescue points will be displayed in bright white (see below). Thei
 Camp waypoints
 ------------------
 
-As the name suggests, Camp waypoints are used to mark good sniper spots. They can be navigated by all bots. However, whether a bot may camp there or not is determined by the flag you can add to the camp waypoint. You can make Camp waypoints team specific or leave them "open" to any team. The colour of Normal Camp waypoints is cyan. Terrorist specific camp waypoints have cyan color with red head, Counter-Terrorist specific is cyan with blue head, as you can see in the pictures below.
+As the name suggests, Camp waypoints are used to mark good sniper spots. They can be navigated by all bots. However, whether a bot may camp there or not is determined by the flag you can add to the camp waypoint. You can make Camp waypoints team specific or leave them "open" to any team. The colour of Normal Camp waypoints is cyan. Terrorist specific camp waypoints have cyan color with red head, Counter-Terrorist specific is cyan with blue head, as you can see in the picture below.
 
 .. figure:: images/camp_points.png
 	:align: center
@@ -463,7 +463,7 @@ To add a path connection, you must open the waypoint menu and select ``3. Create
 
 #. Select ``1. Outgoing Path`` to create an outgoing path connection from the waypoint you are standing on to the waypoint you selected.
 #. Select ``2. Incoming Path`` to create an incoming path connection from the waypoint you selected to the waypoint you are standing.
-#. Select ``3. Bidirectional (Both Ways)`` to create a bi-directional (2-way) path connection from the waypoint you are standing on to the waypoint you select.
+#. Select ``3. Bidirectional (Both Ways)`` to create a bi-directional (2-way) path connection between the waypoint you are standing on and the waypoint you select.
 
 
 Waypoint Flags
