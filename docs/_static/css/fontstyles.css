@@ -1,0 +1,159 @@
+/*
+ * CSS fontstyles for Sphinx Documentation
+ * :copyright: Copyright 2020 Vladislav Sukhov
+ * :license: GPLv3, see LICENSE for details.
+ */
+
+
+/* Colors and text decoration.
+ For example, :black:`text in black` in rST. */
+
+.black {
+    color: black;
+}
+
+.brown {
+	color: brown;
+}
+
+.chocolate {
+	color: chocolate;
+}
+
+.gray {
+    color: gray;
+}
+
+.grey {
+    color: gray;
+}
+
+.silver {
+    color: silver;
+}
+
+.white {
+    color: white;
+}
+
+.maroon {
+    color: maroon;
+}
+
+.red {
+    color: red;
+}
+
+.magenta {
+    color: magenta;
+}
+
+.fuchsia {
+    color: fuchsia;
+}
+
+.pink {
+    color: pink;
+}
+
+.orange {
+    color: orange;
+}
+
+.gold {
+	color: gold;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.lime {
+    color: lime;
+}
+
+.lightgreen {
+    color: lightgreen;
+}
+
+.green {
+    color: green;
+}
+
+.olive {
+    color: olive;
+}
+
+.teal {
+    color: teal;
+}
+
+.cyan {
+    color: cyan;
+}
+
+.aqua {
+    color: aqua;
+}
+
+.blue {
+    color: blue;
+}
+
+.navy {
+    color: navy;
+}
+
+.purple {
+    color: purple;
+}
+
+.under {
+    text-decoration: underline;
+}
+
+.over {
+    text-decoration: overline;
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.b {
+	font-weight: bold;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.redbold {
+	color: red;
+	font-weight: bold;
+}
+
+.greenbold {
+	color: green;
+	font-weight: bold;
+}
+
+.it {
+    font-style: italic;
+}
+
+.ob {
+    font-style: oblique;
+}
+
+.small {
+    font-size: small;
+}
+
+.large {
+    font-size: large;
+}

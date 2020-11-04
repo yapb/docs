@@ -1,0 +1,50 @@
+.. Color profiles for Sphinx.
+.. Has to be used with fontstyles.css
+.. role:: black
+.. role:: brown
+.. role:: chocolate
+.. role:: gray
+.. role:: grey
+.. role:: silver
+.. role:: white
+.. role:: maroon
+.. role:: red
+.. role:: magenta
+.. role:: fuchsia
+.. role:: pink
+.. role:: orange
+.. role:: gold
+.. role:: yellow
+.. role:: lime
+.. role:: lightgreen
+.. role:: green
+.. role:: olive
+.. role:: teal
+.. role:: cyan
+.. role:: aqua
+.. role:: blue
+.. role:: navy
+.. role:: purple
+
+.. role:: under
+.. role:: over
+.. role:: blink
+.. role:: line
+.. role:: strike
+
+.. role:: b
+.. role:: bold
+.. role:: redbold
+.. role:: greenbold
+.. role:: it
+.. role:: ob
+
+.. role:: small
+.. role:: large
+
+.. role:: center
+.. role:: left
+.. role:: right
+
+
+.. (c) Vladislav Sukhov, 2020
