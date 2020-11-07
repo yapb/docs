@@ -38,7 +38,11 @@ When the bot kills the enemy with the nickname "John Smith", he will write "You'
 
 ``[WELCOME]`` - Sets the list of messages that the bot will write when it connects to server.
 
-``[DEADCHAT]`` - Sets the list of messages that the bot will write when it is dead or is in spectator mode
+``[TEAMATTACK]`` - Sets the list of messages that the bot will write when attacked by a teammate.
+
+``[TEAMKILL]`` - Sets the list of messages that the bot will write when it killed a teammate.
+
+``[DEADCHAT]`` - Sets the list of messages that the bot will write when it is dead or is in spectator mode.
 
 .. note:: Minimum number is 9! If you write less than 9 messages for this trigger, yapb will crash!
 
