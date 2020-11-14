@@ -249,6 +249,8 @@ yb_graph_fixcamp
 
 Specifies whether bot should not 'fix' camp directions of camp waypoints when loading old PWF format.
 
+.. note:: If you are using pwf waypoints from PODBot 3.0 this cvar should be disabled, as it can break the directions of the camp points.
+
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 
 
