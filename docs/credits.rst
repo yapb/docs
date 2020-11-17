@@ -6,6 +6,7 @@ Development Team
 --------------------------
 
 - jeefo - Current maintainer, and 2.x - 4.x series developer.
+- $_Vladislav - Documentation, waypoints.
 - Whistler - Original author of YaPB fork. (retired)
 
 Special thanks
@@ -20,7 +21,7 @@ Special thanks
 - Immortal_BLG, author of YaPB3.
 - Valve, for creating such a great game.
 - SpArK, helped alot on early versions.
-- $_Vladislav, for keeping updated this docs.
+- Overitab, alot of waypoints.
 
 Waypointers & Testers
 --------------------------
