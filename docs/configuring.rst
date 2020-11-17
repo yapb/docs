@@ -118,7 +118,7 @@ Points to location where chatter (from official csbot for example) is located.
 Minimum value is ``-``, Maximum value is ``-``, Default value is ``sound/radio/bot``.
 
 
-yb_communication_type
+yb_radio_mode
 --------------------------------
 
 Specifies the way bots are talking to each other and player. 
