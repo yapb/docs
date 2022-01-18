@@ -16,7 +16,7 @@ There are several waypoint types that can be used to indicate map goals, rescue 
 
 Besides, you don't have to worry about every little detail. The editor that comes with this bot version will do lots of the work for you, and besides, it's graphical and easy to use (no programming/coding skills or anything required). You may very well discover that making waypoints can be fun, especially when you see bots roam through the entire map without problems - and you made it possible!.
 
-.. Note:: Since YaPB 2.10 version, a new waypoint format named **Graph** has been added. Thanks to this, points limit was increased to 2048, directions of camp points can be set up and down, not just left and right and reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. Waypoints (multicolored stripes) now named **Nodes** since YaPB 4.x version. Waypoint editor also renamed to Graph editor.
+.. Note:: Since YaPB 2.10 version, a new waypoint format named **Graph** has been added, which raised the limit to 2048 points, allows you to set camp directions not only horizontally but also vertically, and also reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. Waypoints (multicolored stripes) now named **Nodes** since YaPB 4.x version. Waypoint editor also renamed to Graph editor.
 
 
 What do waypoints look like in the game?
@@ -24,7 +24,7 @@ What do waypoints look like in the game?
 
 When you are playing a normal game on a waypointed map, the waypoints will of course be invisible so that they don't distract or annoy you in any way.
 When waypointing is activated (see: How can I access the waypoint editor?, Below for instructions on how to do that), you will see waypoints as vertical bars about as high as a standing player. The colour of normal waypoints is green, but you may also see waypoints in white, purple, red, blue and cyan. These colours indicate special waypoints, some of which have already been mentioned in the last paragraph. If you see waypoints that are much smaller than the other ones, they are crouch waypoints. They will force bots to crouch when approaching them. Such waypoints are needed to lead bots through vents or any other low and narrow passages.
-Connections between waypoints are marked as horizontal lines leading from the centre of one waypoint to the other. They, too, exist in different colours. You may see yellow, white, red and teal lines. Don't worry if all these different colours sound confusing right now - it's actually very easy, but of course it helps a lot if you see some waypoints on the screen.
+Connections between waypoints are marked as horizontal lines leading from the centre of one waypoint to the other. They, too, exist in different colours. You may see yellow, white and red lines. Don't worry if all these different colours sound confusing right now - it's actually very easy, but of course it helps a lot if you see some waypoints on the screen.
 Now you know what waypoints and connections are, what they are for and what they look like, you may want to enter the editing mode and see for yourself.
 
 
@@ -390,14 +390,14 @@ In game, 1-way connections will be visible from 2 waypoints, their start and the
 
     An Outgoing 1-Way connection from right to left waypoint.
 
-The picture below shows the same two waypoints with the incoming connection (from left to right waypoint), :teal:`The incoming 1-way connection displayed in teal` as you can see in the picture below.
+The picture below shows the same two waypoints with the incoming connection (from left to right waypoint), :white:`The incoming 1-way connection displayed in white` as you can see in the picture below.
 
 .. figure:: images/incoming_path.png
     :align: center
 
     An Incoming 1-Way connection from left to right waypoint.
 
-.. note:: If you created an :green:`outgoing path connection` from waypoint A to waypoint B, it will be displayed in green. And when you get to waypoint B, the path connection will turn teal like an :teal:`incoming path connection`.
+.. note:: If you created an :green:`outgoing path connection` from waypoint A to waypoint B, it will be displayed in green. And when you get to waypoint B, the path connection will turn white like an :white:`incoming path connection`.
 
 The fact that 1-way connection are shown from both involved points is a great feature. It makes spotting errors very easy and saves you the trouble of running around to check if there is a connection TO the point where you are standing.
 
@@ -439,9 +439,9 @@ After deleting the path connection, you may notice that the :green:`outgoing pat
 .. figure:: images/deleted_outgoing_path.png
     :align: center
 
-    Removed :green:`outgoing path connection`, only :teal:`incoming path connection` remains (from the selected waypoint to the waypoint you are standing on)
+    Removed :green:`outgoing path connection`, only :white:`incoming path connection` remains (from the selected waypoint to the waypoint you are standing on)
 
-Select ``4. Delete path`` again to delete the :teal:`incoming path connection`.
+Select ``4. Delete path`` again to delete the :white:`incoming path connection`.
 
 .. figure:: images/fully_deleted_path.png
     :align: center
@@ -475,7 +475,7 @@ YaPB has 5 flags for waypoints, which are:
 #. Terrorist Specific - makes waypoint important for Terrorists
 #. CTs Specific - makes waypoint important for Counter-Terrorists
 #. Use Elevator - a flag for a waypoint that makes bots wait while they uplift on the elevator (you must put this flag on the waypoint at the beginning of the elevator path and at the end of the elevator path)
-#. Sniper Point - a flag that makes the camp point as a sniper point.
+#. Sniper Point - a flag that makes the camp point as a sniper point (bots will only camp with sniper rifles).
 
 .. figure:: images/waypoint_flags_menu.png
     :align: center
