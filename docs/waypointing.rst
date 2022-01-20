@@ -141,14 +141,14 @@ Adding waypoints
 
 Adding a waypoint is really easy. Just walk to the position where you want a waypoint to be inserted, bring up your waypoint menu:
 
-.. figure:: _static/images/waypoint_menu_page1.png
+.. figure:: images/waypoint_menu_page1.png
     :align: center
 
     Waypoint Menu (Page 1).
 	
 To add a waypoint, simply select ``5. Add waypoint``. A new menu will appear, the "\ :green:`Waypoint Type`\ " menu. All waypoint types described below can be added by using this menu.
 
-.. figure:: _static/images/waypoint_type_menu.png
+.. figure:: images/waypoint_type_menu.png
     :align: center
 
     Waypoint Type Menu.
@@ -168,7 +168,7 @@ Normal waypoints
 
 :green:`Normal` waypoints are the points you need in order to make bots walk through the map. They are used for navigation only and will not trigger any particular behaviour. You can add a :green:`Normal` waypoint by selecting ``1. Normal`` from the "\ :green:`Waypoint Type`\ " menu. :green:`The colour of Normal waypoints is green`, as you can see in the picture below.
 
-.. figure:: _static/images/normal_point.png
+.. figure:: images/normal_point.png
     :align: center
 
     Normal Waypoint.
@@ -178,7 +178,7 @@ Terrorist Important waypoints
 
 This type of waypoints can be navigated just as a :green:`Normal` waypoint by all bots, but it has one additional function. It marks strategically important points for a Terrorist team. Adding a :red:`Terrorist Important` point in a room will tell Terrorist bots to go to the room and check it frequently. You can add this type of waypoint by selecting ``2. Terrorist Important`` from the "\ :green:`Waypoint Type`\ " menu. :red:`The colour of Terrorist Important waypoints is green with red head`, as you can see in the picture below.
 
-.. figure:: _static/images/terrorist_important_point.png
+.. figure:: images/terrorist_important_point.png
     :align: center
 
     Terrorist Important Waypoint.
@@ -191,7 +191,7 @@ Counter-Terrorist Important waypoints
 
 The function of this waypoint type is exactly the same as the :red:`Terrorist Important` waypoint described above. The only difference is that a :blue:`Counter-Terrorists Important` waypoint obviously marks strategically important places for the :blue:`Counter-Terrorist (CT)` team. You can add this type of waypoint by selecting ``3. Counter-Terrorist Important`` from the "\ :green:`Waypoint Type`\ " menu. :blue:`The colour of Counter-Terrorist Important waypoints is green with blue head`, as you can see in the picture below.
 
-.. figure:: _static/images/counter_terrorist_important_point.png
+.. figure:: images/counter_terrorist_important_point.png
     :align: center
 
     Counter-Terrorist Important Waypoint.
@@ -204,7 +204,7 @@ Ladder waypoints
 
 :chocolate:`Ladder` waypoints are only used for waypointing ladders, as you possibly guessed. To enable your bots to use a ladder, simply walk up to the ladder until you get "stuck" on it (you will see your crosshair grow wider once you are on the ladder). Now place one :chocolate:`Ladder` waypoint at the bottom of the ladder. Then climb up the ladder until you are almost completely over the edge. Place a second waypoint here and make sure that the two ladder waypoints are connected, (This should have happened automatically if the :chocolate:`Ladder` waypoints aren't too far away from each other, if not you can create a connection manually), That's all! You can add this type of waypoint by selecting ``1. Normal`` from the "\ :green:`Waypoint Type`\ " menu, it will automatically turn into a ladder waypoint if you are standing on ladder. Or choose ``4. Block with hostage / Ladder`` from the "\ :green:`Waypoint Type`\ " menu if it's a Hostage Rescue (CS_) scenario map so that bots don't miss the hostages when going up on ladders. :chocolate:`The colour of Ladder waypoints is brown`, as you can see in the picture below.
 
-.. figure:: _static/images/ladder_point.png
+.. figure:: images/ladder_point.png
 	:align: center
 	
 	Ladder waypoint
@@ -226,7 +226,7 @@ Rescue waypoints
 A Counter-Terrorist bot that has succeeded in "activating" the hostages will determine the position of the nearest rescue point and lead the hostages there. When the bot has reached the rescue point, it will check if the hostages are really rescued and after max time about 5 seconds turn back to return to combat. Badly placed rescue points may lead to bots turning around before the hostages have really reached the rescue zone. As a consequence, the hostages will be left standing a few inches away from the rescue zone while the bot considers its mission as completed and turns back to fight, ignoring the deserted hostages. That's why you are advised to place a rescue waypoint well inside a rescue zone, not at its edges!
 In the editor, rescue points will be displayed in bright white (see below). Their radius is set to zero by default and shouldn't be changed. All bots can use this waypoint type for :green:`Normal` navigation as well. You can add this type of waypoint by selecting ``5. Rescue Zone`` from the "\ :green:`Waypoint Type`\ " menu. **The colour of Rescue waypoints is white**, as you can see in the picture below.
 
-.. figure:: _static/images/hostage_rescue_point.png
+.. figure:: images/hostage_rescue_point.png
 	:align: center
 	
 	Hostage Rescue waypoint
@@ -237,14 +237,14 @@ Camp waypoints
 
 As the name suggests, Camp waypoints are used to mark good sniper spots. They can be navigated by all bots. However, whether a bot may camp there or not is determined by the flag you can add to the camp waypoint. You can make Camp waypoints team specific or leave them "open" to any team. The colour of Normal Camp waypoints is cyan. Terrorist specific camp waypoints have cyan color with red head, Counter-Terrorist specific is cyan with blue head, as you can see in the picture below.
 
-.. figure:: _static/images/camp_points.png
+.. figure:: images/camp_points.png
 	:align: center
 	
 	From left to right. Sniper, Counter-Terrorist Specific, Normal and Terrorist Specific camp waypoints.
 	
 Although there are two entries in the "\ :green:`Waypoint Type`\ " menu ("\ :green:`Camping`\ " and "\ :green:`Camp end`\ "), the :cyan:`Camp` waypoint is in fact only one point. However, it carries two "markers" that tell a camping bot where to look while camping. When you are camping yourself, you will monitor a certain area. If you wanted to define this area, you could describe it as an angle. This angle would be specified by two lines going out from your position: One that marks the left edge and another one for the right edge. The monitored area would be between these two lines. The mentioned "markers" fulfill exactly this function. They are displayed as more or less horizontal beams going out from the top of a :cyan:`Camp` waypoint. :red:`The colour of Camp markers is red`, as you can see in the picture below.
 
-.. figure:: _static/images/camp_directions.png
+.. figure:: images/camp_directions.png
 	:align: center
 	
 	A crouched normal Camp waypoint with Camp start and Camp end markers (directions)
@@ -284,22 +284,22 @@ On a De_ map, the :purple:`Map Goal` waypoint marks the bomb spots. It must be p
 Examples of Goal Waypoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: _static/images/hostage_goal_point.png
+.. figure:: images/hostage_goal_point.png
     :align: center
 
     Hostage Goal Waypoint (map cs_assault)
 
-.. figure:: _static/images/vip_goal_point.png
+.. figure:: images/vip_goal_point.png
     :align: center
 
     VIP Escape Goal Waypoint (map as_oilrig)
 
-.. figure:: _static/images/bombplace_goal_point.png
+.. figure:: images/bombplace_goal_point.png
     :align: center
 
     Bomb place Goal Waypoint (map de_dust2)
 
-.. figure:: _static/images/terrorists_escape_goal_point.png
+.. figure:: images/terrorists_escape_goal_point.png
     :align: center
 
     Terrorists escape Goal Waypoint (map es_trinity)
@@ -317,7 +317,7 @@ The Radius
 
 The :blue:`Radius` of a waypoint is indicated by blue polygon that go out in all directions from the position of a waypoint. The photo below was taken from above, we are looking down onto a waypoint, and you can see :blue:`the colour of a Radius is Blue`, as you can see in the picture below.
 
-.. figure:: _static/images/wayzone_radius.png
+.. figure:: images/wayzone_radius.png
     :align: center
 
     Waypoint Radius
@@ -339,7 +339,7 @@ Another problem is not with walls, but with holes and cliffs, If there is no hig
 So these are areas where you will have to keep a watchful eye on your radii and if necessary, change them by hand. In narrow corridors and especially around narrow doorways, you will see that even a small radius calculated by the editor doesn't make the bots navigate precisely enough. In such places, I strongly recommend lowering the radius to zero.
 In order to change the radius of a waypoint, bring up the waypoint menu and select "\ :green:`8. Set Radius`\ ". The following menu will appear:
 
-.. figure:: _static/images/setradius_menu.png
+.. figure:: images/setradius_menu.png
     :align: center
 
     Waypoint Radius Menu
@@ -359,7 +359,7 @@ Connecting Waypoints
 Waypoints alone aren't sufficient to make bots move the way you want. They must be connected with other waypoints in order to let bots reach their goal. By default, connections up to a certain distance will be made automatically.
 You can select the automatic connection distance (AutoPath Max Distance, APMD) by bringing up the waypoint menu and selecting "7. Set Autopath Distance". The following sub-menu will appear:
 
-.. figure:: _static/images/autopath_distance_menu.png
+.. figure:: images/autopath_distance_menu.png
     :align: center
 
     Autopath Distance Menu
@@ -373,7 +373,7 @@ Two-way (bidirectional) connections
 
 The vast majority of all connections in a waypoint set will be :gold:`bidirectional`. Obviously, these connections enable bots to walk both from point A to point B and back from point B to point A. :gold:`The colour of bidirectional paths is yellow`, as you can see in the picture below.
 
-.. figure:: _static/images/bidirectional_path.png
+.. figure:: images/bidirectional_path.png
     :align: center
 
     A 2-Way connection between the two depicted waypoints.
@@ -385,14 +385,14 @@ One-way connections
 One-way connections enable bots to walk from point A to point B, but not vice versa. They can be useful to make bots drop down a wall or a high crate, but prevent them from attempting to get up. Of course, there may be more places at which a 1-way connection can make sense, but that depends on the map.
 In game, 1-way connections will be visible from 2 waypoints, their start and their end waypoint. In order to show you the direction of 1-way connection, it will be shown in different colours depending on from which perspective you view it. Let's say you have a 1-way connection from point 1 to point 2. In this case, when you are standing at point 1, you will see :green:`the outgoing 1-way connection displayed in green` as you can see in the picture below.
 
-.. figure:: _static/images/outgoing_path.png
+.. figure:: images/outgoing_path.png
     :align: center
 
     An Outgoing 1-Way connection from right to left waypoint.
 
 The picture below shows the same two waypoints with the incoming connection (from left to right waypoint), The incoming 1-way connection displayed in white as you can see in the picture below.
 
-.. figure:: _static/images/incoming_path.png
+.. figure:: images/incoming_path.png
     :align: center
 
     An Incoming 1-Way connection from left to right waypoint.
@@ -408,7 +408,7 @@ Jump connections
 :red:`Jump` connections are a bit special as they cannot be drawn like any other connection. But that's not all, apart from that, :red:`Jump` connections can also be :redbold:`one-way or two-way connections`. To make matters even more complex, their 2-way version can come in two flavours: A "pure" two-way jump connection, i.e. a :red:`Jump` connection from A to B and another :red:`Jump` connection back from B to A or a "mixed" two way connection, with a :red:`Jump` connection leading from A to B and a regular one-way connection back from B to A. The latter version will be very rare, though. Now once again, this sounds more complicted than it actually is.
 :red:`The Jump connection horizontal line displayed in red(Outgoing Jump connection)`, viewed from the waypoints where the bots will start their jump can be seen in the picture below.
 
-.. figure:: _static/images/jump_connection.png
+.. figure:: images/jump_connection.png
     :align: center
 
     An Outgoing Jump connection
@@ -423,7 +423,7 @@ Here's how it works (Look at the screenshot below), let's pretend we wanted to d
 
 .. note:: This only works if you are standing near a waypoint and aiming at another one! If you are standing in a waypointless area, you won't be able to use this function because it needs two selected waypoints (The one where you are standing and the one you are aiming at).
 
-.. figure:: _static/images/selected_point.png
+.. figure:: images/selected_point.png
     :align: center
 
     The left selected waypoint
@@ -436,14 +436,14 @@ To delete a path connection, you must open the waypoint menu and select ``4. Del
 
 After deleting the path connection, you may notice that the :green:`outgoing path connection` has been removed (from the waypoint where you are standing to the waypoint you selected) as you can see in picture below:
 
-.. figure:: _static/images/deleted_outgoing_path.png
+.. figure:: images/deleted_outgoing_path.png
     :align: center
 
     Removed :green:`outgoing path connection`, only incoming path connection remains (from the selected waypoint to the waypoint you are standing on)
 
 Select ``4. Delete path`` again to delete the incoming path connection.
 
-.. figure:: _static/images/fully_deleted_path.png
+.. figure:: images/fully_deleted_path.png
     :align: center
 
     Fully deleted path connection
@@ -456,7 +456,7 @@ Adding path connections
 
 To add a path connection, you must open the waypoint menu and select ``3. Create path``. Then a menu should appear as shown in the picture below.
 
-.. figure:: _static/images/path_directions_menu.png
+.. figure:: images/path_directions_menu.png
     :align: center
 
     Path directions menu
@@ -477,7 +477,7 @@ YaPB has 5 flags for waypoints, which are:
 #. Use Elevator - a flag for a waypoint that makes bots wait while they uplift on the elevator (you must put this flag on the waypoint at the beginning of the elevator path and at the end of the elevator path)
 #. Sniper Point - a flag that makes the camp point as a sniper point (bots will only camp with sniper rifles).
 
-.. figure:: _static/images/waypoint_flags_menu.png
+.. figure:: images/waypoint_flags_menu.png
     :align: center
 
     Waypoint Flags Menu
