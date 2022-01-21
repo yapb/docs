@@ -605,11 +605,11 @@ From left to right::
     3 - If bot's money more than the value specified here, he will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for Ts) (+ 8/9/10))
     4 - If bot's money more than the value specified here, he can buy shotguns (M3, XM1014).
     5 - If bot's money less than the value specified here, he cannot buy shotguns (M3, XM1014).
-    6 - If bot's money more than the value specified here, he can buy AWM, SG550, G3SG1, M249.
-    7 - If bot's money less than the value specified here, he cannot buy AWM, SG550, G3SG1, M249.
-    8 - How much money bot leaves a prostock, at purchase of the primary weapon (only for type of behaviour - Normal)
-    9 - How much money bot leaves a prostock, at purchase of the primary weapon (only for type of behaviour - Rusher).
-    10 - How much money bot leaves a prostock, at purchase of the primary weapon  (only for type of behaviour - Careful).
+    6 - If bot's money more than the value specified here, he can buy AWP, SG550, G3SG1, M249.
+    7 - If bot's money less than the value specified here, he cannot buy AWP, SG550, G3SG1, M249.
+    8 - How much money bot leaves in stock, at purchase of the primary weapon (only for type of behaviour - Normal)
+    9 - How much money bot leaves in stock, at purchase of the primary weapon (only for type of behaviour - Rusher).
+    10 - How much money bot leaves in stock, at purchase of the primary weapon  (only for type of behaviour - Careful).
     11 - If bot's money more than the value specified here, he can buy the shield.
 
 Example::
@@ -649,9 +649,9 @@ Numbering of the weapons::
     24 - M249
     25 - SHIELD
 
-From left to right. Top right value is a most wanted bot weapon. Top left value is most worst weapon.
+From left to right. Rightmost value is a most wanted bot weapon. Leftmost value is most worst weapon.
 
-.. Note:: Knife should most "worst" weapon in this tables, otherwise things are messed up.
+.. Note:: Knife should most "worst" weapon in this table, otherwise things are messed up.
 
 Examples::
 
