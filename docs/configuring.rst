@@ -260,7 +260,7 @@ yb_graph_url
 Sepcifies the host where graph database is located. They must be in ``/graph`` path on the server.
 Set to empty, if you don't want downloads
 
-Allowed values: Valid DNS hostname with HTTP server listening on port 80. Default value is ``yapb.ru``.
+Allowed values: Valid DNS hostname with HTTP server listening on port 80. Default value is ``yapb.jeefo.net``.
 
 
 yb_ignore_cvars_on_changelevel
