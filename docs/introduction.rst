@@ -9,13 +9,13 @@ It's adding computer-controlled (AI) players to Counter-Strike games based on Go
 
 Why is it called YaPB?
 -----------------
-"Yet another is" because when fork was started, there was so many other PODBot clones floating around like **PODBot MM**, **e[POD]bot**, **IvPBot**, **POXBot** etc. So the reason was to save the original name, and clarify that bot is derived from the original PODBot.
+It's called "Yet another PODBot" because when fork was started, there was so many other PODBot clones floating around like **PODBot MM**, **e[POD]bot**, **IvPBot**, **POXBot** etc. So the reason was to save the original name, and clarify that bot is derived from the original PODBot.
 
 And POD is an abbreviation for **Ping of Death**. It's called that way because it was derived from the **High Ping Bastard Bot** Botman was doing. And if you look at the Bots Ping they always have a Ping of 5 in the days of Counter-Strike 1.5 and the very first generation of bots did Headshots all the time. 
 
 What are Bots able to do?
 ------------------
-The Bots will automatically know the goals of the map. Counter-Terrorists will go for hostages or defuse the bomb, Terrorists will plant the bomb. VIP Bots will try to reach the Rescue Points. The goal selection is done dynamically and will be affected by several factors like Personality, Health, Teammates nearby & Items the Bot is carrying. The Bots will also try to support teammates and take cover when they think it's needed. They can use some buttons for light-switches and some doors. It's possible lifts will be used by bots.
+The Bots will automatically know the goals of the map. Counter-Terrorists will go for hostages or defuse the bomb, Terrorists will plant the bomb. VIP Bots will try to reach the Rescue Points. The goal selection is done dynamically and will be affected by several factors like Personality, Health, Teammates nearby & Items the Bot is carrying. The Bots will also try to support teammates and take cover when they think it's needed. They also can use some elevators.
 
 What mods are supported?
 ------------------
@@ -32,7 +32,13 @@ YaPB supports running on a listenserver (when the players hosts game itself), as
 
 Why does YaPB need waypoints?
 ------------------
-Is there a Bot who is doing great without any kind of navigational help like waypoints, wayzones or navmesh? It's almost certain you won't find any. Actually, at the time of original development, waypointed navigation was the most widely-used and simple method. Bots are currently navgiating flawlessly, so changing it to navmesh or any other stuff is not planned. YaPB maintains big list of waypoints on the website, so probably we already have the waypoint for your map...
+Is there a Bot who is doing great without any kind of navigational help like waypoints, wayzones or navmesh? It's almost certain you won't find any. Actually, at the time of original development, waypointed navigation was the most widely-used and simple method. Bots are currently navgiating flawlessly, so changing it to navmesh or any other stuff is not planned. YaPB maintains big list of waypoints on the github repository_ which is constantly replenished, so probably we already have the waypoint for your map...
+
+If you would like a waypoint for your map, you can do a issue-request_ on the github repository.
+But it's better to make waypoints yourself than to wait for someone to make waypoints for you.
+
+.. _repository: https://github.com/yapb/graph
+.. _issue-request: https://github.com/yapb/graph/issues/new
 
 What types of maps are supported?
 ------------------
@@ -53,6 +59,6 @@ What types of maps are supported?
   + Hostage Rescue/Bomb Plant/Defuse (csde_* maps).
   + Speed Strike (sp_* maps).
 
-What modes are supporeted for Counter-Strike?
+What modes are supported for Counter-Strike?
 ------------------
 YaPB officially supports CSDM and CSDM FFA modes for Counter-Strike. Other modes should add their own support for bots.
