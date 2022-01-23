@@ -488,7 +488,7 @@ yb_think_fps
 
 Determines how many times per second the rest of bot AI is executed. Higher values will give more smooth movement, but will cause CPU waste, and may cause problems with dedicated servers that have more than 500 fps.
 
-Minimum value is ``30.0``, Maximum value is ``90.0``, Default value is ``30.0``.
+Minimum value is ``24.0``, Maximum value is ``90.0``, Default value is ``26.0``.
 
 
 yb_tkpunish
