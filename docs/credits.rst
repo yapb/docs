@@ -22,6 +22,7 @@ Special thanks
 - Valve, for creating such a great game.
 - SpArK, helped alot on early versions.
 - Overitab, alot of waypoints.
+- [PRince4], alot of waypoints commits.
 
 Waypointers & Testers
 --------------------------
