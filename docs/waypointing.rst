@@ -323,7 +323,7 @@ The :blue:`Radius` of a waypoint is indicated by blue polygon that go out in all
     Waypoint Radius
     
 The :blue:`Radius` indicator are a great mean to see how big the radius of a waypoint actually is, it ends exactly where the corners end.
-What does the :blue:`Radius` actually do? It tells the bots how exactly they must navigate around the waypoint in question. If a bot walks past a row of waypoints with big radii, it will know that super-exact navigation is not required. If the radii are small, the bot will stick strictly to the waypoints.
+What does the :blue:`Radius` actually do? It tells the bots how exactly they must navigate around the waypoint in question. If a bot walks past a row of waypoints with big radius, it will know that super-exact navigation is not required. If the radius are small, the bot will stick strictly to the waypoints.
 Thus, in open areas big radius help to make bot navigation natural - you wouldn't want to see a bot run across a wide courtyard as if it was following an incredibly thin, straight line painted onto the ground, now, would you? It looks much more natural if the bot takes advantage of the space he has around him.
 However, in narrow corridors and doorways or on bridges, the situation is different, too big radius would make bots too careless, they would bump into walls or even fall off a bridge because they think they can walk anywhere inside that big radius!
 That's why choosing appropriate waypoint radius is so important. As a general rule, keep the radius big in open areas and make them small in narrow passages. Read the following section to learn how:
@@ -334,9 +334,9 @@ Setting or Changing the Radius:
 
 The good news first: You don't have to set every single :blue:`Radius` manually, the editor will do much of the work for you! It will automatically calculate the :blue:`Radius` of a waypoint depending on the area around it. If the editor detects higher (~more than knee-high) obstacles like walls nearby, it will automatically adjust the :blue:`Radius` to reach up to the wall, not further. However, the maximum :blue:`Radius` is limited to 128 units. This means that even on a totally open plain, where the nearest obstacle is hundreds of distance units away, the :blue:`Radius` will not exceed 128.
 
-Now you might wonder "Well, if the editor does all this for me, why would I change radii by hand?" The answer is simple,the editor helps, but it isn't perfect, it cannot detect all kinds of obstacles (I can't go too much into detail here because all this is pretty much map-related). Anyway, you will see places where the radius cuts into an obstacle - it could be a very thin pillar, a fence, or even a solid-looking car that's parked in the streets... as I said, it depends on how the mapper built these elements.
+Now you might wonder "Well, if the editor does all this for me, why would I change radius by hand?" The answer is simple,the editor helps, but it isn't perfect, it cannot detect all kinds of obstacles (I can't go too much into detail here because all this is pretty much map-related). Anyway, you will see places where the radius cuts into an obstacle - it could be a very thin pillar, a fence, or even a solid-looking car that's parked in the streets... as I said, it depends on how the mapper built these elements.
 Another problem is not with walls, but with holes and cliffs, If there is no high obstacle, the editor will regard an area as clear and set a big radius, it doesn't care if right next to the waypoint there's a yawning abyss where bots will fall to death!
-So these are areas where you will have to keep a watchful eye on your radii and if necessary, change them by hand. In narrow corridors and especially around narrow doorways, you will see that even a small radius calculated by the editor doesn't make the bots navigate precisely enough. In such places, I strongly recommend lowering the radius to zero.
+So these are areas where you will have to keep a watchful eye on your radius and if necessary, change them by hand. In narrow corridors and especially around narrow doorways, you will see that even a small radius calculated by the editor doesn't make the bots navigate precisely enough. In such places, I strongly recommend lowering the radius to zero.
 In order to change the radius of a waypoint, bring up the waypoint menu and select "\ :green:`8. Set Radius`\ ". The following menu will appear:
 
 .. figure:: images/setradius_menu.png
@@ -350,7 +350,7 @@ Simply select an option by pressing the corresponding key, and the radius of the
 Waypoints with fixed radius
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: Some waypoint types will always have, and require, a radius of zero. The radii of these waypoint types :redbold:`should NOT be changed!` The types with fixed radii are: :chocolate:`Ladder`, Rescue, :cyan:`Camp` (no matter if team specific or not) and :purple:`Map Goal`.
+.. note:: Some waypoint types will always have, and require, a radius of zero. The radius of these waypoint types :redbold:`should NOT be changed!` The types with fixed radius are: :chocolate:`Ladder`, Rescue, :cyan:`Camp` (no matter if team specific or not) and :purple:`Map Goal`.
 
 
 Connecting Waypoints
