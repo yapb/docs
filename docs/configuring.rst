@@ -322,18 +322,6 @@ Sets the bot language for menus, names, chat and messages.
 Valid values: ``ru``, ``en``, ``de``, ``chs``, Default value is ``en``.
 
 
-yb_latency_display
---------------------------------
-
-Determines the type of bots ping displayed.
-
-* If set to ``0`` there will be no anything in scoreboard about bot ping.
-* If set to ``1`` there will be "BOT" displayed for every bot in scoreboard.
-* If set to ``2`` there will be "fake" ping displayed for every bot in scoreboard.
-
-Minimum value is ``0``, Maximum value is ``2``, Default value is ``2``.
-
-
 yb_name_prefix
 --------------------------------
 
@@ -465,6 +453,18 @@ yb_show_avatars
 Enables or disables displaying bot avatars in front of their names in scoreboard. Note, that is currently you can see only avatars of your steam friends.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
+
+
+yb_show_latency
+--------------------------------
+
+Determines the type of bots ping displayed.
+
+* If set to ``0`` there will be no anything in scoreboard about bot ping.
+* If set to ``1`` there will be "BOT" displayed for every bot in scoreboard.
+* If set to ``2`` there will be "fake" ping displayed for every bot in scoreboard.
+
+Minimum value is ``0``, Maximum value is ``2``, Default value is ``2``.
 
 
 yb_spraypaints
