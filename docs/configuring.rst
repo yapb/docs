@@ -538,6 +538,32 @@ You can use the cvars shown above to write in this config. They will be executed
 
 By default YaPB does not have any configs for maps.
 
+Bot Difficulty Configuration
+================================
+You can fine-tune the bots thanks to the difficulty configuration file.
+It contains the settings for reaction time, headshot and wallshot probabilities.
+
+Each of these settings is tied to each difficulty level.
+
+The bots difficulty configuration file is located on the path ``addons\yapb\conf\difficulty.cfg``
+
+The valid format is::
+
+    Level = minReactionTime(s),maxReactionTime(s),headshotProbability,seenThruWallChance,heardThruWallChance
+
+Where::
+    
+    minReactionTime - Minimal time in seconds from time the bot first saw enemy and time he can recognize it.
+    maxReactionTime - Same as above, but upper cap of the limit.
+    headshotProbability - Probability of the bot aiming at the head instead of the body if the body and head are visible.
+    seenThruWallChance - Chance that the bot will attack the enemy if it believes that it is there and just saw it.
+    heardThruWallChance - Chance that the bot will attack the enemy if it believes that it is there and just heard it.
+
+
+Example::
+
+    Expert = 0.1, 0.2, 100, 90, 90
+
 Logos Configuration
 ================================
 List of the bot spray paints are stored is in ``addons\yapb\conf\logos.cfg``.
