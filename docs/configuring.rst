@@ -530,13 +530,33 @@ Enable some non-human reaction timers allowing beat almost every player on this 
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
-Map specific configuration
+Map Specific Configuration
 ================================
 Map specific configs where user-configured cvars are stored. The filename is ``mapname.cfg`` where "mapname" is name of the map for which this config was created eg: ``de_dust.cfg`` for de_dust map. This file located at ``addons/yapb/conf/maps`` directory.
 
 You can use the cvars shown above to write in this config. They will be executed automatically when you start a map specified in the name of this config.
 
 By default YaPB does not have any configs for maps.
+
+Logos Configuration
+================================
+List of the bot spray paints are stored is in ``addons\yapb\conf\logos.cfg``.
+It uses textures from decals.wad, so if you want to add a new spray paint texture, it should be in that file.
+To see available textures in decals.wad you can use special tools like Wally, Half-Life Texture Tools, etc.
+
+Default spray paints list::
+
+    {biohaz
+    {graf003
+    {graf004
+    {graf005
+    {lambda06
+    {target
+    {hand1
+    {spit2
+    {bloodhand6
+    {foot_l
+    {foot_r
 
 Weapons Configuration
 ================================
