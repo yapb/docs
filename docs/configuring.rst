@@ -650,6 +650,18 @@ You can use the cvars shown above to write in this config. They will be executed
 
 By default YaPB does not have any configs for maps.
 
+Custom Configuration File
+================================
+A custom config file that allows you to change some hard-coded things in the bot code.
+
+It's located in ``addons/yapb/conf/custom.cfg``
+
+``C4ModelName`` - It's contains a custom name for C4 model, for servers that replace C4 model with it's own.
+By default it's ``c4.mdl`` (the models/path is omitted), so if you need to use ``models/mybomb/mybomb.mdl``, you should specify ``mybomb/mybomb.mdl``.
+
+``AMXParachuteCvar`` - It's contains a custom cvar name for parachute handling, there are various plugins that handles parachute (AMX Parachute, AMX Parachute Lite, etc.), you can specify needed cvar here.
+
+
 Bot Difficulty Configuration
 ================================
 You can fine-tune the bots thanks to the difficulty configuration file.
@@ -657,7 +669,7 @@ It contains the settings for reaction time, headshot and wallshot probabilities.
 
 Each of these settings is tied to each difficulty level.
 
-The bots difficulty configuration file is located on the path ``addons\yapb\conf\difficulty.cfg``
+The bots difficulty configuration file is located on the path ``addons/yapb/conf/difficulty.cfg``
 
 The valid format is::
 
@@ -678,7 +690,7 @@ Example::
 
 Logos Configuration
 ================================
-List of the bot spray paints are stored is in ``addons\yapb\conf\logos.cfg``.
+List of the bot spray paints are stored is in ``addons/yapb/conf/logos.cfg``.
 It uses textures from decals.wad, so if you want to add a new spray paint texture, it should be in that file.
 To see available textures in decals.wad you can use special tools like Wally, Half-Life Texture Tools, etc.
 
