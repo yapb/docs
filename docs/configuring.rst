@@ -8,6 +8,14 @@ CVARs can be changed on the fly by typing them into the console.
 Bot CVARS
 ================================
 
+yb_attack_monsters
+--------------------------------
+
+Allows or disallows bots to attack monsters.
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
+
+
 yb_autokill_delay
 --------------------------------
 
@@ -82,12 +90,44 @@ If not zero, bots will try to pickup camp points as their goals, and will camp t
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 
 
+yb_camping_time_min
+--------------------------------
+
+Lower bound of time from which time for camping is calculated.
+
+Minimum value is ``5.0``, Maximum value is ``90.0``, Default value is ``15.0``.
+
+
+yb_camping_time_max
+--------------------------------
+
+Upper bound of time until which time for camping is calculated.
+
+Minimum value is ``15.0``, Maximum value is ``120.0``, Default value is ``45.0``.
+
+
 yb_chat
 --------------------------------
 
 If not zero, bots will be able to chat to each other and players while they are dead.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
+
+
+yb_chat_percent
+--------------------------------
+
+Bot chances to send random dead chat when killed.
+
+Minimum value is ``0``, Maximum value is ``100``, Default value is ``30``.
+
+
+yb_check_enemy_invincibility
+--------------------------------
+
+Enables or disables checking enemy invincibility. Useful for some mods.
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
 
 yb_check_enemy_rendering
@@ -244,6 +284,22 @@ If not zero, bots think function is paused and bots stays at the place where he 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
 
+yb_graph_auto_save_count
+--------------------------------
+
+Every N graph nodes placed on map, the graph will be saved automatically (without checks).
+
+Minimum value is ``0``, Maximum value is ``2048``, Default value is ``15``.
+
+
+yb_graph_draw_distance
+--------------------------------
+
+Maximum distance to draw graph nodes from editor viewport.
+
+Minimum value is ``64``, Maximum value is ``512``, Default value is ``400``.
+
+
 yb_graph_fixcamp
 --------------------------------
 
@@ -278,6 +334,14 @@ yb_ignore_enemies
 --------------------------------
 
 If not zero, bots will run all over the map, and doing goals but will not search for enemies.
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
+
+
+yb_ignore_objectives
+--------------------------------
+
+Allows or disallows bots to do map objectives, i.e. plant/defuse bombs, and saves hostages.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
@@ -330,6 +394,14 @@ This cvar contains a string that will be prepended to every added bot name. Some
 By default this value is not set.
 
 
+yb_object_pickup_radius
+--------------------------------
+
+The radius on which bot searches world for new objects, items, and weapons.
+
+Minimum value is ``64.0``, Maximum value is ``1024.0``, Default value is ``450.0``.
+
+
 yb_password_key
 --------------------------------
 
@@ -346,6 +418,30 @@ Specifies the actual password for ``setinfo`` command, to gain remote control to
 To gain access to bot command remotely, user should open console and enter ``setinfo key password``, when ``key`` is value from from ``yb_password_key`` and password is value from ``yb_password``.
 
 By default this value is not set.
+
+
+yb_path_danger_factor_min
+--------------------------------
+
+Lower bound of danger factor that used to add additional danger to path based on practice.
+
+Minimum value is ``100``, Maximum value is ``2400``, Default value is ``200``.
+
+
+yb_path_danger_factor_max
+--------------------------------
+
+Upper bound of danger factor that used to add additional danger to path based on practice.
+
+Minimum value is ``200``, Maximum value is ``4800``, Default value is ``400``.
+
+
+yb_pickup_custom_items
+--------------------------------
+
+Allows or disallows bots to pickup custom items.
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
 
 yb_ping_base_min
@@ -392,6 +488,14 @@ Determines the total number of bots in the game, when the ``yb_quota_mode`` is s
 Minimum value is ``0``, Maximum value is ``32``, Default value is ``0``.
 
 
+yb_random_knife_attacks
+--------------------------------
+
+Allows or disallows the ability for random knife attacks when bot is rushing and no enemy is nearby.
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
+
+
 yb_restricted_weapons
 --------------------------------
 
@@ -432,6 +536,14 @@ The list of weapons for Counter-Strike 1.6::
     shield - Tactical Shield
 
 By default this value is not set.
+
+
+yb_save_bots_names
+--------------------------------
+
+Allows to save bot names upon changelevel, so bot names will be the same after a map change
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 
 
 yb_shoots_thru_walls
