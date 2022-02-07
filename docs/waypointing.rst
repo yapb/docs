@@ -31,7 +31,7 @@ Now you know what waypoints and connections are, what they are for and what they
 How can I access the waypoint editor?
 -------------------------------------
 
-The waypoint editor is not a separate program, it is included in the bot dll (or .so, if you are using linux).To open it, create a ``LAN\Listen Server`` game, select the map you want to waypoint and start the game as usual. As soon as you are in the map, you can activate the editing mode from the console by typing ``yb graphmenu`` or if you have bound a key for it, simply by pressing that key.
+The waypoint editor is not a separate program, it is included in the bot dll (or .so, if you are using linux). To open it, create a LAN\Listen Server game, select the map you want to waypoint and start the game as usual. As soon as you are in the map, you can activate the editing mode from the console by typing ``yb graphmenu`` or if you have bound a key for it, simply by pressing that key.
 
 
 Graph console commands Summary
@@ -112,7 +112,7 @@ To use the graph commands, you will have to use the console. Use the ``~`` key t
 Using graph commands
 =========================
 
-Using ``yb g delete`` will remove the waypoint closest to the player. The waypoint MUST be within 55 units from the player (about 1/2 the player height) in order to be removed. You will need to stand fairly close to the waypoint to be able to remove it. This prevents you from accidentally removing a waypoint on the other side of the room. When removing a waypoint you will hear a sound indicating that the waypoint was removed (the same sound the tripmine makes when placed on a wall).
+Using ``yb g delete`` will remove the waypoint closest to the player. The waypoint MUST be within 50 units from the player (about 1/2 the player height) in order to be removed. You will need to stand fairly close to the waypoint to be able to remove it. This prevents you from accidentally removing a waypoint on the other side of the room. When removing a waypoint you will hear a sound indicating that the waypoint was removed (the same sound the tripmine makes when placed on a wall).
 
 Using ``yb g save`` will save the waypoint data to the graph file. The graph file will have the same name as the current map with an extension of ``.graph``. The file will be saved into the ``cstrike/addons/yapb/data/graph`` Folder. Your current player name will be saved as the waypoint file author.
 
@@ -474,7 +474,7 @@ YaPB has 5 flags for waypoints, which are:
 #. Block with Hostage - a flag that prohibits Counter-Terrorists leading hostages to go along certain waypoints marked with these flags. :redbold:`Important: you should definitely put these flags on the ways where counter-terrorists can lose hostages!`
 #. Terrorist Specific - makes waypoint important for Terrorists
 #. CTs Specific - makes waypoint important for Counter-Terrorists
-#. Use Elevator - a flag for a waypoint that makes bots wait while they uplift on the elevator (you must put this flag on the waypoint at the beginning of the elevator path and at the end of the elevator path)
+#. Use Elevator - a flag for a waypoint that makes bots wait while they uplift on the elevator (you must put this flag on the waypoint at the beginning and at the end of the elevator path)
 #. Sniper Point - a flag that makes the camp point as a sniper point (bots will only camp with sniper rifles).
 
 .. figure:: images/waypoint_flags_menu.png
