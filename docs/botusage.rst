@@ -153,9 +153,9 @@ The following main YaPB commands are available (note these ARE case sensitive):
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb cvars``              | Displays all the cvars with their descriptions.                                                                                |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb graph``              | Handles graph operations.													|
+   | ``yb graph``              | Handles graph operations.                                                                                                      |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb show_custom``        | Shows the current values from custom.cfg											|
+   | ``yb show_custom``        | Shows the current values from custom.cfg                                                                                       |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 To get help on the specified command, type in the console ``yb help``, for example ``yb help add`` shows help for ``yb add`` command, such as arguments, aliases, etc.
