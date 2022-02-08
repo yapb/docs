@@ -81,16 +81,16 @@ Bots can use these replies at random.
 
 VoiceChat customization
 ================================
-YaPB supports voice chat as well, as zBot.
+YaPB supports voice chat as well as zBot.
 All paths for yapb voice chat audio files are in the file: ``chatter.cfg`` which located in the folder ``addons/yapb/conf``.
 
 ``RewritePath`` sets the folder where the voice chat audio files are located. By default it is ``sound/radio/bot``
 
-``Event Radio_***`` sets the name of the sound files that will be played when the bot speaks a specific radio commands.
-For example ``Event Radio_CoverMe`` will contain the sounds that the bot will speak for the command "Cover me!"
+``Event Radio_***`` sets the name of the sound files that will be played instead of when the bot speaks a specific radio commands.
+For example ``Event Radio_CoverMe`` will contain the sounds that the bot will speak instead of the command "Cover me!"
 You can comment out these lines if you want the bot to use standard radio commands.
 
-``Event Chatter_***`` sets the names of sound files that the bot will speak with a non-standard radio commands.
+``Event Chatter_***`` sets the names of sound files for bot's chatter that it will speak.
 For example ``Event Chatter_HearSomething`` will contain the sounds that the bot will speak when it hears an enemy.
 
 How this file should look like::
@@ -133,7 +133,7 @@ How this file should look like::
 	Event Chatter_TeamKill = ("what_happened", "noo", "oh_my_god", "oh_man", "oh_no_sad", "what_have_you_done"); 
 	Event Chatter_ReportingIn = ("reporting_in");
 	Event Chatter_GuardDroppedC4 = ("bombsite", "bombsite2", "i_got_a_covered", "im_camping_c");
-	Event Chatter_Camp = ("im_camping");
+	Event Chatter_Camp = ("im_waiting_here");
 	Event Chatter_PlantingC4 = ("planting_the_bomb", "planting");
 	Event Chatter_DefusingC4 = ("defusing", "defusing_bomb", "defusing_bomb");
 	Event Chatter_InCombat = ("attacking", "attacking_enemies", "engaging_enemies", "in_combat", "in_combat2", "returning_fire");
