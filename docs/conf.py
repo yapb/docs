@@ -1,12 +1,13 @@
 ## conf.py
 
 # Set the project name, version and master file for documentation
-html_title = 'Official YaPB Documentation'
+html_title = 'Официальная документация YaPB'
 master_doc = 'index'
-project = u'Official YaPB Documentation'
+project = u'Официальная документация YaPB'
 version = 'latest'
 release = 'latest'
-htmlhelp_basename = 'Official YaPB Documentation'
+htmlhelp_basename = 'Официальная документация YaPB'
+copyright = u'2004-2022 YaPB Project <yapb@jeefo.net>'
 
 # These folders are copied to the documentation's HTML output
 html_static_path = ['_static']
