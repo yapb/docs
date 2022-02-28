@@ -175,6 +175,15 @@ Type in console ``yb kick`` command to remove the random bot.
 
 If you want to remove the bot from the specified team, you should type in the console ``yb kick t`` to kick a bot from Terrorists team, and ``yb kick ct`` to kick a bot from Counter-Terrorists team.
 
+yb removebots
+---------------
+
+You can also use the alias ``yb kickall`` to remove all bots.
+
+If you want to remove bots instantly, add the ``instant`` argument to this command.
+
+Example: ``yb kickall instant``
+
 yb kill
 ---------------
 
