@@ -207,6 +207,15 @@ Allowed values: ``knife|pistol|shotgun|smg|rifle|sniper|standard``.
 
 Standard means that bots will use all weapons.
 
+yb cvars
+---------------
+
+This command lists all cvars with their descriptions.
+
+If you want to save all cvars you configured to config, add the ``save`` argument to this command.
+
+Example: ``yb cvars save``
+
 Adding bots to the game
 ============================
 
