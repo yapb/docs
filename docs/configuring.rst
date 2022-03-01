@@ -367,7 +367,7 @@ yb_join_team
 
 Forces all bots to join team specified in this cvars.
 
-Valid values: ``ct``,``te``,``any``, Default value is ``any``.
+Valid values: ``ct``, ``t``, ``any``, Default value is ``any``.
 
 
 yb_join_delay
