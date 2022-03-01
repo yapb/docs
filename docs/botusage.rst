@@ -135,7 +135,7 @@ The following main YaPB commands are available (note these ARE case sensitive):
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb kick``               | Kicks off the random or specified bot from the game. (see below)                                                               |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb removebots``         | Kicks all the bots from the game. Also available via alias ``yb kickall``                                                      |
+   | ``yb removebots``         | Kicks all the bots from the game. Also available via alias ``yb kickall``. (see below)                                         |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb kill``               | Kills the specified team or all the bots. (see below)                                                                          |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -151,7 +151,7 @@ The following main YaPB commands are available (note these ARE case sensitive):
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb list``               | Lists the bots currently playing on server.                                                                                    |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb cvars``              | Displays all the cvars with their descriptions.                                                                                |
+   | ``yb cvars``              | Displays all the cvars with their descriptions. (see below)                                                                    |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb graph``              | Handles graph operations.                                                                                                      |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -215,6 +215,8 @@ This command lists all cvars with their descriptions.
 If you want to save all cvars you configured to config, add the ``save`` argument to this command.
 
 Example: ``yb cvars save``
+
+Also you can narrow your search by entering a word as an argument, instead of looking through a list of all cvars.
 
 Adding bots to the game
 ============================
