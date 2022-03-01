@@ -158,7 +158,9 @@ The following main YaPB commands are available (note these ARE case sensitive):
    | ``yb show_custom``        | Shows the current values from custom.cfg                                                                                       |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-To get help on the specified command, type in the console ``yb help``, for example ``yb help add`` shows help for ``yb add`` command, such as arguments, aliases, etc.
+To get help for all commands such as arguments, aliases, etc, type in the console ``yb help``.
+
+If you want to get help for specified command for example ``yb add``, type in the console ``yb help add``.
 
 
 yb add
