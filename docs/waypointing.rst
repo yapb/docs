@@ -136,6 +136,20 @@ The ``yb g path_delete`` command is just like the "create" command except that i
 
 The ``yb g acquire_editor`` command allows you to edit graph on dedicated server. Before you can use this, the ``yb_password`` and ``yb_password_key`` cvars must be configured on the server.
 
+Installing waypoints
+=========================
+
+By default, if YaPB finds a graph (waypoint) in the official database for your map, it will automatically download it to the ``addons/yapb/data/graph`` folder.
+
+If you want to install graph manually, put it in the ``*gamedir*/addons/yapb/data/graph`` folder.
+
+Or if you want to install the old format (pwf) waypoint manually, put it in the ``*gamedir*/addons/yapb/data/pwf`` folder.
+
+Where ``*gamedir*`` is the path to the game directory, for example:
+
+- ``D:\Steam\steamapps\common\Half-Life\cstrike`` is the Counter-Strike 1.6 folder.
+- ``D:\Steam\steamapps\common\Half-Life\czero`` is the Counter-Strike Condition Zero folder.
+
 Adding waypoints
 =========================
 
