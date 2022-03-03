@@ -3,5 +3,5 @@
 
 This is documentation for YaPB bot for the Counter-Strike game
 
-* English: https://docs.yapb.ru/en/latest/
-* Russian: https://docs.yapb.ru/ru/latest/
+* English: https://yapb.readthedocs.io/en/latest/
+* Russian: https://yapb.readthedocs.io/ru/latest/
