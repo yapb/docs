@@ -15,7 +15,7 @@ If you have time and interest you can contribute to documentation on Github_ rep
    introduction
    installation
    configuring
-   customizing
+   customization
    botusage
    waypointing
    localization
