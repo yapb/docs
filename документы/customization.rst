@@ -88,7 +88,7 @@ All paths for yapb voice chat audio files are in the file: ``chatter.cfg`` which
 
 Radio events
 --------------------------
-``Event Radio_***`` sets the name of the sound files that will be played instead of when the bot speaks a specific radio commands.
+``Event Radio_***`` sets the name of the sound files that bot will speak instead of using a specific radio commands.
 
 **Which of them:**
 
@@ -113,6 +113,8 @@ Radio events
 - ``Event Radio_ShesGonnaBlow`` - "Get out of there, it's gonna blow!" radio command.
 - ``Event Radio_Negative`` - "Negative." radio command.
 - ``Event Radio_EnemyDown`` - "Enemy down." radio command.
+
+You can comment out these lines if you want the bot to use standard radio commands.
 
 Chatter events
 --------------------------
