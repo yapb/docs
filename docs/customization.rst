@@ -89,6 +89,7 @@ All paths for yapb voice chat audio files are in the file: ``chatter.cfg`` which
 Radio events
 --------------------------
 ``Event Radio_***`` sets the name of the sound files that will be played instead of when the bot speaks a specific radio commands.
+
 **Which of them:**
 
 - ``Event Radio_CoverMe`` - "Cover Me!" radio command.
