@@ -86,10 +86,35 @@ All paths for yapb voice chat audio files are in the file: ``chatter.cfg`` which
 
 ``RewritePath`` sets the folder where the voice chat audio files are located. By default it is ``sound/radio/bot``
 
+Radio events
+--------------------------
 ``Event Radio_***`` sets the name of the sound files that will be played instead of when the bot speaks a specific radio commands.
-For example ``Event Radio_CoverMe`` will contain the sounds that the bot will speak instead of the command "Cover me!"
-You can comment out these lines if you want the bot to use standard radio commands.
+**Which of them:**
 
+- ``Event Radio_CoverMe`` - "Cover Me!" radio command.
+- ``Event Radio_YouTakePoint`` - "You Take the Point." radio command.
+- ``Event Radio_HoldPosition`` - "Hold This Position." radio command.
+- ``Event Radio_RegroupTeam`` - "Regroup Team." radio command.
+- ``Event Radio_FollowMe`` - "Follow Me." radio command.
+- ``Event Radio_TakingFire`` - "Taking Fire...Need Assistance!" radio command.
+- ``Event Radio_GoGoGo`` - "Go go go!" radio command.
+- ``Event Radio_Fallback`` - "Team, fall back!" radio command.
+- ``Event Radio_StickTogether`` - "Stick together, team." radio command.
+- ``Event Radio_GetInPosition`` - "Get in position and wait for my go." radio command.
+- ``Event Radio_StormTheFront`` - "Storm the Front!" radio command.
+- ``Event Radio_ReportTeam`` - "Report in, team." radio command.
+- ``Event Radio_Affirmative`` - "Affirmative./Roger that." radio command.
+- ``Event Radio_EnemySpotted`` - "Enemy spotted." radio command.
+- ``Event Radio_NeedBackup`` - "Need backup." radio command.
+- ``Event Radio_SectorClear`` - "Sector clear." radio command.
+- ``Event Radio_InPosition`` - "I'm in position." radio command.
+- ``Event Radio_ReportingIn`` - "Reporting in." radio command.
+- ``Event Radio_ShesGonnaBlow`` - "Get out of there, it's gonna blow!" radio command.
+- ``Event Radio_Negative`` - "Negative." radio command.
+- ``Event Radio_EnemyDown`` - "Enemy down." radio command.
+
+Chatter events
+--------------------------
 ``Event Chatter_***`` sets the names of sound files for bot's chatter that it will speak.
 For example ``Event Chatter_HearSomething`` will contain the sounds that the bot will speak when it hears an enemy.
 
