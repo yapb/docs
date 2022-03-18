@@ -32,7 +32,7 @@ Chat Localization
 You just need to create a file ``**_chat.cfg`` for bot chat in your language.
 You can use the file en_chat.cfg as an example.
 
-.. seealso:: See the :doc:`/customizing` section for details.
+.. seealso:: See the :doc:`/customization` section for details.
 
 Nickname Localization
 ================================
