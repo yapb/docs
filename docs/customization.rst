@@ -86,12 +86,92 @@ YaPB поддерживает голосовой чат также как и zBo
 
 ``RewritePath`` задаёт путь к папке где находятся звуковые файлы для голосового чата. По умолчанию это ``sound/radio/bot``
 
-``Event Radio_***`` задаёт имена звуковых файлов которые будут воспроизводиться когда бот говорит определённую радио команду.
-Например ``Event Radio_CoverMe`` будет содержать звуки которыми будет говорить бот при команде "Прикрой меня!"
+События радио
+--------------------------
+``Event Radio_***`` задаёт имена звуковых файлов которые будет произносить бот вместо использования определённых радиокоманд.
+
+**Которые из них:**
+
+- ``Event Radio_CoverMe`` - радиокоманда "Прикройте меня!".
+- ``Event Radio_YouTakePoint`` - радиокоманда "Возьмите эту точку на себя.".
+- ``Event Radio_HoldPosition`` - радиокоманда "Удерживайте эту позицию.".
+- ``Event Radio_RegroupTeam`` - радиокоманда "Перегруппируйтесь.".
+- ``Event Radio_FollowMe`` - радиокоманда "Следуйте за мной.".
+- ``Event Radio_TakingFire`` - радиокоманда "Я под огнём...нужна поддержка!".
+- ``Event Radio_GoGoGo`` - радиокоманда "Пошли, пошли, пошли!".
+- ``Event Radio_Fallback`` - радиокоманда "Команда, отступаем!".
+- ``Event Radio_StickTogether`` - радиокоманда "Команда, держимся вместе.".
+- ``Event Radio_GetInPosition`` - радиокоманда "Займите позицию и ждите моего сигнала.".
+- ``Event Radio_StormTheFront`` - радиокоманда "Штурмуйте фронт!".
+- ``Event Radio_ReportTeam`` - радиокоманда "Доложите обстановку.".
+- ``Event Radio_Affirmative`` - радиокоманда "Понял./Так точно.".
+- ``Event Radio_EnemySpotted`` - радиокоманда "Вижу противника.".
+- ``Event Radio_NeedBackup`` - радиокоманда "Нужно подкрепление.".
+- ``Event Radio_SectorClear`` - радиокоманда "Сектор чист.".
+- ``Event Radio_InPosition`` - радиокоманда "Я на позиции.".
+- ``Event Radio_ReportingIn`` - радиокоманда "Докладываю.".
+- ``Event Radio_ShesGonnaBlow`` - радиокоманда "Уходим отсюда, она сейчас взорвётся!".
+- ``Event Radio_Negative`` - радиокоманда "Никак нет.".
+- ``Event Radio_EnemyDown`` - радиокоманда "Противник убит.".
+
 Вы можете закомментировать эти строки если хотите чтобы боты использовали стандартные радиокоманды.
 
-``Event Chatter_***`` задаёт имена звуковых файлов которыми будет говорить бот при нестандартных радио командах.
-Например ``Event Chatter_HearSomething`` будет содержать звуки которыми будет говорить бот когда он слышит врага.
+События переговоров
+--------------------------
+``Event Chatter_***`` задаёт имена звуковых файлов которые будет произносить бот во время переговоров.
+
+**Список событий переговоров:**
+
+- ``Event Chatter_DiePain`` - звуки смерти бота.
+- ``Event Chatter_GoingToPlantBomb`` - бот говорит, что он собирается ставить бомбу.
+- ``Event Chatter_GoingToGuardVIPSafety`` - бот говорит, что он собирается охранять зону побега VIP.
+- ``Event Chatter_RescuingHostages`` - бот говорит, что он спасает заложников.
+- ``Event Chatter_TeamKill`` - реакция бота на убийство товарища по команде.
+- ``Event Chatter_GuardingVipSafety`` - бот говорит, что он охраняет зону побега VIP.
+- ``Event Chatter_PlantingC4`` - бот говорит, что он ставит бомбу.
+- ``Event Chatter_InCombat`` - бот говорит, что он прямо сейчас сражается с противником.
+- ``Event Chatter_SeeksEnemy``- бот говорит, что он ждёт врага.
+- ``Event Chatter_Nothing`` - бот говорит, что в этом секторе никого нет.
+- ``Event Chatter_EnemyDown`` - бот говорит, что он убил противника.
+- ``Event Chatter_UseHostage`` - бот говорит, что он взял заложника.
+- ``Event Chatter_WonTheRound`` - реакция бота на победу.
+- ``Event Chatter_QuicklyWonTheRound`` - реакция бота на быструю победу.
+- ``Event Chatter_NoEnemiesLeft`` - бот говорит, что больше нет оставшихся противников.
+- ``Event Chatter_FoundBombPlace`` - бот говорит, что он нашёл место с заложенной бомбой.
+- ``Event Chatter_WhereIsTheBomb`` - бот спрашивает, где находится бомба.
+- ``Event Chatter_DefendingBombSite`` - бот говорит, что он защищает место закладки бомбы.
+- ``Event Chatter_BarelyDefused`` - реакция бота на едва обезвреженную бомбу.
+- ``Event Chatter_NiceshotCommander`` - реакция бота на хороший выстрел игрока.
+- ``Event Chatter_ReportingIn`` - бот говорит, что он докладывает.
+- ``Event Chatter_SpotTheBomber`` - бот говорит, что он нашёл террориста несущего бомбу.
+- ``Event Chatter_VIPSpotted`` - бот говорит, что он заметил VIP.
+- ``Event Chatter_FriendlyFire`` - реакция бота, когда он атакован товарищем по команде.
+- ``Event Chatter_GotBlinded`` - реакция бота на светошумовую гранату.
+- ``Event Chatter_GuardDroppedC4`` - бот говорит, что он охраняет брошенную C4.
+- ``Event Chatter_DefusingC4`` - бот говорит, что он обезвреживает C4.
+- ``Event Chatter_FoundC4`` - бот говорит, что он нашёл C4.
+- ``Event Chatter_ScaredEmotion`` - реакция бота, когда он встретил несколько противников и поблизости нет союзников.
+- ``Event Chatter_HeardEnemy`` - бот говорит, что он слышал противника.
+- ``Event Chatter_SniperWarning`` - бот предупреждает о снайпере.
+- ``Event Chatter_SniperKilled`` - бот сообщает, что он убил снайпера.
+- ``Event Chatter_OneEnemyLeft`` - бот говорит, что остался только один противник.
+- ``Event Chatter_TwoEnemiesLeft`` - бот говорит, что осталось два противника.
+- ``Event Chatter_ThreeEnemiesLeft`` - бот говорит, что осталось три противника.
+- ``Event Chatter_NiceshotPall`` - реакция бота на хороший выстрел другого бота.
+- ``Event Chatter_GoingToGuardHostages`` - бот говорит, что он собирается охранять заложников.
+- ``Event Chatter_GoingToGuardDroppedBomb`` - бот говорит, что он собирается охранять брошенную бомбу.
+- ``Event Chatter_OnMyWay`` - бот говорит, что он скоро придёт.
+- ``Event Chatter_LeadOnSir`` - бот говорит игроку, что он будет следовать за ним.
+- ``Event Chatter_Pinned_Down`` - бот просит помощи у союзников когда они находятся поблизости.
+- ``Event Chatter_GottaFindTheBomb`` - бот говорит, что он нашёл бомбу.
+- ``Event Chatter_You_Heard_The_Man`` - бот говорит о начале раунда (в данный момент не используется).
+- ``Event Chatter_Lost_The_Commander`` - бот говорит, что командира (игрока) убили, относится к режиму карьеры в Counter-Strike Condition Zero.
+- ``Event Chatter_NewRound`` - то же, что и ``Chatter_You_Heard_The_Man`` (в данный момент не используется).
+- ``Event Chatter_CoverMe`` - бот просит чтобы его прикрыли.
+- ``Event Chatter_BehindSmoke`` - бот говорит, что он находится за дымом (в данный момент не используется).
+- ``Event Chatter_BombSiteSecured`` - бот говорит, что он обезвредил бомбу.
+- ``Event Chatter_GoingToCamp`` - бот говорит, что он собирается кемперить (охранять территорию).
+- ``Event Chatter_Camp`` - бот говорит что он кемперит.
 
 Вот примерно так должен выглядеть этот файл::
 

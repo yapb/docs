@@ -1,12 +1,12 @@
 **************************
 Справка Yet Another POD-Bot
 **************************
-**YaPB** это оппонент с ИИ для Counter-Strike_ который позволяет вам играть в старый добрый Counter-Strike_ без подключения к любому серверу, заполняя ваш сервер игроками управляемые с помощью ИИ.
+**YaPB** это оппонент с ИИ для Counter-Strike_ который позволяет вам играть в старый добрый Counter-Strike_ без подключения к любому серверу, заполняя ваш сервер игроками управляемыми с помощью ИИ.
 
-Если у вас есть время и интерес, вы можете внести свой вклад в документацию в репозитории Github_.
+Если у вас есть время и интерес, вы можете внести свой вклад в документацию в репозитории GitHub_.
 
 .. _Counter-Strike: https://store.steampowered.com/app/10/CounterStrike/
-.. _Github: https://github.com/yapb/docs
+.. _GitHub: https://github.com/yapb/docs
 
 .. toctree::
    :caption: Документация бота
@@ -15,7 +15,7 @@
    introduction
    installation
    configuring
-   customizing
+   customization
    botusage
    waypointing
    localization
