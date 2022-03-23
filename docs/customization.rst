@@ -122,56 +122,56 @@ Chatter events
 
 **Chatter events list:**
 
-- ``Chatter_DiePain`` - bot death sounds.
-- ``Chatter_GoingToPlantBomb`` - bot says it's going to plant a bomb.
-- ``Chatter_GoingToGuardVIPSafety`` - bot says that he is going to guard the vip escape zone.
-- ``Chatter_RescuingHostages`` - bot says that he is rescuing hostages.
-- ``Chatter_TeamKill`` - bot reaction to killing a teammate.
-- ``Chatter_GuardingVipSafety`` - bot says that he is guarding the vip escape zone.
-- ``Chatter_PlantingC4`` - bot says it's planting a bomb.
-- ``Chatter_InCombat`` - bot says that he is fighting with the enemy right now.
-- ``Chatter_SeeksEnemy``- bot says that he is waiting for the enemy.
-- ``Chatter_Nothing`` - bot says that there is no one in this sector.
-- ``Chatter_EnemyDown`` - bot says that he killed the enemy.
-- ``Chatter_UseHostage`` - bot says that he took a hostage.
-- ``Chatter_WonTheRound`` - bot's reaction to win.
-- ``Chatter_QuicklyWonTheRound`` - bot's reaction to a quick win.
-- ``Chatter_NoEnemiesLeft`` - bot says that there are no more remaining enemies.
-- ``Chatter_FoundBombPlace`` - bot says that he found a place with a planted bomb.
-- ``Chatter_WhereIsTheBomb`` - bot asks where the bomb is.
-- ``Chatter_DefendingBombSite`` - bot says it's defending the bomb site.
-- ``Chatter_BarelyDefused`` - bot's reaction to a barely defused bomb.
-- ``Chatter_NiceshotCommander`` - bot's reaction to a nice shot by a player.
-- ``Chatter_ReportingIn`` - bot says it's reporting in.
-- ``Chatter_SpotTheBomber`` - bot says that he noticed a bomber.
-- ``Chatter_VIPSpotted`` - bot says that he noticed the VIP.
-- ``Chatter_FriendlyFire`` - bot reaction when attacked by a teammate.
-- ``Chatter_GotBlinded`` - bot reaction to flashbang.
-- ``Chatter_GuardDroppedC4`` - bot says that he guards the dropped C4.
-- ``Chatter_DefusingC4`` - bot says that he is defusing C4.
-- ``Chatter_FoundC4`` - bot says that he is found C4.
-- ``Chatter_ScaredEmotion`` - bot reaction when he met several enemies and there are no teammates nearby.
-- ``Chatter_HeardEnemy`` - bot says that he heard the enemy.
-- ``Chatter_SniperWarning`` - bot warns about sniper.
-- ``Chatter_SniperKilled`` - bot reports that he killed a sniper.
-- ``Chatter_OneEnemyLeft`` - bot says that there is only one enemy left.
-- ``Chatter_TwoEnemiesLeft`` - bot says that there are two enemies left.
-- ``Chatter_ThreeEnemiesLeft`` - bot says that there are three enemies left.
-- ``Chatter_NiceshotPall`` - bot's reaction to a nice shot from another bot.
-- ``Chatter_GoingToGuardHostages`` - bot says that he is going to guard the hostages.
-- ``Chatter_GoingToGuardDroppedBomb`` - bot says that he is going to guard the dropped bomb.
-- ``Chatter_OnMyWay`` - bot says it will be here soon.
-- ``Chatter_LeadOnSir`` - bot tells the player that he will follow him.
-- ``Chatter_Pinned_Down`` - bot asks for help from teammates when they are nearby.
-- ``Chatter_GottaFindTheBomb`` - bot says that he is going to look for a bomb (currently not used).
-- ``Chatter_You_Heard_The_Man`` - bot talks about the beginning of the round (currently not used).
-- ``Chatter_Lost_The_Commander`` - bot says that the commander (player) was killed, concerns the career mode in Counter-Strike Condition Zero.
-- ``Chatter_NewRound`` - same as ``Chatter_You_Heard_The_Man`` (currently not used).
-- ``Chatter_CoverMe`` - bot asks to be covered.
-- ``Chatter_BehindSmoke`` - bot says that he is behind the smoke (currently not used).
-- ``Chatter_BombSiteSecured`` - bot says that he defused the bomb.
-- ``Chatter_GoingToCamp`` - bot says that he is going to camp (guard an area).
-- ``Chatter_Camp`` - bot says he's camping.
+- ``Event Chatter_DiePain`` - bot death sounds.
+- ``Event Chatter_GoingToPlantBomb`` - bot says it's going to plant a bomb.
+- ``Event Chatter_GoingToGuardVIPSafety`` - bot says that he is going to guard the vip escape zone.
+- ``Event Chatter_RescuingHostages`` - bot says that he is rescuing hostages.
+- ``Event Chatter_TeamKill`` - bot reaction to killing a teammate.
+- ``Event Chatter_GuardingVipSafety`` - bot says that he is guarding the vip escape zone.
+- ``Event Chatter_PlantingC4`` - bot says it's planting a bomb.
+- ``Event Chatter_InCombat`` - bot says that he is fighting with the enemy right now.
+- ``Event Chatter_SeeksEnemy``- bot says that he is waiting for the enemy.
+- ``Event Chatter_Nothing`` - bot says that there is no one in this sector.
+- ``Event Chatter_EnemyDown`` - bot says that he killed the enemy.
+- ``Event Chatter_UseHostage`` - bot says that he took a hostage.
+- ``Event Chatter_WonTheRound`` - bot's reaction to win.
+- ``Event Chatter_QuicklyWonTheRound`` - bot's reaction to a quick win.
+- ``Event Chatter_NoEnemiesLeft`` - bot says that there are no more remaining enemies.
+- ``Event Chatter_FoundBombPlace`` - bot says that he found a place with a planted bomb.
+- ``Event Chatter_WhereIsTheBomb`` - bot asks where the bomb is.
+- ``Event Chatter_DefendingBombSite`` - bot says it's defending the bomb site.
+- ``Event Chatter_BarelyDefused`` - bot's reaction to a barely defused bomb.
+- ``Event Chatter_NiceshotCommander`` - bot's reaction to a nice shot by a player.
+- ``Event Chatter_ReportingIn`` - bot says it's reporting in.
+- ``Event Chatter_SpotTheBomber`` - bot says that he noticed a bomber.
+- ``Event Chatter_VIPSpotted`` - bot says that he noticed the VIP.
+- ``Event Chatter_FriendlyFire`` - bot reaction when attacked by a teammate.
+- ``Event Chatter_GotBlinded`` - bot reaction to flashbang.
+- ``Event Chatter_GuardDroppedC4`` - bot says that he guards the dropped C4.
+- ``Event Chatter_DefusingC4`` - bot says that he is defusing C4.
+- ``Event Chatter_FoundC4`` - bot says that he is found C4.
+- ``Event Chatter_ScaredEmotion`` - bot reaction when he met several enemies and there are no teammates nearby.
+- ``Event Chatter_HeardEnemy`` - bot says that he heard the enemy.
+- ``Event Chatter_SniperWarning`` - bot warns about sniper.
+- ``Event Chatter_SniperKilled`` - bot reports that he killed a sniper.
+- ``Event Chatter_OneEnemyLeft`` - bot says that there is only one enemy left.
+- ``Event Chatter_TwoEnemiesLeft`` - bot says that there are two enemies left.
+- ``Event Chatter_ThreeEnemiesLeft`` - bot says that there are three enemies left.
+- ``Event Chatter_NiceshotPall`` - bot's reaction to a nice shot from another bot.
+- ``Event Chatter_GoingToGuardHostages`` - bot says that he is going to guard the hostages.
+- ``Event Chatter_GoingToGuardDroppedBomb`` - bot says that he is going to guard the dropped bomb.
+- ``Event Chatter_OnMyWay`` - bot says it will be here soon.
+- ``Event Chatter_LeadOnSir`` - bot tells the player that he will follow him.
+- ``Event Chatter_Pinned_Down`` - bot asks for help from teammates when they are nearby.
+- ``Event Chatter_GottaFindTheBomb`` - bot says he found a bomb.
+- ``Event Chatter_You_Heard_The_Man`` - bot talks about the beginning of the round (currently not used).
+- ``Event Chatter_Lost_The_Commander`` - bot says that the commander (player) was killed, concerns the career mode in Counter-Strike Condition Zero.
+- ``Event Chatter_NewRound`` - same as ``Chatter_You_Heard_The_Man`` (currently not used).
+- ``Event Chatter_CoverMe`` - bot asks to be covered.
+- ``Event Chatter_BehindSmoke`` - bot says that he is behind the smoke (currently not used).
+- ``Event Chatter_BombSiteSecured`` - bot says that he defused the bomb.
+- ``Event Chatter_GoingToCamp`` - bot says that he is going to camp (guard an area).
+- ``Event Chatter_Camp`` - bot says he's camping.
 
 How this file should look like::
 
