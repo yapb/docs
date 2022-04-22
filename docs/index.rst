@@ -8,12 +8,5 @@ If you have time and interest you can contribute to documentation on Github_ rep
 .. _Counter-Strike: https://store.steampowered.com/app/10/CounterStrike/
 .. _Github: https://github.com/yapb/docs
 
-User docs
----------
-
 .. include:: toc-user.rst
-
-Waypointing
-------------------
-
 .. include:: toc-waypointing.rst
