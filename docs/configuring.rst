@@ -289,6 +289,8 @@ yb_graph_auto_save_count
 
 Every N graph nodes placed on map, the graph will be saved automatically (without checks).
 
+If you want to disable autosave, set this cvar to ``0``.
+
 Minimum value is ``0``, Maximum value is ``2048``, Default value is ``15``.
 
 
@@ -305,7 +307,7 @@ yb_graph_fixcamp
 
 Specifies whether bot should not 'fix' camp directions of camp waypoints when loading old PWF format.
 
-.. note:: If you are using pwf waypoints from PODBot 3.0 this cvar should be disabled, as it can break the directions of the camp points.
+.. note:: This option was made to fix camp directions when using waypoints from PODBot 2.5, old YaPB versions or other PODBot clones that do not allow to set a horizontal camp direction. If you are using pwf waypoints from PODBot 3.0 this cvar should be disabled, as it can break the directions of the camp nodes.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 
@@ -313,7 +315,7 @@ Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 yb_graph_url
 --------------------------------
 
-Sepcifies the host where graph database is located. They must be in ``/graph`` path on the server.
+Specifies the host where graph database is located. They must be in ``/graph`` path on the server.
 Set to empty, if you don't want downloads
 
 Allowed values: Valid DNS hostname with HTTP server listening on port 80. Default value is ``yapb.jeefo.net``.
