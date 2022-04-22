@@ -1,5 +1,5 @@
 *********************
-Waypointing
+Waypointing - The Basics
 *********************
 
 .. include:: .fontstyles.rst
