@@ -59,6 +59,6 @@ What types of maps are supported?
   + Hostage Rescue/Bomb Plant/Defuse (csde_* maps).
   + Speed Strike (sp_* maps).
 
-What modes are supported for Counter-Strike?
+What mods are supported for Counter-Strike?
 ------------------
-YaPB officially supports CSDM and CSDM FFA modes for Counter-Strike. Other modes should add their own support for bots.
+YaPB officially supports CSDM and CSDM FFA mods for Counter-Strike. Other mods should add their own support for bots.
