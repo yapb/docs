@@ -248,7 +248,7 @@ To have access to the bot's menus and commands, you need to in a server console 
 To specify a password, you must enter in the console the following cvar ``yb_password botpassword`` where ``botpassword`` is the password you specified.
 To specify a key, you must enter in the console the following cvar ``yb_password_key _ybpw``, where ``_ybpw`` is the key you specified.
 
-Then, in a local console (from where you connect to the server) you must enter the following commandline in the console ``setinfo _ybpw botpassword`` to have access to the commands and menus of the bot.
+Then, in a client console you must enter the following commandline in the console ``setinfo _ybpw botpassword`` to have access to the commands and menus of the bot.
 To have access to graph commands, you need to enter in the console the following command ``yb g acquire_editor``. Make sure that no one has entered this command before you, who has the password from the bot. Otherwise, you won't be able to access graph commands until that player removes graph editing rights.
 
 To revoke the rights to edit graphs, you must enter in the console the following command: ``yb g release_editor``.
