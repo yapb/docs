@@ -13,6 +13,8 @@ yb_attack_monsters
 
 Allows or disallows bots to attack monsters.
 
+Useful for mods like Halloween Mod.
+
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
 
@@ -186,14 +188,6 @@ yb_debug_goal
 Forces all alive bots to build path and go to the specified here graph node.
 
 Minimum value is ``-1``, Maximum value is ``2048``, Default value is ``-1``.
-
-
-yb_debug_heuristic_type
---------------------------------
-
-Selects the heuristic function mode. For debug purposes only.
-
-Minimum value is ``0``, Maximum value is ``4``, Default value is ``0``.
 
 
 yb_destroy_breakables_around
@@ -436,6 +430,14 @@ yb_path_danger_factor_max
 Upper bound of danger factor that used to add additional danger to path based on practice.
 
 Minimum value is ``200``, Maximum value is ``4800``, Default value is ``400``.
+
+
+yb_path_heuristic_type
+--------------------------------
+
+Selects the heuristic function mode. For debug purposes only.
+
+Minimum value is ``0``, Maximum value is ``4``, Default value is ``0``.
 
 
 yb_pickup_custom_items
