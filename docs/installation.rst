@@ -9,13 +9,13 @@ Brief information
 
 Before you begin
 --------------------------
-Unlike many other podbot flavours, YaPB is able to run as metamod plugin as well as standalone dll for every platform it supports (except Android) without changing so/dll/dylib. 
+Unlike many other PODBot flavours, YaPB is able to run as metamod plugin as well as standalone dll for every platform it supports (except Android) without changing so/dll/dylib. 
 
 .. Important:: If you have some mods like AMX Mod X installed, you should consider installing bots as a metamod plugin, not as standalone dll. In other situations there is **no** requirement to install metamod before installing YaPB.
 
-Installation docs only cover installing bot on genuine Steam version of Counter-Strike. Assuming that if you run something special, you know how to install bot or bot as metamod plugin.
+Installation docs only cover installing bot on genuine Steam version of Counter-Strike. Assuming that if you run something special, you know how to install bot as standalone dll or as metamod plugin.
 
-.. Note:: Only 32-bit binary is available, as Valve has dropped support for 64-bit mode HLDS.
+.. Note:: Only 32-bit binary is available, since Valve has dropped support for 64-bit mode HLDS.
 
 
 Installing bot on Windows
@@ -24,25 +24,25 @@ YaPB supports installing both on listen and dedicated server under Windows. Many
 
 Installing using setup program
 --------------------------
-- Download the latest YaPB bot installer from https://yapb.jeefo.net/latest (example: ``yapb-4.2.637-windows.exe``)
-- Run program. Note that it's not signed with certificate. So accept warning.
+- Download the latest YaPB bot installer from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-windows.exe``)
+- Run program.
 - Press ``Browse`` and point to where ``hl.exe``/``hlds.exe`` is located.
 - Press ``Install`` to install bot.
 - You're done!
 
 .. Important:: Installer program automatically detects whether you use metamod, and will patch ``plugins.ini`` file automatically for you, adding entry to point to ``yapb.dll``. If there is no metamod, installer will patch the ``liblist.gam`` file to point to ``yapb.dll``
 
-.. Caution:: Installer has a feature for detecting Counter-Strike game folders. It's looks up all directories where selected ``hl.exe``/``hlds.exe`` is located and checks the library for containing export symbols ``weapon_ak47`` and ``weapon_m4a1``, and if so asssuming that this folder contains some Counter-Strike version, and installs bot to this directory automatically.
+.. Caution:: Installer has a feature for detecting Counter-Strike game folders. It's looks up all directories where selected ``hl.exe``/``hlds.exe`` is located and checks the library for containing export symbols ``weapon_ak47`` and ``weapon_m4a1``, and if so assuming that this folder contains some Counter-Strike version, it will install bot to this directory automatically.
 
 Installing without metamod
 --------------------------
-Assuming that your Counter-Strike is located at: ``c:\steam\steamapps\common\half-life\cstrike``.
+Assuming that your Counter-Strike is located at: ``C:\Steam\steamapps\common\Half-Life\cstrike``.
 
-.. Note:: If you're installing for Condition Zero, than change ``cstrike`` folder to ``czero`` folder.
+.. Note:: If you're installing bot for Condition Zero, then install it to ``czero`` folder instead.
 
-- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.637-windows.zip``)
-- Unzip downloaded package to ``c:\steam\steamapps\common\half-life\cstrike`` directory.
-- Open a file called ``liblist.gam`` in Notepad or any other text editor. (located in ``c:\steam\steamapps\common\half-life\cstrike``.)
+- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-windows.zip``)
+- Unzip downloaded package to ``C:\Steam\steamapps\common\Half-Life\cstrike`` directory.
+- Open a file called ``liblist.gam`` in Notepad or any other text editor. (located in ``C:\Steam\steamapps\common\Half-Life\cstrike``.)
 - Locate the entry ``gamedll``. It should point to ``dlls\mp.dll``.
 - Change entry from ``gamedll "dlls\mp.dll"`` to ``gamedll "addons\yapb\bin\yapb.dll"``.
 - Save the changes.
@@ -50,13 +50,13 @@ Assuming that your Counter-Strike is located at: ``c:\steam\steamapps\common\hal
 
 Installing as metamod plugin
 --------------------------
-Assuming that your Counter-Strike is located at: ``c:\steam\steamapps\common\half-life\cstrike``.
+Assuming that your Counter-Strike is located at: ``C:\Steam\steamapps\common\Half-Life\cstrike``.
 
-.. Note:: If you're installing for Condition Zero, than change ``cstrike`` folder to ``czero`` folder.
+.. Note:: If you're installing bot for Condition Zero, then install it to ``czero`` folder instead.
 
-- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.637-windows.zip``)
-- Unzip downloaded package to ``c:\steam\steamapps\common\half-life\cstrike`` directory.
-- Open a file called ``plugins.ini`` in Notepad or any other text editor. (located in ``c:\steam\steamapps\common\half-life\cstrike\addons\metamod``.)
+- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-windows.zip``)
+- Unzip downloaded package to ``C:\Steam\steamapps\common\Half-Life\cstrike`` directory.
+- Open a file called ``plugins.ini`` in Notepad or any other text editor. (located in ``C:\Steam\steamapps\common\Half-Life\cstrike\addons\metamod``.)
 - Append the following entry: ``win32 addons/yapb/bin/yapb.dll``.
 - Save the changes.
 - You're done!
@@ -67,13 +67,13 @@ YaPB supports installing both on listen and dedicated server under Linux. No ins
 
 Installing without metamod
 --------------------------
-Assuming that your Counter-Strike is located at: ``/usr/steam/steamapps/common/half-life/cstrike``.
+Assuming that your Counter-Strike is located at: ``/usr/Steam/steamapps/common/Half-Life/cstrike``.
 
-.. Note:: If you're installing for Condition Zero, than change ``cstrike`` folder to ``czero`` folder.
+.. Note:: If you're installing bot for Condition Zero, then install it to ``czero`` folder instead.
 
-- Download latest ``TAR.GZ`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.637-linux.tar.gz``)
-- Uncompress downloaded package to ``/usr/steam/steamapps/common/half-life/cstrike`` directory.
-- Open a file called ``liblist.gam`` in your favourite editor. (located in ``/usr/steam/steamapps/common/half-life/cstrike``)
+- Download latest ``TAR.GZ`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-linux.tar.gz``)
+- Uncompress downloaded package to ``/usr/Steam/steamapps/common/Half-Life/cstrike`` directory.
+- Open a file called ``liblist.gam`` in any text editor. (located in ``/usr/Steam/steamapps/common/Half-Life/cstrike``)
 - Locate the entry ``gamedll_linux``. It should point to ``dlls/cs.so``.
 - Change entry from ``gamedll_linux "dlls/cs.so"`` to ``gamedll_linux "addons/yapb/bin/yapb.so"``.
 - Save the changes.
@@ -81,12 +81,12 @@ Assuming that your Counter-Strike is located at: ``/usr/steam/steamapps/common/h
 
 Installing as metamod plugin
 --------------------------
-Assuming that your Counter-Strike is located at: ``/usr/steam/steamapps/common/half-life/cstrike``.
+Assuming that your Counter-Strike is located at: ``/usr/Steam/steamapps/common/Half-Life/cstrike``.
 
-.. Note:: If you're installing for Condition Zero, than change ``cstrike`` folder to ``czero`` folder.
+.. Note:: If you're installing bot for Condition Zero, then install it to ``czero`` folder instead.
 
-- Download latest ``TAR.GZ`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.637-linux.tar.gz``)
-- Unzip downloaded package to ``/usr/steam/steamapps/common/half-life/cstrike`` directory.
+- Download latest ``TAR.GZ`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-linux.tar.gz``)
+- Unzip downloaded package to ``/usr/Steam/steamapps/common/Half-Life/cstrike`` directory.
 -  Open a file called ``plugins.ini`` in your favourite editor. (located in ``/usr/steam/steamapps/common/half-life/cstrike/addons/metamod``.)
 - Append the following entry: ``linux addons/yapb/bin/yapb.so``.
 - Save the changes.
@@ -100,16 +100,16 @@ YaPB can be installed on listen servers only if you use Mac OS X.
 
 .. _here: https://forums.alliedmods.net/showpost.php?p=2041538&postcount=11
 
-.. Note:: Valve hasn't updated GoldSrc games to support OS X Catalina, and Apple has dropped 32-bit support, so Counter-Strike isn't playable on latest OSX releases. YaPB still provides binaries for pre-Catalina users. As soon as Valve (if ever) release Counter-Strike for OS X Catalina, YaPB 64bit binaries will be available.
+.. Note:: Valve didn't update GoldSrc games to support OS X Catalina, and Apple has dropped 32-bit support, so Counter-Strike isn't playable on latest OSX releases. YaPB still provides binaries for pre-Catalina users. As soon as Valve (if ever) release Counter-Strike for OS X Catalina, YaPB 64bit binaries will be available.
 
 Installing without metamod
 --------------------------
 Assuming that your Counter-Strike is located at: ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike``.
 
-.. Note:: If you're installing for Condition Zero, than change ``cstrike`` folder to ``czero`` folder.
+.. Note:: If you're installing bot for Condition Zero, then install it to ``czero`` folder instead.
 
-- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.637-macos.zip``)
-- Uncompress downloaded package to ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`` directory.
+- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-macos.zip``)
+- Unzip downloaded package to ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`` directory.
 - Open a file called ``liblist.gam`` in your favourite editor. (located in ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike``.)
 - Locate the entry ``gamedll_osx``. It's should point to ``dlls/cs.dylib``.
 - Change entry from ``gamedll_osx "dlls/cs.dylib"`` to ``gamedll_osx "addons/yapb/bin/yapb.dylib"``.
@@ -120,9 +120,9 @@ Installing as metamod plugin
 --------------------------
 Assuming that your Counter-Strike is located at: ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike``.
 
-.. Note:: If you're installing for Condition Zero, than change ``cstrike`` folder to ``czero`` folder.
+.. Note:: If you're installing bot for Condition Zero, then install it to ``czero`` folder instead.
 
-- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.637-macos.zip``)
+- Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-macos.zip``)
 - Unzip downloaded package to ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`` directory.
 - Open a file called ``plugins.ini`` in your favourite editor. (located in ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike/addons/metamod``)
 - Append the following entry: ``osx addons/yapb/bin/yapb.dylib``.
