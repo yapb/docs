@@ -86,8 +86,8 @@ Assuming that your Counter-Strike is located at: ``/usr/Steam/steamapps/common/H
 .. Note:: If you're installing bot for Condition Zero, then install it to ``czero`` folder instead.
 
 - Download latest ``TAR.GZ`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-linux.tar.gz``)
-- Unzip downloaded package to ``/usr/Steam/steamapps/common/Half-Life/cstrike`` directory.
--  Open a file called ``plugins.ini`` in your favourite editor. (located in ``/usr/steam/steamapps/common/half-life/cstrike/addons/metamod``.)
+- Uncompress downloaded package to ``/usr/Steam/steamapps/common/Half-Life/cstrike`` directory.
+- Open a file called ``plugins.ini`` in any text editor. (located in ``/usr/steam/steamapps/common/half-life/cstrike/addons/metamod``.)
 - Append the following entry: ``linux addons/yapb/bin/yapb.so``.
 - Save the changes.
 - You're done!
@@ -110,7 +110,7 @@ Assuming that your Counter-Strike is located at: ``/Users/user/Library/Applicati
 
 - Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-macos.zip``)
 - Unzip downloaded package to ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`` directory.
-- Open a file called ``liblist.gam`` in your favourite editor. (located in ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike``.)
+- Open a file called ``liblist.gam`` in any text editor. (located in ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike``.)
 - Locate the entry ``gamedll_osx``. It's should point to ``dlls/cs.dylib``.
 - Change entry from ``gamedll_osx "dlls/cs.dylib"`` to ``gamedll_osx "addons/yapb/bin/yapb.dylib"``.
 - Save the changes.
@@ -124,7 +124,7 @@ Assuming that your Counter-Strike is located at: ``/Users/user/Library/Applicati
 
 - Download latest ``ZIP`` YaPB package from https://yapb.jeefo.net/latest (example: ``yapb-4.2.671-macos.zip``)
 - Unzip downloaded package to ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`` directory.
-- Open a file called ``plugins.ini`` in your favourite editor. (located in ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike/addons/metamod``)
+- Open a file called ``plugins.ini`` in any text editor. (located in ``/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike/addons/metamod``)
 - Append the following entry: ``osx addons/yapb/bin/yapb.dylib``.
 - Save the changes.
 - You're done!
