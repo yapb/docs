@@ -321,7 +321,9 @@ Comma separated list of bot cvars to ignore on changelevel.
 
 Bots reads ``yapb.cfg`` every changelevel, and the values of bot cvars are overwritten with those located in config. This cvar allows server admin to ignore values of specified here cvars from ``yapb.cfg`` if they were changed by hand from server console.
 
-For example: Server started with ``yb_quota`` set to ``10`` in ``yapb.cfg`` and ``yb_quota`` is specified in ``yb_ignore_cvars_on_changelevel``. Time passed, server admine decide that ``yb_quota`` should be set to ``12`` and set it via server console. Next time server will change map, value of ``yb_quota`` will not be changed while reading ``yapb.cfg`` and will stay ``12``.
+For example: Server started with ``yb_quota`` set to ``10`` in ``yapb.cfg`` and ``yb_quota`` is specified in ``yb_ignore_cvars_on_changelevel``. Time passed, server admin decide that ``yb_quota`` should be set to ``12`` and set it via server console. Next time server will change map, value of ``yb_quota`` will not be changed while reading ``yapb.cfg`` and will stay ``12``.
+
+If you want to disable ignoring reading cvars from ``yapb.cfg``, then leave the value empty ``yb_ignore_cvars_on_changelevel ""`` in ``yapb.cfg``
 
 Minimum value is ``-``, Maximum value is ``-``, Default value is ``yb_quota,yb_autovacate``.
 
