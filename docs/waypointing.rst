@@ -16,7 +16,7 @@ There are several waypoint types that can be used to indicate map goals, rescue 
 
 Besides, you don't have to worry about every little detail. The editor that comes with this bot version will do lots of the work for you, and besides, it's graphical and easy to use (no programming/coding skills or anything required). You may very well discover that making waypoints can be fun, especially when you see bots roam through the entire map without problems - and you made it possible!.
 
-.. Note:: Since YaPB 2.10 version, a new waypoint format named **Graph** has been added, which raised the limit to 2048 points, allows you to set camp directions not only horizontally but also vertically, and also reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. Waypoints (multicolored stripes) now named **Nodes** since YaPB 4.x version. Waypoint editor also renamed to Graph editor.
+.. Note:: Since YaPB 2.10 version, a new waypoint format named **Graph** has been added, which raised the limit to 2048 nodes, allows you to set camp directions not only horizontally but also vertically, and also reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. You can save waypoints to pwf format, but it will automatically converted to graph format when loaded. Waypoints (multicolored stripes) now named **Nodes** since YaPB 4.x version. Waypoint editor also renamed to Graph editor.
 
 
 What do waypoints look like in the game?
@@ -149,6 +149,28 @@ Where ``*gamedir*`` is the path to the game directory, for example:
 
 - ``D:\Steam\steamapps\common\Half-Life\cstrike`` is the Counter-Strike 1.6 folder.
 - ``D:\Steam\steamapps\common\Half-Life\czero`` is the Counter-Strike Condition Zero folder.
+
+Graph Editor overview
+=============================
+The Graph Editor shows some useful information about Graph and Practice data, such as properties of current/faced/cached node, node practice data, map name and your current time.
+
+Graph data are stored in ``.graph`` file at ``addons/yapb/data/graph`` or ``.pwf`` file at ``addons/yapb/data/pwf`` if you using/saving it to old PODBot waypoint format.
+Practice data are stored in ``.prc`` file at ``addons/yapb/data/train`` folder.
+
+Current/Faced/Cached node information shows index number of nearest node, total amount of nodes, radius, light value, flags and origin.
+If you didn't cache any node or you are not currently facing any node at all, there will be only the data displayed of nearest node.
+
+Node practice data shows index number of node and the damage value taken from it for both T (Terrorists) and CT (Counter-Terrorists).
+You can also see arrows pointing to these nodes (red for Terrorists, blue for Counter-Terrorists).
+
+White arrows are pointing to your faced node (on which you point your crosshair).
+Yellow arrows are pointing to your cached node.
+
+
+.. figure:: images/graph_editor_overview.png
+    :align: center
+
+    Graph Editor viewport.
 
 Adding waypoints
 =========================
