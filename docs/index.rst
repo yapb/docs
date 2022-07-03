@@ -19,4 +19,5 @@ If you have time and interest you can contribute to documentation on Github_ rep
    botusage
    waypointing
    localization
+   building
    credits
