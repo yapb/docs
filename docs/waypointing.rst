@@ -157,7 +157,7 @@ The Graph Editor shows some useful information about Graph and Practice data, su
 Graph data are stored in ``.graph`` file at ``addons/yapb/data/graph`` or ``.pwf`` file at ``addons/yapb/data/pwf`` if you using/saving it to old PODBot waypoint format.
 Practice data are stored in ``.prc`` file at ``addons/yapb/data/train`` folder.
 
-Current/Faced/Cached node information shows index number of nearest node, total amount of nodes, radius, light value, flags and origin.
+Current/Faced/Cached node information shows index number of this node, total amount of nodes, radius, light value, flags and origin.
 If you didn't cache any node or you are not currently facing any node at all, there will be only the data displayed of nearest node.
 
 Node practice data shows index number of node and the damage value taken from it for both T (Terrorists) and CT (Counter-Terrorists).
