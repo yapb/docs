@@ -442,6 +442,13 @@ Selects the heuristic function mode. For debug purposes only.
 Minimum value is ``0``, Maximum value is ``4``, Default value is ``0``.
 
 
+yb_pickup_best
+--------------------------------
+
+Allows or disallows bots to pickup best weapons. (Disabling can be useful for some mods with non-pickable weapons).
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
+
 yb_pickup_custom_items
 --------------------------------
 
