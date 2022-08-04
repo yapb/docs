@@ -19,4 +19,5 @@
    botusage
    waypointing
    localization
+   building
    credits
