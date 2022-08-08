@@ -31,7 +31,7 @@ Now you know what waypoints and connections are, what they are for and what they
 How can I access the waypoint editor?
 -------------------------------------
 
-The waypoint editor is not a separate program, it is included in the bot dll (or .so, if you are using linux). To open it, create a LAN\Listen Server game, select the map you want to waypoint and start the game as usual. As soon as you are in the map, you can activate the editing mode from the console by typing ``yb graphmenu`` or if you have bound a key for it, simply by pressing that key.
+The waypoint editor is not a separate program, it is included in the bot dll (or .so, if you are using linux). To open it, create a LAN/Listen Server game, select the map you want to waypoint and start the game as usual. As soon as you are in the map, you can activate the editing mode from the console by typing ``yb graphmenu`` or if you have bound a key for it, simply by pressing that key.
 
 
 Graph console commands Summary
