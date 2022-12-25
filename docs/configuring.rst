@@ -293,7 +293,7 @@ yb_graph_draw_distance
 
 Maximum distance to draw graph nodes from editor viewport.
 
-Minimum value is ``64``, Maximum value is ``512``, Default value is ``400``.
+Minimum value is ``64``, Maximum value is ``3072``, Default value is ``400``.
 
 
 yb_graph_fixcamp
