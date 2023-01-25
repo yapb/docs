@@ -196,7 +196,7 @@ yb fill
 
 To fill the server with random bots type in console ``yb fillserver``.
 
-If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: 3. Normal, Personality: 2. Aggressive, you should type in console the follow command ``yb fill 1 5 3 2``.
+If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: 3. Normal, Personality: 1. Aggressive, you should type in console the follow command ``yb fill 1 5 3 1``.
 
 Correct format for the ``yb fill`` command is ``yb fill [team][count][difficulty][personality]``.
 
