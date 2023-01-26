@@ -194,9 +194,34 @@ The ``yb kill`` command kills all the bots. To kill a specific team, such as ter
 yb fill
 ---------------
 
-To fill the server with random bots type in console ``yb fillserver``.
+To fill the server with random bots type in console ``yb fill 0``.
 
 If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: 3. Normal, Personality: 1. Aggressive, you should type in console the follow command ``yb fill 1 5 3 1``.
+
+yb fill arguments info:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Teams**
+
+* ``0`` - Random
+* ``1`` - Terrorists
+* ``2`` - Counter-Terrorists
+
+**Difficulties**
+
+* ``0`` - Newbie
+* ``1`` - Average
+* ``2`` - Normal
+* ``3`` - Professional
+* ``4`` - Godlike
+
+**Personalities**
+
+* ``0`` - Normal
+* ``1`` - Aggressive (rusher)
+* ``2`` - Careful
+
+Don't enter the bot personality value if you want bots with random personalities.
 
 Correct format for the ``yb fill`` command is ``yb fill [team][count][difficulty][personality]``.
 
