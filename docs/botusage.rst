@@ -166,7 +166,50 @@ If you want to get help for specified command for example ``yb add``, type in th
 yb add
 ---------------
 
-To add a specific bot to the game, with nickname: John Smith, difficulty 2. Average, personality 4. Careful, team: CT, team class: SAS, you should type in console ``yb add 2 4 2 3 "John Smith"``
+To add a specific bot to the game, with nickname: John Smith, Difficulty: Average, Personality: Careful, Team: Counter-Terrorists, Team Class: SAS, you should type in console ``yb add 2 4 2 3 "John Smith"``
+
+yb add arguments info:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Difficulties**
+
+* ``0`` - Newbie
+* ``1`` - Average
+* ``2`` - Normal
+* ``3`` - Professional
+* ``4`` - Godlike
+
+**Personalities**
+
+* ``0`` - Normal
+* ``1`` - Aggressive (rusher)
+* ``2`` - Careful
+
+**Teams**
+
+* ``0`` - Random
+* ``1`` - Terrorists
+* ``2`` - Counter-Terrorists
+
+**Team classes**
+
+Terrorists:
+
+* ``0`` - Random
+* ``1`` - Phoenix Connexion
+* ``2`` - Elite Crew
+* ``3`` - Arctic Avengers
+* ``4`` - Guerilla Warfare
+* ``5`` - Midwest Militia **(Condition Zero only!)**
+
+Counter-Terrorists:
+
+* ``0`` - Random
+* ``1`` - Seal Team 6
+* ``2`` - GSG-9
+* ``3`` - SAS
+* ``4`` - GIGN
+* ``5`` - Spetsnaz **(Condition Zero only!)**
 
 Correct format for the ``yb add`` command is ``yb add [difficulty][personality][team][model][name]``. All bot values ​​are selected by numbers (except the bot name).
 
@@ -196,16 +239,16 @@ yb fill
 
 To fill the server with random bots type in console ``yb fill 0``.
 
-If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: 3. Normal, Personality: 1. Aggressive, you should type in console the follow command ``yb fill 1 5 3 1``.
+If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: Normal, Personality: Aggressive, you should type in console the follow command ``yb fill 1 5 3 1``.
 
 yb fill arguments info:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Teams**
 
-* ``0`` - Random
-* ``1`` - Terrorists
-* ``2`` - Counter-Terrorists
+* ``0`` - Both teams
+* ``1`` - Terrorists only
+* ``2`` - Counter-Terrorists only
 
 **Difficulties**
 
