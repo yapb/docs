@@ -166,7 +166,7 @@ If you want to get help for specified command for example ``yb add``, type in th
 yb add
 ---------------
 
-To add a specific bot to the game, with nickname: John Smith, Difficulty: Average, Personality: Careful, Team: Counter-Terrorists, Team Class: SAS, you should type in console ``yb add 2 4 2 3 "John Smith"``
+To add a specific bot to the game, with nickname: John Smith, Difficulty: Average, Personality: Careful, Team: Counter-Terrorists, Team Class: SAS, you should type in console ``yb add 1 2 2 3 "John Smith"``
 
 yb add arguments info:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,7 +239,7 @@ yb fill
 
 To fill the server with random bots type in console ``yb fill 0``.
 
-If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: Normal, Personality: Aggressive, you should type in console the follow command ``yb fill 1 5 3 1``.
+If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: Normal, Personality: Aggressive, you should type in console the follow command ``yb fill 1 5 2 1``.
 
 yb fill arguments info:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
