@@ -423,6 +423,12 @@ yb_path_danger_factor_min
 
 Lower bound of danger factor that used to add additional danger to path based on practice.
 
+The ``yb_path_danger_factor_min`` and ``yb_path_danger_factor_max`` cvars are used to make dangerous paths even more dangerous based on a random value between these cvars.
+
+It means that bots will be less likely to build paths through these nodes.
+
+These cvars do not affect the goal node, because despite the danger, the bots will go to this node in order to complete the goal (plant a bomb, take a hostage, etc.)
+
 Minimum value is ``100``, Maximum value is ``2400``, Default value is ``200``.
 
 
