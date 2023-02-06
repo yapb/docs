@@ -115,7 +115,7 @@ Waypoint Menu
 
     Waypoint Editor Menu (Page 2)
 
-1. **Waypoint stats** - Shows statistics on the number and types of waypoints on the map in the console.
+1. **Debug goal** - Opens a menu for debugging bot walkability to a specified waypoint.
 2. **Autowaypoint on/off** - Enables or disables automatic waypoint placement.
 3. **Set flags** - Opens the menu for selecting flags for a waypoint.
 4. **Save waypoints** - Saves waypoints with path integrity check.
