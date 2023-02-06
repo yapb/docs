@@ -509,13 +509,17 @@ To add a path connection, you must open the waypoint menu and select ``3. Create
 Waypoint Flags
 =========================
 
-YaPB has 5 flags for waypoints, which are:
+YaPB has 9 flags for waypoints, which are:
 
 #. Block with Hostage - a flag that prohibits Counter-Terrorists leading hostages to go along certain waypoints marked with these flags. :redbold:`Important: you should definitely put these flags on the ways where counter-terrorists can lose hostages!`
 #. Terrorist Specific - makes waypoint important for Terrorists
 #. CTs Specific - makes waypoint important for Counter-Terrorists
 #. Use Elevator - a flag for a waypoint that makes bots wait while they uplift on the elevator (you must put this flag on the waypoint at the beginning and at the end of the elevator path)
 #. Sniper Point - a flag that makes the camp point as a sniper point (bots will only camp with sniper rifles).
+#. Map Goal - a flag that turns an normal waypoint into a goal waypoint.
+#. Rescue Zone - a flag that specifies the waypoint as a hostage rescue point.
+#. Crouch Down - a flag that causes bots to crouch when reaching this waypoint.
+#. Camp Point - a flag that makes the waypoint as a camp point. If you add this flag, it opens the menu to choose the start and end direction of the bot's view when it's camping.
 
 .. figure:: images/waypoint_flags_menu.png
     :align: center
