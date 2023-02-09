@@ -20,9 +20,9 @@ Special thanks
 - The Storm, e[POD]bot maintainer.
 - Immortal_BLG, author of YaPB3.
 - Valve, for creating such a great game.
-- SpArK, helped alot on early versions.
-- Overitab, alot of waypoints.
-- [PRince4], alot of waypoints commits.
+- SpArK, helped a lot on early versions.
+- Overitab, a lot of waypoints.
+- [PRince4], a lot of waypoints commits.
 
 Waypointers & Testers
 --------------------------
