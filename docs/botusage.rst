@@ -91,6 +91,7 @@ Bots Features Menu
 3. **Drop the C4 Bomb** - Forces the bot carrying the bomb to drop it at you.
 4. **Drop the Weapon** - Makes the teammate bot throw a weapon at you.
 
+.. Note:: Bot will only throw a weapon at you when it have a primary weapon and 2000 or more dollars in the account.
 
 Waypoint Menu
 ------------------
