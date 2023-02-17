@@ -525,3 +525,18 @@ YaPB has 9 flags for waypoints, which are:
     :align: center
 
     Waypoint Flags Menu
+
+
+Debug Goal menu
+=========================
+
+To test the bots walkability to a specified node, you need to open the second page of "Waypoint Operations" menu, and select ``1. Debug Goal``. Then a menu should appear as shown in the picture below.
+
+.. figure:: images/debug_goal_menu.png
+    :align: center
+
+    Debug Goal Menu
+
+#. Select ``1. Debug nearest node`` to specify the nearest node as the goal that the bot needs to reach.
+#. Select ``2. Debug facing node`` to specify the facing node (which you pointed with your crosshair) as the goal that the bot needs to reach.
+#. Select ``3. Stop debugging`` to disable the Debug Goal functionality.
