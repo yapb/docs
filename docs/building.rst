@@ -32,7 +32,7 @@ Installing the Linux Packages
 
 Building on Windows
 =======================
-- Clone the YaPB repository, by entering the following command in your cmd or powershell window ``git clone --recursive https://github.com/yapb/yapb``
+- Clone the YaPB repository, by entering the following command in your Visual Studio Developer PowerShell or Command Prompt window ``git clone --recursive https://github.com/yapb/yapb``
 - Enter to the YaPB project directory: ``cd yapb``
 - Configure this project using Meson: ``meson setup build``
 - Compile the DLL library: ``meson compile -C build``
