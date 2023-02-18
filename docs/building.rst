@@ -32,7 +32,7 @@
 
 Сборка на Windows
 =======================
-- Клонируйте репозиторий YaPB, введя следующую команду в окне командной строки или powershell ``git clone --recursive https://github.com/yapb/yapb``
+- Клонируйте репозиторий YaPB, введя следующую команду в окне Visual Studio Developer PowerShell или Visual Studio Developer Command Prompt ``git clone --recursive https://github.com/yapb/yapb``
 - Войдите в папку с проектом YaPB: ``cd yapb``
 - Сконфигурируйте этот проект используя Meson: ``meson setup build``
 - Скомпилируйте DLL библиотеку: ``meson compile -C build``
