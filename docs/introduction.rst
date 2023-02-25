@@ -4,7 +4,7 @@ Introduction
 
 What is YaPB?
 -----------------
-YaPB stands for Yet another Ping of Death Bot. It's a deriviate of a Counter-Strike famous bot. - **PODBot**, based on it's source code release by Count-Floyd back in 2003.
+YaPB stands for Yet another Ping of Death Bot. It's a deriviate of a Counter-Strike famous bot - **PODBot**, based on it's source code release by Count-Floyd back in 2003.
 It's adding computer-controlled (AI) players to Counter-Strike games based on GoldSource engine.
 
 Why is it called YaPB?
