@@ -275,7 +275,7 @@ In the editor, rescue points will be displayed in bright white (see below). Thei
 Camp waypoints
 ------------------
 
-As the name suggests, Camp waypoints are used to mark good sniper spots. They can be navigated by all bots. However, whether a bot may camp there or not is determined by the flag you can add to the camp waypoint. You can make Camp waypoints team specific or leave them "open" to any team. The colour of Normal Camp waypoints is cyan. Terrorist specific camp waypoints have cyan color with red head, Counter-Terrorist specific is cyan with blue head, as you can see in the picture below.
+As the name suggests, Camp waypoints are used to mark good sniper spots. They can be navigated by all bots. However, whether a bot may camp there or not is determined by the flag you can add to the camp waypoint. You can make Camp waypoints team specific or leave them "open" to any team. The colour of Normal Camp waypoints is cyan. Terrorist specific camp waypoints have coral color, Counter-Terrorist specific is cornflower blue color, as you can see in the picture below.
 
 .. figure:: images/camp_points.png
 	:align: center
@@ -423,21 +423,21 @@ One-way connections
 ---------------------------
 
 One-way connections enable bots to walk from point A to point B, but not vice versa. They can be useful to make bots drop down a wall or a high crate, but prevent them from attempting to get up. Of course, there may be more places at which a 1-way connection can make sense, but that depends on the map.
-In game, 1-way connections will be visible from 2 waypoints, their start and their end waypoint. In order to show you the direction of 1-way connection, it will be shown in different colours depending on from which perspective you view it. Let's say you have a 1-way connection from point 1 to point 2. In this case, when you are standing at point 1, you will see :green:`the outgoing 1-way connection displayed in green` as you can see in the picture below.
+In game, 1-way connections will be visible from 2 waypoints, their start and their end waypoint. In order to show you the direction of 1-way connection, it will be shown in different colours depending on from which perspective you view it. Let's say you have a 1-way connection from point 1 to point 2. In this case, when you are standing at point 1, you will see the outgoing 1-way connection displayed in white as you can see in the picture below.
 
 .. figure:: images/outgoing_path.png
     :align: center
 
     An Outgoing 1-Way connection from right to left waypoint.
 
-The picture below shows the same two waypoints with the incoming connection (from left to right waypoint), The incoming 1-way connection displayed in white as you can see in the picture below.
+The picture below shows the same two waypoints with the incoming connection (from left to right waypoint), :teal:`The incoming 1-way connection displayed in teal` as you can see in the picture below.
 
 .. figure:: images/incoming_path.png
     :align: center
 
     An Incoming 1-Way connection from left to right waypoint.
 
-.. note:: If you created an :green:`outgoing path connection` from waypoint A to waypoint B, it will be displayed in green. And when you get to waypoint B, the path connection will turn white like an incoming path connection.
+.. note:: If you created an outgoing path connection from waypoint A to waypoint B, it will be displayed in white. And when you get to waypoint B, the path connection will turn teal like an incoming path connection.
 
 The fact that 1-way connection are shown from both involved points is a great feature. It makes spotting errors very easy and saves you the trouble of running around to check if there is a connection TO the point where you are standing.
 
@@ -474,12 +474,12 @@ Removing path connections
 
 To delete a path connection, you must open the waypoint menu and select ``4. Delete path``. 
 
-After deleting the path connection, you may notice that the :green:`outgoing path connection` has been removed (from the waypoint where you are standing to the waypoint you selected) as you can see in picture below:
+After deleting the path connection, you may notice that the outgoing path connection has been removed (from the waypoint where you are standing to the waypoint you selected) as you can see in picture below:
 
 .. figure:: images/deleted_outgoing_path.png
     :align: center
 
-    Removed :green:`outgoing path connection`, only incoming path connection remains (from the selected waypoint to the waypoint you are standing on)
+    Removed outgoing path connection, only :teal:`incoming path connection` remains (from the selected waypoint to the waypoint you are standing on)
 
 Select ``4. Delete path`` again to delete the incoming path connection.
 
