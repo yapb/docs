@@ -285,6 +285,8 @@ This command lists all cvars with their descriptions.
 
 If you want to save all cvars you configured to config, add the ``save`` argument to this command.
 
+You can also save a map-specific config by using the ``save_map`` argument to save the current values of all cvars to ``addons/yapb/conf/maps/map_name.cfg``.
+
 Example: ``yb cvars save``
 
 Also you can narrow your search by entering a word as an argument, instead of looking through a list of all cvars.
