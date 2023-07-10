@@ -381,7 +381,7 @@ yb_language
 
 Sets the bot language for menus, names, chat and messages.
 
-Valid values: ``ru``, ``en``, ``de``, ``chs``, Default value is ``en``.
+Valid values: ``ru``, ``en``, ``de``, Default value is ``en``.
 
 
 yb_name_prefix

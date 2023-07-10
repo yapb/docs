@@ -308,7 +308,6 @@ You must open the file ``yapb.cfg`` in the folder ``addons/yapb/conf`` and chang
 #. ``en`` - English Language
 #. ``ru`` - Russian Language
 #. ``de`` - Deutsch Language
-#. ``chs`` - Chinese Language
 
 For example, write in the config ``yb_language ru`` for Russian Language.
 
