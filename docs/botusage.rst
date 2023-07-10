@@ -212,7 +212,7 @@ Counter-Terrorists:
 * ``4`` - GIGN
 * ``5`` - Spetsnaz **(Condition Zero only!)**
 
-Correct format for the ``yb add`` command is ``yb add [difficulty][personality][team][model][name]``. All bot values ​​are selected by numbers (except the bot name).
+Correct format for the ``yb add`` command is ``yb add [difficulty] [personality] [team] [model] [name]``. All bot values ​​are selected by numbers (except the bot name).
 
 yb kick
 ---------------
@@ -267,7 +267,7 @@ yb fill arguments info:
 
 Don't enter the bot personality value if you want bots with random personalities.
 
-Correct format for the ``yb fill`` command is ``yb fill [team][count][difficulty][personality]``.
+Correct format for the ``yb fill`` command is ``yb fill [team] [count] [difficulty] [personality]``.
 
 yb weapons
 ---------------
