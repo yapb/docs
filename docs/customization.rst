@@ -21,7 +21,7 @@ Placeholders
 * ``%m`` - inserts the name of the current map
 * ``%d`` - inserts the mod name from ``liblist.gam`` file (Counter-Strike or Condition Zero)
 
-Action triggers
+Chat sections
 --------------------------
 ``[BOMBPLANT]`` - Sets a list of messages that bots will write after planting a bomb.
 
