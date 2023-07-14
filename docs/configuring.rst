@@ -854,6 +854,18 @@ Determines how many times per second the rest of bot AI is executed. Higher valu
 Minimum value is ``24``, Maximum value is ``90``, Default value is ``26``.
 
 
+yb_think_fps_disable
+-------------------------------------------
+
+Allows to completely disable think fps on Xash3D.
+
+It avoids laggy movement of bots when watching them in spectator mode.
+
+.. Note:: This cvar goes into effect when new bots are added.
+
+Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
+
+
 yb_threadpool_workers
 -------------------------------------------
 
