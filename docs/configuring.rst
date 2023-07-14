@@ -807,7 +807,7 @@ If set to ``2`` bots will use algorithm from original PODBot, and shoot thru wal
 
 The ``2`` method is consuming a bit more CPU power than the ``1`` method.
 
-Minimum value is ``1``, Maximum value is ``2``, Default value is ``2``.
+Minimum value is ``1``, Maximum value is ``3``, Default value is ``2``.
 
 
 yb_show_avatars
