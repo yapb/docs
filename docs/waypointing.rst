@@ -97,11 +97,13 @@ The following Graph commands are available:
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g path_delete``      | Delete path from cached (or faced) to nearest node.                                                                            |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb g path_create_in``   | Creating incoming path connection from cached (faced) to nearest node.                                                         |
+   | ``yb g path_create_in``   | Creating incoming path connection from faced (or cached) to nearest node.                                                      |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb g path_create_out``  | Creating outgoing path connection from nearest to cached (faced) node.                                                         |
+   | ``yb g path_create_out``  | Creating outgoing path connection from nearest to faced (or cached) node.                                                      |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | ``yb g path_create_both`` | Creating both-ways path connection between cached (faced) and nearest node.                                                    |
+   | ``yb g path_create_both`` | Creating both-ways path connection between faced (or cached) and nearest node.                                                 |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | ``yb g path_create_jump`` | Creating outgoing jumping path connection from nearest to faced (or cached) node.                                              |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g iterate_camp``     | Allows to go through all camp points on map.                                                                                   |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
