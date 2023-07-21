@@ -37,7 +37,7 @@ The waypoint editor is not a separate program, it is included in the bot dll (or
 Graph console commands Summary
 -------------------------------
 
-The following Graph commands are available (note these ARE case sensitive):
+The following Graph commands are available:
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g on``               | Turns on displaying of nodes.                                                                                                  |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
