@@ -53,7 +53,7 @@ Minimum value is ``0``, Maximum value is ``1``, Default value is ``1``.
 yb_bind_menu_key
 -------------------------------------------
 
-Bind's specified key for opening bots menu.
+Binds the specified key to open a bot menu.
 
 Default value is ``=``.
 
