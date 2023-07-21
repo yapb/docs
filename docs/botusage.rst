@@ -130,7 +130,7 @@ Waypoint Menu
 YaPB console commands Summary
 ==================================
 
-The following main YaPB commands are available (note these ARE case sensitive):
+The following main YaPB commands are available:
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb add``                | Adds specific bot into the game. (see below)                                                                                   |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
