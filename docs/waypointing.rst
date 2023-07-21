@@ -501,9 +501,10 @@ To add a path connection, you must open the waypoint menu and select ``3. Create
 
     Path directions menu
 
-#. Select ``1. Outgoing Path`` to create an outgoing path connection from the waypoint you are standing on to the waypoint you selected.
-#. Select ``2. Incoming Path`` to create an incoming path connection from the waypoint you selected to the waypoint you are standing.
-#. Select ``3. Bidirectional (Both Ways)`` to create a bi-directional (2-way) path connection between the waypoint you are standing on and the waypoint you select.
+#. Select ``1. Outgoing Path`` to create an outgoing path connection from nearest to faced (or cached) node.
+#. Select ``2. Incoming Path`` to create an incoming path connection from faced (or cached) to nearest node.
+#. Select ``3. Bidirectional (Both Ways)`` to create a bi-directional (2-way) path connection between the nearest and faced (or cached) node.
+#. Select ``4. Jumping Path`` to create an outgoing jumping path from nearest to faced (or cached) node.
 
 
 Waypoint Flags
