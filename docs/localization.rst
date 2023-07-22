@@ -4,7 +4,7 @@ Localization
 YaPB localization files are located inside ``addons/yapb/conf/lang`` folder.
 Main localization are located inside ``**_lang.cfg`` where ``**`` is two-letter language code
 For example: ``ru`` for Russian language, ``de`` for Deutsch language, etc.
-At the moment, YaPB has four languages: English, Russian and Deutsch
+At the moment, YaPB has three languages: English, Russian and Deutsch
 
 Also, in addition to localizing the main things of the bot, such as menus, pop-up messages, text in the console, etc. You can create a chat base and a list of nicknames in your language.
 ``**_chat.cfg`` for chat and ``**_names.cfg`` for nicknames respectively.
