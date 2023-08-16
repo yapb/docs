@@ -105,6 +105,8 @@ The following Graph commands are available:
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g path_create_jump`` | Creating outgoing jumping path connection from nearest to faced (or cached) node.                                              |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | ``yb g path_clean``       | Clears connections of all types from the node.                                                                                 |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g iterate_camp``     | Allows to go through all camp points on map.                                                                                   |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb g acquire_editor``   | Acquires rights to edit graph on dedicated server. (see below)                                                                 |
@@ -139,6 +141,8 @@ The ``yb g path_create`` command allows you to manually assign a path between 2 
 The actual Waypoint Number you're standing on will be shown in the upper corner of your HUD. For example to manually assign a path between Waypoint #250 and 251, you first should stand in the near of #250, then use ``yb g cache`` to cache waypoint #250, then go to the waypoint #251 and type ``yb g path_create`` to show menu and create needed path connection (one-way or two-way). You can also do this by looking at needed waypoint instead of caching it.
 
 The ``yb g path_delete`` command is just like the "create" command except that it removes a path (connection) from the starting point to the ending point. This is necessary in some cases where you may have a door that opens from one side and allows you to go through but once the door closes you can't go back through the other way.
+
+Using the ``yb g path_clean`` command will remove all connections of any type from the nearest node, unless a node index number is specified as an argument.
 
 The ``yb g acquire_editor`` command allows you to edit graph on dedicated server. Before you can use this, the ``yb_password`` and ``yb_password_key`` cvars must be configured on the server.
 
