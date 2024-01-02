@@ -7,7 +7,7 @@ project = u'Официальная документация YaPB'
 version = 'latest'
 release = 'latest'
 htmlhelp_basename = 'Официальная документация YaPB'
-copyright = u'2004-2023 YaPB Project <yapb@jeefo.net>'
+copyright = u'2004-2024 YaPB Project <yapb@jeefo.net>'
 
 # These folders are copied to the documentation's HTML output
 html_static_path = ['_static']
