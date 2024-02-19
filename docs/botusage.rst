@@ -237,6 +237,8 @@ yb kill
 
 The ``yb kill`` command kills all the bots. To kill a specific team, such as terrorists you should type in console ``yb kill t`` command. For Counter-Terrorists the command are ``yb kill ct``
 
+The ``silent`` argument disables the ``All bots died...`` message in the console. You should enter the ``yb kill silent`` in console, to kill bots without that message.
+
 yb fill
 ---------------
 
