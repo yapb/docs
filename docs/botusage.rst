@@ -158,6 +158,8 @@ The following main YaPB commands are available:
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | ``yb show_custom``        | Shows the current values from custom.cfg                                                                                       |
    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | ``yb exec``               | Executes a client command on bot entity.                                                                                       |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 To get help for all commands such as arguments, aliases, etc, type in the console ``yb help``.
 
@@ -290,6 +292,17 @@ You can also save a map-specific config by using the ``save_map`` argument to sa
 Example: ``yb cvars save``
 
 Also you can narrow your search by entering a word as an argument, instead of looking through a list of all cvars.
+
+To restore the default values of all bot cvars, type ``yb cvars defaults`` in console.
+
+yb exec
+---------------
+
+This command allows you to execute a command from a bot entity.
+
+Valid usage is: ``yb exec [user_id] [command]``.
+
+Where ``[user_id]`` is bot's ID, which you can find by entering the ``yb list`` command in the console.
 
 Adding bots to the game
 ============================
