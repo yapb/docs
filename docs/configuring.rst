@@ -919,10 +919,12 @@ A custom config file that allows you to change some hard-coded things in the bot
 
 It's located in ``addons/yapb/conf/custom.cfg``
 
-``C4ModelName`` - It's contains a custom name for C4 model, for servers that replace C4 model with it's own.
+``C4ModelName`` - It sets a custom name for C4 model, for servers that replace C4 model with it's own.
 By default it's ``c4.mdl`` (the models/path is omitted), so if you need to use ``models/mybomb/mybomb.mdl``, you should specify ``mybomb/mybomb.mdl``.
 
-``AMXParachuteCvar`` - It's contains a custom cvar name for parachute handling, there are various plugins that handles parachute (AMX Parachute, AMX Parachute Lite, etc.), you can specify needed cvar here.
+``AMXParachuteCvar`` - It sets a custom cvar name for parachute handling, there are various plugins that handles parachute (AMX Parachute, AMX Parachute Lite, etc.), you can specify needed cvar here.
+
+``CustomCSDMSpawnPoint`` - It sets a custom spawn point classname for CSDM mods that add custom spawn points other than info_player_start and info_player_deathmatch. So bots will be able to join the game without default spawn entities.
 
 
 Bot Difficulty Configuration
