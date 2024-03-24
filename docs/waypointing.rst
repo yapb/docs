@@ -16,7 +16,7 @@ There are several waypoint types that can be used to indicate map goals, rescue 
 
 Besides, you don't have to worry about every little detail. The editor that comes with this bot version will do lots of the work for you, and besides, it's graphical and easy to use (no programming/coding skills or anything required). You may very well discover that making waypoints can be fun, especially when you see bots roam through the entire map without problems - and you made it possible!.
 
-.. Note:: Since YaPB 2.10 version, a new waypoint format named **Graph** has been added, which raised the limit to 2048 nodes, allows you to set camp directions not only horizontally but also vertically, and also reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. You can save waypoints to pwf format, but it will automatically converted to graph format when loaded. Waypoints (multicolored stripes) now named **Nodes** since YaPB 4.x version. Waypoint editor also renamed to Graph editor.
+.. Note:: Since YaPB 2.10 version, a new waypoint format named **Graph** has been added, which raised the limit to 2048 nodes (in later builds, when graph autoanalysis feature was introduced, the node limit has been raised again), allows you to set camp directions not only horizontally but also vertically, and also reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. You can save waypoints to pwf format, but it will automatically converted to graph format when loaded. Waypoints (multicolored stripes) now named **Nodes** since YaPB 4.x version. Waypoint editor also renamed to Graph editor.
 
 
 What do waypoints look like in the game?
