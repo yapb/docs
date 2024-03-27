@@ -985,7 +985,7 @@ MapStandard Field
 ----------------------------
 This field is by default used on all maps except VIP scenario.
 
-Following is tables which specify which Team is allowed to buy a weapon on a Map. You can also use it to allow/disallow Weapons for a Team or a Map/Gamemode (remember that some Weapons are team-specific and can't be bought by another team).
+Below is the table that specifies which Team is allowed to buy a weapon on a Map. You can also use it to allow/disallow Weapons for a Team or a Map/Gamemode (remember that some Weapons are team-specific and can't be bought by another team).
 
 Weapon buy flags::
 
@@ -1002,7 +1002,7 @@ MapAS Field
 ----------------------------
 This field is by default used only on VIP scenario maps.
 
-Following is tables which specify which Team is allowed to buy a weapon on a Map. You can also use it to allow/disallow Weapons for a Team or a Map/Gamemode (remember that some Weapons are team-specific and can't be bought by another team).
+Below is the table that specifies which Team is allowed to buy a weapon on a Map. You can also use it to allow/disallow Weapons for a Team or a Map/Gamemode (remember that some Weapons are team-specific and can't be bought by another team).
 
 Weapon buy flags::
 
@@ -1055,7 +1055,7 @@ Example::
 
 Weapon Priorities
 -----------------------------
-This tables stores the Weapon Priorities of the Bots depending on Personality (it affects buying & picking up better weapons from the ground).
+This table stores the Weapon Priorities of the Bots depending on Personality (it affects buying & picking up better weapons from the ground).
 
 Numbering of the weapons::
 
