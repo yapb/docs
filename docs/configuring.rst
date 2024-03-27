@@ -307,7 +307,7 @@ Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 yb_freeze_bots
 -------------------------------------------
 
-If not zero, bots think function is paused and bots stays at the place where he was been before activating these cvar.
+If not zero, bots think function is paused and bots stays at the place where they were been before activating these cvar.
 
 Minimum value is ``0``, Maximum value is ``1``, Default value is ``0``.
 
@@ -942,7 +942,7 @@ The valid format is::
 
 Where::
     
-    minReactionTime - Minimal time in seconds from time the bot first saw enemy and time he can recognize it.
+    minReactionTime - Minimal time in seconds from when the bot first saw the enemy to when it can recognize it.
     maxReactionTime - Same as above, but upper cap of the limit.
     headshotProbability - The probability that the bot will aim at the head instead of body, if both body and head are visible.
     seenThruWallChance - Chance that the bot will attack the enemy if it believes that it is there and just saw it.
