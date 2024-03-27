@@ -1047,7 +1047,7 @@ From left to right::
     8 - How much money bot leaves in stock, at purchase of the primary weapon (only for type of behaviour - Normal)
     9 - How much money bot leaves in stock, at purchase of the primary weapon (only for type of behaviour - Rusher).
     10 - How much money bot leaves in stock, at purchase of the primary weapon  (only for type of behaviour - Careful).
-    11 - If bot's money more than the value specified here, he can buy the shield.
+    11 - If bot has more money than the value specified here, it can buy the shield.
 
 Example::
 
