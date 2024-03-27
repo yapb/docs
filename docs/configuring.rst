@@ -1037,13 +1037,13 @@ Specifies economics values for buying the weapons.
 
 From left to right::
 
-    1 - If bot's money more than the value specified here, he can buy the primary weapon.
-    2 - If bot's money more than the value specified here, he will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for CTs) (+ 8/9/10)
-    3 - If bot's money more than the value specified here, he will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for Ts) (+ 8/9/10))
-    4 - If bot's money more than the value specified here, he can buy shotguns (M3, XM1014).
-    5 - If bot's money less than the value specified here, he cannot buy shotguns (M3, XM1014).
-    6 - If bot's money more than the value specified here, he can buy AWP, SG550, G3SG1, M249.
-    7 - If bot's money less than the value specified here, he cannot buy AWP, SG550, G3SG1, M249.
+    1 - If bot has more money than the value specified here, it can buy the primary weapon.
+    2 - If bot has more money than the value specified here, it will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for CTs) (+ 8/9/10)
+    3 - If bot has more money than the value specified here, it will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for Ts) (+ 8/9/10))
+    4 - If bot has more money than the value specified here, it can buy shotguns (M3, XM1014).
+    5 - If bot has less money than the value specified here, it cannot buy shotguns (M3, XM1014).
+    6 - If bot has more money than the value specified here, it can buy AWP, SG550, G3SG1, M249.
+    7 - If bot has less money than the value specified here, it cannot buy AWP, SG550, G3SG1, M249.
     8 - How much money bot leaves in stock, at purchase of the primary weapon (only for type of behaviour - Normal)
     9 - How much money bot leaves in stock, at purchase of the primary weapon (only for type of behaviour - Rusher).
     10 - How much money bot leaves in stock, at purchase of the primary weapon  (only for type of behaviour - Careful).
