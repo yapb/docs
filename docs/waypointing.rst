@@ -155,6 +155,8 @@
 
 Или если вы хотите установить вэйпоинт старого формата (pwf) вручную, положите его в папку ``*gamedir*/addons/yapb/data/pwf``.
 
+Также вы можете установить E-BOT (ewp) вэйпоинты в папку ``*gamedir*/addons/yapb/data/ewp``.
+
 Где ``*gamedir*`` это путь до папки с игрой, например:
 
 - ``D:\Steam\steamapps\common\Half-Life\cstrike`` это папка Counter-Strike 1.6.
