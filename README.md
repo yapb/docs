@@ -1,5 +1,5 @@
 # Официальная документация YaPB
-[![Documentation Status](https://readthedocs.org/projects/yapb/badge/?version=latest)](https://docs.yapb.ru/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/yapb-ru/badge/?version=latest)](https://yapb.readthedocs.io/ru/latest/?badge=latest)
 
 Это документация по YaPB ботам для игры Counter-Strike
 
