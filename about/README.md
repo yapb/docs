@@ -1,6 +1,6 @@
-# About
+# О боте
 
-Learn more about YaPB and the team behind it.
+Узнайте больше о YaPB и команде, которая стоит за ним.
 
-- [Introduction](introduction.md) -- Learn about YaPB and what it can do
-- [Credits](credits.md) -- Development team and contributors
+- [Вступление](introduction.md) -- Узнайте о YaPB и его возможностях
+- [Авторы](credits.md) -- Команда разработчиков и участники

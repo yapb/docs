@@ -1,18 +1,18 @@
-# Custom Configuration File
+# Пользовательский файл конфигурации
 
-A custom config file that allows you to change some hard-coded things in the bot code.
+Пользовательский файл конфигурации, который позволяет вам изменить некоторые захардкоженные вещи в коде бота.
 
-It's located in `addons/yapb/conf/custom.cfg`.
+Он находится в `addons/yapb/conf/custom.cfg`.
 
-## Available Settings
+## Доступные настройки
 
-| Setting | Description |
-|---------|-------------|
-| `C4ModelName` | Sets a custom name for the C4 model, for servers that replace the C4 model with their own. By default it's `c4.mdl` (the models/path is omitted), so if you need to use `models/mybomb/mybomb.mdl`, you should specify `mybomb/mybomb.mdl`. |
-| `AMXParachuteCvar` | Sets a custom CVAR name for parachute handling. There are various plugins that handle parachutes (AMX Parachute, AMX Parachute Lite, etc.), you can specify the needed CVAR here. |
-| `CustomCSDMSpawnPoint` | Sets a custom spawn point classname for CSDM mods that add custom spawn points other than `info_player_start` and `info_player_deathmatch`. So bots will be able to join the game without default spawn entities. |
-| `CSDMDetectCvar` | Sets a CVAR to detect the CSDM mod if it is activated in the game. |
-| `ZMDetectCvar` | Sets a CVAR to detect the Zombie mod. |
-| `ZMDelayCvar` | Sets a CVAR that deals with time before any game mode starts. |
-| `ZMInfectedTeam` | Determines the team on which infected players are on. Valid values: `T`, `CT`. |
-| `EnableFakeBotFeatures` | Decides if fake features (like a fake time, fake SID (avatar), fakeping) should be enabled within bot code on a dedicated server. By default it's off. To enable it you should provide a variable with: `i'm confident for what i'm doing` as the value. Its value doesn't affect the listen server. |
+| Настройка | Описание |
+|-----------|----------|
+| `C4ModelName` | Задаёт пользовательское название для модели C4, для серверов, которые заменяют модель C4 на свою собственную. По умолчанию это `c4.mdl` (путь модели опущен), поэтому если вам нужно использовать `models/mybomb/mybomb.mdl`, вы должны указать `mybomb/mybomb.mdl`. |
+| `AMXParachuteCvar` | Задаёт пользовательское название CVAR для управления парашютом. Существуют различные плагины, которые управляют парашютами (AMX Parachute, AMX Parachute Lite и т.д.), вы можете указать нужный CVAR здесь. |
+| `CustomCSDMSpawnPoint` | Задаёт пользовательское название класса точки возрождения для CSDM модов, которые добавляют свои точки возрождения, отличные от `info_player_start` и `info_player_deathmatch`. Таким образом, боты смогут присоединиться к игре без стандартных сущностей возрождения. |
+| `CSDMDetectCvar` | Задаёт CVAR для обнаружения CSDM мода, если он активирован в игре. |
+| `ZMDetectCvar` | Задаёт CVAR для обнарушения зомби мода. |
+| `ZMDelayCvar` | Задаёт CVAR, который определяет время до начала любого игрового режима. |
+| `ZMInfectedTeam` | Определяет команду, в которой находятся заражённые игроки. Допустимые значения: `T`, `CT`. |
+| `EnableFakeBotFeatures` | Определяет, должны ли быть включены поддельные функции (такие как поддельное время, поддельный SID (аватар), фейковый пинг) в коде бота на выделенном сервере. По умолчанию это выключено. Чтобы включить его, вы должны предоставить переменную со значением: `i'm confident for what i'm doing`. Его значение не влияет на локальный сервер. |

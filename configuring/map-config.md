@@ -1,7 +1,7 @@
-# Map-Specific Configuration
+# Конфигурация для карты
 
-Map specific configs store user-configured CVARs. The filename is `mapname.cfg` where "mapname" is the name of the map for which this config was created, e.g. `de_dust.cfg` for the de_dust map. This file is located in the `addons/yapb/conf/maps` directory.
+Конфиги для карт хранят пользовательские CVARы. Имя файла — `mapname.cfg`, где "mapname" — это имя карты, для которой был создан этот конфиг, например, `de_dust.cfg` для карты de_dust. Этот файл находится в директории `addons/yapb/conf/maps`.
 
-You can use any of the [Bot CVARs](cvars.md) in this config. They will be executed automatically when you start the map specified in the name of this config.
+Вы можете использовать любые из [CVARов ботов](cvars.md) в этом конфиге. Они будут выполнены автоматически, когда вы запустите карту, указанную в названии этого конфига.
 
-By default YaPB does not have any configs for maps.
+По умолчанию YaPB не имеет никаких конфигов для карт.

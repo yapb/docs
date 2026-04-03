@@ -1,14 +1,14 @@
-# Weapons Configuration
+# Настройка оружия
 
-Main config where most stuff regarding weapon handling is defined. The filename is `weapon.cfg` and is located in the `addons/yapb/conf` directory.
+Основной конфиг, где определены大多数 настроек обработки оружия. Имя файла — `weapon.cfg`, и он находится в директории `addons/yapb/conf`.
 
-To edit this file you need to know the weapon numbering.
+Чтобы отредактировать этот файл, вам нужно знать нумерацию оружия.
 
-## Weapon Numbers
+## Номера оружия
 
-| # | Weapon | # | Weapon |
+| # | Оружие | # | Оружие |
 |---|--------|---|--------|
-| 0 | KNIFE | 13 | UMP45 |
+| 0 | НОЖ | 13 | UMP45 |
 | 1 | USP | 14 | AK47 |
 | 2 | GLOCK18 | 15 | SG552 |
 | 3 | DEAGLE | 16 | M4A1 |
@@ -22,97 +22,97 @@ To edit this file you need to know the weapon numbering.
 | 11 | P90 | 24 | M249 |
 | 12 | MAC10 | 25 | SHIELD |
 
-## MapStandard Field
+## Поле MapStandard
 
-This field is by default used on all maps except VIP scenario.
+Это поле используется по умолчанию на всех картах, кроме VIP-сценария.
 
-### Weapon buy flags
+### Флаги покупки оружия
 
-| Value | Meaning |
-|-------|---------|
-| `-1` | Disallow buying for any team |
-| `0` | Terrorist team only |
-| `1` | CT team only |
-| `2` | Can be bought by both teams |
+| Значение | Значение |
+|----------|----------|
+| `-1` | Запретить покупку для любой команды |
+| `0` | Только команда террористов |
+| `1` | Только команда контр-террористов |
+| `2` | Может быть куплено обеими командами |
 
-### Example
+### Пример
 
 ```
 MapStandard = -1,0,-1,2,-1,0,1,2,2,2,-1,2,-1,-1,0,0,1,0,1,1,2,2,0,1,2,1
 ```
 
-## MapAS Field
+## Поле MapAS
 
-This field is by default used only on VIP scenario maps.
+Это поле используется по умолчанию только на картах VIP-сценария.
 
-### Weapon buy flags
+### Флаги покупки оружия
 
-| Value | Meaning |
-|-------|---------|
-| `-1` | Disallow buying for any team |
-| `0` | Terrorist team only |
-| `1` | CT team only |
-| `2` | Can be bought by both teams |
+| Значение | Значение |
+|----------|----------|
+| `-1` | Запретить покупку для любой команды |
+| `0` | Только команда террористов |
+| `1` | Только команда контр-террористов |
+| `2` | Может быть куплено обеими командами |
 
-### Example
+### Пример
 
 ```
 MapAS = -1,-1,-1,2,-1,0,1,1,1,1,1,1,0,2,0,-1,1,0,1,1,0,0,-1,1,1,1
 ```
 
-## Grenade Buying Percentage
+## Процент покупки гранат
 
-Specifies the buying percents for grenade inventory.
+Задаёт процент покупки для гранат в инвентаре.
 
-From left to right:
+Слева направо:
 
-| Position | Grenade |
-|----------|---------|
-| 1 | HE grenade |
-| 2 | Flashbang |
-| 3 | Smoke grenade |
+| Позиция | Граната |
+|---------|---------|
+| 1 | Осколочная граната |
+| 2 | Светошумовая граната |
+| 3 | Дымовая граната |
 
-### Example
+### Пример
 
 ```
 GrenadePercent = 98,75,60
 ```
 
-## Bot Economics
+## Экономика ботов
 
-Specifies economics values for buying weapons.
+Задаёт значения экономики для покупки оружия.
 
-From left to right:
+Слева направо:
 
-| Position | Description |
-|----------|-------------|
-| 1 | If bot has more money than this value, it can buy the primary weapon |
-| 2 | If bot has more money than this value, it will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for CTs) (+ 8/9/10) |
-| 3 | If bot has more money than this value, it will not buy SMGs (MP5, MAC10, TMP, P90, UMP45, SCOUT) (only for Ts) (+ 8/9/10) |
-| 4 | If bot has more money than this value, it can buy shotguns (M3, XM1014) |
-| 5 | If bot has less money than this value, it cannot buy shotguns (M3, XM1014) |
-| 6 | If bot has more money than this value, it can buy AWP, SG550, G3SG1, M249 |
-| 7 | If bot has less money than this value, it cannot buy AWP, SG550, G3SG1, M249 |
-| 8 | How much money bot leaves in stock at purchase of the primary weapon (Normal behavior) |
-| 9 | How much money bot leaves in stock at purchase of the primary weapon (Rusher behavior) |
-| 10 | How much money bot leaves in stock at purchase of the primary weapon (Careful behavior) |
-| 11 | If bot has more money than this value, it can buy the shield |
+| Позиция | Описание |
+|---------|----------|
+| 1 | Если у бота больше денег, чем это значение, он может купить основное оружие |
+| 2 | Если у бота больше денег, чем это значение, он не будет покупать ПП (MP5, MAC10, TMP, P90, UMP45, SCOUT) (только для КТ) |
+| 3 | Если у бота больше денег, чем это значение, он не будет покупать ПП (только для Т) |
+| 4 | Если у бота больше денег, чем это значение, он может купить дробовики (M3, XM1014) |
+| 5 | Если у бота меньше денег, чем это значение, он не может купить дробовики |
+| 6 | Если у бота больше денег, чем это значение, он может купить AWP, SG550, G3SG1, M249 |
+| 7 | Если у бота меньше денег, чем это значение, он не может купить AWP, SG550, G3SG1, M249 |
+| 8 | Сколько денег бот оставляет при покупке основного оружия (обычное поведение) |
+| 9 | Сколько денег бот оставляет при покупке основного оружия (агрессивное поведение) |
+| 10 | Сколько денег бот оставляет при покупке основного оружия (осторожное поведение) |
+| 11 | Если у бота больше денег, чем это значение, он может купить щит |
 
-### Example
+### Пример
 
 ```
 Economics = 1550,2100,2100,4000,6000,7000,16000,1200,800,1100,3000
 ```
 
-## Weapon Priorities
+## Приоритеты оружия
 
-This table stores the Weapon Priorities of the Bots depending on Personality (it affects buying & picking up better weapons from the ground).
+Эта таблица хранит приоритеты оружия ботов в зависимости от личности (это влияет на покупку и подбор лучшего оружия с земли).
 
-From left to right. Rightmost value is the most wanted bot weapon. Leftmost value is the worst weapon.
+Слева направо. Крайнее правое значение — самое желаемое оружие бота. Крайнее левое значение — худшее оружие.
 
-> **Note:** Knife should be the "worst" weapon in this table, otherwise things get messed up.
+> **Примечание:** Нож должен быть "худшим" оружием в этой таблице, иначе возникнут проблемы.
 
-### Examples
+### Примеры
 
 ```
 PersonalityNormal = 00,02,01,04,05,06,03,12,10,24,25,13,11,08,07,22,23,20,21,09,19,15,17,18,14,16

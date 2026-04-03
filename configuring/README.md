@@ -1,16 +1,16 @@
-# Configuring the Bot
+# Настройка бота
 
-Bot CVARS are located inside `yapb.cfg` and parsed on every level change. The new config will be applied on map change or by issuing `exec addons/yapb/conf/yapb.cfg` inside the server console.
+CVARы бота находятся внутри `yapb.cfg` и парсятся при каждой смене карты. Новый конфиг будет применён при смене карты или при выполнении `exec addons/yapb/conf/yapb.cfg` в консоли сервера.
 
-CVARs can be changed on the fly by typing them into the console.
+CVARы можно изменять на лету, вводя их в консоли.
 
-See the following sections for detailed configuration reference:
+См. следующие разделы для подробной справки по настройке:
 
-- [Bot CVARs](cvars.md) -- Full reference of all ~60+ bot CVARs
-- [Map-Specific Config](map-config.md) -- Per-map configuration files
-- [Custom Config](custom-config.md) -- Hard-coded settings in `custom.cfg`
-- [Difficulty](difficulty.md) -- Fine-tuning bot difficulty levels
-- [Weapons](weapons.md) -- Weapon buy flags, priorities, and economics
-- [Localization](localization.md) -- Language support and translations
-- [Customization](customization.md) -- Chat, voice, and appearance customization
-- [Bot Usage](botusage.md) -- In-game menus, commands, and bot management
+- [CVARы ботов](cvars.md) -- Полный справочник по всем ~60+ CVARам бота
+- [Конфиг для карты](map-config.md) -- Конфигурационные файлы для каждой карты
+- [Пользовательский конфиг](custom-config.md) -- Жёстко заданные настройки в `custom.cfg`
+- [Сложность](difficulty.md) -- Точная настройка уровней сложности ботов
+- [Оружие](weapons.md) -- Флаги покупки оружия, приоритеты и экономика
+- [Локализация](localization.md) -- Поддержка языков и переводы
+- [Персонализация](customization.md) -- Настройка чата, голоса и внешнего вида
+- [Использование ботов](botusage.md) -- Меню в игре, команды и управление ботами

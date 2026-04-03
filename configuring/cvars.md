@@ -1,1193 +1,1073 @@
-# Bot CVARs
+# CVARы ботов
 
-Full reference of all bot console variables (CVARs).
+Полный справочник по всем консольным переменным бота (CVARs).
 
-## General
+## Общие
 
 ### yb_attack_monsters
 
-Allows or disallows bots to attack monsters. Useful for mods like Halloween Mod.
+Позволяет или запрещает ботам атаковать монстров. Полезно для модов типа Halloween Mod.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_autokill_delay
 
-Specifies amount of time in seconds when bots will be killed if no humans left alive.
+Задаёт количество времени в секундах, через которое боты будут убиты, если не останется живых людей.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `90` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `90` |
+| По умолчанию | `0` |
 
 ### yb_autovacate
 
-If not zero, bots will automatically leave to make room for human players when they join the server.
+Если не ноль, боты автоматически освободят место для игроков-людей, когда они присоединятся к серверу.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_autovacate_keep_slots
 
-How many slots the autovacate feature should keep for human players.
+Сколько слотов функция автоосвобождения должна сохранять для игроков-людей.
 
-| Property | Value |
-|----------|-------|
-| Min | `1` |
-| Max | `8` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `1` |
+| Макс | `8` |
+| По умолчанию | `1` |
 
 ### yb_avoid_grenades
 
-Allows bots to partially avoid grenades.
+Позволяет ботам частично избегать гранаты.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_bind_menu_key
 
-Binds the specified key to open the bot menu.
+Привязывает команду открытия меню ботов к указанной клавише.
 
-| Property | Value |
-|----------|-------|
-| Default | `=` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `=` |
 
 ### yb_botbuy
 
-If not zero, bots will be able to buy weapons and inventory.
+Если не ноль, боты могут покупать оружие и снаряжение.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_botskin_t
 
-Specifies the bots wanted skin for Terrorists team.
+Задаёт желаемый скин ботов для команды Террористов.
 
-| Value | Skin |
-|-------|------|
-| `0` | Any class |
-| `1` | Phoenix Connexion |
-| `2` | Elite Crew |
-| `3` | Arctic Avengers |
-| `4` | Guerilla Warfare |
-| `5` | Midwest Militia **(Condition Zero only!)** |
+Доступные значения:
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `5` |
-| Default | `0` |
+* `0` — Любой класс
+* `1` — Подразделение Феникс
+* `2` — Элитное подразделение
+* `3` — Арктические мстители
+* `4` — Партизаны
+* `5` — Ополченцы среднего запада **(Только для Condition Zero!)**
+
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `5` |
+| По умолчанию | `0` |
 
 ### yb_botskin_ct
 
-Specifies the bots wanted skin for Counter-Terrorists team.
+Задаёт желаемый скин ботов для команды Контр-Террористов.
 
-| Value | Skin |
-|-------|------|
-| `0` | Any class |
-| `1` | Seal Team 6 |
-| `2` | GSG-9 |
-| `3` | SAS |
-| `4` | GIGN |
-| `5` | Spetsnaz **(Condition Zero only!)** |
+Доступные значения:
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `5` |
-| Default | `0` |
+* `0` — Любой класс
+* `1` — Seal Team 6
+* `2` — GSG-9
+* `3` — SAS
+* `4` — GIGN
+* `5` — Спецназ **(Только для Condition Zero!)**
+
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `5` |
+| По умолчанию | `0` |
 
 ### yb_breakable_health_limit
 
-Specifies the maximum health of a breakable object that the bot will consider destroying.
+Задаёт максимальное здоровье разрушаемого объекта, который бот желает уничтожить.
 
-| Property | Value |
-|----------|-------|
-| Min | `1` |
-| Max | `3000` |
-| Default | `500` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `1` |
+| Макс | `3000` |
+| По умолчанию | `500` |
 
 ### yb_camping_allowed
 
-If not zero, bots will try to pick up camp points as their goals and will camp there for some time based on their personality.
+Если не ноль, боты будут пытаться выбирать кемперские точки в качестве своих целей и будут кемперить там некоторое время в зависимости от их личности.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_camping_time_min
 
-Lower bound of time from which time for camping is calculated.
+Нижняя граница времени, от которого рассчитывается время для кемпинга.
 
-| Property | Value |
-|----------|-------|
-| Min | `5` |
-| Max | `90` |
-| Default | `15` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `5.0` |
+| Макс | `90.0` |
+| По умолчанию | `15.0` |
 
 ### yb_camping_time_max
 
-Upper bound of time until which time for camping is calculated.
+Верхняя граница времени, до которого рассчитывается время для кемпинга.
 
-| Property | Value |
-|----------|-------|
-| Min | `15` |
-| Max | `120` |
-| Default | `45` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `15.0` |
+| Макс | `120.0` |
+| По умолчанию | `45.0` |
 
 ### yb_chat
 
-If not zero, bots will be able to chat to each other and players while they are dead.
+Если не ноль, боты смогут общаться друг с другом и с игроками.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_chat_percent
 
-Bot chances to send random dead chat when killed.
+Шанс бота отправлять случайные сообщения в чат, когда он убит.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `100` |
-| Default | `30` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `100` |
+| По умолчанию | `30` |
 
 ### yb_check_darkness
 
-Allows or disallows bot to check the environment for darkness, thus allows or not to use flashlights or NVG.
+Разрешает или запрещает боту проверять условия освещённости, что позволяет или запрещает использовать фонарики или ПНВ.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_check_enemy_invincibility
 
-Enables or disables checking enemy invincibility. Useful for some mods.
+Включает или выключает проверку неуязвимости игрока. Полезно для некоторых модов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_check_enemy_rendering
 
-Allows checking enemy rendering before taking a victim. This is useful to enable when you play CSDM mod with spawn protection enabled. Bots will not try to select just-spawned players, as they are not vulnerable.
+Позволяет проверить рендеринг врага перед атакой. Это полезно для CSDM мода с защитой на спавне. Боты не будут пытаться выбирать только что заспавненных игроков, так как они неуязвимы.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_csdm_mode
 
-Enables or disables CSDM / FFA mode for bots.
+Включает или выключает CSDM / FFA режим для ботов.
 
-| Value | Mode |
-|-------|------|
-| `0` | CSDM / FFA mode is auto-detected |
-| `1` | CSDM mode enabled, FFA disabled |
-| `2` | CSDM and FFA mode enabled |
-| `3` | CSDM and FFA mode disabled |
+* Если установлено на `0`, CSDM / FFA режим будет обнаружен автоматически.
+* Если установлено на `1`, CSDM режим будет включён, но FFA выключен.
+* Если установлено на `2`, CSDM и FFA режимы будут включены.
+* Если установлено на `3`, CSDM и FFA режимы будут выключены.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `3` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `3` |
+| По умолчанию | `0` |
 
 ### yb_chatter_path
 
-Points to location where chatter (from official csbot for example) is located.
+Указывает местоположение, где находятся файлы голосового чата.
 
-| Property | Value |
-|----------|-------|
-| Default | `sound/radio/bot` |
-
-### yb_count_players_for_fakeping
-
-Take players' pings into account when calculating the average ping for bots. If not, a random ping will be chosen for bots.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `sound/radio/bot` |
 
 ### yb_debug
 
-If not zero, enables useful messages about bot states. Not required for end users.
+Если не ноль, включает полезные отладочные сообщения о состоянии ботов. Не требуется для обычных пользователей.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `4` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_debug_goal
 
-Forces all alive bots to build a path and go to the specified graph node.
+Заставляет всех живых ботов идти до указанной точки.
 
-| Property | Value |
-|----------|-------|
-| Min | `-1` |
-| Max | `2048` |
-| Default | `-1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `-1` |
+| Макс | `2048` |
+| По умолчанию | `-1` |
 
 ### yb_destroy_breakables_around
 
-Allows bots to destroy breakables around them, even without touching them.
+Позволяет ботам уничтожать объекты вокруг них, даже не касаясь их.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_difficulty
 
-Specifies the difficulty of all bots. Changing at runtime will affect already created bots.
+Определяет сложность всех ботов. Изменение во время игры повлияет на уже созданных ботов.
 
-| Value | Difficulty |
-|-------|-----------|
-| `0` | Newbie |
-| `1` | Average |
-| `2` | Normal |
-| `3` | Professional |
-| `4` | Godlike |
+Список сложностей ботов:
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `4` |
-| Default | `4` |
+* `0` — Новичок
+* `1` — Обычный
+* `2` — Средний
+* `3` — Профессионал
+* `4` — Бог
+
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `4` |
+| По умолчанию | `4` |
 
 ### yb_difficulty_auto_balance_interval
 
-Interval in which bots will balance their difficulty.
+Интервал, в котором боты будут балансировать свою сложность.
 
-| Property | Value |
-|----------|-------|
-| Min | `30` |
-| Max | `240` |
-| Default | `30` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `30` |
+| Макс | `240` |
+| По умолчанию | `30` |
 
 ### yb_difficulty_min
 
-Lower bound of random difficulty on bot creation. Only affects newly created bots. `-1` means `yb_difficulty` only is used.
+Нижняя граница случайной сложности при создании бота. Действует только на вновь созданных ботов. `-1` означает, что используется только yb_difficulty.
 
-| Property | Value |
-|----------|-------|
-| Min | `-1` |
-| Max | `4` |
-| Default | `-1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `-1` |
+| Макс | `4` |
+| По умолчанию | `-1` |
 
 ### yb_difficulty_max
 
-Upper bound of random difficulty on bot creation. Only affects newly created bots. `-1` means `yb_difficulty` only is used.
+Верхняя граница случайной сложности при создании бота. Действует только на вновь созданных ботов. `-1` означает, что используется только yb_difficulty.
 
-| Property | Value |
-|----------|-------|
-| Min | `-1` |
-| Max | `4` |
-| Default | `-1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `-1` |
+| Макс | `4` |
+| По умолчанию | `-1` |
 
 ### yb_difficulty_auto
 
-Enables each bot to balance its own difficulty based on the KD-ratio of the team.
+Позволяет каждому боту балансировать собственную сложность на основе соотношения убийств/смертей команды.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_display_welcome_text
 
-Specifies if the bot DLL will display welcome text when adding bots.
+Указывает, будет ли DLL бота отображать текст приветствия при добавлении ботов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_display_menu_text
 
-Enables or disables display of menu text when players ask for a menu. Useful only for Android.
+Включает или отключает отображение текстового меню, когда игрок запрашивает меню. Полезно только для Android.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_economics_disrespect_percent
 
-Allows bots to ignore the economics and buy weapons with disrespect of it.
+Позволяет ботам игнорировать экономику и покупать оружие, не обращая внимания на деньги.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `100` |
-| Default | `25` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `100` |
+| По умолчанию | `25` |
 
 ### yb_economics_rounds
 
-If not zero, bots will use "team" economics. If more than 70% of players don't have money to buy their preferred weapon, no-one buys anything to save money for the next round. This usually causes bots to run with default pistols on the first round.
+Если не ноль, боты будут использовать "командную" экономику. Если у более чем 70% игроков нет денег на покупку предпочитаемого оружия, никто ничего не покупает, чтобы сэкономить деньги на следующий раунд.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
-
-### yb_enable_fake_steamids
-
-Allows or disallows bots to return a fake Steam ID.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_enable_query_hook
 
-Enables fake server query responses that show bots as real players in the server browser.
+Включает ложные ответы на запросы сервера, чтобы показывать ботов как реальных игроков в списке серверов.
 
-> **Note:** If you run bots on a dedicated server, make sure you have `EnableFakeBotFeatures` enabled in `custom.cfg` for this feature to work.
+> **Примечание:** Если вы запускаете ботов на выделенном сервере, убедитесь, что у вас включён параметр `EnableFakeBotFeatures` в файле `custom.cfg`, для работы этой функции.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_freeze_bots
 
-If not zero, bots think the function is paused and bots stay at the place where they were before activating this CVAR.
+Если не ноль, мыслительная функция ботов будет приостановлена, и боты останутся на том месте, где они были перед активацией этого квара.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_graph_analyze_auto_save
 
-Automatically saves the analysis results to a graph file and adds bots again.
+Автоматически сохраняет результаты анализа в файл графа.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_graph_analyze_auto_start
 
-Starts the map auto-analyzer if the graph is not present in the local storage or database.
+Запускает автоанализатор карт, если граф отсутствует в локальном хранилище или базе данных.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_graph_analyze_clean_paths_on_finish
 
-Specifies if the analyzer should clean unnecessary paths upon finishing.
+Указывает, должен ли анализатор очищать ненужные пути после завершения работы.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_graph_analyze_distance
 
-Specifies the minimum distance to keep nodes from each other.
+Задаёт минимальное расстояние, на котором точки должны находиться друг от друга.
 
-| Property | Value |
-|----------|-------|
-| Min | `42` |
-| Max | `128` |
-| Default | `64` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `42` |
+| Макс | `128` |
+| По умолчанию | `64` |
 
 ### yb_graph_analyze_fps
 
-Specifies the FPS at which the analyzer process runs. This keeps the game from freezing during analysis.
+Задаёт количество FPS, при котором работает процесс анализатора. Это предотвращает зависание игры во время анализа.
 
-| Property | Value |
-|----------|-------|
-| Min | `25` |
-| Max | `99` |
-| Default | `30` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `25` |
+| Макс | `99` |
+| По умолчанию | `30` |
 
 ### yb_graph_analyze_mark_goals_on_finish
 
-Specifies if the analyzer should mark nodes as map goals automatically upon finish.
+Указывает, должен ли анализатор автоматически отмечать точки как цели карты после завершения работы.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_graph_analyze_max_jump_height
 
-Specifies the max jump height to test if the next node will be unreachable.
+Задаёт максимальную высоту прыжка для проверки, будет ли следующая точка недостижима.
 
-| Property | Value |
-|----------|-------|
-| Min | `44` |
-| Max | `64` |
-| Default | `44` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `44` |
+| Макс | `64` |
+| По умолчанию | `44` |
 
 ### yb_graph_analyze_optimize_nodes_on_finish
 
-Specifies if the analyzer should merge some near-placed nodes with many connections together.
+Указывает, должен ли анализатор объединять близко расположенные точки с большим количеством соединений.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
-
-### yb_graph_auto_collect_db
-
-Allows the bot to scan the `graph` folder and upload every `.graph` file to the database if they are not there. This is done in a separate thread and does not block the server process.
-
-> **Note:** It works only at server startup, not at map change. Also it does not work on the currently started map.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_graph_auto_save_count
 
-Every N graph nodes placed on the map, the graph will be saved automatically (without checks). If you want to disable autosave, set this CVAR to `0`.
+Через каждую N-ю точку, размещённую на карте, граф будет сохраняться автоматически. Если вы хотите отключить автосохранение, установите значение квара на `0`.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `2048` |
-| Default | `15` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `2048` |
+| По умолчанию | `15` |
 
 ### yb_graph_draw_distance
 
-Maximum distance to draw graph nodes from the editor viewport.
+Максимальное расстояние отображения точек от области просмотра редактора.
 
-| Property | Value |
-|----------|-------|
-| Min | `64` |
-| Max | `3072` |
-| Default | `400` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `64` |
+| Макс | `3072` |
+| По умолчанию | `400` |
 
 ### yb_graph_fixcamp
 
-Specifies whether the bot should not 'fix' camp directions of camp waypoints when loading old PWF format.
+Указывает, должен ли бот "исправлять" направления кемперских точек при загрузке старого формата PWF.
 
-> **Note:** This option was made to fix camp directions when using waypoints from PODBot 2.5, old YaPB versions or other PODBot clones that do not allow setting a horizontal camp direction. If you are using PWF waypoints from PODBot 3.0, this CVAR should be disabled, as it can break the directions of the camp nodes.
+> **Примечание:** Эта опция сделана для исправления направлений кемперских точек при использовании вэйпоинтов от PODBot 2.5 или старых версий YaPB. Если вы используете PWF вэйпоинты из PODBot 3.0, этот квар должен быть отключён.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_graph_url
 
-Specifies the host where the graph database is located. They must be in the `/graph` path on the server. Set to empty if you don't want downloads.
+Указывает хост, на котором расположена база данных графов. Они должны находиться в пути `/graph` на сервере. Установите пустое значение, если вы не хотите скачивать граф файлы.
 
-| Property | Value |
-|----------|-------|
-| Default | `yapb.jeefo.net` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `yapb.jeefo.net` |
 
 ### yb_graph_url_upload
 
-Specifies the URL to which bots will try to upload the graph file to the database.
+Указывает URL-адрес, по которому боты будут пытаться загрузить граф файл в базу данных.
 
-| Property | Value |
-|----------|-------|
-| Default | `yapb.jeefo.net/upload` |
-
-### yb_grenadier_mode
-
-If enabled, bots will not apply throwing conditions on grenades.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
-
-### yb_has_team_semiclip
-
-When enabled, bots will not try to avoid teammates on their way. Assuming that some semiclip plugins are in use.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `yapb.jeefo.net/upload` |
 
 ### yb_ignore_cvars_on_changelevel
 
-Comma-separated list of bot CVARs to ignore on changelevel.
+Список кваров бота, разделённых запятыми, которые игнорируются при смене уровня.
 
-Bots read `yapb.cfg` every changelevel, and the values of bot CVARs are overwritten with those located in the config. This CVAR allows the server admin to ignore values of specified CVARs from `yapb.cfg` if they were changed by hand from the server console.
+Боты читают `yapb.cfg` при каждой смене уровня, поэтому значения кваров перезаписываются значениями из конфига. Этот квар позволяет админу сервера игнорировать определённые квары из `yapb.cfg`, если они были изменены вручную через консоль сервера.
 
-For example: Server started with `yb_quota` set to `10` in `yapb.cfg` and `yb_quota` is specified in `yb_ignore_cvars_on_changelevel`. Time passes, the server admin decides that `yb_quota` should be set to `12` and sets it via the server console. Next time the server changes the map, the value of `yb_quota` will not be changed while reading `yapb.cfg` and will stay `12`.
-
-If you want to disable ignoring reading CVARs from `yapb.cfg`, leave the value empty: `yb_ignore_cvars_on_changelevel ""` in `yapb.cfg`.
-
-| Property | Value |
-|----------|-------|
-| Default | `yb_quota,yb_autovacate` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `yb_quota,yb_autovacate` |
 
 ### yb_ignore_enemies
 
-If not zero, bots will run all over the map doing goals but will not search for enemies.
+Если не ноль, боты будут бегать по всей карте и выполнять цели, но не будут искать врагов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
-
-### yb_ignore_enemies_after_spawn_time
-
-Makes bots ignore enemies for a specified time in seconds on a new round. Useful for Zombie Plague mods.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `540` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_ignore_map_prefix_game_mode
 
-If enabled, bots will not apply game modes based on map name prefix (fy_ and ka_ specifically).
+Если включено, боты не будут применять режимы игры, основанные на префиксе названия карты (в частности, fy_ и ka_).
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_ignore_objectives
 
-Allows or disallows bots to do map objectives, i.e. plant/defuse bombs, and save hostages.
+Разрешает или запрещает ботам выполнять задания на карте (закладывать/обезвреживать бомбы и спасать заложников).
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_jasonmode
 
-If not zero, bots will use only knives while fighting against enemies. This also disables buying.
+Если не ноль, боты будут использовать только ножи, сражаясь с врагами. Это также отключает покупки.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_join_after_player
 
-If not zero, bots will join the server only when some human player has already joined the team.
+Если не ноль, боты присоединятся к серверу только тогда, когда к команде уже присоединится человек.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_join_team
 
-Forces all bots to join the team specified in this CVAR.
+Заставляет всех ботов присоединяться к команде, указанной в этом кваре.
 
-| Property | Value |
-|----------|-------|
-| Valid values | `ct`, `t`, `any` |
-| Default | `any` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `any` |
 
 ### yb_join_delay
 
-Specifies after how many seconds bots should start to join the game after the changelevel.
+Определяет, через сколько секунд боты должны начать присоединяться к игре после смены уровня.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `30` |
-| Default | `5` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0.0` |
+| Макс | `30.0` |
+| По умолчанию | `5.0` |
 
 ### yb_kick_after_player_connect
 
-Kick the bot immediately when a human player joins the server (`yb_autovacate` must be enabled).
+Немедленно убирать бота, когда игрок присоединяется к серверу (yb_autovacate должен быть включён).
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_language
 
-Sets the bot language for menus, names, chat and messages.
+Настраивает язык бота для меню, имён, чата и сообщений.
 
-| Property | Value |
-|----------|-------|
-| Valid values | `ru`, `en`, `de` |
-| Default | `en` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `en` |
 
 ### yb_logger_disable_logfile
 
-Disables the logger from writing anything to a log file. Just spews content to the console.
+Запрещает логгеру записывать что-либо в лог-файл. Только выводить содержимое в консоль.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_max_nodes_for_predict
 
-Maximum number for path length to predict the enemy.
+Максимальная длина пути для предсказания противника.
 
-| Property | Value |
-|----------|-------|
-| Min | `15` |
-| Max | `256` |
-| Default | `25` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `15` |
+| Макс | `256` |
+| По умолчанию | `25` |
 
 ### yb_name_prefix
 
-This CVAR contains a string that will be prepended to every added bot name. Something like a clantag. By default this value is not set.
+Этот квар содержит строку, которая будет добавляться к имени каждого добавленного бота. Что-то вроде клантэга.
+
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | (пусто) |
 
 ### yb_object_destroy_radius
 
-The radius in which the bot destroys breakables around it when not touching them.
+Радиус, в котором бот уничтожает объекты вокруг себя, не касаясь их.
 
-| Property | Value |
-|----------|-------|
-| Min | `64` |
-| Max | `1024` |
-| Default | `400` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `64` |
+| Макс | `1024` |
+| По умолчанию | `400` |
 
 ### yb_object_pickup_radius
 
-The radius in which the bot searches the world for new objects, items, and weapons.
+Радиус, в котором бот ищет на карте новые объекты, предметы и оружие.
 
-| Property | Value |
-|----------|-------|
-| Min | `64` |
-| Max | `1024` |
-| Default | `450` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `64.0` |
+| Макс | `1024.0` |
+| По умолчанию | `450.0` |
 
 ### yb_password_key
 
-Specifies the password key for the `setinfo` command to gain remote control to the `yb` command and bot menus.
+Указывает ключ, хранящий пароль для команды `setinfo`, чтобы получить удалённый доступ к командам и меню бота.
 
-| Property | Value |
-|----------|-------|
-| Default | `_ybpw` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `_ybpw` |
 
 ### yb_password
 
-Specifies the actual password for the `setinfo` command to gain remote control to the `yb` command and bot menus.
+Задаёт пароль для команды `setinfo`, чтобы получить удалённый доступ к командам и меню бота.
 
-To gain access to bot commands remotely, the user should open the console and enter `setinfo key password`, where `key` is the value from `yb_password_key` and `password` is the value from `yb_password`.
+Чтобы получить доступ к командам бота удалённо, пользователь должен ввести в консоли `setinfo key password`, где `key` — это значение из `yb_password_key`, а `password` — это значение из `yb_password`.
 
-By default this value is not set.
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | (пусто) |
 
 ### yb_path_astar_post_smooth
 
-Enables post-smoothing for A*. Reduces zig-zags on paths at the cost of some CPU cycles.
+Включает пост-сглаживание для A*. Уменьшает зигзаги на путях ценой некоторых циклов процессора.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_path_danger_factor_min
 
-Lower bound of danger factor used to add additional danger to paths based on practice.
+Нижняя граница фактора опасности, который используется для добавления дополнительной опасности к пути, основанной на практике.
 
-The `yb_path_danger_factor_min` and `yb_path_danger_factor_max` CVARs are used to make dangerous paths even more dangerous based on a random value between these CVARs. This means that bots will be less likely to build paths through these nodes.
+Квары `yb_path_danger_factor_min` и `yb_path_danger_factor_max` используются для того, чтобы сделать опасные пути ещё более опасными, основываясь на случайном значении между этими кварами. Это значит, что боты будут реже строить путь через эти точки.
 
-These CVARs do not affect the goal node, because despite the danger, the bots will go to this node in order to complete the goal (plant a bomb, take a hostage, etc.)
+Эти квары не влияют на целевую точку, так как, несмотря на опасность, боты будут идти к этой точке, чтобы выполнить цель.
 
-| Property | Value |
-|----------|-------|
-| Min | `100` |
-| Max | `2400` |
-| Default | `200` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `100` |
+| Макс | `2400` |
+| По умолчанию | `200` |
 
 ### yb_path_danger_factor_max
 
-Upper bound of danger factor used to add additional danger to paths based on practice.
+Верхняя граница фактора опасности.
 
-| Property | Value |
-|----------|-------|
-| Min | `200` |
-| Max | `4800` |
-| Default | `400` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `200` |
+| Макс | `4800` |
+| По умолчанию | `400` |
 
 ### yb_path_dijkstra_simple_distance
 
-Use simple distance path calculation instead of running a full Dijkstra path cycle. Used only when Floyd matrices are unavailable due to memory limits.
+Использовать простой расчёт пути расстояния вместо выполнения полного алгоритма Дейкстры. Используется только в том случае, если матрицы Флойда недоступны из-за ограничения памяти.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_path_floyd_memory_limit
 
-Limit maximum Floyd-Warshall memory (megabytes). Use Dijkstra if memory exceeds this limit.
+Ограничение максимальной памяти алгоритма Флойда-Уоршелла (в мегабайтах). При превышении памяти использовать алгоритм Дейкстры.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `32` |
-| Default | `6` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `32` |
+| По умолчанию | `6` |
 
 ### yb_path_heuristic_type
 
-Selects the heuristic function mode. For debug purposes only.
+Выбирает режим эвристической функции. Только для отладки.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `4` |
-| Default | `0` |
-
-### yb_path_randomize_on_round_start
-
-Randomize pathfinding on each round start.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `4` |
+| По умолчанию | `0` |
 
 ### yb_pickup_ammo_and_kits
 
-Allows bots to pick up mod items like ammo, health kits and suits.
+Позволяет ботам подбирать предметы модов, такие как патроны и аптечки.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_pickup_best
 
-Allows or disallows bots to pick up the best weapons. (Disabling can be useful for some mods with non-pickable weapons.)
+Позволяет или запрещает ботам подбирать лучшее оружие.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_pickup_custom_items
 
-Allows or disallows bots to pick up custom items.
+Позволяет или запрещает ботам подбирать пользовательские предметы.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_ping_base_min
 
-Lower bound for base bot ping shown in scoreboard. Affects only newly created bots.
+Нижняя граница базового пинга ботов, отображаемого в таблице очков. Влияет только на вновь созданных ботов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `100` |
-| Default | `7` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `100` |
+| По умолчанию | `7` |
 
 ### yb_ping_base_max
 
-Upper bound for base bot ping shown in scoreboard. Affects only newly created bots.
+Верхняя граница базового пинга ботов, отображаемого в таблице очков. Влияет только на вновь созданных ботов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `100` |
-| Default | `34` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `100` |
+| По умолчанию | `34` |
 
 ### yb_quota
 
-Determines the total number of bots in the game.
+Определяет общее количество ботов в игре.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `32` |
-| Default | `9` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `32` |
+| По умолчанию | `9` |
 
 ### yb_quota_adding_interval
 
-Interval in which bots are added to the game.
+Интервал, через который боты добавляются в игру.
 
-| Property | Value |
-|----------|-------|
-| Min | `0.10` |
-| Max | `1` |
-| Default | `0.10` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0.10` |
+| Макс | `1` |
+| По умолчанию | `0.10` |
 
 ### yb_quota_maintain_interval
 
-Interval at which overall bot quota is checked.
+Интервал, с которым проверяется общая квота ботов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0.40` |
-| Max | `2` |
-| Default | `0.40` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0.40` |
+| Макс | `2` |
+| По умолчанию | `0.40` |
 
 ### yb_quota_mode
 
-Determines the type of how `yb_quota` works.
+Определяет тип работы `yb_quota`.
 
-| Value | Behavior |
-|-------|----------|
-| `fill` | The server will adjust bots to keep N players in the game, where N is `yb_quota` |
-| `match` | The server will maintain a 1:N ratio of humans to bots, where N is `yb_quota` |
-| `normal` | This variable does not affect `yb_quota` |
+* Если установлено на `fill`, сервер настроит ботов так, чтобы в игре оставалось N игроков.
+* Если установлено на `match`, сервер будет поддерживать соотношение людей к ботам 1:N.
+* Если установлено на `normal`, это значение не влияет на `yb_quota`.
 
-| Property | Value |
-|----------|-------|
-| Default | `normal` |
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | `normal` |
 
 ### yb_quota_match
 
-Determines the total number of bots in the game when `yb_quota_mode` is set to `match`, i.e. for every human, N bots join.
+Определяет общее количество ботов в игре, когда `yb_quota_mode` установлен на `match`.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `32` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `32` |
+| По умолчанию | `0` |
 
 ### yb_radio_mode
 
-Specifies the way bots talk to each other and the player.
+Определяет способ коммуникации ботов друг с другом и с игроком.
 
-| Value | Mode |
-|-------|------|
-| `0` | Bots will not communicate at all |
-| `1` | Bots will use only the radio |
-| `2` | Bots will use chatter |
+* Если установлено на `0`, боты вообще не будут общаться.
+* Если установлено на `1`, боты будут использовать только радио.
+* Если установлено на `2`, боты будут использовать голосовой чат.
 
-> **Note:** Chatter will be used only if the bot finds valid wave files in the directory specified in `yb_chatter_path`.
+> **Примечание:** Голосовой чат будет использоваться только в том случае, если бот найдёт допустимые звуковые файлы в каталоге, указанном в `yb_chatter_path`.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `2` |
-| Default | `2` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `2` |
+| По умолчанию | `2` |
 
 ### yb_random_knife_attacks
 
-Allows or disallows the ability for random knife attacks when the bot is rushing and no enemy is nearby.
+Разрешает или запрещает случайные атаки ножом, когда бот спешит и поблизости нет врагов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_restricted_weapons
 
-A list of individual weapons that are restricted for bots to buy. Separated by semicolon.
+Список отдельных видов оружия, которые запрещены к покупке ботам. Разделяется точкой с запятой.
 
-The list of weapons for Counter-Strike 1.6:
+Список оружия для Counter-Strike 1.6:
 
-| Weapon ID | Weapon Name |
-|-----------|-------------|
-| `usp` | HK USP .45 Tactical |
-| `glock` | Glock18 Select Fire |
-| `deagle` | Desert Eagle .50AE |
-| `p228` | SIG P228 |
-| `elite` | Dual Beretta 96G Elite |
-| `fn57` | FN Five-Seven |
-| `m3` | Benelli M3 Super90 |
-| `xm1014` | Benelli XM1014 |
-| `mp5` | HK MP5-Navy |
-| `tmp` | Steyr Tactical Machine Pistol |
-| `p90` | FN P90 |
-| `mac10` | Ingram MAC-10 |
-| `ump45` | HK UMP45 |
-| `ak47` | Automat Kalashnikov AK-47 |
-| `galil` | IMI Galil |
-| `famas` | GIAT FAMAS |
-| `sg552` | Sig SG-552 Commando |
-| `m4a1` | Colt M4A1 Carbine |
-| `aug` | Steyr Aug |
-| `scout` | Steyr Scout |
-| `awp` | AI Arctic Warfare/Magnum |
-| `g3sg1` | HK G3/SG-1 Sniper Rifle |
-| `sg550` | Sig SG-550 Sniper |
-| `m249` | FN M249 Para |
-| `flash` | Concussion Grenade |
-| `hegren` | High-Explosive Grenade |
-| `sgren` | Smoke Grenade |
-| `vest` | Kevlar Vest |
-| `vesthelm` | Kevlar Vest and Helmet |
-| `defuser` | Defuser Kit |
-| `shield` | Tactical Shield |
+```
+usp - HK USP .45 Tactical
+glock - Glock18 Select Fire
+deagle - Desert Eagle .50AE
+p228 - SIG P228
+elite - Dual Beretta 96G Elite
+fn57 - FN Five-Seven
+m3 - Benelli M3 Super90
+xm1014 - Benelli XM1014
+mp5 - HK MP5-Navy
+tmp - Steyr TMP
+p90 - FN P90
+mac10 - Ingram MAC-10
+ump45 - HK UMP45
+ak47 - Автомат Калашникова AK-47
+galil - IMI Galil
+famas - GIAT FAMAS
+sg552 - Sig SG-552 Commando
+m4a1 - Colt M4A1 Carbine
+aug - Steyr Aug
+scout - Steyr Scout
+awp - AI Arctic Warfare/Magnum
+g3sg1 - HK G3/SG-1
+sg550 - Sig SG-550
+m249 - FN M249 Para
+flash - Ослепляющая граната
+hegren - Взрывающаяся граната
+sgren - Дымовая граната
+vest - Бронежилет
+vesthelm - Бронежилет со шлемом
+defuser - Набор сапёра
+shield - Тактический щит
+```
 
-By default this value is not set.
+| Свойство | Значение |
+|----------|----------|
+| По умолчанию | (пусто) |
 
 ### yb_rotate_bots
 
-Randomly disconnects and connects bots, simulating players join/quit.
+Произвольно отключать и подключать ботов, имитируя присоединение/выход игроков.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_rotate_stay_max
 
-Specifies maximum amount of seconds a bot keeps connected if rotation is active.
+Задаёт максимальное количество секунд, в течение которых бот остаётся подключённым, если чередование активно.
 
-| Property | Value |
-|----------|-------|
-| Min | `1800` |
-| Max | `14400` |
-| Default | `3600` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `1800` |
+| Макс | `14400` |
+| По умолчанию | `3600` |
 
 ### yb_rotate_stay_min
 
-Specifies minimum amount of seconds a bot keeps connected if rotation is active.
+Задаёт минимальное количество секунд, в течение которых бот остаётся подключённым, если чередование активно.
 
-| Property | Value |
-|----------|-------|
-| Min | `120` |
-| Max | `7200` |
-| Default | `360` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `120` |
+| Макс | `7200` |
+| По умолчанию | `360` |
 
 ### yb_save_bots_names
 
-Allows saving bot names upon changelevel, so bot names will be the same after a map change.
+Позволяет сохранять имена ботов при смене уровня.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_shoots_thru_walls
 
-Determines the method how bots check if a wall/obstacle is penetrable.
+Определяет метод, с помощью которого боты проверяют, можно ли пробить стену/препятствие.
 
-| Value | Behavior |
-|-------|----------|
-| `1` | Bots will try to shoot through walls more actively, even unrealistically |
-| `2` | Bots will use the algorithm from original PODBot, and shoot through walls less |
+Если установлено на `1`, боты будут пытаться стрелять сквозь стены более активно.
+Если установлено на `2`, боты будут использовать алгоритм из оригинального PODBot.
 
-The `2` method consumes a bit more CPU power than the `1` method.
-
-| Property | Value |
-|----------|-------|
-| Min | `1` |
-| Max | `3` |
-| Default | `2` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `1` |
+| Макс | `3` |
+| По умолчанию | `2` |
 
 ### yb_show_avatars
 
-Enables or disables displaying bot avatars in front of their names in the scoreboard. Note that currently you can see only avatars of your Steam friends.
+Включает или отключает отображение аватаров ботов перед их именами в таблице очков.
 
-> **Note:** If you run bots on a dedicated server, make sure you have `EnableFakeBotFeatures` enabled in `custom.cfg` for this feature to work.
+> **Примечание:** Если вы запускаете ботов на выделенном сервере, убедитесь, что у вас включён параметр `EnableFakeBotFeatures` в файле `custom.cfg`.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_show_latency
 
-Determines the type of bot ping displayed.
+Определяет тип отображаемого пинга ботов.
 
-| Value | Behavior |
-|-------|----------|
-| `0` | There will be nothing in the scoreboard about bot ping |
-| `1` | There will be "BOT" displayed for every bot in the scoreboard |
-| `2` | There will be a "fake" ping displayed for every bot in the scoreboard |
+* Если установлено на `0`, пинг ботов не будет отображаться.
+* Если установлено на `1`, у каждого бота будет отображаться "BOT".
+* Если установлено на `2`, у каждого бота будет отображаться "фейковый" пинг.
 
-> **Note:** If you run bots on a dedicated server, make sure you have `EnableFakeBotFeatures` enabled in `custom.cfg` for this feature to work.
+> **Примечание:** Если вы запускаете ботов на выделенном сервере, убедитесь, что у вас включён параметр `EnableFakeBotFeatures` в файле `custom.cfg`.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `2` |
-| Default | `2` |
-
-### yb_smoke_grenade_checks
-
-Determines the method of how smoke affects the bot's vision.
-
-| Value | Behavior |
-|-------|----------|
-| `0` | The smoke won't affect the bot's vision |
-| `1` | The smoke affection method from PODBot will be used |
-| `2` | The smoke affection method from official CSBot (a.k.a. ZBot) will be used |
-
-ZBot's method allows the bot to shoot at enemies in smoke clouds under certain circumstances, while PODBot's certainly cannot.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `2` |
-| Default | `2` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `2` |
+| По умолчанию | `2` |
 
 ### yb_spraypaints
 
-If not zero, bots will spray some paints all over the map.
+Если не ноль, боты будут рисовать логотипы по всей карте.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_stab_close_enemies
 
-If not zero, bots will stab the enemy with a knife if the bot is in good condition.
+Если не ноль, боты будут наносить удары ножом по врагу, если бот в хорошем состоянии.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_think_fps
 
-Determines how many times per second the rest of bot AI is executed. Higher values will give smoother movement but will cause CPU waste, and may cause problems with dedicated servers that have more than 500 fps.
+Определяет, сколько раз в секунду выполняется мыслительная функция бота. Более высокие значения обеспечат более плавное движение, но могут вызвать проблемы на серверах с высоким FPS.
 
-| Property | Value |
-|----------|-------|
-| Min | `24` |
-| Max | `90` |
-| Default | `26` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `24.0` |
+| Макс | `90.0` |
+| По умолчанию | `26.0` |
 
 ### yb_think_fps_disable
 
-Allows completely disabling think FPS on Xash3D. It avoids laggy movement of bots when watching them in spectator mode.
+Позволяет полностью отключить think FPS на Xash3D. Это позволяет избежать лагов в движении ботов при наблюдении за ними в режиме наблюдателя.
 
-> **Note:** This CVAR goes into effect when new bots are added.
+> **Примечание:** Этот квар вступает в силу при добавлении новых ботов.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `0` |
 
 ### yb_threadpool_workers
 
-Maximum number of threads the bot will run to process some tasks. `-1` means half of CPU cores are used.
+Максимальное количество потоков, которые бот будет использовать для обработки задач. `-1` означает половину ядер процессора.
 
-| Property | Value |
-|----------|-------|
-| Min | `-1` |
-| Max | count of your CPU's threads |
-| Default | `-1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `-1` |
+| Макс | (кол-во ядер) |
+| По умолчанию | `-1` |
 
 ### yb_tkpunish
 
-If not zero, bots will punish teammates that attack the bot.
+Если не ноль, боты будут наказывать товарищей по команде, которые атакуют бота.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
-
-### yb_use_engine_pvs_check
-
-Use engine to check potential visibility of an enemy. It reduces the number of calls to engine functions, thus reducing CPU usage. The side effect is that bots can fire through obstacles more blatantly.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
 
 ### yb_user_follow_percent
 
-Determines the percentage of bots that will try to automatically follow the leader. Bots treat the bomb guy, VIP and human players as leaders.
+Определяет процент ботов, которые будут автоматически следовать за лидером. Боты относятся к носителям бомбы, VIP-игрокам и людям как к лидерам.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `100` |
-| Default | `20` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `100` |
+| По умолчанию | `20` |
 
 ### yb_user_max_followers
 
-Determines how many bots can respond to a human player on the `Follow Me` command and follow the human.
+Определяет, сколько ботов могут следовать за человеком, сказавшим команду "Следуй за мной".
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `16` |
-| Default | `1` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `16` |
+| По умолчанию | `1` |
 
 ### yb_walking_allowed
 
-If not zero, bots will use "shift" or walking when hearing a nearby enemy.
+Если не ноль, боты будут использовать "shift" или ходить, когда слышат врага поблизости.
 
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
-
-### yb_whose_your_daddy
-
-Enables or disables extra hard difficulty for bots. It zeroes out any reaction or surprise timers and allows bots to ignore FOV when searching for enemies. It also forces the bots to aim their weapon at the enemy almost immediately.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `0` |
+| Свойство | Значение |
+|----------|----------|
+| Мин | `0` |
+| Макс | `1` |
+| По умолчанию | `1` |
