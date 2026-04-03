@@ -1,7 +1,5 @@
-# Official YaPB Documentation
-[![Documentation Status](https://readthedocs.org/projects/yapb/badge/?version=latest)](https://yapb.readthedocs.io/en/latest/?badge=latest)
+# Yet Another POD-Bot Readme
 
-This is documentation for YaPB bot for the Counter-Strike game
+**YaPB** is an AI opponent for [Counter-Strike](https://store.steampowered.com/app/10/CounterStrike/) which allows you to play good old Counter-Strike without connecting to any server, or fill your server with AI-controlled players.
 
-* English: https://yapb.readthedocs.io/en/latest/
-* Russian: https://yapb.readthedocs.io/ru/latest/
+If you have time and interest you can contribute to documentation on our [GitHub repository](https://github.com/yapb/docs).
