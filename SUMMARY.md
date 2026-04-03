@@ -2,15 +2,15 @@
 
 * [Introduction](README.md)
 
-* [About]()
+* [About](about/README.md)
     * [Introduction](about/introduction.md)
     * [Credits](about/credits.md)
 
-* [Getting Started]()
+* [Getting Started](getting-started/README.md)
     * [Installation](getting-started/installation.md)
     * [Building from Source](getting-started/building.md)
 
-* [Configuration]()
+* [Configuration](configuring/README.md)
     * [Bot CVARs](configuring/cvars.md)
     * [Map-Specific Config](configuring/map-config.md)
     * [Custom Config](configuring/custom-config.md)
@@ -20,7 +20,7 @@
     * [Customization](configuring/customization.md)
     * [Bot Usage](configuring/botusage.md)
 
-* [Waypointing]()
+* [Waypointing](waypointing/README.md)
     * [Adding Nodes](waypointing/adding-nodes.md)
     * [Node Types](waypointing/node-types.md)
     * [Connections and Flags](waypointing/connections-and-flags.md)
