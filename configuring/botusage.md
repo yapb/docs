@@ -6,7 +6,7 @@
 
 Pressing the `=` key in game, a menu with the following options should appear on your screen:
 
-![YaPB user menu](images/main_menu.png)
+![YaPB user menu](../images/main_menu.png)
 
 1. **Control Bots** -- A menu that adds or removes bots from the game
 2. **Features** -- A menu that configures the type of weapons used by bots, opens the graph editor menu, toggles debug mode and controls bots commands
@@ -15,20 +15,20 @@ Pressing the `=` key in game, a menu with the following options should appear on
 
 ### Bots Control Menu
 
-![Bots Control Menu](images/bots_control_menu.png)
+![Bots Control Menu](../images/bots_control_menu.png)
 
 1. **Quick add bot** -- This does what it says. It quickly adds a Bot giving him a random name, team, difficulty and model. Difficulty will be chosen randomly between your `yb_difficulty_min`/`yb_difficulty_max` values specified in yapb.cfg
 2. **Add specific bot** -- Allows you to specify all things (except name) for adding a single Bot
 
-![Difficulty selection](images/bots_difficulty_level.png)
+![Difficulty selection](../images/bots_difficulty_level.png)
 
-![Personality selection](images/bots_personality_menu.png)
+![Personality selection](../images/bots_personality_menu.png)
 
-![Team selection](images/select_team_menu.png)
+![Team selection](../images/select_team_menu.png)
 
-![CT class selection](images/ct_class_select.png)
+![CT class selection](../images/ct_class_select.png)
 
-![T class selection](images/t_class_select.png)
+![T class selection](../images/t_class_select.png)
 
 3. **Remove random bot** -- Removes a random bot
 4. **Remove all bots** -- Removes all bots from the server
@@ -36,18 +36,18 @@ Pressing the `=` key in game, a menu with the following options should appear on
 
 ### Bots Features Menu
 
-![Bots Features Menu](images/bots_features_menu.png)
+![Bots Features Menu](../images/bots_features_menu.png)
 
 1. **Weapon mode menu** -- A menu that configures the type of weapons used by bots
 
-![Weapon Mode Menu](images/bots_weapon_mode.png)
+![Weapon Mode Menu](../images/bots_weapon_mode.png)
 
 2. **Graph editor** -- Opens the graph editor
 3. **Select personality** -- Adds a bot with the currently set difficulty with personality setting
 4. **Toggle debug mode** -- Enables or disables debug mode
 5. **Command menu** -- Opens the bot command menu
 
-![Bot Command Menu](images/bot_commandmenu.png)
+![Bot Command Menu](../images/bot_commandmenu.png)
 
 1. **Make double jump** -- Forces the nearest teammate bot to crouch next to you to make a double jump
 2. **Finish double jump** -- Releases the bot after the first command, it must get up and go about its business

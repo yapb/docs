@@ -4,7 +4,7 @@
 
 The **Radius** of a node is indicated by a blue polygon that goes out in all directions from the position of a node. The photo below was taken from above -- we are looking down onto a node, and you can see **the colour of a Radius is Blue**.
 
-![Node Radius](images/wayzone_radius.png)
+![Node Radius](../images/wayzone_radius.png)
 
 The Radius indicator is a great means to see how big the radius of a node actually is; it ends exactly where the corners end.
 
@@ -26,7 +26,7 @@ So these are areas where you will have to keep a watchful eye on your radius and
 
 In order to change the radius of a node, bring up the graph editor and select **8. Set Radius**. The following menu will appear:
 
-![Node Radius Menu](images/setradius_menu.png)
+![Node Radius Menu](../images/setradius_menu.png)
 
 Simply select an option by pressing the corresponding key, and the radius of the currently active node will be changed to the selected value. You will quickly get a feeling for these numbers if you play around with them a bit.
 
@@ -42,7 +42,7 @@ Nodes alone aren't sufficient to make bots move the way you want. They must be c
 
 You can select the automatic connection distance (AutoPath Max Distance, APMD) by bringing up the graph editor and selecting "7. Set Autopath Distance". The following sub-menu will appear:
 
-![Autopath Distance Menu](images/autopath_distance_menu.png)
+![Autopath Distance Menu](../images/autopath_distance_menu.png)
 
 Select the desired distance from this menu. After selecting a distance, connections up to that distance will be drawn automatically. Of course, you can also add and remove connections manually.
 
@@ -50,7 +50,7 @@ Select the desired distance from this menu. After selecting a distance, connecti
 
 The vast majority of all connections in a node set will be **bidirectional**. Obviously, these connections enable bots to walk both from point A to point B and back from point B to point A. **The colour of bidirectional paths is yellow**, as you can see in the picture below.
 
-![Bidirectional Path](images/bidirectional_path.png)
+![Bidirectional Path](../images/bidirectional_path.png)
 
 ### One-Way Connections
 
@@ -58,11 +58,11 @@ One-way connections enable bots to walk from point A to point B, but not vice ve
 
 In game, 1-way connections will be visible from 2 nodes, their start and their end node. In order to show you the direction of 1-way connection, it will be shown in different colours depending on from which perspective you view it. Let's say you have a 1-way connection from node 1 to node 2. In this case, when you are standing at node 1, you will see the outgoing 1-way connection displayed in white.
 
-![Outgoing Path](images/outgoing_path.png)
+![Outgoing Path](../images/outgoing_path.png)
 
 The picture below shows the same two nodes with the incoming connection (from left to right node). **The incoming 1-way connection is displayed in teal**.
 
-![Incoming Path](images/incoming_path.png)
+![Incoming Path](../images/incoming_path.png)
 
 > **Note:** If you created an outgoing path connection from node A to node B, it will be displayed in white. And when you get to node B, the path connection will turn teal like an incoming path connection.
 
@@ -74,7 +74,7 @@ The fact that 1-way connections are shown from both involved nodes is a great fe
 
 Now once again, this sounds more complicated than it actually is. **The Jump connection horizontal line is displayed in red (Outgoing Jump connection)**, viewed from the nodes where the bots will start their jump.
 
-![Jump Connection](images/jump_connection.png)
+![Jump Connection](../images/jump_connection.png)
 
 ---
 
@@ -88,7 +88,7 @@ Here's how it works. Let's pretend we wanted to delete the connection from the n
 
 > **Note:** This only works if you are standing near a node and aiming at another one! If you are standing in a nodeless area, you won't be able to use this function because it needs two selected nodes (The one where you are standing and the one you are aiming at).
 
-![Selected Node](images/selected_point.png)
+![Selected Node](../images/selected_point.png)
 
 ### Removing Path Connections
 
@@ -96,11 +96,11 @@ To delete a path connection, you must open the graph editor and select **4. Dele
 
 After deleting the path connection, you may notice that the outgoing path connection has been removed (from the node where you are standing to the node you selected) as you can see in the picture below:
 
-![Deleted Outgoing Path](images/deleted_outgoing_path.png)
+![Deleted Outgoing Path](../images/deleted_outgoing_path.png)
 
 Select **4. Delete path** again to delete the incoming path connection.
 
-![Fully Deleted Path](images/fully_deleted_path.png)
+![Fully Deleted Path](../images/fully_deleted_path.png)
 
 As you have already noticed, all path connections have been removed from the node you are standing on to the selected node.
 
@@ -108,7 +108,7 @@ As you have already noticed, all path connections have been removed from the nod
 
 To add a path connection, you must open the graph editor and select **3. Create path**. Then a menu should appear as shown in the picture below.
 
-![Path Directions Menu](images/path_directions_menu.png)
+![Path Directions Menu](../images/path_directions_menu.png)
 
 1. Select **1. Outgoing Path** to create an outgoing path connection from nearest to faced (or cached) node
 2. Select **2. Incoming Path** to create an incoming path connection from faced (or cached) to nearest node
@@ -133,4 +133,4 @@ YaPB has 9 flags for nodes, which are:
 | 8 | Crouch Down | A flag that causes bots to crouch when reaching this node |
 | 9 | Camp Point | A flag that makes the node as a camp point. If you add this flag, it opens the menu to choose the start and end direction of the bot's view when it's camping |
 
-![Node Flags Menu](images/node_flags_menu.png)
+![Node Flags Menu](../images/node_flags_menu.png)

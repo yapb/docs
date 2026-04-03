@@ -125,4 +125,4 @@ Node practice data shows index number of node and the damage value taken from it
 
 White arrows are pointing to your faced node (on which you point your crosshair). Yellow arrows are pointing to your cached node.
 
-![Graph Editor viewport](images/graph_editor_overview.png)
+![Graph Editor viewport](../images/graph_editor_overview.png)

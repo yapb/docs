@@ -4,13 +4,13 @@
 
 **Normal** nodes are the points you need in order to make bots walk through the map. They are used for navigation only and will not trigger any particular behaviour. You can add a Normal node by selecting `1. Normal` from the Node Type menu. **The colour of Normal nodes is green**, as you can see in the picture below.
 
-![Normal Node](images/normal_point.png)
+![Normal Node](../../images/normal_point.png)
 
 ## Terrorist Important Nodes
 
 This type of nodes can be navigated just as a Normal node by all bots, but it has one additional function. It marks strategically important points for a Terrorist team. Adding a **Terrorist Important** point in a room will tell Terrorist bots to go to the room and check it frequently. You can add this type of node by selecting `2. Terrorist Important` from the Node Type menu. **The colour of Terrorist Important nodes is green with red head**, as you can see in the picture below.
 
-![Terrorist Important Node](images/terrorist_important_point.png)
+![Terrorist Important Node](../images/terrorist_important_point.png)
 
 > **Important:** The use of Terrorist Important points depends on the map type! Wherever the Terrorist team is the "defending" team (i.e. on As_ Cs_ type maps), Terrorist Important points should be placed at key positions around the hostage area or VIP escape zone. For example, if the hostages are inside a building, Terrorist Important points should be added behind each entrance to the building. Doing so will make the Terrorists check all entrances frequently and guard them. Do not place Terrorist Important points far away on the other side of the map. After all, you don't want the Terrorists to abandon the hostages and rush aimlessly through the map, now, do you? With the VIP escape zone, the same strategy applies: Make Terrorists guard the key routes to the escape zone by using Terrorist Important nodes. You **DON'T** need to place Terrorist Important points directly at the hostages. Terrorists will check on hostages anyway. On maps where the Terrorist team is "offensive" (i.e. De_ and Es_ type maps), Terrorist Important nodes should not be overused. The "offensive" team will try to reach the map goal node anyway. The only useful function you can use important nodes for is to make particular routes more attractive for the bots. For example, if there is a longer and more complicated, but safer and more surprising route to the map goal, bots may tend to underuse it a little. In such cases, placing one or two Terrorist Important nodes along this route can help.
 
@@ -18,7 +18,7 @@ This type of nodes can be navigated just as a Normal node by all bots, but it ha
 
 The function of this node type is exactly the same as the Terrorist Important node described above. The only difference is that a **Counter-Terrorists Important** node obviously marks strategically important places for the Counter-Terrorist (CT) team. You can add this type of node by selecting `3. Counter-Terrorist Important` from the Node Type menu. **The colour of Counter-Terrorist Important nodes is green with blue head**, as you can see in the picture below.
 
-![Counter-Terrorist Important Node](images/counter_terrorist_important_point.png)
+![Counter-Terrorist Important Node](../images/counter_terrorist_important_point.png)
 
 > **Important:** As with the other team specific nodes, Counter-Terrorist Important nodes should also be placed according to the map type. On maps where the Counter-Terrorist team is forced to move out and reach a certain goal -- either hostages to rescue or a VIP escape zone to reach safely -- Counter-Terrorist Important points can be useful to make a particular route more attractive. You **DON'T** need to place Counter-Terrorist Important points near a map goal (hostages on CS_ maps, VIP escape zone(s) on As_ maps), Counter-Terrorist bots will go there anyway. It's the most important point for them, and adding several other important nodes right next to it doesn't yield any benefit. On maps where the Counter-Terrorist team is in a defensive role (i.e. on De_ maps and Es_ maps), place Counter-Terrorist Important points at key positions around the bomb/escape zone(s) in order to make Counter-Terrorist bots defend all possible routes to the Terrorists map goal.
 
@@ -26,7 +26,7 @@ The function of this node type is exactly the same as the Terrorist Important no
 
 **Ladder** nodes are only used for nodding ladders, as you possibly guessed. To enable your bots to use a ladder, simply walk up to the ladder until you get "stuck" on it (you will see your crosshair grow wider once you are on the ladder). Now place one Ladder node at the bottom of the ladder. Then climb up the ladder until you are almost completely over the edge. Place a second node here and make sure that the two ladder nodes are connected (this should have happened automatically if the Ladder nodes aren't too far away from each other; if not you can create a connection manually). That's all! You can add this type of node by selecting `1. Normal` from the Node Type menu -- it will automatically turn into a ladder node if you are standing on a ladder. Or choose `4. Block with hostage / Ladder` from the Node Type menu if it's a Hostage Rescue (CS_) scenario map so that bots don't miss the hostages when going up on ladders. **The colour of Ladder nodes is brown**, as you can see in the picture below.
 
-![Ladder Node](images/ladder_point.png)
+![Ladder Node](../images/ladder_point.png)
 
 ### General Hints for Ladder Nodes
 
@@ -44,17 +44,17 @@ A Counter-Terrorist bot that has succeeded in "activating" the hostages will det
 
 In the editor, rescue points will be displayed in bright white. Their radius is set to zero by default and shouldn't be changed. All bots can use this node type for Normal navigation as well. You can add this type of node by selecting `5. Rescue Zone` from the Node Type menu. **The colour of Rescue nodes is white**, as you can see in the picture below.
 
-![Hostage Rescue Node](images/hostage_rescue_point.png)
+![Hostage Rescue Node](../images/hostage_rescue_point.png)
 
 ## Camp Nodes
 
 As the name suggests, Camp nodes are used to mark good sniper spots. They can be navigated by all bots. However, whether a bot may camp there or not is determined by the flag you can add to the camp node. You can make Camp nodes team specific or leave them "open" to any team. The colour of Normal Camp nodes is cyan. Terrorist specific camp nodes have coral color, Counter-Terrorist specific is cornflower blue color, as you can see in the picture below.
 
-![Camp Points](images/camp_points.png)
+![Camp Points](../images/camp_points.png)
 
 Although there are two entries in the Node Type menu ("Camping" and "Camp end"), the Camp node is in fact only one point. However, it carries two "markers" that tell a camping bot where to look while camping. When you are camping yourself, you will monitor a certain area. If you wanted to define this area, you could describe it as an angle. This angle would be specified by two lines going out from your position: One that marks the left edge and another one for the right edge. The monitored area would be between these two lines. The mentioned "markers" fulfill exactly this function. They are displayed as more or less horizontal beams going out from the top of a Camp node. **The colour of Camp markers is red**, as you can see in the picture below.
 
-![Camp Directions](images/camp_directions.png)
+![Camp Directions](../images/camp_directions.png)
 
 When a bot approaches the depicted Camp node, it will turn to face the direction of the Camp start marker first. Then it will scan the area between this marker and the Camp end marker by changing every few seconds the direction it is facing from one to the other. An enemy moving outside the two markers may escape the bot's attention, unless it hears the enemy coming. In the picture above, both markers are pointing to the same height. However, you can also specify different heights for each marker. This is very useful for making bots monitor a ramp, a slope, a stairway or other uneven surfaces.
 
@@ -89,10 +89,10 @@ Now you may wonder how to determine the exact function of the Map Goal node. Don
 
 ### Examples of Goal Nodes
 
-![Hostage Goal Node (map cs_assault)](images/hostage_goal_point.png)
+![Hostage Goal Node (map cs_assault)](../images/hostage_goal_point.png)
 
-![VIP Escape Goal Node (map as_oilrig)](images/vip_goal_point.png)
+![VIP Escape Goal Node (map as_oilrig)](../images/vip_goal_point.png)
 
-![Bomb place Goal Node (map de_dust2)](images/bombplace_goal_point.png)
+![Bomb place Goal Node (map de_dust2)](../images/bombplace_goal_point.png)
 
-![Terrorists escape Goal Node (map es_trinity)](images/terrorists_escape_goal_point.png)
+![Terrorists escape Goal Node (map es_trinity)](../images/terrorists_escape_goal_point.png)

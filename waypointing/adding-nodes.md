@@ -2,11 +2,11 @@
 
 Adding a node is really easy. Just walk to the position where you want a node to be inserted, bring up your graph editor:
 
-![Graph Editor Menu (Page 1)](images/graph_editor_page1.png)
+![Graph Editor Menu (Page 1)](../images/graph_editor_page1.png)
 
 To add a node, simply select **5. Add node**. A new menu will appear, the **Node Type** menu. All node types described below can be added by using this menu.
 
-![Node Type Menu](images/node_type_menu.png)
+![Node Type Menu](../images/node_type_menu.png)
 
 Once you have selected a node type from the "Node Type" menu, you will hear a sound, and the selected node will appear in the map, at the exact position where you stood when you pressed the key.
 

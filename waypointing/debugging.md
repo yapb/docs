@@ -4,7 +4,7 @@
 
 To test the bots walkability to a specified node, you need to open the second page of the "Graph Editor" menu, and select **1. Debug Goal**. Then a menu should appear as shown in the picture below.
 
-![Debug Goal Menu](images/debug_goal_menu.png)
+![Debug Goal Menu](../images/debug_goal_menu.png)
 
 | Option | Description |
 |--------|-------------|
