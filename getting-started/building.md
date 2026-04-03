@@ -1,111 +1,111 @@
-# Building from Source
+# Сборка из исходного кода
 
-> **Note:** You need to build a 32-bit library, since Valve has dropped support for 64-bit HLDS.
+> **Примечание:** Вам нужно собрать 32-битную библиотеку, так как Valve прекратила поддержку 64-битного HLDS.
 
-## Installing the Windows Packages
+## Установка пакетов Windows
 
-1. Install the latest version of Visual Studio from <https://visualstudio.microsoft.com/>
-2. Launch the Visual Studio Installer, select the required Visual Studio edition and install all necessary components for C/C++ development
-3. Install the latest version of Git for Windows from <https://git-scm.com/download/windows/>
-4. Run the installer, and follow the installation instructions
-5. Install the latest version of Python from <https://www.python.org/downloads/windows/>
-6. Run the installer, and follow the installation instructions
-7. Install Meson and Ninja using pip, by entering the following command in your cmd or powershell window:
+1. Установите последнюю версию Visual Studio с <https://visualstudio.microsoft.com/>
+2. Запустите Visual Studio Installer, выберите требуемую редакцию Visual Studio и установите все необходимые компоненты для разработки на C/C++
+3. Установите последнюю версию Git для Windows с <https://git-scm.com/download/windows/>
+4. Запустите установщик и следуйте его указаниям
+5. Установите последнюю версию Python с <https://www.python.org/downloads/windows/>
+6. Запустите установщик и следуйте его указаниям
+7. Установите Meson и Ninja используя pip, введя следующую команду в окне командной строки или powershell:
 
    ```
    pip install meson ninja
    ```
 
-8. You're done!
+8. Готово!
 
-## Installing the Linux Packages
+## Установка пакетов Linux
 
-1. Install the latest version of GCC or Clang:
+1. Установите последнюю версиу GCC или Clang:
 
    ```bash
    sudo apt install gcc
-   # or
+   # или
    sudo apt install clang
    ```
 
-2. Install the latest version of Git:
+2. Установите последнюю версию Git:
 
    ```bash
    sudo apt install git
    ```
 
-3. Install the latest version of Python:
+3. Установите последнюю версию Python:
 
    ```bash
    sudo apt install python3
    ```
 
-4. Install the gcc-multilib and g++-multilib packages:
+4. Установите пакеты gcc-multilib и g++-multilib:
 
    ```bash
    sudo apt install gcc-multilib g++-multilib
    ```
 
-5. Install Meson and Ninja using pip:
+5. Установите Meson и Ninja используя pip:
 
    ```bash
    pip install meson ninja
    ```
 
-6. You're done!
+6. Готово!
 
-## Building on Windows
+## Сборка на Windows
 
-1. Clone the YaPB repository:
+1. Клонируйте репозиторий YaPB:
 
    ```powershell
    git clone --recursive https://github.com/yapb/yapb
    ```
 
-2. Enter the YaPB project directory:
+2. Войдите в папку с проектом YaPB:
 
    ```powershell
    cd yapb
    ```
 
-3. Configure the project using Meson:
+3. Сконфигурируйте проект используя Meson:
 
    ```powershell
    meson setup build
    ```
 
-4. Compile the DLL library:
+4. Скомпилируйте DLL библиотеку:
 
    ```powershell
    meson compile -C build
    ```
 
-5. You're done! The compiled library is located at `build/yapb.dll`
+5. Готово! Скомпилированная библиотека находится в `build/yapb.dll`
 
-## Building on Linux
+## Сборка на Linux
 
-1. Clone the YaPB repository:
+1. Клонируйте репозиторий YaPB:
 
    ```bash
    git clone --recursive https://github.com/yapb/yapb
    ```
 
-2. Enter the YaPB project directory:
+2. Войдите в папку с проектом YaPB:
 
    ```bash
    cd yapb
    ```
 
-3. Configure the project using Meson:
+3. Сконфигурируйте проект используя Meson:
 
    ```bash
    meson setup build
    ```
 
-4. Compile the .so library:
+4. Скомпилируйте .so библиотеку:
 
    ```bash
    meson compile -C build
    ```
 
-5. You're done! The compiled library is located at `build/yapb.so`
+5. Готово! Скомпилированная библиотека находится в `build/yapb.so`

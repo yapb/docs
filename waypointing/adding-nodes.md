@@ -1,15 +1,15 @@
-# Adding Nodes
+# Добавление узлов
 
-Adding a node is really easy. Just walk to the position where you want a node to be inserted, bring up your graph editor:
+Добавить узел очень просто. Просто подойдите к месту, куда вы хотите поставить узел, затем откройте меню редактирования графов:
 
-![Graph Editor Menu (Page 1)](images/graph_editor_page1.png)
+![Меню редактора графов (Страница 1)](images/graph_editor_page1.png)
 
-To add a node, simply select **5. Add node**. A new menu will appear, the **Node Type** menu. All node types described below can be added by using this menu.
+Чтобы добавить узел, просто выберите **5. Добавить узел**. Появится новое меню — **Меню типов узлов**. Все типы узлов, описанные ниже, можно добавить с помощью этого меню.
 
-![Node Type Menu](images/node_type_menu.png)
+![Меню типов узлов](images/node_type_menu.png)
 
-Once you have selected a node type from the "Node Type" menu, you will hear a sound, and the selected node will appear in the map, at the exact position where you stood when you pressed the key.
+После того, как вы выбрали тип узла в меню типов узлов, вы услышите звук, и выбранный узел появится на карте в том месте, где вы стояли, когда нажали кнопку.
 
-> **Note:** If you are standing while selecting a node, a standing node will be inserted. All bots will run or walk towards this node normally. If you want bots to crouch when approaching a particular position, crouch down when inserting the node. You will notice that the node you just added is only about half as high as normally. As you inserted it when you were crouched down, it automatically carries a **Crouch** flag (see: [Node Types](node-types.md)). Bots will now crouch automatically when trying to reach this node.
+> **Примечание:** Если вы стоите при выборе узла, будет поставлен стоячий узел. Все боты будут бежать или идти к этому узлу как обычно. Если вы хотите, чтобы боты приседали при приближении к определённой позиции, присядьте во время установки узла. Вы заметите, что только что добавленный узел примерно вдвое ниже, чем обычно. Когда вы поставили его, сидя на корточках, на нём автоматически отобразится флаг **Crouch** (см.: [Типы узлов](node-types.md)). Боты теперь будут автоматически приседать при попытке достичь этого узла.
 
-Now that you know the basic method used to add a node, let's have a closer look at the node types that exist.
+Теперь, когда вы знаете основной способ добавления узла, давайте более подробно рассмотрим существующие типы узлов.

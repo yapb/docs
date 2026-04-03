@@ -1,313 +1,313 @@
-# Bot Usage
+# Использование ботов
 
-## The YaPB User Menu
+## Меню пользователя YaPB
 
-### Main Menu
+### Главное меню
 
-Pressing the `=` key in game, a menu with the following options should appear on your screen:
+При нажатии на клавишу `=` в игре, на экране появится меню со следующими опциями:
 
-![YaPB user menu](images/main_menu.png)
+![Меню пользователя YaPB](images/main_menu.png)
 
-1. **Control Bots** -- A menu that adds or removes bots from the game
-2. **Features** -- A menu that configures the type of weapons used by bots, opens the graph editor menu, toggles debug mode and controls bots commands
-3. **Fill Server** -- A menu that fills the server with bots with the specified parameters
-4. **End Round** -- Kills all bots for the end of round
+1. **Управление ботами** -- Меню, которое добавляет или убирает ботов из игры
+2. **Функции** -- Меню, которое содержит настройки типов оружия, используемого ботами, редактор вэйпоинтов, переключатель режима отладки и управления командами ботов
+3. **Заполнить сервер** -- Меню, которое задаёт параметры ботов для заполнения сервера
+4. **Закончить раунд** -- Убивает всех ботов для окончания раунда
 
-### Bots Control Menu
+### Меню управления ботами
 
-![Bots Control Menu](images/bots_control_menu.png)
+![Меню управления ботами](images/bots_control_menu.png)
 
-1. **Quick add bot** -- This does what it says. It quickly adds a Bot giving him a random name, team, difficulty and model. Difficulty will be chosen randomly between your `yb_difficulty_min`/`yb_difficulty_max` values specified in yapb.cfg
-2. **Add specific bot** -- Allows you to specify all things (except name) for adding a single Bot
+1. **Быстро добавить бота** -- Это делает то, что говорит. Оно быстро добавляет бота, давая ему случайное имя, команду, сложность и модель. Сложность будет выбираться случайно между вашими значениями `yb_difficulty_min`/`yb_difficulty_max`, указанными в yapb.cfg
+2. **Добавить особого бота** -- Позволяет вам указать все параметры (кроме имени) для добавления одного бота
 
-![Difficulty selection](images/bots_difficulty_level.png)
+![Выбор сложности](images/bots_difficulty_level.png)
 
-![Personality selection](images/bots_personality_menu.png)
+![Выбор личности](images/bots_personality_menu.png)
 
-![Team selection](images/select_team_menu.png)
+![Выбор команды](images/select_team_menu.png)
 
-![CT class selection](images/ct_class_select.png)
+![Выбор класса CT](images/ct_class_select.png)
 
-![T class selection](images/t_class_select.png)
+![Выбор класса T](images/t_class_select.png)
 
-3. **Remove random bot** -- Removes a random bot
-4. **Remove all bots** -- Removes all bots from the server
-5. **Bot removal menu** -- A menu that allows you to remove a bot from the server specified in the list
+3. **Убрать случайного бота** -- Убирает случайного бота
+4. **Убрать всех ботов** -- Убирает всех ботов с сервера
+5. **Меню убирания ботов** -- Меню, которое позволяет вам убрать бота с сервера, указанного в списке
 
-### Bots Features Menu
+### Меню функций ботов
 
-![Bots Features Menu](images/bots_features_menu.png)
+![Меню функций ботов](images/bots_features_menu.png)
 
-1. **Weapon mode menu** -- A menu that configures the type of weapons used by bots
+1. **Меню выбора режима оружия** -- Меню, которое настраивает тип используемого ботами оружия
 
-![Weapon Mode Menu](images/bots_weapon_mode.png)
+![Меню режима оружия ботов](images/bots_weapon_mode.png)
 
-2. **Graph editor** -- Opens the graph editor
-3. **Select personality** -- Adds a bot with the currently set difficulty with personality setting
-4. **Toggle debug mode** -- Enables or disables debug mode
-5. **Command menu** -- Opens the bot command menu
+2. **Меню вэйпоинтов** -- Открывает меню редактора вэйпоинтов
+3. **Выбрать личность бота** -- Добавляет бота с текущей заданной сложностью с настройкой личности
+4. **Переключить режим отладки** -- Включает или выключает режим отладки
+5. **Меню команд бота** -- Открывает меню команд бота
 
-![Bot Command Menu](images/bot_commandmenu.png)
+![Меню команд бота](images/bot_commandmenu.png)
 
-1. **Make double jump** -- Forces the nearest teammate bot to crouch next to you to make a double jump
-2. **Finish double jump** -- Releases the bot after the first command, it must get up and go about its business
-3. **Drop the C4 bomb** -- Forces the bot carrying the bomb to drop it at you
-4. **Drop the weapon** -- Makes the teammate bot throw a weapon at you
+1. **Сделать двойной прыжок** -- Заставляет ближайшего бота тиммейта присесть рядом с вами, чтобы сделать двойной прыжок
+2. **Закончить двойной прыжок** -- Отпускает бота после первой команды, он должен встать и идти по своим делам
+3. **Скинуть бомбу C4** -- Заставляет бота, несущего бомбу, бросить её вам
+4. **Скинуть оружие** -- Заставляет бота тиммейта бросить вам оружие
 
-> **Note:** Bot will only throw a weapon at you when it has a primary weapon and 2000 or more dollars in the account.
+> **Примечание:** Бот будет бросать вам оружие только тогда, когда у него есть основное оружие и 2000 или более долларов на счету.
 
 ---
 
-## Console Commands
+## Консольные команды
 
-The following main YaPB commands are available:
+Доступны следующие основные команды YaPB:
 
-| Command | Description |
-|---------|-------------|
-| `yb add` | Adds specific bot into the game |
-| `yb kick` | Kicks off the random or specified bot from the game |
-| `yb removebots` | Kicks all the bots from the game. Also available via alias `yb kickall` |
-| `yb kill` | Kills the specified team or all the bots |
-| `yb fill` | Fills the server (add bots) with specified parameters |
-| `yb vote` | Forces all the bots to vote to specified map |
-| `yb weapons` | Sets the bots weapon mode to use |
-| `yb menu` | Opens the main bot menu |
-| `yb version` | Displays version information about bot build |
-| `yb list` | Lists the bots currently playing on server |
-| `yb cvars` | Displays all the CVARs with their descriptions |
-| `yb graph` | Handles graph operations |
-| `yb show_custom` | Shows the current values from custom.cfg |
-| `yb exec` | Executes a client command on bot entity |
+| Команда | Описание |
+|---------|----------|
+| `yb add` | Добавляет заданного бота в игру |
+| `yb kick` | Убирает случайного или указанного бота из игры |
+| `yb removebots` | Убирает всех ботов из игры. Также доступно через алиас `yb kickall` |
+| `yb kill` | Убивает указанную команду или всех ботов |
+| `yb fill` | Заполняет сервер (добавляет ботов) с заданными параметрами |
+| `yb vote` | Заставляет всех ботов голосовать за указанную карту |
+| `yb weapons` | Задаёт режим используемого ботами оружия |
+| `yb menu` | Открывает главное меню бота |
+| `yb version` | Показывает информацию о версии сборки бота |
+| `yb list` | Показывает список текущих ботов, играющих на сервере |
+| `yb cvars` | Показывает все квары с их описаниями |
+| `yb graph` | Управляет операциями графов |
+| `yb show_custom` | Показывает текущие значения из custom.cfg |
+| `yb exec` | Выполняет клиентскую команду на стороне бота |
 
-To get help for all commands such as arguments, aliases, etc, type in the console `yb help`.
+Чтобы получить помощь по всем командам, такую как аргументы, алиасы и т.д., напишите в консоли `yb help`.
 
-If you want to get help for a specified command, for example `yb add`, type in the console `yb help add`.
+Если вы хотите получить помощь по указанной команде, например `yb add`, напишите в консоли `yb help add`.
 
 ### yb add
 
-To add a specific bot to the game, with nickname: John Smith, Difficulty: Average, Personality: Careful, Team: Counter-Terrorists, Team Class: SAS, you should type in console:
+Чтобы добавить заданного бота в игру, с ником: John Smith, Сложность: Обычная, Личность: Осторожная, Команда: Контр-Террористы, Класс команды: SAS, вы должны написать в консоли:
 
 ```
 yb add 1 2 2 3 "John Smith"
 ```
 
-#### Arguments
+#### Аргументы
 
-**Difficulties:**
+**Сложности:**
 
-| Value | Difficulty |
-|-------|-----------|
-| `0` | Newbie |
-| `1` | Average |
-| `2` | Normal |
-| `3` | Professional |
-| `4` | Godlike |
+| Значение | Сложность |
+|----------|-----------|
+| `0` | Новичок |
+| `1` | Обычный |
+| `2` | Средний |
+| `3` | Профессионал |
+| `4` | Бог |
 
-**Personalities:**
+**Личности:**
 
-| Value | Personality |
-|-------|------------|
-| `0` | Normal |
-| `1` | Aggressive (rusher) |
-| `2` | Careful |
+| Значение | Личность |
+|----------|----------|
+| `0` | Нормальная |
+| `1` | Агрессивная |
+| `2` | Осторожная |
 
-**Teams:**
+**Команды:**
 
-| Value | Team |
-|-------|------|
-| `0` | Random |
-| `1` | Terrorists |
-| `2` | Counter-Terrorists |
+| Значение | Команда |
+|----------|----------|
+| `0` | Случайная |
+| `1` | Террористы |
+| `2` | Контр-Террористы |
 
-**Team classes:**
+**Классы команд:**
 
-Terrorists:
+Террористы:
 
-| Value | Class |
-|-------|-------|
-| `0` | Random |
-| `1` | Phoenix Connexion |
-| `2` | Elite Crew |
-| `3` | Arctic Avengers |
-| `4` | Guerilla Warfare |
-| `5` | Midwest Militia **(Condition Zero only!)** |
+| Значение | Класс |
+|----------|-------|
+| `0` | Случайный |
+| `1` | Подразделение Феникс |
+| `2` | Элитное подразделение |
+| `3` | Арктические мстители |
+| `4` | Партизаны |
+| `5` | Ополченцы среднего запада **(Только для Condition Zero!)** |
 
-Counter-Terrorists:
+Контр-Террористы:
 
-| Value | Class |
-|-------|-------|
-| `0` | Random |
+| Значение | Класс |
+|----------|-------|
+| `0` | Случайный |
 | `1` | Seal Team 6 |
 | `2` | GSG-9 |
 | `3` | SAS |
 | `4` | GIGN |
-| `5` | Spetsnaz **(Condition Zero only!)** |
+| `5` | Спецназ **(Только для Condition Zero!)** |
 
-Correct format for the `yb add` command is:
+Корректный формат для команды `yb add`:
 
 ```
-yb add [difficulty] [personality] [team] [model] [name]
+yb add [сложность] [личность] [команда] [модель] [имя]
 ```
 
-All bot values are selected by numbers (except the bot name).
+Все значения ботов выбираются цифрами (кроме имени).
 
 ### yb kick
 
-Type in console `yb kick` command to remove the random bot.
+Напишите в консоли команду `yb kick`, чтобы убрать случайного бота.
 
-If you want to remove the bot from the specified team, type in the console `yb kick t` to kick a bot from Terrorists team, and `yb kick ct` to kick a bot from Counter-Terrorists team.
+Если вы хотите убрать бота из конкретной команды, вы должны написать `yb kick t`, чтобы убрать бота с команды Террористов, и `yb kick ct`, чтобы убрать бота с команды Контр-Террористов.
 
 ### yb removebots
 
-You can also use the alias `yb kickall` to remove all bots.
+Вы также можете использовать алиас `yb kickall`, чтобы убрать всех ботов.
 
-If you want to remove bots instantly, add the `instant` argument to this command.
+Если вы хотите убрать ботов мгновенно, добавьте аргумент `instant` к этой команде.
 
-Example: `yb kickall instant`
+Пример: `yb kickall instant`
 
 ### yb kill
 
-The `yb kill` command kills all the bots. To kill a specific team, such as terrorists, you should type in console `yb kill t` command. For Counter-Terrorists the command is `yb kill ct`.
+Команда `yb kill` убивает всех ботов. Чтобы убить конкретную команду, такую как террористы, вы должны написать в консоль `yb kill t`. Для Контр-Террористов команда `yb kill ct`.
 
-The `silent` argument disables the "All bots died..." message in the console. You should enter `yb kill silent` in console, to kill bots without that message.
+Аргумент `silent` отключает сообщение "Все боты убиты..." в консоли. Вы должны ввести в консоль `yb kill silent`, чтобы убить ботов без этого сообщения.
 
 ### yb fill
 
-To fill the server with random bots type in console `yb fill 0`.
+Чтобы заполнить сервер случайными ботами, напишите в консоль `yb fill 0`.
 
-If you want to fill the server with specific bots, for example: Team: Terrorists, Count: 5, Difficulty: Normal, Personality: Aggressive, you should type in console the following command:
+Если вы хотите заполнить сервер определёнными ботами, например: Команда: Террористы, Количество: 5, Сложность: Средняя, Личность: Агрессивная, вы должны написать в консоли следующую команду:
 
 ```
 yb fill 1 5 2 1
 ```
 
-#### Arguments
+#### Аргументы
 
-**Teams:**
+**Команды:**
 
-| Value | Team |
-|-------|------|
-| `0` | Both teams |
-| `1` | Terrorists only |
-| `2` | Counter-Terrorists only |
+| Значение | Команда |
+|----------|----------|
+| `0` | Обе команды |
+| `1` | Только террористы |
+| `2` | Только контр-террористы |
 
-**Difficulties:**
+**Сложности:**
 
-| Value | Difficulty |
-|-------|-----------|
-| `0` | Newbie |
-| `1` | Average |
-| `2` | Normal |
-| `3` | Professional |
-| `4` | Godlike |
+| Значение | Сложность |
+|----------|-----------|
+| `0` | Новичок |
+| `1` | Обычный |
+| `2` | Средний |
+| `3` | Профессионал |
+| `4` | Бог |
 
-**Personalities:**
+**Личности:**
 
-| Value | Personality |
-|-------|------------|
-| `0` | Normal |
-| `1` | Aggressive (rusher) |
-| `2` | Careful |
+| Значение | Личность |
+|----------|----------|
+| `0` | Нормальная |
+| `1` | Агрессивная |
+| `2` | Осторожная |
 
-Don't enter the bot personality value if you want bots with random personalities.
+Не вводите значение личности бота, если вы хотите ботов со случайными личностями.
 
-Correct format for the `yb fill` command is:
+Корректный формат для команды `yb fill`:
 
 ```
-yb fill [team] [count] [difficulty] [personality]
+yb fill [команда] [количество] [сложность] [личность]
 ```
 
 ### yb weapons
 
-To force the bot to use only a certain type of weapon, for example, shotguns, you should type in console the `yb weapons shotgun` command.
+Чтобы заставить бота использовать определённый вид оружия, например, дробовики, вы должны написать в консоль команду `yb weapons shotgun`.
 
-Allowed values: `knife|pistol|shotgun|smg|rifle|sniper|standard`.
+Допустимые значения: `knife|pistol|shotgun|smg|rifle|sniper|standard`.
 
-Standard means that bots will use all weapons.
+Standard означает, что боты будут использовать все виды оружия.
 
 ### yb cvars
 
-This command lists all CVARs with their descriptions.
+Эта команда выводит список всех кваров с их описаниями.
 
-- To save all CVARs you configured to config, add the `save` argument to this command
-- You can also save a map-specific config by using the `save_map` argument to save the current values of all CVARs to `addons/yapb/conf/maps/map_name.cfg`
+- Чтобы сохранить все настроенные квары в конфиг, добавьте аргумент `save` к этой команде
+- Вы также можете сохранить конфиг для конкретной карты, используя аргумент `save_map` для сохранения текущих значений всех кваров в файл `addons/yapb/conf/maps/map_name.cfg`
 
-Example: `yb cvars save`
+Пример: `yb cvars save`
 
-You can also narrow your search by entering a word as an argument, instead of looking through a list of all CVARs.
+Также вы можете сузить свой поиск, введя слово как аргумент, вместо просмотра списка со всеми кварами.
 
-To restore the default values of all bot CVARs, type `yb cvars defaults` in console.
+Чтобы восстановить стандартные значения всех кваров бота, введите в консоль `yb cvars defaults`.
 
 ### yb exec
 
-This command allows you to execute a command from a bot entity.
+Эта команда позволяет вам выполнить команду со стороны бота.
 
-Valid usage is:
+Допустимое использование:
 
 ```
-yb exec [user_id] [command]
+yb exec [идентификатор] [команда]
 ```
 
-Where `[user_id]` is the bot's ID, which you can find by entering the `yb list` command in the console.
+Где `[идентификатор]` — это идентификатор бота, который вы можете найти, введя команду `yb list` в консоли.
 
 ---
 
-## Adding Bots to the Game
+## Добавление ботов в игру
 
-- Select `1. Quick add bot` from the bot control menu to add a bot with random stats (name, difficulty, personality, etc.)
-- Select `2. Add specific bot` from the bot control menu to add a bot with manually specified stats
+- Выберите `1. Быстро добавить бота` в меню управления ботами, чтобы добавить бота со случайной статистикой (имя, сложность, личность и т.д.)
+- Выберите `2. Добавить особого бота` в меню управления ботами, чтобы добавить бота с вручную заданной статистикой
 
-Or type in console `yb_quota x` where X is the amount of bots to add.
-
----
-
-## Selecting the Bot Language
-
-You must open the file `yapb.cfg` in the folder `addons/yapb/conf` and change the value of `yb_language` CVAR to the next available one.
-
-1. `en` -- English Language
-2. `ru` -- Russian Language
-3. `de` -- Deutsch Language
-
-For example, write in the config `yb_language ru` for Russian Language.
+Или напишите в консоли `yb_quota x`, где X — это количество добавляемых ботов.
 
 ---
 
-## Bot Management on a Dedicated Server
+## Выбор языка бота
 
-To have access to the bot's menus and commands, you need to specify a password and a key from which the password will be read in a server console.
+Вы должны открыть файл `yapb.cfg` в папке `addons/yapb/conf` и изменить значение квара `yb_language` на следующее доступное:
 
-To specify a password, enter in the console the following CVAR:
+1. `en` -- Английский язык
+2. `ru` -- Русский язык
+3. `de` -- Немецкий язык
+
+Например, напишите в конфиге `yb_language ru` для русского языка.
+
+---
+
+## Управление ботами на выделенном сервере
+
+Чтобы иметь доступ к командам и меню бота, вам нужно в консоли сервера указать пароль и ключ, откуда будет считываться пароль.
+
+Чтобы указать пароль, введите в консоли следующий квар:
 
 ```
 yb_password botpassword
 ```
 
-Where `botpassword` is the password you specified.
+Где `botpassword` — это указанный вами пароль.
 
-To specify a key, enter in the console the following CVAR:
+Чтобы указать ключ, введите в консоли следующий квар:
 
 ```
 yb_password_key _ybpw
 ```
 
-Where `_ybpw` is the key you specified.
+Где `_ybpw` — это указанный вами ключ.
 
-Then, in a client console, enter the following command to have access to the commands and menus of the bot:
+Затем в консоли клиента вы должны ввести следующую команду, чтобы иметь доступ к командам и меню бота:
 
 ```
 setinfo _ybpw botpassword
 ```
 
-To have access to graph commands, you need to enter in the console the following command:
+Чтобы иметь доступ к graph командам, вам нужно ввести в консоль следующую команду:
 
 ```
 yb g acquire_editor
 ```
 
-Make sure that no one has entered this command before you, who has the password from the bot. Otherwise, you won't be able to access graph commands until that player removes graph editing rights.
+Убедитесь, что никто не вводил эту команду ранее, у кого есть пароль от бота. Иначе вы не сможете иметь доступ к graph командам, пока игрок не снимет с себя права на редактирование графов.
 
-To revoke the rights to edit graphs, you must enter in the console the following command:
+Чтобы снять права на редактирование графов, вы должны ввести в консоль следующую команду:
 
 ```
 yb g release_editor

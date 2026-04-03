@@ -1,98 +1,98 @@
-# Node Types
+# Типы узлов
 
-## Normal Nodes
+## Обычные узлы
 
-**Normal** nodes are the points you need in order to make bots walk through the map. They are used for navigation only and will not trigger any particular behaviour. You can add a Normal node by selecting `1. Normal` from the Node Type menu. **The colour of Normal nodes is green**, as you can see in the picture below.
+**Обычные** узлы — это точки, которые вам нужны, чтобы заставить ботов перемещаться по карте. Они используются только для навигации и не вызывают какого-либо особого поведения. Вы можете добавить обычный узел, выбрав `1. Обычный` в меню типов узлов. **Цвет обычных узлов зелёный**, как вы можете видеть на картинке ниже.
 
-![Normal Node](images/normal_point.png)
+![Обычный узел](images/normal_point.png)
 
-## Terrorist Important Nodes
+## Узлы, важные для террористов
 
-This type of nodes can be navigated just as a Normal node by all bots, but it has one additional function. It marks strategically important points for a Terrorist team. Adding a **Terrorist Important** point in a room will tell Terrorist bots to go to the room and check it frequently. You can add this type of node by selecting `2. Terrorist Important` from the Node Type menu. **The colour of Terrorist Important nodes is green with red head**, as you can see in the picture below.
+Этот тип узлов может использоваться всеми ботами так же, как и обычный узел, но имеет одну дополнительную функцию. Он отмечает стратегически важные точки для команды террористов. Добавление **важной для террористов** точки в комнате будет указывать ботам-террористам, чтобы они заходили в комнату и часто её проверяли. Вы можете добавить этот тип узла, выбрав `2. Важный для террористов` в меню типов узлов. **Цвет узлов, важных для террористов, — зелёный с красной головкой**, как вы можете видеть на картинке ниже.
 
-![Terrorist Important Node](images/terrorist_important_point.png)
+![Узел важный для террористов](images/terrorist_important_point.png)
 
-> **Important:** The use of Terrorist Important points depends on the map type! Wherever the Terrorist team is the "defending" team (i.e. on As_ Cs_ type maps), Terrorist Important points should be placed at key positions around the hostage area or VIP escape zone. For example, if the hostages are inside a building, Terrorist Important points should be added behind each entrance to the building. Doing so will make the Terrorists check all entrances frequently and guard them. Do not place Terrorist Important points far away on the other side of the map. After all, you don't want the Terrorists to abandon the hostages and rush aimlessly through the map, now, do you? With the VIP escape zone, the same strategy applies: Make Terrorists guard the key routes to the escape zone by using Terrorist Important nodes. You **DON'T** need to place Terrorist Important points directly at the hostages. Terrorists will check on hostages anyway. On maps where the Terrorist team is "offensive" (i.e. De_ and Es_ type maps), Terrorist Important nodes should not be overused. The "offensive" team will try to reach the map goal node anyway. The only useful function you can use important nodes for is to make particular routes more attractive for the bots. For example, if there is a longer and more complicated, but safer and more surprising route to the map goal, bots may tend to underuse it a little. In such cases, placing one or two Terrorist Important nodes along this route can help.
+> **Важно:** Использование точек, важных для террористов, зависит от типа карты! Везде, где команда террористов является "обороняющейся" (например, на картах типа As_, Cs_), важные для террористов точки должны быть размещены на ключевых позициях вокруг зоны заложников или зоны побега VIP. Например, если заложники находятся внутри здания, важные для террористов точки должны быть добавлены за каждым входом в здание. Это заставит террористов часто проверять все входы и охранять их. Не размещайте важные для террористов точки далеко на другой стороне карты. В конце концов, вы же не хотите, чтобы террористы бросили заложников и бесцельно мчались по карте, не так ли? С зоной побега VIP применяется та же стратегия: заставить террористов охранять ключевые маршруты к зоне побега, используя важные для террористов точки. Вам **НЕ** нужно ставить важные для террористов точки прямо на заложников. В любом случае террористы будут проверять заложников. На картах, где команда террористов является "наступательной" (например, карты типа De_ и Es_), не следует злоупотреблять важными для террористов узлами. "Наступательная" команда в любом случае попытается достичь целевого узла на карте. Единственная полезная функция, для которой вы можете использовать важные узлы, — это сделать определённые маршруты более привлекательными для ботов. Например, если существует более длинный и более сложный, но более безопасный и более неожиданный маршрут к цели на карте, боты могут его немного недооценивать. В таких случаях может помочь размещение одного или двух важных для террористов узлов на этом маршруте.
 
-## Counter-Terrorist Important Nodes
+## Узлы, важные для контр-террористов
 
-The function of this node type is exactly the same as the Terrorist Important node described above. The only difference is that a **Counter-Terrorists Important** node obviously marks strategically important places for the Counter-Terrorist (CT) team. You can add this type of node by selecting `3. Counter-Terrorist Important` from the Node Type menu. **The colour of Counter-Terrorist Important nodes is green with blue head**, as you can see in the picture below.
+Функция этого типа узла точно такая же, как и у важного для террористов узла, описанного выше. Единственное отличие состоит в том, что **важный для контр-террористов** узел отмечает стратегически важные места для команды контр-террористов (CT). Вы можете добавить этот тип узла, выбрав `3. Важный для контр-террористов` в меню типов узлов. **Цвет узлов, важных для контр-террористов, — зелёный с синей головкой**, как вы можете видеть на картинке ниже.
 
-![Counter-Terrorist Important Node](images/counter_terrorist_important_point.png)
+![Узел важный для контр-террористов](images/counter_terrorist_important_point.png)
 
-> **Important:** As with the other team specific nodes, Counter-Terrorist Important nodes should also be placed according to the map type. On maps where the Counter-Terrorist team is forced to move out and reach a certain goal -- either hostages to rescue or a VIP escape zone to reach safely -- Counter-Terrorist Important points can be useful to make a particular route more attractive. You **DON'T** need to place Counter-Terrorist Important points near a map goal (hostages on CS_ maps, VIP escape zone(s) on As_ maps), Counter-Terrorist bots will go there anyway. It's the most important point for them, and adding several other important nodes right next to it doesn't yield any benefit. On maps where the Counter-Terrorist team is in a defensive role (i.e. on De_ maps and Es_ maps), place Counter-Terrorist Important points at key positions around the bomb/escape zone(s) in order to make Counter-Terrorist bots defend all possible routes to the Terrorists map goal.
+> **Важно:** Как и в случае с другими узлами для конкретной команды, важные для контр-террористов узлы также должны быть размещены в соответствии с типом карты. На картах, где команда контр-террористов вынуждена выдвинуться и достичь определённой цели — либо заложников, которых нужно спасти, либо зоны побега VIP, чтобы добраться до неё безопасно, — важные для контр-террористов точки могут быть полезны для того, чтобы сделать конкретный маршрут более привлекательным. Вам **НЕ** нужно размещать важные для контр-террористов точки возле цели на карте (заложники на картах CS_, зона(ы) побега VIP на картах As_), туда всё равно пойдут боты контр-террористы. Для них это самые важные точки, и добавление нескольких других важных узлов рядом с ними не принесёт никакой пользы. На картах, где команда контр-террористов играет оборонительную роль (например, на картах De_ и Es_), поместите важные для контр-террористов точки на ключевых позициях вокруг места закладки бомбы/зоны побега, чтобы заставить ботов контр-террористов защищать все возможные пути к цели террористов.
 
-## Ladder Nodes
+## Лестничные узлы
 
-**Ladder** nodes are only used for nodding ladders, as you possibly guessed. To enable your bots to use a ladder, simply walk up to the ladder until you get "stuck" on it (you will see your crosshair grow wider once you are on the ladder). Now place one Ladder node at the bottom of the ladder. Then climb up the ladder until you are almost completely over the edge. Place a second node here and make sure that the two ladder nodes are connected (this should have happened automatically if the Ladder nodes aren't too far away from each other; if not you can create a connection manually). That's all! You can add this type of node by selecting `1. Normal` from the Node Type menu -- it will automatically turn into a ladder node if you are standing on a ladder. Or choose `4. Block with hostage / Ladder` from the Node Type menu if it's a Hostage Rescue (CS_) scenario map so that bots don't miss the hostages when going up on ladders. **The colour of Ladder nodes is brown**, as you can see in the picture below.
+**Лестничные** узлы используются только для лестниц, как вы, возможно, догадались. Чтобы позволить вашим ботам использовать лестницу, просто подойдите к лестнице, пока вы не зацепитесь за неё (вы увидите, как ваш прицел становится шире, когда вы поднимаетесь по лестнице). Теперь поместите один лестничный узел внизу лестницы. Затем поднимайтесь по лестнице, пока почти полностью не дойдёте до края. Разместите здесь второй узел и убедитесь, что два лестничных узла соединены (это должно было произойти автоматически, если лестничные узлы не слишком далеко друг от друга; в противном случае вы можете создать соединение вручную). Вот и всё! Вы можете добавить этот тип узла, выбрав `1. Обычный` в меню типов узлов — он автоматически превратится в лестничный узел, если вы стоите на лестнице. Или выберите `4. Блокировать с заложником / Лестница` в меню типов узлов, если это карта сценария спасения заложников (CS_), чтобы боты не потеряли заложников, поднимаясь по лестнице. **Цвет лестничных узлов — коричневый**, как вы можете видеть на картинке ниже.
 
-![Ladder Node](images/ladder_point.png)
+![Лестничный узел](images/ladder_point.png)
 
-### General Hints for Ladder Nodes
+### Общие советы по лестничным узлам
 
-1. Node ladders AFTER you noded the areas above and below them! If you node ladders first, all nodes in reach of a ladder node will be connected with it and have their radius reduced to zero automatically! It doesn't matter whether you place the top or the bottom Ladder node first.
-2. If the ladder is very long, you can place additional Ladder nodes between the bottom and the top end.
-3. The bottom node will automatically get connected with the nearest node, independent of current AutoPath Max Distance settings.
-4. The top node will usually get a connection towards it automatically, but you will have to add a connection leading away from it manually.
-5. Ladder nodes will always have a radius of zero, and this shouldn't be changed!
+1. Ставьте узлы на лестницы только ПОСЛЕ того, как вы поставили узлы над и под ними! Если вы сначала ставите узлы на лестницы, все узлы в пределах досягаемости лестничного узла будут соединены с ним, а их радиус автоматически уменьшится до нуля! Неважно, разместите ли вы сначала верхний или нижний лестничный узел.
+2. Если лестница очень длинная, вы можете разместить дополнительные лестничные узлы между нижним и верхним концом.
+3. Нижний узел будет автоматически соединён с ближайшим узлом, независимо от текущих настроек максимального расстояния автопути.
+4. Верхний узел обычно соединяется с нижним автоматически, но вам придётся добавить соединение, ведущее от него вручную.
+5. У лестничных узлов всегда будет нулевой радиус, и его не следует менять!
 
-## Rescue Nodes
+## Узлы точек спасения
 
-**Rescue** nodes are only needed on Cs_ type maps (hostage rescue scenarios). They mark the zone where the Counter-Terrorist team must bring the hostages, the rescue zone. Place one of these nodes inside each rescue zone there is. If there is only one, you only need one Rescue node. Placing more points in one rescue zone is unnecessary bulk and will rather cause problems than improve anything.
+**Спасательные** узлы необходимы только на картах типа Cs_ (сценарий спасения заложников). Они помечают зону, куда команда контр-террористов должна вести заложников, называемую зоной спасения. Поставьте один из этих узлов внутри каждой зоны спасения. Если есть только одна, вам понадобится только один спасательный узел. Расстановка большего количества точек в одной зоне спасения — ненужная масса и скорее вызовет проблемы, чем улучшит что-либо.
 
-A Counter-Terrorist bot that has succeeded in "activating" the hostages will determine the position of the nearest rescue point and lead the hostages there. When the bot has reached the rescue point, it will check if the hostages are really rescued and after max time about 5 seconds turn back to return to combat. Badly placed rescue points may lead to bots turning around before the hostages have really reached the rescue zone. As a consequence, the hostages will be left standing a few inches away from the rescue zone while the bot considers its mission as completed and turns back to fight, ignoring the deserted hostages. That's why you are advised to place a rescue node well inside a rescue zone, not at its edges!
+Бот контр-террористов, которому удалось "активировать" заложников, определит позицию ближайшей точки спасения и поведёт заложников туда. Когда бот достиг точки спасения, он проверит, действительно ли заложники спасены, и примерно через 5 секунд развернётся, чтобы вернуться в бой. Плохо размещённые точки спасения могут привести к тому, что боты развернутся до того, как заложники действительно достигнут зоны спасения. В результате заложники останутся стоять в нескольких дюймах от зоны спасения, в то время как бот считает свою миссию выполненной и разворачивается обратно, чтобы сражаться, игнорируя покинутых заложников. Вот почему вам советуют размещать спасательный узел хорошо внутри зоны спасения, а не на её краях!
 
-In the editor, rescue points will be displayed in bright white. Their radius is set to zero by default and shouldn't be changed. All bots can use this node type for Normal navigation as well. You can add this type of node by selecting `5. Rescue Zone` from the Node Type menu. **The colour of Rescue nodes is white**, as you can see in the picture below.
+В редакторе точки спасения будут отображаться ярким белым цветом. Их радиус по умолчанию установлен на ноль и не должен изменяться. Все боты могут использовать этот тип узла для обычной навигации. Вы можете добавить этот тип узла, выбрав `5. Зона спасения` в меню типов узлов. **Цвет спасательных узлов — белый**, как вы можете видеть на картинке ниже.
 
-![Hostage Rescue Node](images/hostage_rescue_point.png)
+![Узел спасения заложников](images/hostage_rescue_point.png)
 
-## Camp Nodes
+## Узлы кемпинга
 
-As the name suggests, Camp nodes are used to mark good sniper spots. They can be navigated by all bots. However, whether a bot may camp there or not is determined by the flag you can add to the camp node. You can make Camp nodes team specific or leave them "open" to any team. The colour of Normal Camp nodes is cyan. Terrorist specific camp nodes have coral color, Counter-Terrorist specific is cornflower blue color, as you can see in the picture below.
+Как следует из названия, узлы кемпинга используются для обозначения хороших снайперских позиций. Все боты могут перемещаться к ним. Однако, может ли бот кемперить там или нет, определяется флагом, который вы можете добавить к узлу кемпинга. Вы можете сделать узлы кемпинга специфичными для команды или оставить их "открытыми" для любой команды. Цвет обычных узлов кемпинга — голубой. Узлы кемпинга для террористов имеют коралловый цвет, для контр-террористов — васильковый цвет, как вы можете видеть на картинке ниже.
 
-![Camp Points](images/camp_points.png)
+![Точки кемпинга](images/camp_points.png)
 
-Although there are two entries in the Node Type menu ("Camping" and "Camp end"), the Camp node is in fact only one point. However, it carries two "markers" that tell a camping bot where to look while camping. When you are camping yourself, you will monitor a certain area. If you wanted to define this area, you could describe it as an angle. This angle would be specified by two lines going out from your position: One that marks the left edge and another one for the right edge. The monitored area would be between these two lines. The mentioned "markers" fulfill exactly this function. They are displayed as more or less horizontal beams going out from the top of a Camp node. **The colour of Camp markers is red**, as you can see in the picture below.
+Хотя в меню типов узлов есть две записи ("Кемпинг" и "Конец кемпинга"), узел кемпинга на самом деле только одна точка. Однако он несёт два "маркера", которые говорят кемперу, куда смотреть во время кемпинга. Когда вы кемперите сами, вы наблюдаете определённую область. Если бы вы хотели определить эту область, вы могли бы описать её как угол. Этот угол был бы определён двумя линиями, выходящими из вашей позиции: одна, которая отмечает левый край, и другая — для правого края. Наблюдаемая область будет находиться между этими двумя линиями. Упомянутые "маркеры" выполняют именно эту функцию. Они отображаются как более или менее горизонтальные лучи, выходящие из вершины узла кемпинга. **Цвет маркеров кемпинга — красный**, как вы можете видеть на картинке ниже.
 
-![Camp Directions](images/camp_directions.png)
+![Направления кемпинга](images/camp_directions.png)
 
-When a bot approaches the depicted Camp node, it will turn to face the direction of the Camp start marker first. Then it will scan the area between this marker and the Camp end marker by changing every few seconds the direction it is facing from one to the other. An enemy moving outside the two markers may escape the bot's attention, unless it hears the enemy coming. In the picture above, both markers are pointing to the same height. However, you can also specify different heights for each marker. This is very useful for making bots monitor a ramp, a slope, a stairway or other uneven surfaces.
+Когда бот приближается к изображённому узлу кемпинга, он сначала повернётся, чтобы лицом к направлению маркера начала кемпинга. Затем он будет сканировать область между этим маркером и маркером конца кемпинга, меняя каждые несколько секунд направление, в которое он смотрит, от одного к другому. Враг, двигающийся за пределами двух маркеров, может избежать внимания бота, если не услышит, как враг приближается. На картинке выше оба маркера указывают на одну и ту же высоту. Однако вы также можете указать разные высоты для каждого маркера. Это очень полезно для того, чтобы заставить ботов наблюдать рампу, склон, лестницу или другие неровные поверхности.
 
-So far, so good. But how to set a working camp node? Follow these steps:
+Пока всё хорошо. Но как установить работающий узел кемпинга? Следуйте этим шагам:
 
-1. Go to the exact position where you want bots to camp (of course, a dark corner or similar locations are best suited for camping)
-2. If you want bots to stand while they are camping, remain standing upright. If you want them to crouch while camping (more precise aiming!), crouch yourself while adding the point
-3. Point your crosshair at the exact direction and height where you want your bots to start looking
-4. Bring up the Node Type menu and select `6. Camping`. The Camp node itself will now be placed at your current position, and you will see the two marker beams going out from it. The Camp start marker will already be pointed at the direction you specified, the Camp end marker will still need some adjustment
-5. Now point your crosshair at the exact direction and height where you want your bots to end their monitoring
-6. Once again, open the Node Type menu, but now select `7. Camp end`. You will see that the Camp end marker will now be pointed at the direction you specified
+1. Перейдите на точную позицию, где вы хотите, чтобы боты кемперили (конечно, тёмный угол или подобные места лучше всего подходят для кемпинга)
+2. Если вы хотите, чтобы боты стояли во время кемпинга, оставайтесь стоять. Если вы хотите, чтобы они приседали во время кемпинга (более точное прицеливание!), присядьте сами при добавлении точки
+3. Направьте прицел на точное направление и высоту, где вы хотите, чтобы боты начали смотреть
+4. Откройте меню типов узлов и выберите `6. Кемпинг`. Сам узел кемпинга теперь будет размещён на вашей текущей позиции, и вы увидите два маркера, выходящих из него. Маркер начала кемпинга уже будет направлен в направление, которое вы указали, а маркер конца кемпинга всё ещё нуждается в некоторой настройке
+5. Теперь направьте прицел на точное направление и высоту, где вы хотите, чтобы боты закончили мониторинг
+6. Снова откройте меню типов узлов, но теперь выберите `7. Конец кемпинга`. Вы увидите, что маркер конца кемпинга теперь будет направлен в направление, которое вы указали
 
-That's it! Unless you want to make your Camp node team specific or add another flag (see: [Node Flags](connections-and-flags.md)), you are done! In fact, it sounds much more complicated than it actually is.
+Вот и всё! Если вы не хотите сделать узел кемпинга специфичным для команды или добавить другой флаг (см.: [Флаги узлов](connections-and-flags.md)), вы закончили! На самом деле это звучит намного сложнее, чем есть на самом деле.
 
-### Quick Notes and Hints About Camp Nodes
+### Быстрые заметки и советы по узлам кемпинга
 
-1. You can alter Camp start and Camp end markers as often as you want. As soon as you are near an existing Camp node (i.e. as soon as its node stats are shown in the upper left corner of your HUD), bringing up the Node Type menu and selecting `6. Camping` or `7. Camp end` will **NOT** add a new node. Instead, it will readjust the Camp start and/or Camp end marker(s) of the nearby Camp node to the new direction you specified.
-2. Thus, if you want to place two Camp nodes closely together, make sure that the node stats of the first one have disappeared from your HUD before you set the second one. If the stats of the first node are still visible, you will accidentally modify the Camp start and Camp end markers of that node instead of inserting a new point.
-3. Don't place Camp nodes in strategically irrelevant areas, or you will see bots camping in a situation totally unimportant area while their team mates are under heavy attack.
-4. Provide the "defending" team with some nice sniper spots near the map goal! In general, if you make team-specific Camp nodes, make more for the defending team than for the attacking team.
+1. Вы можете изменять маркеры начала и конца кемпинга сколько угодно. Как только вы находитесь рядом с существующим узлом кемпинга (то есть как только его статистика узла отображается в верхнем левом углу вашего HUD), открытие меню типов узлов и выбор `6. Кемпинг` или `7. Конец кемпинга` **НЕ** добавит новый узел. Вместо этого он перенастроит маркеры начала и/или конца кемпинга ближайшего узла кемпинга в новом направлении, которое вы указали.
+2. Таким образом, если вы хотите разместить два узла кемпинга близко друг к другу, убедитесь, что статистика узла первого исчезла из вашего HUD перед установкой второго. Если статистика первого узла всё ещё видна, вы случайно измените маркеры начала и конца кемпинга этого узла вместо вставки новой точки.
+3. Не размещайте узлы кемпинга в стратегически незначительных областях, иначе вы увидите, как боты кемперят в ситуации, которая абсолютно не важна, в то время как их товарищи по команде подвергаются сильной атаке.
+4. Обеспечьте "обороняющей" команде несколько хороших снайперских позиций около цели карты! В целом, если вы делаете узлы кемпинга для конкретной команды, сделайте больше для обороняющейся команды, чем для атакующей.
 
-## Map Goal Nodes
+## Узлы целей карты
 
-This node type obviously indicates the **Map Goal**.
+Этот тип узла явно указывает **цель карты**.
 
-- On an As_ map, the **Map Goal** node tells the bots where the VIP escape zone is. Make sure the escape zone symbol is visible on your HUD when you place a map goal node there. Otherwise the VIP may end up reaching the point and running away again just like you would do with Rescue nodes.
-- On a Cs_ map, the **Map Goal** node marks the position of the hostages. It is **NOT** necessary to place one Map Goal node per hostage. Unless the hostages are standing really far away from each other, one point per hostage group will perfectly do.
-- On a De_ map, the **Map Goal** node marks the bomb spots. It must be placed somewhere inside the bomb zone, i.e. the bomb icon must be blinking on your HUD when you place such a node. In contrast to Cs_ maps, on De_ maps it makes sense to set various goal nodes in one bomb zone. This will enable bots to choose from several spots to plant the bomb and make them less predictable.
-- On Es_ maps, the **Map Goal** node marks the escape zone for the Terrorists. You can follow the same rules as for As_ maps.
+- На карте As_ узел **цели карты** указывает ботам, где находится зона побега VIP. Убедитесь, что символ зоны побега виден на вашем HUD, когда вы размещаете узел цели карты там. В противном случае VIP может добраться до точки и снова убежать, как и с узлами спасения.
+- На карте Cs_ узел **цели карты** отмечает позицию заложников. **НЕ** обязательно размещать один узел цели карты на каждого заложника. Если заложники стоят действительно далеко друг от друга, одна точка на группу заложников отлично подойдёт.
+- На карте De_ узел **цели карты** отмечает места закладки бомбы. Он должен быть размещён где-то внутри зоны бомбы, то есть значок бомбы должен мигать на вашем HUD, когда вы размещаете такой узел. В отличие от карт Cs_, на картах De_ имеет смысл установить различные целевые узлы в одной зоне бомбы. Это позволит ботам выбирать из нескольких мест для закладки бомбы и сделает их менее предсказуемыми.
+- На карте Es_ узел **цели карты** отмечает зону побега для террористов. Вы можете следовать тем же правилам, что и для карт As_.
 
-Now you may wonder how to determine the exact function of the Map Goal node. Don't worry, this is entirely map specific, you don't have to do anything about it. All bots of both participating teams will automatically know what the Map Goal is, they only need the point to guide them there. You can add this type of node by selecting `8. Goal` from the Node Type menu. **The colour of Goal nodes is purple**, as you can see in the pictures below.
+Теперь вы можете задаться вопросом, как определить точную функцию узла цели карты. Не беспокойтесь, это полностью зависит от типа карты, вам не нужно ничего делать. Все боты обеих команд автоматически знают, что такое цель карты, им нужна только точка, чтобы вести их туда. Вы можете добавить этот тип узла, выбрав `8. Цель` в меню типов узлов. **Цвет целевых узлов — фиолетовый**, как вы можете видеть на картинках ниже.
 
-### Examples of Goal Nodes
+### Примеры целевых узлов
 
-![Hostage Goal Node (map cs_assault)](images/hostage_goal_point.png)
+![Узел цели заложников (карта cs_assault)](images/hostage_goal_point.png)
 
-![VIP Escape Goal Node (map as_oilrig)](images/vip_goal_point.png)
+![Узел цели побега VIP (карта as_oilrig)](images/vip_goal_point.png)
 
-![Bomb place Goal Node (map de_dust2)](images/bombplace_goal_point.png)
+![Узел места закладки бомбы (карта de_dust2)](images/bombplace_goal_point.png)
 
-![Terrorists escape Goal Node (map es_trinity)](images/terrorists_escape_goal_point.png)
+![Узел цели побега террористов (карта es_trinity)](images/terrorists_escape_goal_point.png)

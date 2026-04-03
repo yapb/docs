@@ -1,57 +1,57 @@
-# Introduction
+# Вступление
 
-## What is YaPB?
+## Что такое YaPB?
 
-YaPB stands for Yet another Ping of Death Bot. It's a derivative of a Counter-Strike famous bot - **PODBot**, based on its source code release by Count-Floyd back in 2003. It adds computer-controlled (AI) players to Counter-Strike games based on GoldSource engine.
+YaPB расшифровывается как Yet another Ping of Death Bot. Это модификация известного бота Counter-Strike - **PODBot**, основанная на исходном коде, выпущенном Count-Floyd в 2003 году. Он добавляет игроков с компьютерным управлением (ИИ) в игры Counter-Strike, основанные на движке GoldSource.
 
-## Why is it called YaPB?
+## Почему он называется YaPB?
 
-It's called "Yet another PODBot" because when the fork was started, there were so many other PODBot clones floating around like **PODBot MM**, **e[POD]bot**, **IvPBot**, **POXBot** etc. So the reason was to save the original name, and clarify that the bot is derived from the original PODBot.
+Он называется "Yet another PODBot" (с английского "Ещё один PODBot"), потому что когда был начат форк, было много других клонов PODBot, таких как **PODBot MM**, **e[POD]bot**, **IvPBot**, **POXBot** и т.д. По этой причине мы сохранили оригинальное имя и уточнили, что бот является модификацией оригинального PODBot.
 
-And POD is an abbreviation for **Ping of Death**. It's called that way because it was derived from the **High Ping Bastard Bot** Botman was doing. And if you look at the Bots Ping they always have a Ping of 5 in the days of Counter-Strike 1.5 and the very first generation of bots did Headshots all the time.
+POD - это аббревиатура **Ping of Death** (с английского "Пинг смерти"). Его назвали так, потому что он был основан на **High Ping Bastard Bot** (с английского "Ублюдочный бот с высоким пингом"), который сделал Botman. И если вы посмотрите на пинг ботов, у него всегда было значение 5 во времена Counter-Strike 1.5, и первое поколение ботов всё время делало выстрелы в голову.
 
-## What are Bots able to do?
+## На что способны боты?
 
-The Bots will automatically know the goals of the map. Counter-Terrorists will go for hostages or defuse the bomb, Terrorists will plant the bomb. VIP Bots will try to reach the Rescue Points. The goal selection is done dynamically and will be affected by several factors like Personality, Health, Teammates nearby & Items the Bot is carrying. The Bots will also try to support teammates and take cover when they think it's needed. They also can use some elevators.
+Боты автоматически знают цели карты. Контр-террористы пойдут за заложниками или обезвредят бомбу, террористы заложат бомбу. VIP-боты будут пытаться добраться до спасательных точек. Выбор цели осуществляется динамически и зависит от нескольких факторов, таких как личность, здоровье, ближайшие тиммейты и предметы, которые несёт бот. Боты также попытаются поддержать тиммейтов и укрыться, когда они сочтут это необходимым. Также они могут использовать некоторые лифты.
 
-## What mods are supported?
+## Какие моды поддерживаются?
 
-YaPB currently supports only Counter-Strike (since Beta 6.5 to 1.6) and Condition Zero mods for Half-Life.
+YaPB в настоящее время поддерживает только Counter-Strike (начиная с Beta 6.5 до 1.6) и Condition Zero моды для Half-Life.
 
-**Supported engines:**
+**Поддерживаемые движки:**
 
-- Official Valve's GoldSrc Engine on Windows, Linux and macOS.
-- Flying with Gauss Xash3D Engine on Windows, Linux, macOS and Android.
-- ReHLDS & ReGameDLL on Windows and Linux.
-- WON version of Valve's GoldSrc Engine on Windows, Linux. Minimum engine version is 1.1.0.4.
+- Официальный движок Valve GoldSrc для Windows, Linux и macOS.
+- Движок Xash3D от Flying with Gauss для Windows, Linux, macOS и Android.
+- ReHLDS и ReGameDLL для Windows и Linux.
+- WON версия движка GoldSrc от Valve для Windows и Linux. Минимальная версия движка 1.1.0.4.
 
-YaPB supports running on a listenserver (when the player hosts game themselves), as well as on HLDS (dedicated server).
+YaPB поддерживает запуск на локальном сервере (когда игрок сам создаёт сервер), а также на HLDS (выделенном сервере).
 
-## Why does YaPB need waypoints?
+## Почему YaPB нуждается в вэйпоинтах?
 
-Is there a Bot who is doing great without any kind of navigational help like waypoints, wayzones or navmesh? It's almost certain you won't find any. Actually, at the time of original development, waypointed navigation was the most widely-used and simple method. Bots are currently navigating flawlessly, so changing it to navmesh or any other stuff is not planned. YaPB maintains a big list of waypoints on the [github repository](https://github.com/yapb/graph) which is constantly replenished, so probably we already have the waypoint for your map...
+Есть ли бот, который отлично работает без какой-либо навигационной помощи, такой как вэйпоинты, путевые зоны или навигационная сетка? Почти наверняка вы не найдёте ни одного. На самом деле, во время первоначальной разработки, навигация с вэйпоинтами была наиболее широко используемой и простой методикой. Боты на данный момент безупречны в навигации, поэтому не нужно менять их на навигационную сетку или любой другой тип навигации. YaPB ведёт большой список вэйпоинтов в [GitHub репозитории](https://github.com/yapb/graph), который постоянно пополняется, поэтому вероятно, у нас уже есть вэйпоинт для вашей карты...
 
-If you would like a waypoint for your map, you can do an [issue-request](https://github.com/yapb/graph/issues/new) on the github repository. But it's better to make waypoints yourself than to wait for someone to make waypoints for you.
+Если вы хотите, чтобы вам сделали вэйпоинт для вашей карты, вы можете сделать [запрос](https://github.com/yapb/graph/issues/new) на GitHub репозитории. Но лучше делать вэйпоинты самому, чем ждать, чтобы кто-то сделал их за вас.
 
-## What types of maps are supported?
+## Какие типы карт поддерживаются?
 
-**Supported game scenarios:**
+**Поддерживаемые сценарии игры:**
 
-- Aim Training (aim_* maps)
-- Escape (es_* maps)
-- Knife Arena (ka_* maps)
-- Deathmatch (dm_* maps)
-- Fight Yard (fy_* maps)
-- Gun Game (gg_* maps)
-- Grenade Wars (he_* maps)
-- Prepared Assault (pa_* maps)
-- VIP Assassination (as_* maps)
-- Sniper Wars (awp_* maps)
-- Hostage Rescue (cs_* maps)
-- Bomb Plant/Defuse (de_* maps)
-- Hostage Rescue/Bomb Plant/Defuse (csde_* maps)
-- Speed Strike (sp_* maps)
+- Тренировка меткости (карты aim_*)
+- Побег террористов (карты es_*)
+- Арена с ножами (карты ka_*)
+- Бой насмерть (карты dm_*)
+- Поле битвы (карты fy_*)
+- Гонка вооружений (карты gg_*)
+- Война с гранатами (карты he_*)
+- Подготовленное нападение (карты pa_*)
+- Эвакуация VIP (карты as_*)
+- Война со снайперами (карты awp_*)
+- Спасение заложников (карты cs_*)
+- Закладка бомбы/Разминирование (карты de_*)
+- Спасение заложников/Закладка бомбы/Разминирование (карты csde_*)
+- Битва на скорость (карты sp_*)
 
-## What mods are supported for Counter-Strike?
+## Какие моды для Counter-Strike поддерживаются?
 
-YaPB officially supports CSDM and CSDM FFA mods for Counter-Strike. Other mods should add their own support for bots.
+YaPB официально поддерживает CSDM и CSDM FFA моды для Counter-Strike. Другие моды должны добавить собственную поддержку ботов.

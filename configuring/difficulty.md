@@ -1,30 +1,30 @@
-# Bot Difficulty Configuration
+# Настройка сложности ботов
 
-You can fine-tune the bots thanks to the difficulty configuration file. It contains the values of reaction time, headshot and wallshot probabilities, recoil control values, and aim offset axes.
+Вы можете точно настроить ботов благодаря файлу конфигурации сложности. Он содержит значения времени реакции, вероятности попадания в голову и в стену, значения контроля отдачи и смещения прицела.
 
-Each of these values is tied to each difficulty level.
+Каждое из этих значений привязано к каждому уровню сложности.
 
-The bots difficulty configuration file is located at `addons/yapb/conf/difficulty.cfg`.
+Файл конфигурации сложности ботов находится в `addons/yapb/conf/difficulty.cfg`.
 
-## Format
+## Формат
 
 ```
 Level = minReactionTime(s),maxReactionTime(s),headshotProbability,seenThruWallChance,heardThruWallChance,maxWeaponRecoil,aimError
 ```
 
-## Parameters
+## Параметры
 
-| Parameter | Description |
-|-----------|-------------|
-| `minReactionTime` | Minimal time in seconds from when the bot first saw the enemy to when it can recognize it |
-| `maxReactionTime` | Same as above, but upper cap of the limit |
-| `headshotProbability` | The probability that the bot will aim at the head instead of body, if both body and head are visible |
-| `seenThruWallChance` | Chance that the bot will attack the enemy if it believes that it is there and just saw it |
-| `heardThruWallChance` | Chance that the bot will attack the enemy if it believes that it is there and just heard it |
-| `maxWeaponRecoil` | Maximum weapon recoil to compensate by pausing fire |
-| `aimError` | (x, y, z) offsets to add aim error to bot aiming |
+| Параметр | Описание |
+|-----------|----------|
+| `minReactionTime` | Минимальное время в секундах от момента, когда бот впервые увидел врага, до момента, когда он может его распознать |
+| `maxReactionTime` | То же, что и выше, но верхний предел |
+| `headshotProbability` | Вероятность того, что бот будет целиться в голову вместо тела, если и голова, и тело видны |
+| `seenThruWallChance` | Шанс, что бот будет атаковать врага, если он верит, что враг там, и только что видел его |
+| `heardThruWallChance` | Шанс, что бот будет атаковать врага, если он верит, что враг там, и только что слышал его |
+| `maxWeaponRecoil` | Максимальная отдача оружия для компенсации путём приостановки огня |
+| `aimError` | Смещения (x, y, z) для добавления ошибки прицеливания боту |
 
-## Example
+## Пример
 
 ```
 Expert = 0.1, 0.2, 100, 90, 90, 21, 0.0, 0.0, 0.0

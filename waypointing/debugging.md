@@ -1,13 +1,13 @@
-# Debugging
+# Отладка
 
-## Debug Goal Menu
+## Меню отладки цели
 
-To test the bots walkability to a specified node, you need to open the second page of the "Graph Editor" menu, and select **1. Debug Goal**. Then a menu should appear as shown in the picture below.
+Чтобы проверить проходимость ботов до указанного узла, вам нужно открыть вторую страницу меню "Редактор графов" и выбрать **1. Отладка цели**. Затем должно появиться меню, как показано на картинке ниже.
 
-![Debug Goal Menu](images/debug_goal_menu.png)
+![Меню отладки цели](images/debug_goal_menu.png)
 
-| Option | Description |
-|--------|-------------|
-| **1. Debug nearest node** | Specify the nearest node as the goal that the bot needs to reach |
-| **2. Debug facing node** | Specify the facing node (which you pointed with your crosshair) as the goal that the bot needs to reach |
-| **3. Stop debugging** | Disable the Debug Goal functionality |
+| Опция | Описание |
+|--------|----------|
+| **1. Отладка ближайшего узла** | Определить ближайший узел как цель, которую должен достичь бот |
+| **2. Отладка направленного узла** | Определить направленный узел (на который вы указали прицелом) как цель, которую должен достичь бот |
+| **3. Остановить отладку** | Отключить функцию отладки цели |

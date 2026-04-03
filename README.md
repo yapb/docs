@@ -1,5 +1,5 @@
 # Yet Another POD-Bot Readme
 
-**YaPB** is an AI opponent for [Counter-Strike](https://store.steampowered.com/app/10/CounterStrike/) which allows you to play good old Counter-Strike without connecting to any server, or fill your server with AI-controlled players.
+**YaPB** — это AI-противник для [Counter-Strike](https://store.steampowered.com/app/10/CounterStrike/), который позволяет вам играть в старый добрый Counter-Strike без подключения к какому-либо серверу или заполнить ваш сервер игроками под управлением AI.
 
-If you have time and interest you can contribute to documentation on our [GitHub repository](https://github.com/yapb/docs).
+Если у вас есть время и интерес, вы можете внести свой вклад в документацию на нашем [GitHub репозитории](https://github.com/yapb/docs).

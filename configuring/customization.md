@@ -1,187 +1,187 @@
-# Customization
+# Персонализация
 
-## Chat Customization
+## Персонализация чата
 
-You can create a new chat base for your language or change the existing one. It is located in the folder: `addons/yapb/conf/lang`.
+Вы можете создать новую базу чата для вашего языка или изменить существующую. Она находится в папке: `addons/yapb/conf/lang`.
 
-To do this, create a file `**_chat.cfg` or open an existing one.
+Для этого создайте файл `**_chat.cfg` или откройте существующий.
 
-Bots can write chat messages depending on the situation: planting a bomb, killing an enemy, attacking teammates, etc.
+Боты могут писать сообщения в чате в зависимости от ситуации: закладка бомбы, убийство противника, атака тиммейтов и т.д.
 
-### Placeholders
+### Заполнители
 
-| Placeholder | Description |
-|-------------|-------------|
-| `%v` | Inserts the nickname of the last killed player |
-| `%f` | Inserts the nickname of the team leader |
-| `%t` | Inserts the nickname of the alive teammate |
-| `%e` | Inserts the nickname of the alive enemy |
-| `%s` | Inserts the nickname of the random player |
-| `%m` | Inserts the name of the current map |
-| `%d` | Inserts the mod name from `liblist.gam` file (Counter-Strike or Condition Zero) |
+| Заполнитель | Описание |
+|-------------|----------|
+| `%v` | Вставляет ник последнего убитого игрока |
+| `%f` | Вставляет ник лидера команды |
+| `%t` | Вставляет ник живого тиммейта |
+| `%e` | Вставляет ник живого противника |
+| `%s` | Вставляет ник случайного игрока |
+| `%m` | Вставляет название текущей карты |
+| `%d` | Вставляет название мода из файла `liblist.gam` (Counter-Strike или Condition Zero) |
 
-### Chat Sections
+### Разделы чата
 
-**`[BOMBPLANT]`** -- Sets a list of messages that bots will write after planting a bomb.
+**`[BOMBPLANT]`** -- Задаёт список сообщений, которые будут писать боты после закладки бомбы.
 
-**`[KILLED]`** -- Sets a list of messages for bots that will write after killing an enemy. Use the placeholder `%v` to write the nickname of the killed enemy.
+**`[KILLED]`** -- Задаёт список сообщений для ботов, которые будут писать после убийства врага. Используйте заполнитель `%v`, чтобы написать ник убитого врага.
 
-Example:
+Пример:
 
 ```ini
 [KILLED]
-You're dead %v!
+Ты мёртв %v!
 ```
 
-When the bot kills the enemy with the nickname "John Smith", he will write "You're dead John Smith!" using the line shown in the example.
+Когда бот убивает врага с ником "Иван Петров", он напишет "Ты мёртв Иван Петров!", используя строку, указанную в примере.
 
-**`[WELCOME]`** -- Sets the list of messages that the bot will write when it connects to the server.
+**`[WELCOME]`** -- Задаёт список сообщений, которые бот будет писать при подключении к серверу.
 
-**`[TEAMATTACK]`** -- Sets the list of messages that the bot will write when attacked by a teammate.
+**`[TEAMATTACK]`** -- Задаёт список сообщений, которые бот будет писать, когда его атакуют товарищи по команде.
 
-**`[TEAMKILL]`** -- Sets the list of messages that the bot will write when it killed a teammate.
+**`[TEAMKILL]`** -- Задаёт список сообщений, которые бот будет писать, когда он убил товарища по команде.
 
-**`[DEADCHAT]`** -- Sets the list of messages that the bot will write when it is dead or is in spectator mode.
+**`[DEADCHAT]`** -- Задаёт список сообщений, которые бот будет писать, когда он мёртв или находится в режиме наблюдателя.
 
-> **Warning:** Minimum number is 9! If you write less than 9 messages for this trigger, YaPB will crash!
+> **Внимание:** Минимальное количество сообщений - 9! Если вы напишете менее 9 сообщений для этого триггера, YaPB будет работать некорректно!
 
-**`[REPLIES]`** -- Sets the list of messages that the bot will write in answer to another bot if it has an answer to the specified word. To set a word to which the answer will be, you need to set a key to specified words separated by commas.
+**`[REPLIES]`** -- Задаёт список сообщений, которые бот будет писать в ответ другому боту, если у него есть ответ на указанное слово. Чтобы задать слово, на которое будет ответ, вам нужно задать ключ к указанным словам, разделённым запятыми.
 
-Example:
+Пример:
 
 ```ini
 [REPLIES]
-@KEY "WORD", "ANOTHER WORD"
-This is the answer to the given words.
-This is another answer to the given words.
+@KEY "СЛОВО", "ДРУГОЕ СЛОВО"
+Это ответ на указанные слова.
+Это другой ответ к указанным словам.
 
-@KEY "KEYWORD"
-This is the answer to new key word.
+@KEY "КЛЮЧЕВОЕ СЛОВО"
+Это ответ на новое ключевое слово.
 ```
 
-This is how it will look in the game:
+Вот как это будет выглядеть в игре:
 
 ```
-John Smith: Bla bla bla word
-Ricardo Milos: This is answer to the given words.
+Иван Петров: Бла бла бла слово
+Рикардо Милос: Это ответ на указанные слова.
 
-Keanu Reeves: Bla bla bla another word bla bla...
-Tommy Vercetti: This is another answer to the given words.
+Киану Ривз: Бла бла бла другое слово бла бла...
+Томми Версетти: Это другой ответ к указанным словам.
 
-Ryan Gosling: Answer me a new keyword.
-Soap MacTavish: This is the answer to new key word.
+Райан Гослинг: Скажи мне ответ на новое ключевое слово.
+Соуп Мактавиш: Это ответ на новое ключевое слово.
 ```
 
-Bots can use these replies at random.
+Боты могут использовать эти ответы в случайном порядке.
 
-> **Warning:** Please note that the key words in the `[REPLIES]` trigger must be written in capital letters! In messages, they can be written in any format.
+> **Внимание:** Обратите внимание, что ключевые слова в триггере `[REPLIES]` должны быть написаны заглавными буквами! В сообщениях они могут быть написаны в любом формате.
 
-**`[UNKNOWN]`** -- Sets the list of messages that the bot will write in answer to another bot if it has no response in the `[REPLIES]` trigger.
+**`[UNKNOWN]`** -- Задаёт список сообщений, которые бот будет писать в ответ другому боту, если его сообщение не содержит ключевых слов из триггера `[REPLIES]`.
 
 ---
 
-## Voice Chat Customization
+## Персонализация голосового чата
 
-YaPB supports voice chat as well as ZBot. All paths for YaPB voice chat audio files are in the file: `chatter.cfg` which is located in the folder `addons/yapb/conf`.
+YaPB поддерживает голосовой чат, аналогично ZBot. Все пути к звуковым файлам голосового чата YaPB находятся в файле: `chatter.cfg`, который находится в папке `addons/yapb/conf`.
 
-`RewritePath` sets the folder where the voice chat audio files are located. By default it is `sound/radio/bot`.
+`RewritePath` задаёт папку, где находятся звуковые файлы для голосового чата. По умолчанию это `sound/radio/bot`.
 
-### Radio Events
+### События радио
 
-`Event Radio_***` sets the name of the sound files that the bot will speak instead of using a specific radio command.
+`Event Radio_***` задаёт имена звуковых файлов, которые будет произносить бот вместо использования определённых радиокоманд.
 
-| Event | Description |
-|-------|-------------|
-| `Event Radio_CoverMe` | "Cover Me!" radio command |
-| `Event Radio_YouTakePoint` | "You Take the Point." radio command |
-| `Event Radio_HoldPosition` | "Hold This Position." radio command |
-| `Event Radio_RegroupTeam` | "Regroup Team." radio command |
-| `Event Radio_FollowMe` | "Follow Me." radio command |
-| `Event Radio_TakingFire` | "Taking Fire...Need Assistance!" radio command |
-| `Event Radio_GoGoGo` | "Go go go!" radio command |
-| `Event Radio_Fallback` | "Team, fall back!" radio command |
-| `Event Radio_StickTogether` | "Stick together, team." radio command |
-| `Event Radio_GetInPosition` | "Get in position and wait for my go." radio command |
-| `Event Radio_StormTheFront` | "Storm the Front!" radio command |
-| `Event Radio_ReportTeam` | "Report in, team." radio command |
-| `Event Radio_Affirmative` | "Affirmative./Roger that." radio command |
-| `Event Radio_EnemySpotted` | "Enemy spotted." radio command |
-| `Event Radio_NeedBackup` | "Need backup." radio command |
-| `Event Radio_SectorClear` | "Sector clear." radio command |
-| `Event Radio_InPosition` | "I'm in position." radio command |
-| `Event Radio_ReportingIn` | "Reporting in." radio command |
-| `Event Radio_ShesGonnaBlow` | "Get out of there, it's gonna blow!" radio command |
-| `Event Radio_Negative` | "Negative." radio command |
-| `Event Radio_EnemyDown` | "Enemy down." radio command |
+| Событие | Описание |
+|---------|----------|
+| `Event Radio_CoverMe` | "Прикройте меня!" |
+| `Event Radio_YouTakePoint` | "Возьмите эту точку на себя." |
+| `Event Radio_HoldPosition` | "Удерживайте эту позицию." |
+| `Event Radio_RegroupTeam` | "Перегруппируйтесь." |
+| `Event Radio_FollowMe` | "Следуйте за мной." |
+| `Event Radio_TakingFire` | "Я под огнём... нужна поддержка!" |
+| `Event Radio_GoGoGo` | "Пошли, пошли, пошли!" |
+| `Event Radio_Fallback` | "Команда, отступаем!" |
+| `Event Radio_StickTogether` | "Команда, держимся вместе." |
+| `Event Radio_GetInPosition` | "Займите позицию и ждите моего сигнала." |
+| `Event Radio_StormTheFront` | "Штурмуйте фронт!" |
+| `Event Radio_ReportTeam` | "Доложите обстановку." |
+| `Event Radio_Affirmative` | "Понял./Так точно." |
+| `Event Radio_EnemySpotted` | "Вижу противника." |
+| `Event Radio_NeedBackup` | "Нужно подкрепление." |
+| `Event Radio_SectorClear` | "Сектор чист." |
+| `Event Radio_InPosition` | "Я на позиции." |
+| `Event Radio_ReportingIn` | "Докладываю." |
+| `Event Radio_ShesGonnaBlow` | "Уходим отсюда, она сейчас взорвётся!" |
+| `Event Radio_Negative` | "Никак нет." |
+| `Event Radio_EnemyDown` | "Противник убит." |
 
-You can comment out these lines if you want the bot to use standard radio commands.
+Вы можете закомментировать эти строки, если хотите, чтобы боты использовали стандартные радиокоманды.
 
-### Chatter Events
+### События переговоров
 
-`Event Chatter_***` sets the names of sound files for bot's chatter that it will speak.
+`Event Chatter_***` задаёт имена звуковых файлов, которые будет произносить бот во время переговоров.
 
-| Event | Description |
-|-------|-------------|
-| `Chatter_DiePain` | Bot death sounds |
-| `Chatter_GoingToPlantBomb` | Bot says it's going to plant a bomb |
-| `Chatter_GoingToGuardVIPSafety` | Bot says that it is going to guard the VIP escape zone |
-| `Chatter_RescuingHostages` | Bot says that it is rescuing hostages |
-| `Chatter_TeamKill` | Bot reaction to killing a teammate |
-| `Chatter_GuardingVipSafety` | Bot says that it is guarding the VIP escape zone |
-| `Chatter_PlantingC4` | Bot says it's planting a bomb |
-| `Chatter_InCombat` | Bot says that it is fighting with the enemy right now |
-| `Chatter_SeeksEnemy` | Bot says that it is waiting for the enemy |
-| `Chatter_Nothing` | Bot says that there is no one in this sector |
-| `Chatter_EnemyDown` | Bot says that it killed the enemy |
-| `Chatter_UseHostage` | Bot says that it took a hostage |
-| `Chatter_WonTheRound` | Bot's reaction to win |
-| `Chatter_QuicklyWonTheRound` | Bot's reaction to a quick win |
-| `Chatter_NoEnemiesLeft` | Bot says that there are no more remaining enemies |
-| `Chatter_FoundBombPlace` | Bot says that it found a place with a planted bomb |
-| `Chatter_WhereIsTheBomb` | Bot asks where the bomb is |
-| `Chatter_DefendingBombSite` | Bot says it's defending the bomb site |
-| `Chatter_BarelyDefused` | Bot's reaction to a barely defused bomb |
-| `Chatter_NiceshotCommander` | Bot's reaction to a nice shot by a player |
-| `Chatter_ReportingIn` | Bot says it's reporting in |
-| `Chatter_SpotTheBomber` | Bot says that it noticed a bomber |
-| `Chatter_VIPSpotted` | Bot says that it noticed the VIP |
-| `Chatter_FriendlyFire` | Bot reaction when attacked by a teammate |
-| `Chatter_GotBlinded` | Bot reaction to flashbang |
-| `Chatter_GuardingPlantedC4` | Bot says that it guards the planted C4 |
-| `Chatter_GuardingEscapeZone` | Bot reports that it's guarding a terrorist escape zone |
-| `Chatter_GoingToGuardEscapeZone` | Bot says that it's going to guard the terrorist escape zone |
-| `Chatter_GoingToGuardRescueZone` | Bot says that it's going to guard the hostage rescue zone |
-| `Chatter_DefusingC4` | Bot says that it is defusing C4 |
-| `Chatter_FoundC4` | Bot says that it is found C4 |
-| `Chatter_ScaredEmotion` | Bot reaction when it met several enemies and there are no teammates nearby |
-| `Chatter_HeardEnemy` | Bot says that it heard the enemy |
-| `Chatter_SpottedOneEnemy` | Bot says that it's spotted one enemy |
-| `Chatter_SpottedTwoEnemies` | Bot says that it's spotted two enemies |
-| `Chatter_SpottedThreeEnemies` | Bot says that it's spotted three enemies |
-| `Chatter_TooManyEnemies` | Bot says that it's spotted a lot of enemies (four or more) |
-| `Chatter_SniperWarning` | Bot warns about sniper |
-| `Chatter_SniperKilled` | Bot reports that it killed a sniper |
-| `Chatter_OneEnemyLeft` | Bot says that there is only one enemy left |
-| `Chatter_TwoEnemiesLeft` | Bot says that there are two enemies left |
-| `Chatter_ThreeEnemiesLeft` | Bot says that there are three enemies left |
-| `Chatter_NiceshotPall` | Bot's reaction to a nice shot from another bot |
-| `Chatter_GoingToGuardHostages` | Bot says that it is going to guard the hostages |
-| `Chatter_GoingToGuardDroppedBomb` | Bot says that it is going to guard the dropped bomb |
-| `Chatter_OnMyWay` | Bot says it will be here soon |
-| `Chatter_LeadOnSir` | Bot tells the player that it will follow him |
-| `Chatter_Pinned_Down` | Bot asks for help from teammates when they are nearby |
-| `Chatter_GottaFindTheBomb` | Bot says that it found a bomb |
-| `Chatter_You_Heard_The_Man` | Bot responds to phrases from `Chatter_NewRound` (currently not used) |
-| `Chatter_Lost_The_Commander` | Bot says that the commander (player) was killed (currently not used) |
-| `Chatter_NewRound` | Bot talks about the beginning of the round (currently not used) |
-| `Chatter_CoverMe` | Bot asks to be covered |
-| `Chatter_BehindSmoke` | Bot says that it is behind the smoke (currently not used) |
-| `Chatter_BombSiteSecured` | Bot says that it defused the bomb |
-| `Chatter_GoingToCamp` | Bot says that it is going to camp (guard an area) |
-| `Chatter_Camp` | Bot says that it's camping |
-| `Chatter_OnARoll` | Bot brags about killing a large number of enemies in a small amount of time |
+| Событие | Описание |
+|---------|----------|
+| `Chatter_DiePain` | Звуки смерти бота |
+| `Chatter_GoingToPlantBomb` | Бот говорит, что собирается ставить бомбу |
+| `Chatter_GoingToGuardVIPSafety` | Бот говорит, что собирается охранять зону побега VIP |
+| `Chatter_RescuingHostages` | Бот говорит, что спасает заложников |
+| `Chatter_TeamKill` | Реакция бота на убийство товарища по команде |
+| `Chatter_GuardingVipSafety` | Бот говорит, что охраняет зону побега VIP |
+| `Chatter_PlantingC4` | Бот говорит, что ставит бомбу |
+| `Chatter_InCombat` | Бот говорит, что прямо сейчас сражается с противником |
+| `Chatter_SeeksEnemy` | Бот говорит, что ждёт врага |
+| `Chatter_Nothing` | Бот говорит, что в этом секторе никого нет |
+| `Chatter_EnemyDown` | Бот говорит, что убил противника |
+| `Chatter_UseHostage` | Бот говорит, что взял заложника |
+| `Chatter_WonTheRound` | Реакция бота на победу |
+| `Chatter_QuicklyWonTheRound` | Реакция бота на быструю победу |
+| `Chatter_NoEnemiesLeft` | Бот говорит, что больше нет оставшихся противников |
+| `Chatter_FoundBombPlace` | Бот говорит, что нашёл место с заложенной бомбой |
+| `Chatter_WhereIsTheBomb` | Бот спрашивает, где находится бомба |
+| `Chatter_DefendingBombSite` | Бот говорит, что защищает место закладки бомбы |
+| `Chatter_BarelyDefused` | Реакция бота на едва обезвреженную бомбу |
+| `Chatter_NiceshotCommander` | Реакция бота на хороший выстрел игрока |
+| `Chatter_ReportingIn` | Бот говорит, что докладывает |
+| `Chatter_SpotTheBomber` | Бот говорит, что заметил террориста с бомбой |
+| `Chatter_VIPSpotted` | Бот говорит, что заметил VIP |
+| `Chatter_FriendlyFire` | Реакция бота, когда он атакован товарищем по команде |
+| `Chatter_GotBlinded` | Реакция бота на светошумовую гранату |
+| `Chatter_GuardingPlantedC4` | Бот говорит, что охраняет установленную C4 |
+| `Chatter_GuardingEscapeZone` | Бот сообщает, что охраняет зону побега террористов |
+| `Chatter_GoingToGuardEscapeZone` | Бот говорит, что собирается охранять зону побега террористов |
+| `Chatter_GoingToGuardRescueZone` | Бот говорит, что собирается охранять зону спасения заложников |
+| `Chatter_DefusingC4` | Бот говорит, что обезвреживает C4 |
+| `Chatter_FoundC4` | Бот говорит, что нашёл C4 |
+| `Chatter_ScaredEmotion` | Реакция бота, когда он встретил несколько противников и поблизости нет союзников |
+| `Chatter_HeardEnemy` | Бот говорит, что слышал противника |
+| `Chatter_SpottedOneEnemy` | Бот говорит, что заметил одного противника |
+| `Chatter_SpottedTwoEnemies` | Бот говорит, что заметил двух противников |
+| `Chatter_SpottedThreeEnemies` | Бот говорит, что заметил трёх противников |
+| `Chatter_TooManyEnemies` | Бот говорит, что заметил много противников (четыре или более) |
+| `Chatter_SniperWarning` | Бот предупреждает о снайпере |
+| `Chatter_SniperKilled` | Бот сообщает, что убил снайпера |
+| `Chatter_OneEnemyLeft` | Бот говорит, что остался только один противник |
+| `Chatter_TwoEnemiesLeft` | Бот говорит, что осталось два противника |
+| `Chatter_ThreeEnemiesLeft` | Бот говорит, что осталось три противника |
+| `Chatter_NiceshotPall` | Реакция бота на хороший выстрел другого бота |
+| `Chatter_GoingToGuardHostages` | Бот говорит, что собирается охранять заложников |
+| `Chatter_GoingToGuardDroppedBomb` | Бот говорит, что собирается охранять брошенную бомбу |
+| `Chatter_OnMyWay` | Бот говорит, что скоро придёт |
+| `Chatter_LeadOnSir` | Бот говорит игроку, что будет следовать за ним |
+| `Chatter_Pinned_Down` | Бот просит помощи у союзников, когда они находятся поблизости |
+| `Chatter_GottaFindTheBomb` | Бот говорит, что нашёл бомбу |
+| `Chatter_You_Heard_The_Man` | Бот отвечает на фразы из `Chatter_NewRound` (в данный момент не используется) |
+| `Chatter_Lost_The_Commander` | Бот говорит, что командир (игрок) был убит (в данный момент не используется) |
+| `Chatter_NewRound` | Бот говорит о начале раунда (в данный момент не используется) |
+| `Chatter_CoverMe` | Бот просит, чтобы его прикрыли |
+| `Chatter_BehindSmoke` | Бот говорит, что находится за дымом (в данный момент не используется) |
+| `Chatter_BombSiteSecured` | Бот говорит, что обезвредил бомбу |
+| `Chatter_GoingToCamp` | Бот говорит, что собирается кемперить (охранять территорию) |
+| `Chatter_Camp` | Бот говорит, что кемперит |
+| `Chatter_OnARoll` | Бот хвастается убийством большого количества противников за короткое время |
 
-### Example chatter.cfg
+### Пример chatter.cfg
 
 ```ini
 RewritePath sound/radio/bot
@@ -237,7 +237,7 @@ Event Chatter_HeardEnemy = i_hear_them, hang_on_i_heard_something, i_hear_someth
 Event Chatter_SpottedOneEnemy = one_guy
 Event Chatter_SpottedTwoEnemies = two_of_them
 Event Chatter_SpottedThreeEnemies = three, three_of_them
-Event Chatter_TooManyEnemies = a_bunch_of_them, theyre_all_over_the_place2, theyre_everywhere2, theres_too_many_of_them, theres_too_many, too_many2, the_actions_hot_here, its_a_party
+Event Chatter_TooManyEnemies = a_bunch_of_them, they're_all_over_the_place2, they're_everywhere2, theres_too_many_of_them, theres_too_many, too_many2, the_actions_hot_here, its_a_party
 Event Chatter_SniperWarning = sniper, sniper2, watch_it_theres_a_sniper
 Event Chatter_SniperKilled = got_the_sniper, got_the_sniper2, sniper_down, took_out_the_sniper, the_sniper_is_dead
 Event Chatter_VIPSpotted = i_see_our_target, target_spotted, target_acquired

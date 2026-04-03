@@ -1,29 +1,29 @@
-# Credits
+# Авторы
 
-## Development Team
+## Команда разработчиков
 
-- **jeefo** -- Current maintainer, and 2.x - 4.x series developer
-- **$_Vladislav** -- Documentation, waypoints
-- **Whistler** -- Original author of YaPB fork (retired)
+- **jeefo** -- Текущий разработчик, создатель версий 2.x - 4.x
+- **$_Vladislav** -- Документация, вэйпоинты
+- **Whistler** -- Оригинальный автор форка YaPB (в отставке)
 
-## Special Thanks
+## Особые благодарности
 
-- **Botman** -- Creator of the first bot. He figured out how to put bots into CS
-- **CountFloyd** -- Creator of PODBot, on which this bot is created
-- **KWo** -- Current PODBot MM maintainer
-- **Pierre-Marie Baty** -- Bots-United co-founder
-- **Splorygon** -- Original PODBot MM maintainer
-- **evilspy** -- JKbotti author
-- **The Storm** -- e[POD]bot maintainer
-- **Immortal_BLG** -- Author of YaPB3
-- **Valve** -- For creating such a great game
-- **SpArK** -- Helped a lot on early versions
-- **Overitab** -- A lot of waypoints
-- **[PRince4]** -- A lot of waypoints commits
+- **Botman** -- Создатель первого бота. Он выяснил, как добавить ботов в CS
+- **CountFloyd** -- Создатель PODBot, на котором был создан этот бот
+- **KWo** -- Текущий разработчик PODBot MM
+- **Pierre-Marie Baty** -- Соучредитель Bots-United
+- **Splorygon** -- Оригинальный разработчик PODBot MM
+- **evilspy** -- Автор JKbotti
+- **The Storm** -- Автор e[POD]bot
+- **Immortal_BLG** -- Автор YaPB3
+- **Valve** -- За создание такой прекрасной игры
+- **SpArK** -- За большую помощь на ранних версиях бота
+- **Overitab** -- За множество вэйпоинтов
+- **[PRince4]** -- За множество вэйпоинтов
 
-## Waypointers & Testers
+## Вэйпоинтеры и тестировщики
 
-### Waypointers
+### Вэйпоинтеры
 
 - $_Vladislav
 - Overitab
@@ -34,7 +34,7 @@
 - Bots-United Members
 - Reallite Labs
 
-### Testers
+### Тестировщики
 
 - ZmifF
 - RR99i
@@ -43,10 +43,10 @@
 - SaTaN
 - SpArK
 
-### Others
+### Другие
 
-- **Ancient** -- For hosting YaPB for some time
+- **Ancient** -- За хостинг сайта YaPB на некоторое время
 
-## Additional
+## Дополнительно
 
-There are many more people who helped to bring this bot alive. If you are not mentioned here, please notify us.
+Конечно, есть больше людей, которые помогли оживить бота. Если вы не упомянуты здесь, пожалуйста, сообщите нам.

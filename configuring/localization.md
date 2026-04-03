@@ -1,48 +1,48 @@
-# Localization
+# Локализация
 
-YaPB localization files are located inside `addons/yapb/conf/lang` folder. Main localization files are located inside `**_lang.cfg` where `**` is the language code.
+Файлы локализации YaPB находятся внутри папки `addons/yapb/conf/lang`. Основная локализация находится внутри `**_lang.cfg`, где `**` — это двухбуквенный код языка.
 
-At the moment, YaPB has four languages:
+На данный момент YaPB имеет четыре языка:
 
-- `en` -- English
-- `ru` -- Russian
-- `de` -- Deutsch
-- `chs` -- Chinese (Simplified)
+- `en` -- Английский
+- `ru` -- Русский
+- `de` -- Немецкий
+- `chs` -- Китайский (Упрощённый)
 
-To select a language, you must use one of the suggested language codes as the value of the `yb_language` CVAR, or enter your own if you have created a new config with a translation to another language.
+Чтобы выбрать язык, вы должны использовать один из предложенных языковых кодов в качестве значения квара `yb_language`, или указать свой собственный, если вы создали новый конфиг с переводом на другой язык.
 
-You can change the `yb_language` value in `addons/yapb/conf/yapb.cfg`.
+Вы можете изменить значение `yb_language` в `addons/yapb/conf/yapb.cfg`.
 
-Also, in addition to localizing the main things of the bot, such as menus, pop-up messages, text in the console, etc., you can create a chat base and a list of nicknames in your language. Use `**_chat.cfg` for chat and `**_names.cfg` for nicknames respectively.
+Также, помимо локализации основных вещей бота, таких как меню, всплывающие сообщения, текст в консоли и т.д., вы можете создать базу чата и список ников на вашем языке. Используйте `**_chat.cfg` для чата и `**_names.cfg` для ников соответственно.
 
 ---
 
-## Main Localization
+## Основная локализация
 
-To translate the bot into your language, you need to create a file `**_lang.cfg`. Then open the file and insert the original bot strings after the `[ORIGINAL]` line. Also insert translated strings after the `[TRANSLATED]` line.
+Чтобы перевести бота на ваш язык, вам нужно создать файл `**_lang.cfg`. Затем откройте этот файл и вставьте оригинальные строки бота после строки `[ORIGINAL]`. Также вставьте переведённые строки после строки `[TRANSLATED]`.
 
-It should look like this:
+Это должно выглядеть так:
 
 ```ini
 [ORIGINAL]
-Here are the original strings of the bot.
+Здесь оригинальные строки бота.
 
 [TRANSLATED]
-Here are the translated strings of the bot.
+Здесь переведённые строки бота.
 ```
 
-You can use `ru_lang.cfg` as a template for translation.
+Вы можете использовать `ru_lang.cfg` как шаблон для перевода.
 
 ---
 
-## Chat Localization
+## Локализация чата
 
-You just need to create a file `**_chat.cfg` for bot chat in your language. You can use the file `en_chat.cfg` as an example.
+Вам просто нужно создать файл `**_chat.cfg` для чата ботов на вашем языке. Вы можете использовать файл `en_chat.cfg` в качестве примера.
 
-See the [Customization](customization.md) section for details.
+Подробности см. в разделе [Настройка](customization.md).
 
 ---
 
-## Nickname Localization
+## Локализация ников
 
-You just need to create a file `**_names.cfg` for bot nicknames in your language. You can use the file `en_names.cfg` as an example.
+Вам просто нужно создать файл `**_names.cfg` для ников ботов на вашем языке. Вы можете использовать файл `en_names.cfg` в качестве примера.

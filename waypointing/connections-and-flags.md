@@ -1,136 +1,136 @@
-# Connections and Flags
+# Соединения и флаги
 
-## The Radius
+## Радиус
 
-The **Radius** of a node is indicated by a blue polygon that goes out in all directions from the position of a node. The photo below was taken from above -- we are looking down onto a node, and you can see **the colour of a Radius is Blue**.
+**Радиус** узла обозначается синим многоугольником, который выходит во всех направлениях от позиции узла. Фото ниже было сделано сверху — мы смотрим вниз на узел, и вы можете видеть **цвет радиуса — синий**.
 
-![Node Radius](images/wayzone_radius.png)
+![Радиус узла](images/wayzone_radius.png)
 
-The Radius indicator is a great means to see how big the radius of a node actually is; it ends exactly where the corners end.
+Индикатор радиуса — отличный способ увидеть, насколько большой радиус у узла на самом деле; он заканчивается точно там, где заканчиваются углы.
 
-What does the Radius actually do? It tells the bots how exactly they must navigate around the node in question. If a bot walks past a row of nodes with big radius, it will know that super-exact navigation is not required. If the radius is small, the bot will stick strictly to the nodes.
+Что на самом деле делает радиус? Он сообщает ботам, как именно они должны перемещаться вокруг рассматриваемого узла. Если бот проходит мимо ряда узлов с большим радиусом, он будет знать, что сверхточная навигация не требуется. Если радиус маленький, бот будет строго придерживаться узлов.
 
-Thus, in open areas, big radius help to make bot navigation natural -- you wouldn't want to see a bot run across a wide courtyard as if it was following an incredibly thin, straight line painted onto the ground, would you? It looks much more natural if the bot takes advantage of the space it has around it.
+Таким образом, на открытых участках большой радиус помогает сделать навигацию ботов естественной — вы же не хотите видеть, как бот бежит через широкий двор, как будто он следует невероятно тонкой прямой линии, нарисованной на земле, не так ли? Выглядит гораздо естественнее, если бот использует пространство вокруг себя.
 
-However, in narrow corridors and doorways or on bridges, the situation is different: too big a radius would make bots too careless, they would bump into walls or even fall off a bridge because they think they can walk anywhere inside that big radius!
+Однако в узких коридорах и дверных проёмах или на мостах ситуация иная: слишком большой радиус сделает ботов слишком беспечными, они будут натыкаться на стены или даже падать с моста, потому что думают, что могут ходить где угодно внутри этого большого радиуса!
 
-That's why choosing appropriate node radius is so important. As a general rule, keep the radius big in open areas and make them small in narrow passages.
+Вот почему выбор подходящего радиуса узла так важен. Как общее правило, делайте радиус большим на открытых участках и маленьким в узких проходах.
 
-### Setting or Changing the Radius
+### Установка или изменение радиуса
 
-The good news first: You don't have to set every single Radius manually, the editor will do much of the work for you! It will automatically calculate the Radius of a node depending on the area around it. If the editor detects higher (~more than knee-high) obstacles like walls nearby, it will automatically adjust the Radius to reach up to the wall, not further. However, the maximum Radius is limited to 128 units. This means that even on a totally open plain, where the nearest obstacle is hundreds of distance units away, the Radius will not exceed 128.
+Сначала хорошие новости: вам не нужно устанавливать каждый радиус вручную, редактор сделает много работы за вас! Он автоматически рассчитает радиус узла в зависимости от области вокруг него. Если редактор обнаружит высокие препятствия (выше колена) поблизости, он автоматически настроит радиус так, чтобы он доходил до стены, но не дальше. Однако максимальный радиус ограничен 128 юнитами. Это означает, что даже на совершенно открытой равнине, где ближайшее препятствие находится на расстоянии сотен единиц, радиус не превысит 128.
 
-Now you might wonder "Well, if the editor does all this for me, why would I change radius by hand?" The answer is simple: the editor helps, but it isn't perfect, it cannot detect all kinds of obstacles (I can't go too much into detail here because all this is pretty much map-related). Anyway, you will see places where the radius cuts into an obstacle -- it could be a very thin pillar, a fence, or even a solid-looking car that's parked in the streets. Another problem is not with walls, but with holes and cliffs: If there is no high obstacle, the editor will regard an area as clear and set a big radius, it doesn't care if right next to the node there's a yawning abyss where bots will fall to death!
+Теперь вы можете задаться вопросом: "Ну, если редактор делает всё это за меня, зачем мне менять радиус вручную?" Ответ прост: редактор помогает, но он не идеален, он не может обнаружить все виды препятствий (я не могу вдаваться в подробности, потому что это довольно много связано с картой). Как бы то ни было, вы увидите места, где радиус входит в препятствие — это может быть очень тонкая стойка, забор или даже машина, припаркованная на улице. Другая проблема — не со стенами, а с ямами и обрывами: если нет высокого препятствия, редактор сочтёт область свободной и установит большой радиус, ему всё равно, что рядом с узлом есть зияющая пропасть, куда боты упадут насмерть!
 
-So these are areas where you will have to keep a watchful eye on your radius and if necessary, change them by hand. In narrow corridors and especially around narrow doorways, you will see that even a small radius calculated by the editor doesn't make the bots navigate precisely enough. In such places, it's strongly recommended lowering the radius to zero.
+Итак, это области, за которыми вам нужно следить за радиусом и при необходимости изменять его вручную. В узких коридорах и особенно вокруг узких дверных проёмов вы увидите, что даже маленький радиус, рассчитанный редактором, не позволяет ботам навигировать достаточно точно. В таких местах настоятельно рекомендуется уменьшить радиус до нуля.
 
-In order to change the radius of a node, bring up the graph editor and select **8. Set Radius**. The following menu will appear:
+Чтобы изменить радиус узла, откройте редактор графов и выберите **8. Установить радиус**. Появится следующее меню:
 
-![Node Radius Menu](images/setradius_menu.png)
+![Меню радиуса узла](images/setradius_menu.png)
 
-Simply select an option by pressing the corresponding key, and the radius of the currently active node will be changed to the selected value. You will quickly get a feeling for these numbers if you play around with them a bit.
+Просто выберите опцию, нажав соответствующую клавишу, и радиус активного узла изменится на выбранное значение. Вы быстро почувствуете эти числа, если немного поэкспериментируете с ними.
 
-### Nodes with Fixed Radius
+### Узлы с фиксированным радиусом
 
-> **Note:** Some node types will always have, and require, a radius of zero. The radius of these node types **should NOT be changed!** The types with fixed radius are: Ladder, Rescue, Camp (no matter if team specific or not) and Map Goal.
-
----
-
-## Connecting Nodes
-
-Nodes alone aren't sufficient to make bots move the way you want. They must be connected with other nodes in order to let bots reach their goal. By default, connections up to a certain distance will be made automatically.
-
-You can select the automatic connection distance (AutoPath Max Distance, APMD) by bringing up the graph editor and selecting "7. Set Autopath Distance". The following sub-menu will appear:
-
-![Autopath Distance Menu](images/autopath_distance_menu.png)
-
-Select the desired distance from this menu. After selecting a distance, connections up to that distance will be drawn automatically. Of course, you can also add and remove connections manually.
-
-### Two-Way (Bidirectional) Connections
-
-The vast majority of all connections in a node set will be **bidirectional**. Obviously, these connections enable bots to walk both from point A to point B and back from point B to point A. **The colour of bidirectional paths is yellow**, as you can see in the picture below.
-
-![Bidirectional Path](images/bidirectional_path.png)
-
-### One-Way Connections
-
-One-way connections enable bots to walk from point A to point B, but not vice versa. They can be useful to make bots drop down a wall or a high crate, but prevent them from attempting to get up. Of course, there may be more places at which a 1-way connection can make sense, but that depends on the map.
-
-In game, 1-way connections will be visible from 2 nodes, their start and their end node. In order to show you the direction of 1-way connection, it will be shown in different colours depending on from which perspective you view it. Let's say you have a 1-way connection from node 1 to node 2. In this case, when you are standing at node 1, you will see the outgoing 1-way connection displayed in white.
-
-![Outgoing Path](images/outgoing_path.png)
-
-The picture below shows the same two nodes with the incoming connection (from left to right node). **The incoming 1-way connection is displayed in teal**.
-
-![Incoming Path](images/incoming_path.png)
-
-> **Note:** If you created an outgoing path connection from node A to node B, it will be displayed in white. And when you get to node B, the path connection will turn teal like an incoming path connection.
-
-The fact that 1-way connections are shown from both involved nodes is a great feature. It makes spotting errors very easy and saves you the trouble of running around to check if there is a connection TO the node where you are standing.
-
-### Jump Connections
-
-**Jump** connections are a bit special as they cannot be drawn like any other connection. But that's not all, apart from that, Jump connections can also be **one-way or two-way connections**. To make matters even more complex, their 2-way version can come in two flavours: A "pure" two-way jump connection, i.e. a Jump connection from A to B and another Jump connection back from B to A or a "mixed" two way connection, with a Jump connection leading from A to B and a regular one-way connection back from B to A. The latter version will be very rare, though.
-
-Now once again, this sounds more complicated than it actually is. **The Jump connection horizontal line is displayed in red (Outgoing Jump connection)**, viewed from the nodes where the bots will start their jump.
-
-![Jump Connection](images/jump_connection.png)
+> **Примечание:** Некоторые типы узлов всегда имеют и требуют радиус, равный нулю. Радиус этих типов узлов **НЕ должен изменяться!** Типы с фиксированным радиусом: Лестница, Спасение, Кемпинг (независимо от того, для конкретной команды или нет) и Цель карты.
 
 ---
 
-## Adding/Removing Connections Manually
+## Соединение узлов
 
-Now you know the most important things about connections in general and the different types of connections. You also know how to adjust automatic connection lengths and how to add a jump connection by hand. But how do you add or remove a connection by hand?
+Одних узлов недостаточно, чтобы заставить ботов двигаться так, как вы хотите. Они должны быть соединены с другими узлами, чтобы боты могли достичь своей цели. По умолчанию соединения на определённое расстояние будут создаваться автоматически.
 
-You simply aim at the desired node and select the action to perform from the on-screen menu!
+Вы можете выбрать автоматическое расстояние соединения (максимальное расстояние автопути, APMD), открыв редактор графов и выбрав "7. Установить расстояние автопути". Появится следующее подменю:
 
-Here's how it works. Let's pretend we wanted to delete the connection from the node where we're standing to the left node near the wall -- aim at the node with your crosshair. As soon as the node is selected, it will become bigger, and a little arrow will appear in front of it.
+![Меню расстояния автопути](images/autopath_distance_menu.png)
 
-> **Note:** This only works if you are standing near a node and aiming at another one! If you are standing in a nodeless area, you won't be able to use this function because it needs two selected nodes (The one where you are standing and the one you are aiming at).
+Выберите нужное расстояние из этого меню. После выбора расстояния соединения до этого расстояния будут рисоваться автоматически. Конечно, вы также можете добавлять и удалять соединения вручную.
 
-![Selected Node](images/selected_point.png)
+### Двусторонние (двунаправленные) соединения
 
-### Removing Path Connections
+Подавляющее большинство всех соединений в наборе узлов будут **двунаправленными**. Эти соединения, очевидно, позволяют ботам ходить как от точки A к точке B, так и обратно от точки B к точке A. **Цвет двусторонних путей — жёлтый**, как вы можете видеть на картинке ниже.
 
-To delete a path connection, you must open the graph editor and select **4. Delete path**.
+![Двусторонний путь](images/bidirectional_path.png)
 
-After deleting the path connection, you may notice that the outgoing path connection has been removed (from the node where you are standing to the node you selected) as you can see in the picture below:
+### Односторонние соединения
 
-![Deleted Outgoing Path](images/deleted_outgoing_path.png)
+Односторонние соединения позволяют ботам ходить от точки A к точке B, но не наоборот. Они могут быть полезны, чтобы заставить ботов спуститься со стены или высокого ящика, но помешать им попытаться подняться. Конечно, может быть больше мест, где одностороннее соединение имеет смысл, но это зависит от карты.
 
-Select **4. Delete path** again to delete the incoming path connection.
+В игре односторонние соединения будут видны от 2 узлов — их начального и конечного узла. Чтобы показать вам направление одностороннего соединения, оно будет показано разными цветами в зависимости от того, с какой стороны вы на него смотрите. Допустим, у вас есть одностороннее соединение от узла 1 к узлу 2. В этом случае, когда вы стоите на узле 1, вы увидите исходящее одностороннее соединение, отображаемое белым цветом.
 
-![Fully Deleted Path](images/fully_deleted_path.png)
+![Исходящий путь](images/outgoing_path.png)
 
-As you have already noticed, all path connections have been removed from the node you are standing on to the selected node.
+На картинке ниже показаны те же два узла с входящим соединением (слева направо). **Входящее одностороннее соединение отображается бирюзовым цветом**.
 
-### Adding Path Connections
+![Входящий путь](images/incoming_path.png)
 
-To add a path connection, you must open the graph editor and select **3. Create path**. Then a menu should appear as shown in the picture below.
+> **Примечание:** Если вы создали исходящее путевое соединение от узла A к узлу B, оно будет отображаться белым цветом. И когда вы дойдёте до узла B, путевое соединение станет бирюзовым, как входящее путевое соединение.
 
-![Path Directions Menu](images/path_directions_menu.png)
+Тот факт, что односторонние соединения отображаются с обоих вовлечённых узлов, — отличная функция. Это позволяет очень легко обнаруживать ошибки и избавляет вас от необходимости бегать, чтобы проверить, есть ли соединение К узлу, на котором вы стоите.
 
-1. Select **1. Outgoing Path** to create an outgoing path connection from nearest to faced (or cached) node
-2. Select **2. Incoming Path** to create an incoming path connection from faced (or cached) to nearest node
-3. Select **3. Bidirectional (Both Ways)** to create a bi-directional (2-way) path connection between the nearest and faced (or cached) node
-4. Select **4. Jumping Path** to create an outgoing jumping path from nearest to faced (or cached) node
+### Прыжковые соединения
+
+**Прыжковые** соединения немного особенные, поскольку их нельзя нарисовать, как любое другое соединение. Но это не всё, помимо этого прыжковые соединения также могут быть **односторонними или двусторонними**. Чтобы сделать всё ещё сложнее, их двусторонняя версия может быть двух видов: "чистое" двустороннее прыжковое соединение, т.е. прыжковое соединение от A к B и ещё одно прыжковое соединение обратно от B к A, или "смешанное" двустороннее соединение с прыжковым соединением от A к B и обычным односторонним соединением обратно от B к A. Хотя последняя версия будет очень редкой.
+
+Теперь ещё раз, это звучит сложнее, чем есть на самом деле. **Горизонтальная линия прыжкового соединения отображается красным цветом (исходящее прыжковое соединение)**, если смотреть с узлов, с которых боты начнут свой прыжок.
+
+![Прыжковое соединение](images/jump_connection.png)
 
 ---
 
-## Node Flags
+## Добавление/удаление соединений вручную
 
-YaPB has 9 flags for nodes, which are:
+Теперь вы знаете наиболее важные вещи о соединениях в целом и о различных типах соединений. Вы также знаете, как настроить автоматическую длину соединений и как добавить прыжковое соединение вручную. Но как добавить или удалить соединение вручную?
 
-| # | Flag | Description |
-|---|------|-------------|
-| 1 | Block with Hostage | A flag that prohibits Counter-Terrorists leading hostages from going along certain nodes marked with this flag. **Important: you should definitely put these flags on the ways where counter-terrorists can lose hostages!** |
-| 2 | Terrorist Specific | Makes node important for Terrorists |
-| 3 | CTs Specific | Makes node important for Counter-Terrorists |
-| 4 | Use Elevator | A flag for a node that makes bots wait while they uplift on the elevator (you must put this flag on the node at the beginning and at the end of the elevator path) |
-| 5 | Sniper Point | A flag that makes the camp point as a sniper point (bots will only camp with sniper rifles) |
-| 6 | Map Goal | A flag that turns a normal node into a goal node |
-| 7 | Rescue Zone | A flag that specifies the node as a hostage rescue point |
-| 8 | Crouch Down | A flag that causes bots to crouch when reaching this node |
-| 9 | Camp Point | A flag that makes the node as a camp point. If you add this flag, it opens the menu to choose the start and end direction of the bot's view when it's camping |
+Вы просто наведите прицел на нужный узел и выберите действие для выполнения из экранного меню!
 
-![Node Flags Menu](images/node_flags_menu.png)
+Вот как это работает. Допустим, мы хотим удалить соединение от узла, на котором мы стоим, к левому узлу у стены — наведите прицел на узел. Как только узел будет выбран, он станет больше, и появится маленькая стрелочка перед ним.
+
+> **Примечание:** Это работает только если вы стоите рядом с узлом и направляете прицел на другой! Если вы стоите в области без узлов, вы не сможете использовать эту функцию, потому что она требует двух выбранных узлов (того, на котором вы стоите, и того, на который вы направляете прицел)!
+
+![Выбранный узел](images/selected_point.png)
+
+### Удаление путевых соединений
+
+Чтобы удалить путевое соединение, вы должны открыть редактор графов и выберите **4. Удалить путь**.
+
+После удаления путевого соединения вы можете заметить, что исходящее путевое соединение было удалено (от узла, на котором вы стоите, к выбранному узлу), как вы можете видеть на картинке ниже:
+
+![Удалён исходящий путь](images/deleted_outgoing_path.png)
+
+Снова выберите **4. Удалить путь**, чтобы удалить входящее путевое соединение.
+
+![Полностью удалённый путь](images/fully_deleted_path.png)
+
+Как вы уже заметили, все путевые соединения были удалены от узла, на котором вы стоите, к выбранному узлу.
+
+### Добавление путевых соединений
+
+Чтобы добавить путевое соединение, вы должны открыть редактор графов и выбрать **3. Создать путь**. Затем должно появиться меню, как показано на картинке ниже.
+
+![Меню направлений пути](images/path_directions_menu.png)
+
+1. Выберите **1. Исходящий путь**, чтобы создать исходящее путевое соединение от ближайшего к направленному (или кэшированному) узлу
+2. Выберите **2. Входящий путь**, чтобы создать входящее путевое соединение от направленного (или кэшированного) к ближайшему узлу
+3. Выберите **3. Двусторонний (Оба направления)**, чтобы создать двустороннее (двунаправленное) путевое соединение между ближайшим и направленным (или кэшированным) узлом
+4. Выберите **4. Прыжковый путь**, чтобы создать исходящий прыжковый путь от ближайшего к направленному (или кэшированному) узлу
+
+---
+
+## Флаги узлов
+
+YaPB имеет 9 флагов для узлов:
+
+| # | Флаг | Описание |
+|---|------|----------|
+| 1 | Блокировать с заложником | Флаг, который запрещает контр-террористам, ведущим заложников, проходить определённые узлы, отмеченные этим флагом. **Важно: вы обязательно должны разместить эти флаги на путях, где контр-террористы могут потерять заложников!** |
+| 2 | Только для террористов | Делает узел важным для террористов |
+| 3 | Только для КТ | Делает узел важным для контр-террористов |
+| 4 | Использовать лифт | Флаг для узла, который заставляет ботов ждать, пока они поднимаются на лифт (вы должны разместить этот флаг на узле в начале и в конце пути лифта) |
+| 5 | Снайперская точка | Флаг, который делает точку кемпинга снайперской точкой (боты будут кемперить только со снайперскими винтовками) |
+| 6 | Цель карты | Флаг, который превращает обычный узел в целевой узел |
+| 7 | Зона спасения | Флаг, который определяет узел как точку спасения заложников |
+| 8 | Присесть | Флаг, который заставляет ботов приседать при достижении этого узла |
+| 9 | Точка кемпинга | Флаг, который делает узел точкой кемпинга. Если вы добавите этот флаг, откроется меню для выбора начала и конца направления обзора бота во время кемпинга |
+
+![Меню флагов узлов](images/node_flags_menu.png)
