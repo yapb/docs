@@ -2,11 +2,8 @@
 
 * [Home](README.md)
 
-* [About](about/README.md)
-    * [Introduction](about/introduction.md)
-    * [Credits](about/credits.md)
-
 * [Getting Started](getting-started/README.md)
+    * [Introduction](getting-started/introduction.md)
     * [Installation](getting-started/installation.md)
     * [Building from Source](getting-started/building.md)
 
@@ -25,3 +22,5 @@
     * [Node Types](waypointing/node-types.md)
     * [Connections and Flags](waypointing/connections-and-flags.md)
     * [Debugging](waypointing/debugging.md)
+
+* [Credits](credits/README.md)
