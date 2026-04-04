@@ -1,6 +1,6 @@
 # Документация YaPB
 
-* [Вступление](README.md)
+* [Главная](README.md)
 
 * [О боте](about/README.md)
     * [Вступление](about/introduction.md)
