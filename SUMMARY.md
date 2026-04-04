@@ -2,11 +2,8 @@
 
 * [Главная](README.md)
 
-* [О боте](about/README.md)
-    * [Вступление](about/introduction.md)
-    * [Авторы](about/credits.md)
-
 * [Начало работы](getting-started/README.md)
+    * [Вступление](getting-started/introduction.md)
     * [Установка](getting-started/installation.md)
     * [Сборка из исходного кода](getting-started/building.md)
 
@@ -25,3 +22,5 @@
     * [Типы узлов](waypointing/node-types.md)
     * [Соединения и флаги](waypointing/connections-and-flags.md)
     * [Отладка](waypointing/debugging.md)
+
+* [Авторы](credits/README.md)
