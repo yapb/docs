@@ -1,6 +1,6 @@
 # YaPB Documentation
 
-* [Introduction](README.md)
+* [Home](README.md)
 
 * [About](about/README.md)
     * [Introduction](about/introduction.md)
