@@ -1,6 +1,6 @@
 # Official YaPB Documentation
 
-[![Deploy to GitHub Pages](https://github.com/yapb/docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/yapb/docs/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/yapb/docs/actions/workflows/deploy-pages.yml/badge.svg?branch=master)](https://github.com/yapb/docs/actions/workflows/deploy-pages.yml)
 
 This is documentation for the YaPB bot for the Counter-Strike game.
 
