@@ -1,4 +1,4 @@
-# Official YaPB Documentation
+# YaPB Docs
 
 [![Deploy to GitHub Pages](https://github.com/yapb/docs/actions/workflows/deploy-pages.yml/badge.svg?branch=master)](https://github.com/yapb/docs/actions/workflows/deploy-pages.yml)
 
