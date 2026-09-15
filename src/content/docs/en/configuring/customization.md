@@ -14,15 +14,17 @@ If the chat config is missing or broken, bot chat is disabled automatically (`yb
 
 ### Format
 
-The file has a single root `Chat` block. Inside it, every chat section is a block with `raw` keyword — its lines are taken verbatim, one message per line. The order of messages is randomized by the bot itself.
+Every chat section lives at the top level of the file — a block with the `raw` keyword: its lines are taken verbatim, one message per line. The order of messages is randomized by the bot itself.
+
+:::note
+The legacy layout with a single root `Chat` block wrapping all sections is still accepted, so old configs keep working. New files should use the flat layout.
+:::
 
 ```ini
-Chat {
-   raw Killed {
-      %v, you're no match for me!
-      Sorry, %v. You got in my way.
-      That'll teach you, %v!
-   }
+raw Killed {
+   %v, you're no match for me!
+   Sorry, %v. You got in my way.
+   That'll teach you, %v!
 }
 ```
 
@@ -61,26 +63,24 @@ Example — when the bot kills the enemy with the nickname "John Smith", it can 
 The `Replies` block sets the messages that bots write in answer to a player's chat when it contains a known keyword. Every reply group is a block (the name is arbitrary) with one or more `key = "..."` entries and an anonymous `raw` block holding the replies verbatim.
 
 ```ini
-Chat {
-   Replies {
-      AIMBOT {
-         key = "AIMBOT"
-         key = "WALLHACK"
+Replies {
+   AIMBOT {
+      key = "AIMBOT"
+      key = "WALLHACK"
 
-         raw {
-            %s, are you cheating?
-            Aimbots are cool, shut up %s!
-            I saw %f peeking through walls. Coincidence? I think not.
-         }
+      raw {
+         %s, are you cheating?
+         Aimbots are cool, shut up %s!
+         I saw %f peeking through walls. Coincidence? I think not.
       }
+   }
 
-      AGAIN {
-         key = " AGAIN "
+   AGAIN {
+      key = " AGAIN "
 
-         raw {
-            %s, things are always repeating - aren't they?
-            Here we go again. Deja vu.
-         }
+      raw {
+         %s, things are always repeating - aren't they?
+         Here we go again. Deja vu.
       }
    }
 }
@@ -114,22 +114,24 @@ Chatter is only used when `yb_radio_mode` is set to `2`. All changes to this fil
 
 ### Format
 
-The file has a single root `Chatter` block. Every event inside it is a block named after the chatter event, holding sound file names (without the `sound/` prefix and extension) one per line. A comma-separated scalar value is also accepted:
+Every event lives at the top level of the file — a block named after the chatter event, holding sound file names (without the `sound/` prefix and extension) one per line. A comma-separated scalar value is also accepted:
+
+:::note
+The legacy layout with a single root `Chatter` block wrapping all events is still accepted, so old configs keep working. New files should use the flat layout.
+:::
 
 ```ini
-Chatter {
-   RewritePath = sound/radio/bot
+RewritePath = sound/radio/bot
 
-   CoverMe {
-      cover_me
-      cover_me2
-   }
-
-   EnemyDown = enemy_down, enemy_down2
+CoverMe {
+   cover_me
+   cover_me2
 }
+
+EnemyDown = enemy_down, enemy_down2
 ```
 
-`RewritePath` sets the folder where the voice chat audio files are located. By default it is `sound/radio/bot`. It can be placed inside or outside the `Chatter` block.
+`RewritePath` sets the folder where the voice chat audio files are located. By default it is `sound/radio/bot`. In the flat layout it lives at the top level of the file (legacy: inside the `Chatter` block).
 
 Missing sound files are reported to the console. If more than ten files are missing, chatter is disabled and bots fall back to standard radio (`yb_radio_mode` is reset to `1`).
 
@@ -215,43 +217,41 @@ Missing sound files are reported to the console. If more than ten files are miss
 ### Example chatter.cfg
 
 ```ini
-Chatter {
-   RewritePath = sound/radio/bot
+RewritePath = sound/radio/bot
 
-   CoverMe {
-      cover_me
-      cover_me2
-   }
+CoverMe {
+   cover_me
+   cover_me2
+}
 
-   TakingFire {
-      taking_fire_need_assistance2
-      i_could_use_some_help
-      i_could_use_some_help_over_here
-      help
-      need_help
-      need_help2
-      im_in_trouble
-   }
+TakingFire {
+   taking_fire_need_assistance2
+   i_could_use_some_help
+   i_could_use_some_help_over_here
+   help
+   need_help
+   need_help2
+   im_in_trouble
+}
 
-   Affirmative = affirmative, roger_that, me_too, ill_come_with_you, ill_go_with_you, ill_go_too, i_got_your_back, i_got_your_back2, im_with_you, sounds_like_a_plan, good_idea
+Affirmative = affirmative, roger_that, me_too, ill_come_with_you, ill_go_with_you, ill_go_too, i_got_your_back, i_got_your_back2, im_with_you, sounds_like_a_plan, good_idea
 
-   SectorClear {
-      clear
-      clear2
-      clear3
-      area_clear
-      all_clear_here
-      nothing_moving_over_here
-      all_quiet
-      nothing
-   }
+SectorClear {
+   clear
+   clear2
+   clear3
+   area_clear
+   all_clear_here
+   nothing_moving_over_here
+   all_quiet
+   nothing
+}
 
-   PlantingC4 = planting_the_bomb, planting
+PlantingC4 = planting_the_bomb, planting
 
-   DefusingC4 {
-      defusing
-      defusing_bomb
-      defusing_bomb_now
-   }
+DefusingC4 {
+   defusing
+   defusing_bomb
+   defusing_bomb_now
 }
 ```

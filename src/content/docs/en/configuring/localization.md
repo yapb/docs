@@ -24,28 +24,30 @@ Also, in addition to localizing the main things of the bot, such as menus, pop-u
 
 To translate the bot into your language, create a file `**_lang.cfg` (you can use `ru_lang.cfg` as a template).
 
-The file has a single root `Lang` block. Every entry inside it is a named block (the name is arbitrary) with two `raw` blocks: `Original` with the English source string and `Translated` with the translation. Lines inside `raw` blocks are taken verbatim and joined with newlines, so multi-line strings like menus are translated line by line.
+Every entry lives at the top level of the file: a named block (the name is arbitrary) with two `raw` blocks: `Original` with the English source string and `Translated` with the translation. Lines inside `raw` blocks are taken verbatim and joined with newlines, so multi-line strings like menus are translated line by line.
+
+:::note
+The legacy layout with a single root `Lang` block wrapping all entries is still accepted, so old configs keep working. New files should use the flat layout.
+:::
 
 ```ini
-Lang {
-   YMainMenuW {
-      raw Original {
-         \yMain Menu\w
-         1. Control bots
-         2. Features
-         3. Fill server
-         4. End round
-         0. Exit
-      }
+YMainMenuW {
+   raw Original {
+      \yMain Menu\w
+      1. Control bots
+      2. Features
+      3. Fill server
+      4. End round
+      0. Exit
+   }
 
-      raw Translated {
-         \yГлавное меню\w
-         1. Управление ботами
-         2. Функции
-         3. Заполнить сервер
-         4. Конец раунда
-         0. Выход
-      }
+   raw Translated {
+      \yГлавное меню\w
+      1. Управление ботами
+      2. Функции
+      3. Заполнить сервер
+      4. Конец раунда
+      0. Выход
    }
 }
 ```

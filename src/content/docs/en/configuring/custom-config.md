@@ -10,6 +10,10 @@ It's located in `addons/yapb/conf/custom.cfg`.
 All changes to this file take effect only on server restart.
 :::
 
+:::note
+Keys may live either inside their section (as in the shipped config) or at the root level of the file -- both layouts are accepted.
+:::
+
 ## Available Settings
 
 | Setting | Description |
@@ -26,3 +30,18 @@ All changes to this file take effect only on server restart.
 | `DisableLogFile` | Disables any writing activity to log files. All errors and warnings are just sent to the server console. |
 | `DisableSpawnControl` | Disables enforcement of player spawn limits during bot creation and quota management, allowing the use of custom spawn editors. |
 | `UnlockThinkFPS` | Allows to control the bot's think rate (tick rate) with the `yb_think_fps` CVAR. By default the bot's tick rate is locked to the internal value, and `yb_think_fps` is ignored. |
+
+## Graph Database Endpoints
+
+The `GraphDatabase` section holds the endpoints behind the `@aliases` of the `yb_graph_url` / `yb_graph_url_upload` CVARs (see [CVARs](/docs/en/configuring/cvars/)). Change them here to relocate the graph database without rebuilding the bot.
+
+| Setting | Description |
+|---------|-------------|
+| `GraphGithubDownload` | Download base behind `@github` of `yb_graph_url` (CDN raw over https). |
+| `GraphRussiaDownload` | Download base behind `@russia` of `yb_graph_url` (sourcecraft over https). |
+| `GraphWorkersUpload` | Upload base behind `@workers` of `yb_graph_url_upload` (cloudflare worker over https). |
+| `GraphRussiaWorker` | Upload base behind `@russia` of `yb_graph_url_upload` (yandex worker copy over https). |
+| `GraphLegacyBase` | Base behind `@http` / `@legacy` (legacy plain http server). |
+| `GraphLegacyUpload` | Upload base used as a no-TLS fallback for `@workers` and `@russia`. |
+
+Downloads append `graph/<map>.graph` to the base URL; uploads POST the graph file to the base URL as-is. Automatic collection is only available over https.

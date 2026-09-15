@@ -604,19 +604,37 @@ Determines the maximum slope height change between the current and next node to 
 
 ### yb_graph_url
 
-Specifies the URL from which bots will be able to download the graph in case of a missing local one. Accepts a full base URL with scheme (https recommended) or a legacy bare host name (assumed http). Set to empty if no downloads are needed.
+Specifies the base URL from which bots download a missing graph. The `graph/<map>.graph` path is appended automatically. Set to empty to disable downloads.
+
+Allowed values: `@github`, `@russia`, `@http` (or `@legacy`), or any full base URL.
+
+- `@github` -- CDN raw download over https (unavailable on builds without TLS)
+- `@russia` -- sourcecraft download over https, for regions with github issues (unavailable on builds without TLS)
+- `@http` -- legacy server over plain http
+
+The endpoints behind the aliases can be remapped in `custom.cfg`, see [Custom Configuration File](/docs/en/configuring/custom-config/).
 
 | Property | Value |
 |----------|-------|
-| Default | `https://raw.githubusercontent.com/yapb/graph/refs/heads/master` |
+| Default | `@github` |
 
 ### yb_graph_url_upload
 
-Specifies the URL to which bots will try to upload the graph file to the database.
+Specifies the base URL to which bots upload graph files. The file is POSTed to the base URL as-is. Set to empty to disable uploads.
+
+Allowed values: `@workers`, `@russia`, `@http` (or `@legacy`), or any full base URL.
+
+- `@workers` -- cloudflare worker over https (falls back to `@http` on builds without TLS)
+- `@russia` -- yandex worker copy over https (falls back to `@http` on builds without TLS)
+- `@http` -- legacy server over plain http
+
+Automatic graph collection is requested from the server root and requires https, otherwise it's skipped.
+
+The endpoints behind the aliases can be remapped in `custom.cfg`, see [Custom Configuration File](/docs/en/configuring/custom-config/).
 
 | Property | Value |
 |----------|-------|
-| Default | `yapb.jeefo.net/upload` |
+| Default | `@workers` |
 
 ### yb_grenadier_mode
 

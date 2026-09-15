@@ -14,15 +14,17 @@ title: "Персонализация"
 
 ### Формат
 
-Файл имеет единственный корневой блок `Chat`. Внутри него каждая секция чата — это блок с ключевым словом `raw`: его строки берутся дословно, по одному сообщению на строку. Порядок сообщений рандомизируется самим ботом.
+Каждая секция чата находится на верхнем уровне файла — это блок с ключевым словом `raw`: его строки берутся дословно, по одному сообщению на строку. Порядок сообщений рандомизируется самим ботом.
+
+:::note
+Устаревший вариант с единственным корневым блоком `Chat`, оборачивающим все секции, по-прежнему принимается — старые конфиги продолжают работать. Новые файлы следует писать в плоском формате.
+:::
 
 ```ini
-Chat {
-   raw Killed {
-      %v, you're no match for me!
-      Sorry, %v. You got in my way.
-      That'll teach you, %v!
-   }
+raw Killed {
+   %v, you're no match for me!
+   Sorry, %v. You got in my way.
+   That'll teach you, %v!
 }
 ```
 
@@ -61,26 +63,24 @@ Chat {
 Блок `Replies` задаёт сообщения, которые боты пишут в ответ на чат игрока, если в нём содержится известное ключевое слово. Каждая группа ответов — это блок (имя произвольное) с одной или несколькими записями `key = "..."` и анонимным блоком `raw`, в котором перечислены ответы.
 
 ```ini
-Chat {
-   Replies {
-      AIMBOT {
-         key = "AIMBOT"
-         key = "WALLHACK"
+Replies {
+   AIMBOT {
+      key = "AIMBOT"
+      key = "WALLHACK"
 
-         raw {
-            %s, are you cheating?
-            Aimbots are cool, shut up %s!
-            I saw %f peeking through walls. Coincidence? I think not.
-         }
+      raw {
+         %s, are you cheating?
+         Aimbots are cool, shut up %s!
+         I saw %f peeking through walls. Coincidence? I think not.
       }
+   }
 
-      AGAIN {
-         key = " AGAIN "
+   AGAIN {
+      key = " AGAIN "
 
-         raw {
-            %s, things are always repeating - aren't they?
-            Here we go again. Deja vu.
-         }
+      raw {
+         %s, things are always repeating - aren't they?
+         Here we go again. Deja vu.
       }
    }
 }
@@ -114,22 +114,24 @@ YaPB поддерживает голосовой чат так же, как ZBot
 
 ### Формат
 
-Файл имеет единственный корневой блок `Chatter`. Каждое событие внутри него — это блок с именем события голосового чата, содержащий имена звуковых файлов (без префикса `sound/` и расширения), по одному на строку. Также принимается скалярное значение через запятую:
+Каждое событие находится на верхнем уровне файла — это блок с именем события голосового чата, содержащий имена звуковых файлов (без префикса `sound/` и расширения), по одному на строку. Также принимается скалярное значение через запятую:
+
+:::note
+Устаревший вариант с единственным корневым блоком `Chatter`, оборачивающим все события, по-прежнему принимается — старые конфиги продолжают работать. Новые файлы следует писать в плоском формате.
+:::
 
 ```ini
-Chatter {
-   RewritePath = sound/radio/bot
+RewritePath = sound/radio/bot
 
-   CoverMe {
-      cover_me
-      cover_me2
-   }
-
-   EnemyDown = enemy_down, enemy_down2
+CoverMe {
+   cover_me
+   cover_me2
 }
+
+EnemyDown = enemy_down, enemy_down2
 ```
 
-`RewritePath` задаёт папку, в которой расположены аудиофайлы голосового чата. По умолчанию это `sound/radio/bot`. Он может находиться внутри или снаружи блока `Chatter`.
+`RewritePath` задаёт папку, в которой расположены аудиофайлы голосового чата. По умолчанию это `sound/radio/bot`. В плоском формате он находится на верхнем уровне файла (в устаревшем варианте — внутри блока `Chatter`).
 
 Отсутствующие звуковые файлы сообщаются в консоль. Если отсутствует более десяти файлов, голосовой чат отключается, и боты откатываются на стандартное радио (`yb_radio_mode` сбрасывается в `1`).
 
@@ -215,43 +217,41 @@ Chatter {
 ### Пример chatter.cfg
 
 ```ini
-Chatter {
-   RewritePath = sound/radio/bot
+RewritePath = sound/radio/bot
 
-   CoverMe {
-      cover_me
-      cover_me2
-   }
+CoverMe {
+   cover_me
+   cover_me2
+}
 
-   TakingFire {
-      taking_fire_need_assistance2
-      i_could_use_some_help
-      i_could_use_some_help_over_here
-      help
-      need_help
-      need_help2
-      im_in_trouble
-   }
+TakingFire {
+   taking_fire_need_assistance2
+   i_could_use_some_help
+   i_could_use_some_help_over_here
+   help
+   need_help
+   need_help2
+   im_in_trouble
+}
 
-   Affirmative = affirmative, roger_that, me_too, ill_come_with_you, ill_go_with_you, ill_go_too, i_got_your_back, i_got_your_back2, im_with_you, sounds_like_a_plan, good_idea
+Affirmative = affirmative, roger_that, me_too, ill_come_with_you, ill_go_with_you, ill_go_too, i_got_your_back, i_got_your_back2, im_with_you, sounds_like_a_plan, good_idea
 
-   SectorClear {
-      clear
-      clear2
-      clear3
-      area_clear
-      all_clear_here
-      nothing_moving_over_here
-      all_quiet
-      nothing
-   }
+SectorClear {
+   clear
+   clear2
+   clear3
+   area_clear
+   all_clear_here
+   nothing_moving_over_here
+   all_quiet
+   nothing
+}
 
-   PlantingC4 = planting_the_bomb, planting
+PlantingC4 = planting_the_bomb, planting
 
-   DefusingC4 {
-      defusing
-      defusing_bomb
-      defusing_bomb_now
-   }
+DefusingC4 {
+   defusing
+   defusing_bomb
+   defusing_bomb_now
 }
 ```
