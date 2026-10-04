@@ -15,10 +15,10 @@ The default build target is a 32-bit library, since Valve has dropped support fo
 | Ninja | Build backend |
 | GCC or Clang (gcc/g++ or clang/clang++) | Host compiler |
 | [Zig](https://ziglang.org/download/) | Only for cross builds (it ships its own libc) |
-| Visual Studio 2015+ (C/C++ tools) | Windows native builds only |
+| Visual Studio 2022+ (C/C++ tools) | Windows native builds only |
 
 :::note
-The build never installs anything itself. The `build.sh` helper probes the environment and prints distro-specific install hints when something is missing.
+The build never installs anything itself. The `build.sh` helper probes the environment (cmake, ninja, compiler, zig, multilib) and fails with a short error when something is missing.
 :::
 
 ## Getting the Source
@@ -28,7 +28,7 @@ git clone --recursive https://github.com/yapb/yapb
 cd yapb
 ```
 
-The submodules (`crlib`, `linkage`, `mbedtls`) are required. If you already cloned without `--recursive`, run `git submodule update --init --recursive`.
+The submodules (`ystl` with nested `mbedtls`, `linkage`) are required. If you already cloned without `--recursive`, run `git submodule update --init --recursive`.
 
 ## Building with build.sh (Recommended)
 
@@ -71,6 +71,7 @@ Preset groups:
 - **Local presets** (host compiler, no zig needed): `release`, `dist`, `linux-amd64-asan`, `linux-x86-asan`
 - **Cross presets** (need zig on PATH): `ci-linux-x86`, `ci-linux-amd64`, `ci-linux-x86-nosimd`, `ci-linux-arm64`, `ci-linux-riscv64`, `ci-apple-amd64`, `ci-windows-x86-clang`, `ci-windows-amd64`
 - **CI-only presets** (their runners, not for local use): `ci-apple-arm64`, `ci-windows-x86`, `ci-windows-x86-clang-cl`, `ci-windows-x86-msvc-xp`
+- **Test presets** (unit tests, native compiler only): `windows-tests`, `linux-tests`
 
 See `CMakePresets.json` for the full matrix.
 
@@ -94,7 +95,7 @@ See `CMakePresets.json` for the full matrix.
    ./build.sh
    ```
 
-4. You're done! The compiled library is located at `release/yapb.so` (each preset builds into a directory named after itself)
+4. You're done! The compiled library is located at `build/release/yapb.so` (each preset builds into `build/<preset>`)
 
 ## Building on Windows
 
@@ -106,7 +107,7 @@ See `CMakePresets.json` for the full matrix.
    ./build.sh --arch=windows-x86-clang
    ```
 
-4. You're done! The compiled library is located at `release/yapb.dll` for native builds, or `windows-x86-clang/yapb.dll` for the cross preset
+4. You're done! The compiled library is located at `build/release/yapb.dll` for native builds, or `build/ci-windows-x86-clang/yapb.dll` for the cross preset
 
 ## Build Options
 
@@ -114,11 +115,13 @@ These CMake options can be passed with `-D<Var>=<Val>` (or through `build.sh -D<
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `64BIT` | `OFF` | Build as 64-bit binary |
-| `NATIVE` | `OFF` | Configure compiler for a native machine build (`-march=native`) |
-| `WINXP` | `OFF` | Configure MSVC build for a Windows XP compatible binary |
-| `NOSIMD` | `OFF` | Disable all SIMD/NEON optimizations |
-| `STATIC_LINKENT` | `OFF` | Use predefined entity link list |
-| `LTO` | `ON` | Enable link-time optimization |
-| `SANITIZE` | (empty) | Enable sanitizers, e.g. `address` or `address,undefined` (dev builds) |
-| `WITH_TLS` | `ON` | Enable HTTPS support via vendored mbedtls |
+| `YAPB_64BIT` | `OFF` | Build as 64-bit binary |
+| `YAPB_NATIVE` | `OFF` | Configure compiler for a native machine build (`-march=native`) |
+| `YAPB_WINXP` | `OFF` | Configure MSVC build for a Windows XP compatible binary |
+| `YAPB_NOSIMD` | `OFF` | Disable all SIMD/NEON optimizations |
+| `YAPB_STATIC_LINKENT` | `OFF` | Use predefined entity link list |
+| `YAPB_LTO` | `ON` | Enable link-time optimization |
+| `YAPB_SANITIZE` | (empty) | Enable sanitizers, e.g. `address` or `address,undefined` (dev builds) |
+| `YAPB_WITH_TLS` | `ON` | Enable HTTPS support via vendored mbedtls |
+| `YAPB_BUILD_TESTS` | `OFF` | Build test host (fake engine harness, native 64-bit only) |
+| `YAPB_WITH_AMXX` | `ON` | Build AMX Mod X module (i386 only) |

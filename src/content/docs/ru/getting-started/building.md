@@ -15,10 +15,10 @@ title: "Сборка из исходного кода"
 | Ninja | Бэкенд сборки |
 | GCC или Clang (gcc/g++ или clang/clang++) | Компилятор хоста |
 | [Zig](https://ziglang.org/download/) | Только для кросс-сборок (он несёт собственную libc) |
-| Visual Studio 2015+ (инструменты C/C++) | Только для нативных сборок на Windows |
+| Visual Studio 2022+ (инструменты C/C++) | Только для нативных сборок на Windows |
 
 :::note
-Сборка ничего не устанавливает сама. Хелпер `build.sh` проверяет окружение и выводит подсказки по установке для конкретного дистрибутива, если чего-то не хватает.
+Сборка ничего не устанавливает сама. Хелпер `build.sh` проверяет окружение (cmake, ninja, компилятор, zig, multilib) и падает с короткой ошибкой, если чего-то не хватает.
 :::
 
 ## Получение исходников
@@ -28,7 +28,7 @@ git clone --recursive https://github.com/yapb/yapb
 cd yapb
 ```
 
-Подмодули (`crlib`, `linkage`, `mbedtls`) обязательны. Если вы уже склонировали без `--recursive`, выполните `git submodule update --init --recursive`.
+Подмодули (`ystl` с вложенным `mbedtls`, `linkage`) обязательны. Если вы уже склонировали без `--recursive`, выполните `git submodule update --init --recursive`.
 
 ## Сборка через build.sh (Рекомендуется)
 
@@ -71,6 +71,7 @@ cmake --build --preset release
 - **Локальные пресеты** (компилятор хоста, zig не нужен): `release`, `dist`, `linux-amd64-asan`, `linux-x86-asan`
 - **Кросс-пресеты** (нужен zig в PATH): `ci-linux-x86`, `ci-linux-amd64`, `ci-linux-x86-nosimd`, `ci-linux-arm64`, `ci-linux-riscv64`, `ci-apple-amd64`, `ci-windows-x86-clang`, `ci-windows-amd64`
 - **Пресеты только для CI** (их раннеры, не для локального использования): `ci-apple-arm64`, `ci-windows-x86`, `ci-windows-x86-clang-cl`, `ci-windows-x86-msvc-xp`
+- **Тестовые пресеты** (юнит-тесты, только нативный компилятор): `windows-tests`, `linux-tests`
 
 Полная матрица — в `CMakePresets.json`.
 
@@ -94,7 +95,7 @@ cmake --build --preset release
    ./build.sh
    ```
 
-4. Готово! Собранная библиотека находится в `release/yapb.so` (каждый пресет собирается в директорию, названную его же именем)
+4. Готово! Собранная библиотека находится в `build/release/yapb.so` (каждый пресет собирается в `build/<preset>`)
 
 ## Сборка на Windows
 
@@ -106,7 +107,7 @@ cmake --build --preset release
    ./build.sh --arch=windows-x86-clang
    ```
 
-4. Готово! Собранная библиотека находится в `release/yapb.dll` для нативных сборок или в `windows-x86-clang/yapb.dll` для кросс-пресета
+4. Готово! Собранная библиотека находится в `build/release/yapb.dll` для нативных сборок или в `build/ci-windows-x86-clang/yapb.dll` для кросс-пресета
 
 ## Опции сборки
 
@@ -114,11 +115,13 @@ cmake --build --preset release
 
 | Опция | По умолчанию | Описание |
 |--------|---------|-------------|
-| `64BIT` | `OFF` | Собрать 64-битный бинарник |
-| `NATIVE` | `OFF` | Настроить компилятор для нативной сборки под машину (`-march=native`) |
-| `WINXP` | `OFF` | Настроить MSVC-сборку бинарника, совместимого с Windows XP |
-| `NOSIMD` | `OFF` | Отключить все оптимизации SIMD/NEON |
-| `STATIC_LINKENT` | `OFF` | Использовать предопределённый список связей сущностей |
-| `LTO` | `ON` | Включить link-time оптимизацию |
-| `SANITIZE` | (пусто) | Включить санитайзеры, например `address` или `address,undefined` (dev-сборки) |
-| `WITH_TLS` | `ON` | Включить поддержку HTTPS через vendored mbedtls |
+| `YAPB_64BIT` | `OFF` | Собрать 64-битный бинарник |
+| `YAPB_NATIVE` | `OFF` | Настроить компилятор для нативной сборки под машину (`-march=native`) |
+| `YAPB_WINXP` | `OFF` | Настроить MSVC-сборку бинарника, совместимого с Windows XP |
+| `YAPB_NOSIMD` | `OFF` | Отключить все оптимизации SIMD/NEON |
+| `YAPB_STATIC_LINKENT` | `OFF` | Использовать предопределённый список связей сущностей |
+| `YAPB_LTO` | `ON` | Включить link-time оптимизацию |
+| `YAPB_SANITIZE` | (пусто) | Включить санитайзеры, например `address` или `address,undefined` (dev-сборки) |
+| `YAPB_WITH_TLS` | `ON` | Включить поддержку HTTPS через vendored mbedtls |
+| `YAPB_BUILD_TESTS` | `OFF` | Собрать тестовый хост (фейковый движок, только нативный 64-бит) |
+| `YAPB_WITH_AMXX` | `ON` | Собрать модуль AMX Mod X (только i386) |
