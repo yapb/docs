@@ -161,3 +161,15 @@ Valve не обновляла GoldSrc игры для поддержки macOS C
 6. Добавьте следующую запись: `osx addons/yapb/bin/yapb.dylib`
 7. Сохраните изменения
 8. Готово!
+
+---
+
+## Проверка релизов
+
+Архивы релизов подписаны через `GPG`, отпечаток публичного ключа: `FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24`, найти его можно здесь: [https://keyserver.ubuntu.com/](https://keyserver.ubuntu.com/pks/lookup?search=FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24+&fingerprint=on&op=index).
+
+Как проверить:
+1. [Скачайте](https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24) ключ `FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24.asc`
+2. Импортируйте: `gpg --import FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24.asc`
+3. Скачайте `архив` релиза и `.asc` файл.
+4. Проверьте: `gpg --verify some-yapb.zip.asc some-yapb.zip`.

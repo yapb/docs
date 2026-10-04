@@ -158,3 +158,15 @@ If you're installing the bot for Condition Zero, then install it to the `czero` 
 6. Append the following entry: `osx addons/yapb/bin/yapb.dylib`
 7. Save the changes
 8. You're done!
+
+---
+
+## Verifying releases
+
+Release archives are signed via `GPG`, pubkey fingerprint is: `FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24` and could be found at [https://keyserver.ubuntu.com/](https://keyserver.ubuntu.com/pks/lookup?search=FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24+&fingerprint=on&op=index).
+
+How to:
+1. [Download](https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24) `FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24.asc` key
+2. Import: `gpg --import FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24.asc`
+3. Download release `archive` and `.asc` file.
+4. Verify: `gpg --verify some-yapb.zip.asc some-yapb.zip`.

@@ -31,6 +31,14 @@ Keys may live either inside their section (as in the shipped config) or at the r
 | `DisableSpawnControl` | Disables enforcement of player spawn limits during bot creation and quota management, allowing the use of custom spawn editors. |
 | `UnlockThinkFPS` | Allows to control the bot's think rate (tick rate) with the `yb_think_fps` CVAR. By default the bot's tick rate is locked to the internal value, and `yb_think_fps` is ignored. |
 
+## Mode Walls
+
+The `ModeWalls` section supports map-restricting plugins (e.g. AMXX "Mode 2x2"), which seal off parts of the map with wall entities when online is low.
+
+| Setting | Description |
+|---------|-------------|
+| `ModeWallClassname` | Classname of the wall entities the plugin spawns (default `test_effect`). Bots treat entities with this classname and solid bbox as blockers for pathfinding. |
+
 ## Graph Database Endpoints
 
 The `GraphDatabase` section holds the endpoints behind the `@aliases` of the `yb_graph_url` / `yb_graph_url_upload` CVARs (see [CVARs](/docs/en/configuring/cvars/)). Change them here to relocate the graph database without rebuilding the bot.

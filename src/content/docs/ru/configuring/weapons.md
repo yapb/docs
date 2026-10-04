@@ -82,13 +82,13 @@ Economy {
 
 ```ini
 FireDelay {
-   pistolBase = 0.05     // базовая задержка, добавляемая к каждому выстрелу из пистолета
-   pistolMin = 0.02, 0.04, 0.06, 0.08, 0.12, 0.16
-   pistolMax = 0.08, 0.10, 0.13, 0.16, 0.20, 0.26
-   otherBase = 0.10      // базовая задержка для прочего полуавтоматического оружия (дробовики, снайперки)
-   otherMin = 0.0, 0.1, 0.2, 0.3, 0.4, 0.6
-   otherMax = 0.1, 0.2, 0.3, 0.4, 0.5, 0.7
-   deagleExtra = 0.08    // дополнительная задержка для более тяжёлого цикла Deagle
+   PistolBase = 0.05     // базовая задержка, добавляемая к каждому выстрелу из пистолета
+   PistolMin = 0.02, 0.04, 0.06, 0.08, 0.12, 0.16
+   PistolMax = 0.08, 0.10, 0.13, 0.16, 0.20, 0.26
+   OtherBase = 0.10      // базовая задержка для прочего полуавтоматического оружия (дробовики, снайперки)
+   OtherMin = 0.0, 0.1, 0.2, 0.3, 0.4, 0.6
+   OtherMax = 0.1, 0.2, 0.3, 0.4, 0.5, 0.7
+   DeagleExtra = 0.08    // дополнительная задержка для более тяжёлого цикла Deagle
 }
 ```
 
@@ -180,28 +180,28 @@ HearableSounds {
 - `name` — класснейм, используемый для выбора оружия
 - `model` — имя `p_`-модели для разделения cs-оружия
 - `alias` — алиас buy-меню оружия, используется ограничениями оружия
-- `fullName` — полное имя оружия для отображения (например `HK USP .45 Tactical`)
+- `FullName` — полное имя оружия для отображения (например `HK USP .45 Tactical`)
 - `price` — цена при покупке
-- `minPrimaryAmmo` — минимум основных патронов для покупки
-- `teamStandard` — доступность для команд на стандартных картах: `none`, `terrorist`, `ct`, `both`
-- `teamAS` — доступность для команд на картах `as_`
-- `buyGroup` / `buySelect` — группа и пункт в buy-меню (стандартные карты)
-- `buySelectT` / `buySelectCT` — пункт для выбора в buy-меню v1.6 (террористы / КТ)
-- `penetratePower` — пробивная способность стен
-- `maxClip` — максимум патронов в магазине
+- `MinPrimaryAmmo` — минимум основных патронов для покупки
+- `TeamStandard` — доступность для команд на стандартных картах: `none`, `terrorist`, `ct`, `both`
+- `TeamAS` — доступность для команд на картах `as_`
+- `BuyGroup` / `BuySelect` — группа и пункт в buy-меню (стандартные карты)
+- `BuySelectT` / `BuySelectCT` — пункт для выбора в buy-меню v1.6 (террористы / КТ)
+- `PenetratePower` — пробивная способность стен
+- `MaxClip` — максимум патронов в магазине
 - `type` — класс оружия: `melee`, `pistol`, `shotgun`, `zoomrifle`, `rifle`, `smg`, `sniper`, `heavy`
-- `primaryFireHold` — удерживать кнопку основного огня для использования (`yes`/`no`)
+- `PrimaryFireHold` — удерживать кнопку основного огня для использования (`yes`/`no`)
 
 ```ini
 Weapons {
    Deagle {
-      name = weapon_deagle
-      alias = deagle
-      fullName = Desert Eagle .50AE
-      price = 650
-      teamStandard = ct
-      teamAS = ct
-      type = pistol
+      Name = weapon_deagle
+      Alias = deagle
+      FullName = Desert Eagle .50AE
+      Price = 650
+      TeamStandard = ct
+      TeamAS = ct
+      Type = pistol
    }
 }
 ```

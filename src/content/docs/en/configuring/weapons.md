@@ -82,13 +82,13 @@ Final delay between trigger pulls is `base + random (min[slot], max[slot])`. Slo
 
 ```ini
 FireDelay {
-   pistolBase = 0.05     // base delay added to every pistol shot
-   pistolMin = 0.02, 0.04, 0.06, 0.08, 0.12, 0.16
-   pistolMax = 0.08, 0.10, 0.13, 0.16, 0.20, 0.26
-   otherBase = 0.10      // base delay for other semi-auto weapons (shotguns, snipers)
-   otherMin = 0.0, 0.1, 0.2, 0.3, 0.4, 0.6
-   otherMax = 0.1, 0.2, 0.3, 0.4, 0.5, 0.7
-   deagleExtra = 0.08    // extra delay for deagle's heavier cycle
+   PistolBase = 0.05     // base delay added to every pistol shot
+   PistolMin = 0.02, 0.04, 0.06, 0.08, 0.12, 0.16
+   PistolMax = 0.08, 0.10, 0.13, 0.16, 0.20, 0.26
+   OtherBase = 0.10      // base delay for other semi-auto weapons (shotguns, snipers)
+   OtherMin = 0.0, 0.1, 0.2, 0.3, 0.4, 0.6
+   OtherMax = 0.1, 0.2, 0.3, 0.4, 0.5, 0.7
+   DeagleExtra = 0.08    // extra delay for deagle's heavier cycle
 }
 ```
 
@@ -180,28 +180,28 @@ Values:
 - `name` — classname used to select the weapon
 - `model` — `p_` model name to separate cs weapons
 - `alias` — buy-menu alias of the weapon, used by the weapon restrictions
-- `fullName` — full weapon name for display (e.g. `HK USP .45 Tactical`)
+- `FullName` — full weapon name for display (e.g. `HK USP .45 Tactical`)
 - `price` — price when buying
-- `minPrimaryAmmo` — minimum primary ammo to buy
-- `teamStandard` — team availability on standard maps: `none`, `terrorist`, `ct`, `both`
-- `teamAS` — team availability on `as_` maps
-- `buyGroup` / `buySelect` — group and item in the buy menu (standard maps)
-- `buySelectT` / `buySelectCT` — item to select in the v1.6 buy menu (terrorists / CTs)
-- `penetratePower` — wall penetration power
-- `maxClip` — max ammo in clip
+- `MinPrimaryAmmo` — minimum primary ammo to buy
+- `TeamStandard` — team availability on standard maps: `none`, `terrorist`, `ct`, `both`
+- `TeamAS` — team availability on `as_` maps
+- `BuyGroup` / `BuySelect` — group and item in the buy menu (standard maps)
+- `BuySelectT` / `BuySelectCT` — item to select in the v1.6 buy menu (terrorists / CTs)
+- `PenetratePower` — wall penetration power
+- `MaxClip` — max ammo in clip
 - `type` — weapon class: `melee`, `pistol`, `shotgun`, `zoomrifle`, `rifle`, `smg`, `sniper`, `heavy`
-- `primaryFireHold` — hold down the primary fire button to use (`yes`/`no`)
+- `PrimaryFireHold` — hold down the primary fire button to use (`yes`/`no`)
 
 ```ini
 Weapons {
    Deagle {
-      name = weapon_deagle
-      alias = deagle
-      fullName = Desert Eagle .50AE
-      price = 650
-      teamStandard = ct
-      teamAS = ct
-      type = pistol
+      Name = weapon_deagle
+      Alias = deagle
+      FullName = Desert Eagle .50AE
+      Price = 650
+      TeamStandard = ct
+      TeamAS = ct
+      Type = pistol
    }
 }
 ```

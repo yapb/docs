@@ -200,15 +200,14 @@ Missing sound files are reported to the console. If more than ten files are miss
 | `ThreeEnemiesLeft` | Bot says that there are three enemies left |
 | `NiceShotPall` | Bot's reaction to a nice shot from another bot |
 | `GoingToGuardHostages` | Bot says that it is going to guard the hostages |
+| `GoingToGuardEscapeZone` | Bot says that it is going to guard the escape zone |
+| `GoingToGuardRescueZone` | Bot says that it is going to guard the rescue zone |
 | `GoingToGuardDroppedBomb` | Bot says that it is going to guard the dropped bomb |
 | `OnMyWay` | Bot says it will be here soon |
 | `LeadOnSir` | Bot tells the player that it will follow him |
 | `PinnedDown` | Bot asks for help from teammates when they are nearby |
 | `GottaFindTheBomb` | Bot says that it is going to find the bomb |
-| `YouHeardTheMan` | Bot responds to phrases from `NewRound` (currently not used) |
-| `LostCommander` | Bot says that the commander (player) was killed (currently not used) |
-| `NewRound` | Bot talks about the beginning of the round (currently not used) |
-| `BehindSmoke` | Bot says that it is behind the smoke (currently not used) |
+| `LostCommander` | Bot says that the commander (player) was killed |
 | `BombSiteSecured` | Bot says that it secured the bomb site |
 | `GoingToCamp` | Bot says that it is going to camp (guard an area) |
 | `Camp` | Bot says that it's camping |
@@ -253,5 +252,28 @@ DefusingC4 {
    defusing
    defusing_bomb
    defusing_bomb_now
+}
+```
+
+---
+
+## Bot Avatars
+
+The `avatars.cfg` file in `addons/yapb/conf` holds 64-bit Steam IDs used to display avatars for bots in the scoreboard. Counter-Strike only shows avatars of players' friends, so this is mostly useless until a fix is found. If you find yourself listed there, please create an issue to remove your person.
+
+```ini
+Avatars {
+   76561198007764214
+}
+```
+
+## Spray Logos
+
+The `logos.cfg` file in `addons/yapb/conf` holds spray logo definitions for bots. They are taken from `decals.wad`. Decal names start with `{`, the raw block keeps them verbatim.
+
+```ini
+raw Logos {
+   {lambda06
+   {target
 }
 ```

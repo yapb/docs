@@ -267,6 +267,10 @@ Forces all alive bots to build a path and go to the specified graph node.
 | Max | `4096` |
 | Default | `-1` |
 
+### yb_debug_overlay_color
+
+Specifies the RGB color of the debug overlay text, e.g. `255 255 255`.
+
 ### yb_destroy_breakables_around
 
 Allows bots to destroy breakables around them, even without touching them.
@@ -484,16 +488,6 @@ Starts the map auto-analyzer if the graph is not present in the local storage or
 | Max | `1` |
 | Default | `1` |
 
-### yb_graph_analyze_clean_paths_on_finish
-
-Specifies if the analyzer should clean unnecessary paths upon finishing.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
-
 ### yb_graph_analyze_distance
 
 Specifies the minimum distance to keep nodes from each other.
@@ -503,26 +497,6 @@ Specifies the minimum distance to keep nodes from each other.
 | Min | `42` |
 | Max | `128` |
 | Default | `64` |
-
-### yb_graph_analyze_fps
-
-Specifies the FPS at which the analyzer process runs. This keeps the game from freezing during analysis.
-
-| Property | Value |
-|----------|-------|
-| Min | `25` |
-| Max | `99` |
-| Default | `30` |
-
-### yb_graph_analyze_mark_goals_on_finish
-
-Specifies if the analyzer should mark nodes as map goals automatically upon finish.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
 
 ### yb_graph_analyze_max_jump_height
 
@@ -534,15 +508,19 @@ Specifies the max jump height to test if the next node will be unreachable.
 | Max | `64` |
 | Default | `44` |
 
-### yb_graph_analyze_optimize_nodes_on_finish
+### yb_graph_analyze_on_finish
 
-Specifies if the analyzer should merge some near-placed nodes with many connections together.
+Finish steps as a bitmask (`1` optimize, `2` clean, `4` goals, `8` camps, `16` teams) or names (`optimize`, `clean`, `goals`, `camps`, `teams`, `all`, `none`).
+
+### yb_graph_analyze_slice_ms
+
+Max milliseconds of analysis work per server frame. Bounds analysis hitch, prevents hard freezes.
 
 | Property | Value |
 |----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Min | `1` |
+| Max | `25` |
+| Default | `4` |
 
 ### yb_graph_auto_collect_db
 
@@ -600,7 +578,7 @@ Determines the maximum slope height change between the current and next node to 
 |----------|-------|
 | Min | `18` |
 | Max | `45` |
-| Default | `24` |
+| Default | `18` |
 
 ### yb_graph_url
 
@@ -1195,8 +1173,8 @@ If not zero, bots will spray some paints all over the map.
 | Property | Value |
 |----------|-------|
 | Min | `0` |
-| Max | `1` |
-| Default | `1` |
+| Max | `100` |
+| Default | `30` |
 
 ### yb_stab_close_enemies
 
