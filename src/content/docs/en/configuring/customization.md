@@ -55,8 +55,16 @@ No more than six placeholders are substituted in a single message. Unknown marke
 | `TeamAttack` | Messages bots write when attacked by a teammate |
 | `TeamKill` | Messages bots write when they killed a teammate |
 | `Unknown` | Fallback answers used when no reply matched the chat keyword (see `Replies` below) |
+| `GameNames` | Game name aliases for the `%d` placeholder: `CZ` and `CS` entries with comma-separated variants, the first one picked 30% of the time |
 
 Example — when the bot kills the enemy with the nickname "John Smith", it can write "You're dead John Smith!" using the line `You're dead %v!` from the `Killed` section.
+
+```ini
+GameNames {
+   CZ = CZ, Condition Zero
+   CS = CS, Counter-Strike
+}
+```
 
 ### Replies
 
