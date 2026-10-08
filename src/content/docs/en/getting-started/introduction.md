@@ -23,7 +23,7 @@ YaPB currently supports only Counter-Strike (since Beta 6.5 to 1.6) and Conditio
 **Supported engines:**
 
 - Official Valve's GoldSrc Engine on Windows, Linux and macOS.
-- Flying with Gauss Xash3D Engine on Windows, Linux, macOS and Android.
+- Flying with Gauss Xash3D Engine on Windows, Linux and macOS.
 - ReHLDS & ReGameDLL on Windows and Linux.
 - WON version of Valve's GoldSrc Engine on Windows, Linux. Minimum engine version is 1.1.0.4.
 

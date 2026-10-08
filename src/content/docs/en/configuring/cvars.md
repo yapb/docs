@@ -355,16 +355,6 @@ Specifies if the bot DLL will display welcome text when adding bots.
 | Max | `1` |
 | Default | `1` |
 
-### yb_display_menu_text
-
-Enables or disables display of menu text when players ask for a menu. Useful only for Android.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
-
 ### yb_dont_shoot
 
 If enabled, bots are not allowed to press the attack button, thus forbidding them from shooting.
@@ -1199,16 +1189,6 @@ Has effect only if `UnlockThinkFPS = yes` is set in `custom.cfg`.
 | Min | `10` |
 | Max | `90` |
 | Default | `40` |
-
-### yb_think_fps_disable
-
-Allows to completely disable think fps on Xash3D.
-
-| Property | Value |
-|----------|-------|
-| Min | `0` |
-| Max | `1` |
-| Default | `1` |
 
 ### yb_threadpool_workers
 

@@ -4,7 +4,7 @@ title: "Installation"
 
 ## Before you begin
 
-Unlike many other PODBot flavours, YaPB is able to run as a metamod plugin as well as a standalone DLL for every platform it supports (except Android) without changing the so/dll/dylib.
+Unlike many other PODBot flavours, YaPB is able to run as a metamod plugin as well as a standalone DLL for every platform it supports without changing the so/dll/dylib.
 
 :::caution
 If you have some mods like AMX Mod X installed, you should consider installing bots as a metamod plugin, not as a standalone DLL. In other situations there is **no** requirement to install metamod before installing YaPB.
