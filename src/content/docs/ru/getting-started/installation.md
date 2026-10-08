@@ -24,7 +24,7 @@ YaPB поддерживает установку на локальном и вы
 
 ### Использование программы установки
 
-1. Скачайте последнюю версию установщика YaPB из <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-windows.exe`)
+1. Скачайте последнюю версию установщика YaPB из <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-windows.exe`)
 2. Запустите программу
 3. Нажмите `Обзор` и укажите, где находится `hl.exe`/`hlds.exe`
 4. Нажмите `Установить` для установки бота
@@ -47,7 +47,7 @@ YaPB поддерживает установку на локальном и вы
 Если вы устанавливаете для Condition Zero, тогда установите его в папку `czero`
 :::
 
-1. Скачайте последнюю версию `ZIP` архива YaPB из <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-windows.zip`)
+1. Скачайте последнюю версию `ZIP` архива YaPB из <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-windows.zip`)
 2. Распакуйте скачанный архив в папку `C:\Steam\steamapps\common\Half-Life\cstrike`
 3. Откройте файл под названием `liblist.gam` в блокноте или любом другом текстовом редакторе (находящийся в `C:\Steam\steamapps\common\Half-Life\cstrike`)
 4. Найдите запись `gamedll`. Она должна указывать на `dlls\mp.dll`
@@ -63,7 +63,7 @@ YaPB поддерживает установку на локальном и вы
 Если вы устанавливаете для Condition Zero, тогда установите его в папку `czero`
 :::
 
-1. Скачайте последнюю версию `ZIP` архива YaPB из <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-windows.zip`)
+1. Скачайте последнюю версию `ZIP` архива YaPB из <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-windows.zip`)
 2. Распакуйте скачанный архив в папку `C:\Steam\steamapps\common\Half-Life\cstrike`
 3. Откройте файл под названием `plugins.ini` в блокноте или любом другом текстовом редакторе (находящийся в `C:\Steam\steamapps\common\Half-Life\cstrike\addons\metamod`)
 4. Добавьте следующую запись: `win32 addons/yapb/bin/yapb.dll`
@@ -84,7 +84,7 @@ YaPB поддерживает установку на локальном и вы
 Если вы устанавливаете для Condition Zero, тогда установите его в папку `czero`
 :::
 
-1. Скачайте последнюю версию `TAR.XZ` архива YaPB из <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-linux.tar.xz`)
+1. Скачайте последнюю версию `TAR.XZ` архива YaPB из <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-linux.tar.xz`)
 2. Распакуйте скачанный архив в папку `/usr/Steam/steamapps/common/Half-Life/cstrike`
 3. Откройте файл под названием `liblist.gam` в любом текстовом редакторе (находящийся в `/usr/Steam/steamapps/common/Half-Life/cstrike`)
 4. Найдите запись `gamedll_linux`. Она должна указывать на `dlls/cs.so`
@@ -100,7 +100,7 @@ YaPB поддерживает установку на локальном и вы
 Если вы устанавливаете для Condition Zero, тогда установите его в папку `czero`
 :::
 
-1. Скачайте последнюю версию `TAR.XZ` архива YaPB из <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-linux.tar.xz`)
+1. Скачайте последнюю версию `TAR.XZ` архива YaPB из <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-linux.tar.xz`)
 2. Распакуйте скачанный архив в папку `/usr/Steam/steamapps/common/Half-Life/cstrike`
 3. Откройте файл под названием `plugins.ini` в любом текстовом редакторе (находящийся в `/usr/Steam/steamapps/common/Half-Life/cstrike/addons/metamod`)
 4. Добавьте следующую запись: `linux addons/yapb/bin/yapb.so`
@@ -135,8 +135,8 @@ Valve не обновляла GoldSrc игры для поддержки macOS C
 Если вы устанавливаете для Condition Zero, тогда установите его в папку `czero`
 :::
 
-1. Скачайте последнюю версию пакета YaPB с сайта <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-windows.zip` или `yapb-4.4.957-linux.tar.xz`)
-2. Скачайте последнюю версию пакета extras с сайта <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-extras.zip`)
+1. Скачайте последнюю версию пакета YaPB с сайта <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-windows.zip` или `yapb-4.4.957-linux.tar.xz`)
+2. Скачайте последнюю версию пакета extras с сайта <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-extras.zip`)
 3. Распакуйте скачанный пакет YaPB в директорию `/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`
 4. Распакуйте бинарный файл `yapb.dylib` из папки `darwin-x86` в скачанном пакете extras в директорию `/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike/addons/yapb/bin`
 5. Откройте файл под названием `liblist.gam` в любом текстовом редакторе (находящийся в `/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`)
@@ -153,8 +153,8 @@ Valve не обновляла GoldSrc игры для поддержки macOS C
 Если вы устанавливаете для Condition Zero, тогда установите его в папку `czero`
 :::
 
-1. Скачайте последнюю версию пакета YaPB с сайта <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-windows.zip` или `yapb-4.4.957-linux.tar.xz`)
-2. Скачайте последнюю версию пакета extras с сайта <https://yapb.jeefo.net/latest> (например: `yapb-4.4.957-extras.zip`)
+1. Скачайте последнюю версию пакета YaPB с сайта <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-windows.zip` или `yapb-4.4.957-linux.tar.xz`)
+2. Скачайте последнюю версию пакета extras с сайта <https://github.com/yapb/yapb/releases> (например: `yapb-4.4.957-extras.zip`)
 3. Распакуйте скачанный пакет YaPB в директорию `/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike`
 4. Распакуйте бинарный файл `yapb.dylib` из папки `darwin-x86` в скачанном пакете extras в директорию `/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike/addons/yapb/bin`
 5. Откройте файл под названием `plugins.ini` в любом текстовом редакторе (находящийся в `/Users/user/Library/Application Support/Steam/steamapps/common/Half-Life/cstrike/addons/metamod`)

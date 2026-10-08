@@ -4,7 +4,6 @@ title: "Credits"
 
 ## Development Team
 
-- **jeefo** -- Current maintainer, and 2.x - 4.x series developer
 - **$_Vladislav** -- Documentation, waypoints
 - **Whistler** -- Original author of YaPB fork (retired)
 
