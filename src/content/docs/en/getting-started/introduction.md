@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+description: "What YaPB is, which games and mods it supports, and why bots need waypoints."
 ---
 
 ## What is YaPB?

@@ -1,0 +1,151 @@
+/* YaPB docs theme — warm amber accent (à la amxts), Manrope typeface,
+   rounded surfaces, calmer tables and screenshots with soft shadows. */
+
+@import '@fontsource-variable/manrope';
+
+:root {
+	--sl-font:
+		'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+		Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--sl-font-mono:
+		ui-monospace, 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas,
+		monospace;
+	/* Content column ~30% wider than the 45rem default. */
+	--sl-content-width: 58rem;
+
+	/* Amber accent on light background. */
+	--sl-color-accent-low: #fef3c7;
+	--sl-color-accent: #b45309;
+	--sl-color-accent-high: #92400e;
+}
+
+:root[data-theme='dark'] {
+	/* Amber accent on dark background. */
+	--sl-color-accent-low: #451a03;
+	--sl-color-accent: #f59e0b;
+	--sl-color-accent-high: #fcd34d;
+
+	/* Warm stone neutrals à la amxts (default ramp is cold blue-gray).
+	   gray-1 is lightest, gray-6 darkest in dark mode. */
+	--sl-color-gray-1: #e7e5e4;
+	--sl-color-gray-2: #d6d3d1;
+	--sl-color-gray-3: #a8a29e;
+	--sl-color-gray-4: #57534e;
+	--sl-color-gray-5: #292524;
+	--sl-color-gray-6: #1c1917;
+	--sl-color-black: #0c0a09;
+}
+
+/* Roomier article typography. */
+.sl-markdown-content {
+	line-height: 1.75;
+}
+
+.sl-markdown-content :is(h2, h3) {
+	letter-spacing: -0.01em;
+}
+
+/* Softer, rounded code blocks. */
+.sl-markdown-content pre {
+	border-radius: 0.9rem;
+}
+
+/* Cards: rounder + lift on hover. */
+.card {
+	border-radius: 1rem;
+}
+
+a.card:hover {
+	transform: translateY(-2px);
+	transition: transform 0.15s ease;
+	border-color: var(--sl-color-accent);
+}
+
+/* Screenshots: rounded with a soft shadow. */
+.sl-markdown-content img {
+	border-radius: 0.75rem;
+	box-shadow: var(--sl-shadow-md);
+}
+
+/* Tables: calmer header, sticky-ish readability. */
+.sl-markdown-content table {
+	font-size: 0.9375rem;
+}
+
+.sl-markdown-content thead th {
+	background: var(--sl-color-accent-low);
+	color: var(--sl-color-accent-high);
+}
+
+/* In dark mode the table header stays neutral — amber only in light. */
+:root[data-theme='dark'] .sl-markdown-content thead th {
+	background: var(--sl-color-gray-6);
+	color: var(--sl-color-gray-1);
+}
+
+.sl-markdown-content tbody tr:nth-child(even) {
+	background: color-mix(in srgb, var(--sl-color-gray-6) 45%, transparent);
+}
+
+/* Splash hero: left-aligned docs style, not a marketing banner.
+   Single column even on wide screens (no image), roomy title
+   for the wide Unbounded typeface. */
+.hero {
+	display: block;
+	padding-block: 1.5rem 1rem;
+}
+
+.hero .stack {
+	text-align: start;
+	align-items: flex-start;
+}
+
+.hero .copy {
+	align-items: flex-start;
+}
+
+.hero .copy > * {
+	max-width: none;
+}
+
+.hero .actions {
+	justify-content: flex-start;
+}
+
+.hero > h1 {
+	font-size: clamp(1.75rem, 3.5vw + 1rem, 2.4rem);
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+.hero .tagline {
+	font-size: var(--sl-text-base);
+	text-wrap: balance;
+}
+
+.hero .actions {
+	margin-top: 0.25rem;
+}
+
+/* Landing cards: denser so the splash fits one screen. */
+.card-grid {
+	gap: 0.75rem;
+}
+
+.card-grid .card {
+	padding: 1rem 1.25rem;
+}
+
+.card-grid .card .title {
+	font-size: var(--sl-text-base);
+}
+
+/* Sidebar: current page pill with readable text in both themes.
+   (Starlight leaves its own `color: text-invert` here, which is black
+   in dark mode — unreadable on a dark pill background.) */
+#starlight__sidebar a[aria-current='page'] {
+	background: color-mix(in srgb, var(--sl-color-accent) 14%, transparent);
+	color: var(--sl-color-accent-high);
+	font-weight: 600;
+}

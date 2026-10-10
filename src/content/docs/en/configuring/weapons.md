@@ -16,10 +16,10 @@ The `Standard` block specifies which team is allowed to buy a weapon on a regula
 
 Possible values:
 
-- `banned` — disallow buying for any team
-- `terrorist` — Terrorist team only (alias: `t`)
-- `ct` — CT team only
-- `both` — can be bought by both teams
+- `banned` - disallow buying for any team
+- `terrorist` - Terrorist team only (alias: `t`)
+- `ct` - CT team only
+- `both` - can be bought by both teams
 
 Only the weapons you list here are overridden; the rest keep their defaults from `gamedef.cfg`.
 
@@ -150,9 +150,9 @@ Every block name is a sound sample prefix (relative to the `sound/` directory); 
 
 Values:
 
-- `flags` — noise classification (one or more, comma separated): `HitFall`, `Pickup`, `Zoom`, `Ammo`, `Hostage`, `Broke`, `Door`, `Defuse`, `SGDetonate`, `WeaponFire`, `Footstep`, `Explosion`, `Ricochet`, `Misc`
-- `radius` — base hear radius, in units (scaled by volume/attenuation)
-- `duration` — how long the sound stays in bot's memory, in seconds
+- `flags` - noise classification (one or more, comma separated): `HitFall`, `Pickup`, `Zoom`, `Ammo`, `Hostage`, `Broke`, `Door`, `Defuse`, `SGDetonate`, `WeaponFire`, `Footstep`, `Explosion`, `Ricochet`, `Misc`
+- `radius` - base hear radius, in units (scaled by volume/attenuation)
+- `duration` - how long the sound stays in bot's memory, in seconds
 
 ```ini
 HearableSounds {
@@ -177,20 +177,20 @@ Every block name is a weapon id (`Knife`, `USP`, `Glock18`, `Deagle`, `P228`, `E
 
 Values:
 
-- `name` — classname used to select the weapon
-- `model` — `p_` model name to separate cs weapons
-- `alias` — buy-menu alias of the weapon, used by the weapon restrictions
-- `FullName` — full weapon name for display (e.g. `HK USP .45 Tactical`)
-- `price` — price when buying
-- `MinPrimaryAmmo` — minimum primary ammo to buy
-- `TeamStandard` — team availability on standard maps: `none`, `terrorist`, `ct`, `both`
-- `TeamAS` — team availability on `as_` maps
-- `BuyGroup` / `BuySelect` — group and item in the buy menu (standard maps)
-- `BuySelectT` / `BuySelectCT` — item to select in the v1.6 buy menu (terrorists / CTs)
-- `PenetratePower` — wall penetration power
-- `MaxClip` — max ammo in clip
-- `type` — weapon class: `melee`, `pistol`, `shotgun`, `zoomrifle`, `rifle`, `smg`, `sniper`, `heavy`
-- `PrimaryFireHold` — hold down the primary fire button to use (`yes`/`no`)
+- `name` - classname used to select the weapon
+- `model` - `p_` model name to separate cs weapons
+- `alias` - buy-menu alias of the weapon, used by the weapon restrictions
+- `FullName` - full weapon name for display (e.g. `HK USP .45 Tactical`)
+- `price` - price when buying
+- `MinPrimaryAmmo` - minimum primary ammo to buy
+- `TeamStandard` - team availability on standard maps: `none`, `terrorist`, `ct`, `both`
+- `TeamAS` - team availability on `as_` maps
+- `BuyGroup` / `BuySelect` - group and item in the buy menu (standard maps)
+- `BuySelectT` / `BuySelectCT` - item to select in the v1.6 buy menu (terrorists / CTs)
+- `PenetratePower` - wall penetration power
+- `MaxClip` - max ammo in clip
+- `type` - weapon class: `melee`, `pistol`, `shotgun`, `zoomrifle`, `rifle`, `smg`, `sniper`, `heavy`
+- `PrimaryFireHold` - hold down the primary fire button to use (`yes`/`no`)
 
 ```ini
 Weapons {

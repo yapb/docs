@@ -14,7 +14,7 @@ If the chat config is missing or broken, bot chat is disabled automatically (`yb
 
 ### Format
 
-Every chat section lives at the top level of the file — a block with the `raw` keyword: its lines are taken verbatim, one message per line. The order of messages is randomized by the bot itself.
+Every chat section lives at the top level of the file - a block with the `raw` keyword: its lines are taken verbatim, one message per line. The order of messages is randomized by the bot itself.
 
 :::note
 The legacy layout with a single root `Chat` block wrapping all sections is still accepted, so old configs keep working. New files should use the flat layout.
@@ -57,7 +57,7 @@ No more than six placeholders are substituted in a single message. Unknown marke
 | `Unknown` | Fallback answers used when no reply matched the chat keyword (see `Replies` below) |
 | `GameNames` | Game name aliases for the `%d` placeholder: `CZ` and `CS` entries with comma-separated variants, the first one picked 30% of the time |
 
-Example — when the bot kills the enemy with the nickname "John Smith", it can write "You're dead John Smith!" using the line `You're dead %v!` from the `Killed` section.
+Example - when the bot kills the enemy with the nickname "John Smith", it can write "You're dead John Smith!" using the line `You're dead %v!` from the `Killed` section.
 
 ```ini
 GameNames {
@@ -107,7 +107,7 @@ Tommy Vercetti: Here we go again. Deja vu.
 Bots can use these replies at random. Keywords are matched case-insensitively against the chat text; enclose a key with spaces (e.g. `" AGAIN "`) to match it as a whole word.
 
 :::note
-Write the keys in capital letters — they are stored uppercase. In players' messages they can be written in any format.
+Write the keys in capital letters - they are stored uppercase. In players' messages they can be written in any format.
 :::
 
 ---
@@ -122,7 +122,7 @@ Chatter is only used when `yb_radio_mode` is set to `2`. All changes to this fil
 
 ### Format
 
-Every event lives at the top level of the file — a block named after the chatter event, holding sound file names (without the `sound/` prefix and extension) one per line. A comma-separated scalar value is also accepted:
+Every event lives at the top level of the file - a block named after the chatter event, holding sound file names (without the `sound/` prefix and extension) one per line. A comma-separated scalar value is also accepted:
 
 :::note
 The legacy layout with a single root `Chatter` block wrapping all events is still accepted, so old configs keep working. New files should use the flat layout.

@@ -6,7 +6,7 @@ Map specific configs store user-configured CVARs. The filename is `<mapname>.cfg
 
 You can use any of the [Bot CVARs](\/docs\/en/configuring/cvars/) in this config. It is executed automatically via the engine `exec` command when the matching map starts.
 
-By default YaPB does not ship any configs for maps — the `maps` directory only contains a `.gitkeep` placeholder. Create a file named after your map to override CVARs on it.
+By default YaPB does not ship any configs for maps - the `maps` directory only contains a `.gitkeep` placeholder. Create a file named after your map to override CVARs on it.
 
 Example `addons/yapb/conf/maps/fy_pool_day.cfg`:
 

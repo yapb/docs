@@ -1,0 +1,42 @@
+---
+title: 'YaPB - AI-противник для Counter-Strike'
+description: 'YaPB - это AI-противник для Counter-Strike. Установите его, настройте сложность и оружие, создайте вэйпоинты для своих карт.'
+template: splash
+hero:
+  title: 'Играйте в Counter-Strike с AI-противниками'
+  tagline: 'YaPB заполняет ваш сервер игроками под управлением AI - устанавливается за минуты, настраивается под вас, работает на любой карте с вэйпоинтами.'
+  actions:
+    - text: Начало работы
+      link: /docs/ru/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Смотреть на GitHub
+      link: https://github.com/yapb/yapb
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="Начало работы" icon="rocket">
+    Установите YaPB на Windows, Linux или macOS - или соберите из исходников.
+
+    [Установить YaPB](/docs/ru/getting-started/installation/)
+  </Card>
+  <Card title="Настройка бота" icon="setting">
+    Около 110 CVARов, сложность, оружие, конфиги для отдельных карт и локализация.
+
+    [Справочник по настройке](/docs/ru/configuring/)
+  </Card>
+  <Card title="Вэйпоинты карты" icon="puzzle">
+    Расставьте узлы во встроенном редакторе графов, чтобы боты ориентировались на карте.
+
+    [Редактор графов](/docs/ru/waypointing/)
+  </Card>
+  <Card title="Использование в игре" icon="terminal">
+    Меню, консольные команды и управление ботами прямо во время игры.
+
+    [Использование ботов](/docs/ru/configuring/botusage/)
+  </Card>
+</CardGrid>

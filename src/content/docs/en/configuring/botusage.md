@@ -300,7 +300,7 @@ Debug commands for players:
 | `memory` | Displays memory allocation statistics |
 | `translate [reset\|write]` | Lists untranslated strings collected during play; `write` appends them to the language config, `reset` clears the list |
 
-Example — execute a command from a bot entity (find the bot id with `yb list` first):
+Example - execute a command from a bot entity (find the bot id with `yb list` first):
 
 ```
 yb debug exec 3 "say hello"

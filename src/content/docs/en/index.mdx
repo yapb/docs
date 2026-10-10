@@ -1,0 +1,42 @@
+---
+title: 'YaPB - AI opponent for Counter-Strike'
+description: 'YaPB is an AI opponent for Counter-Strike. Install it, configure difficulty and weapons, and waypoint your maps.'
+template: splash
+hero:
+  title: 'Play Counter-Strike with AI opponents'
+  tagline: 'YaPB fills your server with computer-controlled players - install it in minutes, tune difficulty and weapons, waypoint any map.'
+  actions:
+    - text: Get started
+      link: /docs/en/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/yapb/yapb
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="Getting started" icon="rocket">
+    Install YaPB on Windows, Linux, or macOS - or build it from source.
+
+    [Install YaPB](/docs/en/getting-started/installation/)
+  </Card>
+  <Card title="Configure the bot" icon="setting">
+    Some ~110 CVARs, difficulty, weapons, per-map configs and localization.
+
+    [Configuration reference](/docs/en/configuring/)
+  </Card>
+  <Card title="Waypoint a map" icon="puzzle">
+    Place nodes with the in-game graph editor so bots can navigate your map.
+
+    [Graph editing](/docs/en/waypointing/)
+  </Card>
+  <Card title="In-game usage" icon="terminal">
+    Menus, console commands and bot management while you play.
+
+    [Bot usage](/docs/en/configuring/botusage/)
+  </Card>
+</CardGrid>

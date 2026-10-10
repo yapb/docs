@@ -74,4 +74,4 @@ See the [Customization](\/docs\/en/configuring/customization/) section for detai
 
 ## Nickname Customization
 
-Bot nicknames live in the shared `addons/yapb/conf/names.cfg` file (one nickname per line inside a `raw Names` block). To customize them, edit that file directly — it applies to all languages.
+Bot nicknames live in the shared `addons/yapb/conf/names.cfg` file (one nickname per line inside a `raw Names` block). To customize them, edit that file directly - it applies to all languages.
