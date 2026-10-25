@@ -271,6 +271,10 @@ Forces all alive bots to build a path and go to the specified graph node.
 
 Specifies the RGB color of the debug overlay text, e.g. `255 255 255`.
 
+| Property | Value |
+|----------|-------|
+| Default | `255 255 255` |
+
 ### yb_destroy_breakables_around
 
 Allows bots to destroy breakables around them, even without touching them.
@@ -344,6 +348,16 @@ Enables each bot to balance its own difficulty based on the KD-ratio of the team
 | Min | `0` |
 | Max | `2` |
 | Default | `0` |
+
+### yb_difficulty_lock
+
+Keeps the difficulty of manually added bots fixed, ignoring `yb_difficulty` and `yb_difficulty_auto` changes.
+
+| Property | Value |
+|----------|-------|
+| Min | `0` |
+| Max | `1` |
+| Default | `1` |
 
 ### yb_display_welcome_text
 
@@ -512,6 +526,10 @@ Specifies the max jump height to test if the next node will be unreachable.
 
 Finish steps as a bitmask (`1` optimize, `2` clean, `4` goals, `8` camps, `16` teams) or names (`optimize`, `clean`, `goals`, `camps`, `teams`, `all`, `none`).
 
+| Property | Value |
+|----------|-------|
+| Default | `all` |
+
 ### yb_graph_analyze_slice_ms
 
 Max milliseconds of analysis work per server frame. Bounds analysis hitch, prevents hard freezes.
@@ -660,12 +678,11 @@ If not zero, bots will run all over the map doing goals but will not search for 
 
 ### yb_ignore_enemies_after_spawn_time
 
-Makes bots ignore enemies for a specified time in seconds on a new round. Useful for Zombie Plague mods.
+Makes bots ignore enemies for a specified time in seconds on a new round. Useful for Zombie Plague mods. When the Zombie Plague mod is detected, the value is set automatically from its delay CVAR.
 
 | Property | Value |
 |----------|-------|
 | Min | `0` |
-| Max | `540` |
 | Default | `0` |
 
 ### yb_ignore_map_prefix_game_mode
@@ -1093,20 +1110,22 @@ Determines the method how bots check if a wall/obstacle is penetrable.
 
 | Value | Behavior |
 |-------|----------|
-| `1` | Bots will try to shoot through walls more actively, even unrealistically |
-| `2` | Bots will use the algorithm from original PODBot, and shoot through walls less |
+| `1` | Simple wall check; bots try to shoot through walls more actively, even unrealistically |
+| `2` | Thickness-based check from original PODBot; bots shoot through walls less |
+| `3` | Iterative thickness check with a larger penetration budget |
+| `4` | Game-faithful check that mirrors `FireBullets3` ballistics and surface material penetration |
 
-The `2` method consumes a bit more CPU power than the `1` method.
+Methods `2`-`4` consume more CPU power than method `1`. Method `4` falls back to `1` when the material list is unavailable.
 
 | Property | Value |
 |----------|-------|
 | Min | `0` |
-| Max | `3` |
-| Default | `2` |
+| Max | `4` |
+| Default | `4` |
 
 ### yb_show_avatars
 
-Enables or disables displaying bot avatars in front of their names in the scoreboard. Note that currently you can see only avatars of your Steam friends.
+Enables or disables displaying bot avatars in front of their names in the scoreboard. Note that currently you can only see avatars of your teammates.
 
 :::note
 If you run bots on a dedicated server, make sure you have `EnableFakeBotFeatures` enabled in `custom.cfg` for this feature to work.
