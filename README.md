@@ -7,6 +7,14 @@ This is documentation for the YaPB bot for the Counter-Strike game.
 * English: https://yapb.github.io/docs/en/
 * Russian: https://yapb.github.io/docs/ru/
 
+## Credits
+
+Major credit goes to [Vladislav4KZ](https://github.com/Vladislav4KZ) for the documentation, waypoints and ongoing work on YaPB.
+
+## License
+
+Documentation is released into the public domain under the [Unlicense](UNLICENSE), matching the bot itself.
+
 ## Contributing
 
 If you have time and interest, you can contribute to the documentation right here — fixes and new translations are welcome via pull requests.
