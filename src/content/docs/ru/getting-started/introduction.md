@@ -24,7 +24,7 @@ YaPB в настоящее время поддерживает только Coun
 **Поддерживаемые движки:**
 
 - Официальный движок GoldSrc от Valve для Windows, Linux и macOS.
-- Движок Xash3D от Flying with Gauss для Windows, Linux и macOS.
+- Движок Xash3D от Flying with Gauss для Windows, Linux, macOS и Android.
 - ReHLDS и ReGameDLL для Windows и Linux.
 - WON-версия движка GoldSrc от Valve для Windows и Linux. Минимальная версия движка - 1.1.0.4.
 
