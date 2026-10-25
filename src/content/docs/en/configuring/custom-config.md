@@ -54,6 +54,12 @@ The `ModeWalls` section supports map-restricting plugins (e.g. AMXX "Mode 2x2"),
 |---------|---------|-------------|
 | `ModeWallClassname` | `test_effect` | Classname of the wall entities the plugin spawns (default `test_effect`). Bots treat entities with this classname and solid bbox as blockers for pathfinding. |
 
+## Bot
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `BlockedClientCommands` | `lastinv` | Comma or space separated list of client commands that bots must never be forced to execute. The default `lastinv` avoids a gamedll `SelectLastItem` crash on a stale weapon pointer. |
+
 ## Graph Database Endpoints
 
 The `GraphDatabase` section holds the endpoints behind the `@aliases` of the `yb_graph_url` / `yb_graph_url_upload` CVARs (see [CVARs](/docs/en/configuring/cvars/)). Change them here to relocate the graph database without rebuilding the bot.
