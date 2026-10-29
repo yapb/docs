@@ -119,7 +119,17 @@ export default defineConfig({
 						{ slug: 'waypointing/adding-nodes' },
 						{ slug: 'waypointing/node-types' },
 						{ slug: 'waypointing/connections-and-flags' },
+						{ slug: 'waypointing/common-mistakes' },
 						{ slug: 'waypointing/debugging' },
+					],
+				},
+				{
+					label: 'Help',
+					translations: {
+						ru: 'Помощь',
+					},
+					items: [
+						{ slug: 'troubleshooting' },
 					],
 				},
 				{ slug: 'credits' },
