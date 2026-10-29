@@ -1,0 +1,162 @@
+---
+title: "Встроенные AMXX-плагины"
+description: "Плагины Takeover и Chat AI (EasyHttp): зависимости, установка, квары."
+---
+
+import { Aside, Badge, FileTree, Steps, TabItem, Tabs } from '@astrojs/starlight/components';
+
+YaPB поставляет два Pawn-плагина в виде **исходников** (`.sma`) в `cfg/addons/amxmodx/scripting/` - а значит и в каждом релизном архиве. Компилируются самостоятельно через `amxxpc`.
+
+| Плагин | Файл | Что делает |
+|--------|------|------------|
+| Bot Takeover | `yapb_takeover.sma` | Позволяет мёртвому игроку взять управление ботом-тиммейтом (респавн на позиции бота с его инвентарём). По мотивам BotFeatures от Vaqtincha. |
+| Chat AI | `yapb_chat_ai.sma` | Заменяет/перехватывает чат ботов через OpenAI-совместимый chat-completions LLM и AmxxEasyHttp. |
+
+Настройка модуля (`yapb_amxx` в `modules.ini`, `yapb.inc` в `include/`) описана на странице [Скриптинг](/docs/ru/scripting/) и нужна обоим.
+
+## Bot Takeover (`yapb_takeover.sma`) <Badge text="1.0.0" variant="note" /> <Badge text="нужен ReAPI" variant="caution" />
+
+Мёртвый наблюдатель нажимает клавишу, spectate'я бота-тиммейта -> игрок респавнится на позиции бота с его инвентарём, а бот тихо убирается. При рестарте раунда полезные стволы можно вернуть ботам (опция), корректно обрабатываются C4/дефьюзер/щит/VIP, а конфликтующий BotFeatures при нахождении ставится на паузу.
+
+### Зависимости
+
+| Компонент | Обязателен | Примечание |
+|-----------|------------|------------|
+| `yapb.inc` / `yapb_amxx` | Да | Нужен **YaPB API 3.2+** (`yb_api_at_least (3, 2)`), проверяется через `set_fail_state`. Используются `yb_is_user_bot`, `yb_get_bot_origin`, `yb_is_bot_alive`, `yb_is_bot_stale`, `yb_is_bot_simulating`, `yb_set_bot_simulation`. |
+| **ReAPI** (`<reapi>`) | Да | `rg_*` нативы (`rg_round_respawn`, `rg_transfer_c4`, `rg_remove_all_items`, ...), `HookChain` (`RG_CBasePlayer_Observer_Think`, `RG_RoundEnd`, `RG_CSGameRules_RestartRound`, ...), `get_member`/`set_member`. Нужны **ReHLDS + ReGameDLL** на сервере. |
+| `fakemeta` (`<fakemeta>`) | Да | Переменные сущностей, `EngFunc_TraceHull`, форварды. |
+| `hamsandwich` (`<hamsandwich>`) | Да | `Ham_RemovePlayerItem` / `Ham_AddPlayerItem` / `Ham_Think` для переноса инвентаря; прикрывает сущность `player_weaponstrip`, если есть. |
+| `amxmodx`, `amxmisc` | Да | Стандартные инклуды. |
+| Языковой файл | Да | `cfg/addons/amxmodx/data/lang/yapb_takeover.txt` -> скопировать в `addons/amxmodx/data/lang/`. Строки `en` + `ru` (`register_dictionary ("yapb_takeover.txt")`). |
+
+<Aside type="caution">
+  Без ReAPI/ReGameDLL этот плагин не скомпилируется и не запустится. Это единственный встроенный плагин с таким требованием.
+</Aside>
+
+### Установка
+
+<Steps>
+
+1. Скопируйте `yapb_takeover.sma` в `addons/amxmodx/scripting/`, а `yapb.inc` в `addons/amxmodx/scripting/include/`.
+2. Скопируйте `yapb_takeover.txt` в `addons/amxmodx/data/lang/`.
+3. Скомпилируйте через `amxxpc` -> `yapb_takeover.amxx` -> `addons/amxmodx/plugins/`.
+4. Добавьте `yapb_takeover.amxx` в `addons/amxmodx/configs/plugins.ini`.
+5. Смените карту / перезапустите. Конфиг сам создастся как `addons/amxmodx/configs/yapb_takeover.cfg` через `AutoExecConfig`.
+
+</Steps>
+
+### Как пользоваться
+
+1. Умрите, затем spectate'те бота-тиммейта от первого лица (`eye`) или в свободной погоне (`chase`).
+2. Нажмите клавишу захвата. HUD-подсказка покажет имя бота:
+
+   <Tabs>
+     <TabItem label="Клавиша N (по умолчанию)">
+
+     Нажмите **`N`** (nightvision). Это `yb_takeover_use_key 0`. Текст подсказки - `TAKEOVER_PROMPT_N`.
+
+     </TabItem>
+     <TabItem label="Клавиша E">
+
+     Выставьте `yb_takeover_use_key 1` и нажмите **`E`** (use). Текст подсказки - `TAKEOVER_PROMPT_E`.
+
+     </TabItem>
+   </Tabs>
+3. Вы респавнитесь на позиции бота с его здоровьем/бронёй/оружием/патронами/C4/дефьюзером/щитом, сохраняя скорость. Сущность бота удаляется.
+4. Если место занято или раунд кончился посреди захвата - захват отменяется и всё откатывается (журнал инвентаря + VIP-статус + симуляция бота восстанавливаются).
+
+Зеркало в скорборде, HUD-подсказки, анонсы в чате и реакции ботов - всё настраивается (см. ниже).
+
+### Квары (`yapb_takeover.cfg`)
+
+| Квар | По умолч. | Смысл |
+|------|-----------|-------|
+| `yb_takeover_enabled` | `1` | Главный выключатель. |
+| `yb_takeover_use_key` | `0` | `0` = клавиша `N` (nightvision), `1` = клавиша `E` (use) через хук observer think. |
+| `yb_takeover_team_only` | `1` | Только боты своей команды. |
+| `yb_takeover_eye` | `1` | Разрешить захват в режиме наблюдателя от первого лица. |
+| `yb_takeover_chase` | `1` | Разрешить захват в свободной погоне. |
+| `yb_takeover_max_uses` | `0` | Максимум захватов на игрока за раунд, `0` - без лимита. |
+| `yb_takeover_allow_vip` | `0` | Разрешить брать VIP-ботов (as_ карты). VIP-флаг передаётся игроку. |
+| `yb_takeover_back_items` | `0` | При рестарте раунда возвращать полезные стволы (primary/pistol) от игрока обратно боту. Полный рестарт (`m_bCompleteReset`) пропускает это. |
+| `yb_takeover_chat` | `1` | Анонсировать захваты в командном чате (`TAKEOVER_ANNOUNCE`). |
+| `yb_takeover_bot_chat` | `1` | Съеденный бот «реагирует» одной из фраз `TAKEOVER_BOT_CHAT1..5`. |
+| `yb_takeover_hud` | `1` | Показывать подсказки наблюдателю в HUD. |
+| `yb_takeover_scoreboard` | `0` | Зеркалить состояние захваченного бота (мёртв/жив + здоровье) в скорборд. |
+| `yb_takeover_autoswitch` | `0` | После смерти автоматически spectate'тить случайного живого бота-тиммейта, чтобы быстрее захватить. |
+| `yb_takeover_log` | `0` | Писать события в `yapb_takeover.log` (захват, отмена, откат, вкл/выкл симуляции). |
+| `yb_takeover_stop_botfeatures` | `1` | Ставить на паузу legacy-плагин BotFeatures, если загружен (чтобы не было двойной обработки). Не `bind_pcvar`, читается один раз в `plugin_cfg`. |
+
+### Заметки владельцам серверов
+
+* Захват блокируется, если бот мёртв, stale, не симулируется, уже занят, превышен лимит на раунд или это запрещённый VIP.
+* Гранаты в замахе, активное оружие, щит, C4, дефьюзер, броня, NVG, здоровье и модель - всё переносится или откатывается при ошибке, см. `transfer_inventory()` / `rollback_transfer()` в исходнике.
+* Логи - в `addons/amxmodx/logs/yapb_takeover.log` при `yb_takeover_log 1`.
+
+## Chat AI (`yapb_chat_ai.sma`) <Badge text="2.2.0" variant="note" /> <Badge text="нужен EasyHttp" variant="caution" />
+
+Перехватывает чат YaPB через `yb_chat_pre` / `yb_chat_post` и отвечает через **OpenAI-совместимый** `POST /v1/chat/completions` (`{"choices":[{"message":{"content":"..."}}]}`). Умеет адресованный чат живых, мёртвый чат, болтовню ботов, bot-to-bot диалоги, небольшую очередь запросов (глубина 8, приоритет - сообщениям людей), кулдаун на игрока и короткую память на бота (последние 3 хода).
+
+### Зависимости
+
+| Компонент | Обязателен | Примечание |
+|-----------|------------|------------|
+| `yapb.inc` / `yapb_amxx` | Да | Используются `yb_bot_say` (с `force`), `yb_get_bot_chat` / `YB_CHAT_OFF`, `yb_is_user_bot`, `yb_is_bot_alive`, `yb_is_bot_stale`, `yb_get_bot_personality`, `yb_get_bot_difficulty`, форварды `yb_chat_pre` / `yb_chat_post`. |
+| **AmxxEasyHttp** (модуль `easy_http` + `<easy_http>`) | Да | От [Next21Team](https://github.com/Next21Team/AmxxEasyHttp) (MIT). HTTP/HTTPS-клиент + встроенный JSON (`EzHttpRequest`, `EzHttpOptions`, `ezhttp_post`, `ezhttp_parse_json_response`, ...). Ставится **отдельно** - скачайте из [релизов AmxxEasyHttp](https://github.com/Next21Team/AmxxEasyHttp/releases) (сборки Linux + Windows, свежий `1.5.0`), скопируйте бинарники `easy_http` в `addons/amxmodx/modules/` и включите `easy_http` в `modules.ini`. Под Linux нужен `GLIBC 2.19+`. |
+| LLM-эндпоинт | Да | Любой сервер с `POST {url}/v1/chat/completions`: поля `model`, `messages[]`, `temperature`, `max_tokens`, ответ в стиле OpenAI `choices[0].message.content` (запасной вариант - поле `reply` на верхнем уровне). |
+| `amxmodx` | Да | Стандартный инклуд. |
+
+Поток: `yb_chat_pre` блокирует оригинал (если `yb_chat_ai_strict 0` и бота не нашлось - пропускает) -> плагин POST'ит `system` (из квара-промпта) + до 3 ходов истории бота + строку `user` с контекстом (карта, имена, команда, HP, броня, жив/мёртв, личность, сложность) -> `on_ai_response` чистит ответ (убирает управляющие символы, `"`, `;`, обрезает до `yb_chat_ai_reply_chars`) -> `yb_bot_say(bot, reply, team_only, true)` -> опциональный ответный bot-to-bot ход.
+
+### Установка
+
+<Steps>
+
+1. Скачайте [AmxxEasyHttp](https://github.com/Next21Team/AmxxEasyHttp/releases) и включите модуль `easy_http`: бинарник в `addons/amxmodx/modules/`, `easy_http` в `modules.ini`, `easy_http.inc` + `easy_http_json.inc` в `scripting/include/`. (Исходники и документация: [Next21Team/AmxxEasyHttp](https://github.com/Next21Team/AmxxEasyHttp).)
+2. Скопируйте `yapb_chat_ai.sma` в `addons/amxmodx/scripting/` (в `include/` нужны `yapb.inc` + `easy_http.inc`).
+3. Скомпилируйте через `amxxpc` -> `yapb_chat_ai.amxx` -> `addons/amxmodx/plugins/`, добавьте в `plugins.ini`.
+4. Укажите `yb_chat_ai_url` на ваш эндпоинт (по умолчанию `http://127.0.0.1:8080/v1/chat/completions`), задайте `yb_chat_ai_model`, при необходимости `yb_chat_ai_api_key`.
+5. Смените карту / перезапустите. Конфиг сам создастся как `addons/amxmodx/configs/yapb_chat_ai.cfg` через `AutoExecConfig`.
+
+</Steps>
+
+<FileTree>
+
+- cstrike/addons/amxmodx/
+  - modules/
+    - easy_http_i386.so / easy_http.dll # из релизов AmxxEasyHttp
+  - configs/
+    - modules.ini # easy_http + yapb_amxx
+    - plugins.ini # yapb_chat_ai.amxx
+    - yapb_chat_ai.cfg # создаёт AutoExecConfig
+
+</FileTree>
+
+### Квары (`yapb_chat_ai.cfg`)
+
+| Квар | По умолч. | Смысл |
+|------|-----------|-------|
+| `yb_chat_ai_enabled` | `1` | Главный выключатель (при выкл. очередь сбрасывается). |
+| `yb_chat_ai_debug` | `0` | Подробный трейс в `yapb_chat_ai.log` (дамп конфига, строки PRE/SEND/RESPONSE/QUEUE). |
+| `yb_chat_ai_override_human` | `1` | Перехватывать сообщения людей и отвечать через ИИ (блокируется через `PLUGIN_HANDLED`). |
+| `yb_chat_ai_override_bot` | `0` | Перехватывать болтовню живых ботов и отвечать через ИИ. При `0` живая болтовня вместо этого с вероятностью даёт диалоги в `yb_chat_post`. |
+| `yb_chat_ai_override_dead` | `1` | Перехватывать мёртвый чат ботов (призрачные шутки) и отвечать через ИИ. |
+| `yb_chat_ai_bot_talk` | `1` | Разрешить bot->bot болтовню/диалоги. |
+| `yb_chat_ai_addressed` | `1` | Сообщения людей триггерят только с обращения `<имя бота>[ :,;] <текст>`. При `0` отвечает первый живой подходящий бот на что угодно. |
+| `yb_chat_ai_bot_chance` | `35` | Шанс 0-100% для bot->bot ходов (путь `yb_chat_post` и followup'ы), проверка раз в окно 6с. |
+| `yb_chat_ai_strict` | `0` | При `1` `yb_chat_pre` всегда блокирует оригинал, даже если бот не нашёлся; при `0` оригинал проходит при неудаче. |
+| `yb_chat_ai_temperature` | `0.8` | Temperature LLM. |
+| `yb_chat_ai_max_tokens` | `512` | Кламп 16-2048. |
+| `yb_chat_ai_reply_chars` | `160` | Макс. длина ответа после чистки (`0` - не обрезать). |
+| `yb_chat_ai_cooldown` | `3.0` | Секунд между ИИ-ответами на одного живого отправителя (отрицательные = 0). |
+| `yb_chat_ai_url` | `http://127.0.0.1:8080/v1/chat/completions` | Эндпоинт (таймаут HTTP 20с, коннект 3с). |
+| `yb_chat_ai_model` | `local-model` | Поле `model` в JSON-теле. |
+| `yb_chat_ai_api_key` | _(пусто)_ | Если задан - шлёт `Authorization: Bearer <key>`. |
+| `yb_chat_ai_prompt_human` | _(cocky CS 1.6 bot ...)_ | Системный промпт для ответов человеку. |
+| `yb_chat_ai_prompt_bot` | _(cocky ... rivalry ...)_ | Системный промпт для ответов боту. |
+| `yb_chat_ai_prompt_dead` | _(dead ... ghost jokes ...)_ | Системный промпт для мёртвого чата. |
+| `yb_chat_ai_prompt_followup` | _(continue ... one more line ...)_ | Системный промпт для followup-реплик. |
+
+<Aside type="tip">
+  Бот молчит? Включите `yb_chat_ai_debug 1` и смотрите `addons/amxmodx/logs/yapb_chat_ai.log` - там конфиг, причины блокировок, HTTP-коды ошибок и ответы.
+</Aside>

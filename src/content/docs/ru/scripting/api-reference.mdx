@@ -1,0 +1,573 @@
+---
+title: "Справочник AMXX API"
+description: "Все нативы, форварды и enum YaPB из yapb.inc (API модуля 3.6)."
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution">
+  Эта страница повторяет `cfg/addons/amxmodx/scripting/include/yapb.inc`, который генерируется скриптом `tools/gen_amxx_inc.py` из `ext/amxx/yapb_amxx.cpp` и `inc/module.h`, `inc/graph.h`, `inc/constant.h`, `inc/tasks.h`. Не правьте `yapb.inc` вручную - правьте doc-комментарии в `yapb_amxx.cpp` и регенерируйте.
+</Aside>
+
+Текущее API модуля: **3.6** (`kBotModuleApiMajor` / `kBotModuleApiMinor` в `inc/module.h`). Проверяется в рантайме через `yb_get_api_version()` / `yb_api_at_least()` (см. [Скриптинг](/docs/ru/scripting/)).
+
+Соглашения:
+
+* `index` бота - это индекс игрока (1..maxplayers). Всегда проверяйте через `yb_is_user_bot()`.
+* Индексы точек - это индексы графа, либо `YB_INVALID_NODE_INDEX` (`-1`), если точки нет.
+* Индексы сущностей - `YB_INVALID_ENTITY_INDEX` (`0`), если сущности нет.
+* Параметры `Float:origin[3]` - мировые координаты.
+
+## Enum
+
+### `YBNodeFlag`
+
+Битовые флаги, возвращает `yb_get_node_flags()`.
+
+| Значение | Смысл |
+|----------|-------|
+| `YB_NODE_FLAG_BUTTON` `(1<<0)` | Рядом кнопка |
+| `YB_NODE_FLAG_LIFT` `(1<<1)` | Лифт / подъёмник |
+| `YB_NODE_FLAG_CROUCH` `(1<<2)` | Точка приседа |
+| `YB_NODE_FLAG_CROSSING` `(1<<3)` | Перекрёсток |
+| `YB_NODE_FLAG_GOAL` `(1<<4)` | Цель |
+| `YB_NODE_FLAG_LADDER` `(1<<5)` | Лестница |
+| `YB_NODE_FLAG_RESCUE` `(1<<6)` | Зона спасения заложников |
+| `YB_NODE_FLAG_CAMP` `(1<<7)` | Кемперская точка |
+| `YB_NODE_FLAG_NO_HOSTAGE` `(1<<8)` | Заложники избегают точку |
+| `YB_NODE_FLAG_DOUBLE_JUMP` `(1<<9)` | Место для двойного прыжка |
+| `YB_NODE_FLAG_NARROW` `(1<<10)` | Узкий проход |
+| `YB_NODE_FLAG_SNIPER` `(1<<28)` | Снайперская позиция |
+| `YB_NODE_FLAG_TERRORIST_ONLY` `(1<<29)` | Только террористы |
+| `YB_NODE_FLAG_CT_ONLY` `(1<<30)` | Только контр-террористы |
+
+### `YBNodeType`
+
+Используется в `yb_get_random_node()`.
+
+| Значение | Смысл |
+|----------|-------|
+| `YB_NODE_TYPE_TERRORIST` `0` | Спавн террористов |
+| `YB_NODE_TYPE_CT` `1` | Спавн CT |
+| `YB_NODE_TYPE_GOAL` `2` | Цель |
+| `YB_NODE_TYPE_CAMP` `3` | Кэмп |
+| `YB_NODE_TYPE_SNIPER` `4` | Снайпер |
+| `YB_NODE_TYPE_RESCUE` `5` | Спасение |
+
+### `YBDifficulty`
+
+| Значение | Смысл |
+|----------|-------|
+| `YB_DIFFICULTY_NOOB` `0` | Новичок |
+| `YB_DIFFICULTY_EASY` `1` | Обычный |
+| `YB_DIFFICULTY_NORMAL` `2` | Средний |
+| `YB_DIFFICULTY_HARD` `3` | Профессионал |
+| `YB_DIFFICULTY_EXPERT` `4` | Бог |
+
+### `YBPersonality`
+
+| Значение | Смысл |
+|----------|-------|
+| `YB_PERSONALITY_NORMAL` `0` | Нормальная |
+| `YB_PERSONALITY_RUSHER` `1` | Агрессивная / рашер |
+| `YB_PERSONALITY_CAREFUL` `2` | Осторожная |
+
+### `YBTask`
+
+Текущая задача бота из `yb_get_bot_task()`.
+
+| Значение | Смысл |
+|----------|-------|
+| `YB_TASK_NORMAL` `0` | Обычная |
+| `YB_TASK_PAUSE` `1` | Пауза |
+| `YB_TASK_MOVE_TO` `2` | Идти в точку |
+| `YB_TASK_FOLLOW_USER` `3` | Следовать за игроком |
+| `YB_TASK_PICKUP_ITEM` `4` | Подобрать предмет |
+| `YB_TASK_CAMP` `5` | Кэмп |
+| `YB_TASK_PLANT_BOMB` `6` | Установка бомбы |
+| `YB_TASK_DEFUSE_BOMB` `7` | Разминирование |
+| `YB_TASK_ATTACK` `8` | Атака |
+| `YB_TASK_HUNT` `9` | Охота |
+| `YB_TASK_SEEK_COVER` `10` | Поиск укрытия |
+| `YB_TASK_THROW_EXPLOSIVE` `11` | Бросок HE |
+| `YB_TASK_THROW_FLASHBANG` `12` | Бросок флешки |
+| `YB_TASK_THROW_SMOKE` `13` | Бросок дыма |
+| `YB_TASK_DOUBLE_JUMP` `14` | Двойной прыжок |
+| `YB_TASK_ESCAPE_FROM_BOMB` `15` | Побег от бомбы |
+| `YB_TASK_SHOOT_BREAKABLE` `16` | Стрельба по разрушаемому |
+| `YB_TASK_HIDE` `17` | Прятаться |
+| `YB_TASK_BLIND` `18` | Ослеплён |
+| `YB_TASK_SPRAYPAINT` `19` | Спрей |
+| `YB_TASK_NONE` `20` | Нет задачи |
+
+### `YBChatMode`
+
+Кто может говорить за бота (`yb_set_bot_chat()` / `yb_get_bot_chat()`).
+
+| Значение | Смысл |
+|----------|-------|
+| `YB_CHAT_INVALID` `-1` | Невалидный бот |
+| `YB_CHAT_AUTO` `0` | Ядро само решает, когда и что сказать |
+| `YB_CHAT_MANUAL` `1` | Ядро молчит, чатом управляет плагин |
+| `YB_CHAT_OFF` `2` | Чата нет вообще |
+
+### `YBChatSource`
+
+Кто породил сообщение в `yb_chat_pre` / `yb_chat_post`.
+
+| Значение | Смысл |
+|----------|-------|
+| `YB_CHAT_HUMAN` `0` | Живой игрок |
+| `YB_CHAT_BOT` `1` | Бот (ядро) |
+| `YB_CHAT_PLUGIN` `2` | Плагин (через `yb_bot_say()`) |
+
+### Сентинелы
+
+```c
+enum {
+  YB_INVALID_NODE_INDEX = -1,
+  YB_INVALID_ENTITY_INDEX = 0
+};
+```
+
+## Хелпер
+
+```c
+stock bool:yb_api_at_least (const major, const minor)
+```
+
+Возвращает true, если загруженный API модуля не ниже `major.minor`. Вручную: `major = version >>> 16`, `minor = version & 0xFFFF`.
+
+## Общие
+
+### `yb_get_api_version()`
+
+```c
+native yb_get_api_version ();
+```
+
+Версия API бота, упакованная как `major << 16 | minor`. `0` - бот не загружен.
+
+### `yb_get_bot_version(output[], len)`
+
+```c
+native yb_get_bot_version (output[], len);
+```
+
+Копирует строку версии бота в `output`. Возвращает число скопированных символов.
+
+### `yb_game_has_bots()`
+
+```c
+native bool:yb_game_has_bots ();
+```
+
+True, если боты есть в игре.
+
+### `yb_get_bot_count()`
+
+```c
+native yb_get_bot_count ();
+```
+
+Число ботов в игре.
+
+### `yb_add_bot()`
+
+```c
+native bool:yb_add_bot (YBDifficulty:difficulty = YBDifficulty:YB_DIFFICULTY_NORMAL, YBPersonality:personality = YBPersonality:YB_PERSONALITY_NORMAL, CsTeams:team = CS_TEAM_UNASSIGNED);
+```
+
+Ставит в очередь добавление бота. `1` - запрос принят. Нужен `<cstrike>` для `CsTeams`.
+
+### `yb_is_user_bot(index)`
+
+```c
+native bool:yb_is_user_bot (index);
+```
+
+True, если `index` - бот YaPB.
+
+### `yb_kick_bot(index, silent = true, reduce_quota = true)`
+
+```c
+native bool:yb_kick_bot (index, bool:silent = true, bool:reduce_quota = true);
+```
+
+Кикает одного бота. `1` - успех.
+
+### `yb_get_quota()` / `yb_set_quota(count)`
+
+```c
+native yb_get_quota ();
+native bool:yb_set_quota (count);
+```
+
+Чтение / запись квоты ботов (`yb_quota`). `yb_set_quota()` возвращает `1` при успехе, `0` - бот не загружен.
+
+## Состояние бота
+
+### `yb_get_bot_origin(index, Float:origin[3])`
+
+```c
+native bool:yb_get_bot_origin (index, Float:origin[3]);
+```
+
+Пишет координаты бота. `1` - успех.
+
+### `yb_get_bot_weapon(index)`
+
+```c
+native yb_get_bot_weapon (index);
+```
+
+Текущее оружие (`CSW_*`), `0` - невалидный бот.
+
+### `yb_get_bot_weapon_name(index, output[], len)`
+
+```c
+native bool:yb_get_bot_weapon_name (index, output[], len);
+```
+
+Копирует classname текущего оружия. `1` - успех.
+
+### `yb_get_bot_ammo(index, weapon)` / `yb_get_bot_ammo_in_clip(index)`
+
+```c
+native yb_get_bot_ammo (index, weapon);
+native yb_get_bot_ammo_in_clip (index);
+```
+
+Запасные патроны для `weapon` и патроны в текущем магазине.
+
+### `yb_get_bot_ping(index)`
+
+```c
+native yb_get_bot_ping (index);
+```
+
+Пинг бота (`0` - невалидный).
+
+### `yb_get_bot_difficulty(index)` / `yb_set_bot_difficulty(index, YBDifficulty:difficulty)`
+
+```c
+native YBDifficulty:yb_get_bot_difficulty (index);
+native bool:yb_set_bot_difficulty (index, YBDifficulty:difficulty);
+```
+
+Чтение / запись сложности (см. `YBDifficulty`).
+
+### `yb_get_bot_personality(index)` / `yb_set_bot_personality(index, YBPersonality:personality)`
+
+```c
+native YBPersonality:yb_get_bot_personality (index);
+native bool:yb_set_bot_personality (index, YBPersonality:personality);
+```
+
+Чтение / запись личности (см. `YBPersonality`).
+
+### `yb_get_bot_task(index)` / `yb_get_bot_task_data(index)`
+
+```c
+native YBTask:yb_get_bot_task (index);
+native yb_get_bot_task_data (index);
+```
+
+Текущая задача (см. `YBTask`) и её данные (обычно индекс точки, `YB_INVALID_NODE_INDEX` - нет).
+
+### `yb_get_bot_node(index)` / `yb_get_bot_goal(index)`
+
+```c
+native yb_get_bot_node (index);
+native yb_get_bot_goal (index);
+```
+
+Точка, на которой стоит бот (мёртвый/кемперящий вернёт `YB_INVALID_NODE_INDEX`), и точка, к которой он идёт.
+
+### `yb_set_bot_goal_node(index, node)` / `yb_set_bot_goal_origin(index, const Float:origin[3])`
+
+```c
+native yb_set_bot_goal_node (index, node);
+native yb_set_bot_goal_origin (index, const Float:origin[3]);
+```
+
+Заставить бота идти в точку / в мировые координаты. `1` - успех.
+
+### `yb_get_bot_path_length(index)` / `yb_get_bot_path_node(index, offset)`
+
+```c
+native yb_get_bot_path_length (index);
+native yb_get_bot_path_node (index, offset);
+```
+
+Остаток пути в точках и точка пути со смещением `offset` от текущего курсора (`0` - следующая точка, `YB_INVALID_NODE_INDEX` - нет).
+
+### `yb_is_bot_stuck(index)` / `yb_get_bot_stuck_time(index)`
+
+```c
+native bool:yb_is_bot_stuck (index);
+native Float:yb_get_bot_stuck_time (index);
+```
+
+Застрял ли бот и суммарное время застревания в секундах.
+
+### `yb_is_bot_camping(index)`
+
+```c
+native bool:yb_is_bot_camping (index);
+```
+
+True - бот кемперит.
+
+### `yb_set_bot_movement(index, bool:movement)` / `yb_is_bot_movement(index)`
+
+```c
+native bool:yb_set_bot_movement (index, bool:movement);
+native bool:yb_is_bot_movement (index);
+```
+
+Заморозить / разморозить движение и запросить состояние.
+
+### `yb_set_bot_simulation(index, bool:simulate)` / `yb_is_bot_simulating(index)`
+
+```c
+native bool:yb_set_bot_simulation (index, bool:simulate);
+native bool:yb_is_bot_simulating (index);
+```
+
+Приостановить / возобновить все тики бота (Takeover использует это, пока телом управляет человек) и запросить состояние. Нужен API 3.2+.
+
+### `yb_is_bot_alive(index)` / `yb_is_bot_stale(index)`
+
+```c
+native bool:yb_is_bot_alive (index);
+native bool:yb_is_bot_stale (index);
+```
+
+Жив ли бот и покидает ли он сервер (stale).
+
+### `yb_get_bot_look_at(index, Float:origin[3])` / `yb_set_bot_look_at(index, const Float:origin[3])`
+
+```c
+native bool:yb_get_bot_look_at (index, Float:origin[3]);
+native bool:yb_set_bot_look_at (index, const Float:origin[3]);
+```
+
+Прочитать точку взгляда или форсировать её (нулевой вектор возвращает управление ИИ). `1` - успех.
+
+### `yb_get_bot_enemy(index)` / `yb_get_bot_last_enemy(index)` / `yb_get_bot_last_victim(index)`
+
+```c
+native yb_get_bot_enemy (index);
+native yb_get_bot_last_enemy (index);
+native yb_get_bot_last_victim (index);
+```
+
+Текущий враг, последний враг и последняя жертва (`YB_INVALID_ENTITY_INDEX` - нет).
+
+### `yb_is_bot_enemy_reachable(index)`
+
+```c
+native bool:yb_is_bot_enemy_reachable (index);
+```
+
+Достижим ли текущий враг.
+
+### `yb_get_bot_last_enemy_origin(index, Float:origin[3])`
+
+```c
+native bool:yb_get_bot_last_enemy_origin (index, Float:origin[3]);
+```
+
+Последняя известная позиция врага. `1` - успех.
+
+## Граф
+
+### `yb_has_graph()`
+
+```c
+native bool:yb_has_graph ();
+```
+
+True - на текущей карте есть файл графа.
+
+### `yb_get_node_count()`
+
+```c
+native yb_get_node_count ();
+```
+
+Общее число точек графа.
+
+### `yb_is_node_valid(node)`
+
+```c
+native bool:yb_is_node_valid (node);
+```
+
+True - индекс точки валиден.
+
+### `yb_get_node_flags(node)`
+
+```c
+native YBNodeFlag:yb_get_node_flags (node);
+```
+
+Флаги точки (см. `YBNodeFlag`).
+
+### `yb_get_node_origin(node, Float:origin[3])`
+
+```c
+native bool:yb_get_node_origin (node, Float:origin[3]);
+```
+
+Пишет координаты точки. `1` - успех.
+
+### `yb_get_nearest_node(const Float:origin[3])`
+
+```c
+native yb_get_nearest_node (const Float:origin[3]);
+```
+
+Ближайшая к позиции точка графа (`YB_INVALID_NODE_INDEX` - нет).
+
+### `yb_find_nearest_node(const Float:origin[3], Float:maxDistance = 9999999.0)`
+
+```c
+native yb_find_nearest_node (const Float:origin[3], Float:maxDistance = 9999999.0);
+```
+
+Ближайшая точка в пределах `maxDistance`.
+
+### `yb_find_farest_node(const Float:origin[3], Float:maxDistance = 32.0)`
+
+```c
+native yb_find_farest_node (const Float:origin[3], Float:maxDistance = 32.0);
+```
+
+Самая дальняя точка за пределами `maxDistance` (несмотря на имя, второй параметр - минимальная дистанция).
+
+### `yb_find_nearest_node_in_radius(const Float:origin[3], Float:radius)`
+
+```c
+native yb_find_nearest_node_in_radius (const Float:origin[3], Float:radius);
+```
+
+Ближайшая точка в радиусе `radius`.
+
+### `yb_get_node_distance(srcNode, destNode)`
+
+```c
+native Float:yb_get_node_distance (srcNode, destNode);
+```
+
+Дистанция между точками в юнитах, `-1` - точка невалидна.
+
+### `yb_is_node_reachable(srcNode, destNode)`
+
+```c
+native bool:yb_is_node_reachable (srcNode, destNode);
+```
+
+True - точки достижимы друг из друга.
+
+### `yb_get_node_radius(node)` / `yb_get_node_light(node)`
+
+```c
+native Float:yb_get_node_radius (node);
+native Float:yb_get_node_light (node);
+```
+
+Радиус точки и уровень освещённости (`0` - невалидна).
+
+### `yb_get_node_link_count(node)` / `yb_get_node_link(node, index)` / `yb_get_node_link_flags(node, index)`
+
+```c
+native yb_get_node_link_count (node);
+native yb_get_node_link (node, index);
+native yb_get_node_link_flags (node, index);
+```
+
+Число исходящих связей, целевая точка связи (`YB_INVALID_NODE_INDEX` - нет) и флаги связи.
+
+### `yb_get_random_node(type)`
+
+```c
+native YBNodeType:yb_get_random_node (type);
+```
+
+Случайная точка заданного типа (см. `YBNodeType`), `YB_INVALID_NODE_INDEX` - нет.
+
+### `yb_get_graph_author(output[], len)` / `yb_get_graph_modified(output[], len)`
+
+```c
+native yb_get_graph_author (output[], len);
+native yb_get_graph_modified (output[], len);
+```
+
+Копируют строки автора / редактора графа. Возвращают число скопированных символов.
+
+## Чат
+
+Нужен чат-экстеншн (`IBotChatAPI`, доступен при API >= 3.6).
+
+### `yb_bot_say(index, const message[], bool:team_only = false, bool:force = false)`
+
+```c
+native bool:yb_bot_say (index, const message[], bool:team_only = false, bool:force = false);
+```
+
+Ставит в очередь текстовое сообщение бота. `force` обходит глобальный квар чата. `1` - поставлено в очередь.
+
+### `yb_set_bot_chat(index, YBChatMode:mode)` / `yb_get_bot_chat(index)`
+
+```c
+native bool:yb_set_bot_chat (index, YBChatMode:mode);
+native YBChatMode:yb_get_bot_chat (index);
+```
+
+Задать / узнать, кто может говорить за бота (см. `YBChatMode`).
+
+## Форварды
+
+Просто реализуйте любой из них в плагине - регистрация не нужна.
+
+### `yb_bot_spawned(index)`
+
+```c
+forward yb_bot_spawned (index);
+```
+
+Бот заспавнился.
+
+### `yb_bot_killed(victim, killer)`
+
+```c
+forward yb_bot_killed (victim, killer);
+```
+
+Бот убит.
+
+### `yb_bot_removed(index, bool:kicked)`
+
+```c
+forward yb_bot_removed (index, bool:kicked);
+```
+
+Бот удалён.
+
+### `yb_chat_pre(sender, const message[], bool:team_only, YBChatSource:source)`
+
+```c
+forward yb_chat_pre (sender, const message[], bool:team_only, YBChatSource:source);
+```
+
+Вызывается перед текстовым сообщением чата. Верните `PLUGIN_HANDLED`, чтобы заблокировать. Chat AI использует это для замены сообщений ядра/игроков на ответы LLM.
+
+### `yb_chat_post(sender, const message[], bool:team_only, YBChatSource:source)`
+
+```c
+forward yb_chat_post (sender, const message[], bool:team_only, YBChatSource:source);
+```
+
+Вызывается после текстового сообщения чата.
