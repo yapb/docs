@@ -99,6 +99,17 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Scripting',
+					translations: {
+						ru: 'Скриптинг',
+					},
+					items: [
+						{ slug: 'scripting' },
+						{ slug: 'scripting/api-reference' },
+						{ slug: 'scripting/plugins' },
+					],
+				},
+				{
 					label: 'Waypointing',
 					translations: {
 						ru: 'Вэйпоинты',

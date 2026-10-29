@@ -1,0 +1,163 @@
+---
+title: "Bundled AMXX Plugins"
+description: "Takeover and Chat AI (EasyHttp) plugins: dependencies, install, cvars."
+---
+
+import { Aside, Badge, FileTree, Steps, TabItem, Tabs } from '@astrojs/starlight/components';
+
+YaPB ships two Pawn plugins as **source** (`.sma`) in `cfg/addons/amxmodx/scripting/` - and therefore inside every release archive. You compile them yourself with `amxxpc`.
+
+| Plugin | File | What it does |
+|--------|------|--------------|
+| Bot Takeover | `yapb_takeover.sma` | Lets a dead player take control of a teammate bot (respawn at the bot position with its inventory). Based on BotFeatures by Vaqtincha. |
+| Chat AI | `yapb_chat_ai.sma` | Replaces/intercepts bot chat with an OpenAI-compatible chat-completions LLM through AmxxEasyHttp. |
+
+Module setup (`yapb_amxx` in `modules.ini`, `yapb.inc` in `include/`) is covered on the [Scripting](/docs/en/scripting/) page and applies to both.
+
+## Bot Takeover (`yapb_takeover.sma`) <Badge text="1.0.0" variant="note" /> <Badge text="needs ReAPI" variant="caution" />
+
+Dead spectator presses a key while spectating a teammate bot -> the player is respawned at the bot position with the bot inventory, and the bot is retired (killed silently). Round restart returns useful weapons to bots (optional), handles C4/defuser/shield/VIP correctly, and pauses the conflicting BotFeatures plugin if found.
+
+### Dependencies
+
+| Component | Required | Notes |
+|-----------|----------|-------|
+| `yapb.inc` / `yapb_amxx` | Yes | Requires **YaPB API 3.2+** (`yb_api_at_least (3, 2)`), enforced via `set_fail_state`. Uses `yb_is_user_bot`, `yb_get_bot_origin`, `yb_is_bot_alive`, `yb_is_bot_stale`, `yb_is_bot_simulating`, `yb_set_bot_simulation`. |
+| **ReAPI** (`<reapi>`) | Yes | Uses `rg_*` natives (`rg_round_respawn`, `rg_transfer_c4`, `rg_remove_all_items`, ...), `HookChain` (`RG_CBasePlayer_Observer_Think`, `RG_RoundEnd`, `RG_CSGameRules_RestartRound`, ...), `get_member`/`set_member`. Requires **ReHLDS + ReGameDLL** on the server. |
+| `fakemeta` (`<fakemeta>`) | Yes | Entity vars, `EngFunc_TraceHull`, forwards. |
+| `hamsandwich` (`<hamsandwich>`) | Yes | `Ham_RemovePlayerItem` / `Ham_AddPlayerItem` / `Ham_Think` for inventory transfer; guards the `player_weaponstrip` entity when present. |
+| `amxmodx`, `amxmisc` | Yes | Standard includes. |
+| Language file | Yes | `cfg/addons/amxmodx/data/lang/yapb_takeover.txt` -> copy to `addons/amxmodx/data/lang/`. Provides `en` + `ru` strings (`register_dictionary ("yapb_takeover.txt")`). |
+
+<Aside type="caution">
+  Without ReAPI/ReGameDLL this plugin can neither compile nor run. It is the only bundled plugin with that requirement.
+</Aside>
+
+### Install
+
+<Steps>
+
+1. Copy `yapb_takeover.sma` to `addons/amxmodx/scripting/` and `yapb.inc` to `addons/amxmodx/scripting/include/`.
+2. Copy `yapb_takeover.txt` to `addons/amxmodx/data/lang/`.
+3. Compile with `amxxpc` -> `yapb_takeover.amxx` -> `addons/amxmodx/plugins/`.
+4. Add `yapb_takeover.amxx` to `addons/amxmodx/configs/plugins.ini`.
+5. Change map / restart. Config is auto-created as `addons/amxmodx/configs/yapb_takeover.cfg` via `AutoExecConfig`.
+
+</Steps>
+
+### How to use it
+
+1. Die, then spectate a teammate bot in first-person (`eye` mode) or free chase (`chase` mode).
+2. Press the takeover key. A HUD hint shows the bot name:
+
+   <Tabs>
+     <TabItem label="N key (default)">
+
+     Press **`N`** (nightvision). This is `yb_takeover_use_key 0`. The hint text is `TAKEOVER_PROMPT_N`.
+
+     </TabItem>
+     <TabItem label="E key">
+
+     Set `yb_takeover_use_key 1`, then press **`E`** (use key). The hint text is `TAKEOVER_PROMPT_E`.
+
+     </TabItem>
+   </Tabs>
+
+3. You respawn at the bot position with its health/armor/weapons/ammo/C4/defuser/shield, keeping velocity. The bot entity is removed.
+4. If the spot is blocked or the round ends mid-takeover, the takeover aborts and everything rolls back (inventory journal + VIP state + bot simulation restored).
+
+Scoreboard mirroring, HUD hints, chat announcements and bot reactions are all configurable (see below).
+
+### CVARs (`yapb_takeover.cfg`)
+
+| CVAR | Default | Meaning |
+|------|---------|---------|
+| `yb_takeover_enabled` | `1` | Master switch. |
+| `yb_takeover_use_key` | `0` | `0` = `N` (nightvision) key, `1` = `E` (use) key via observer think hook. |
+| `yb_takeover_team_only` | `1` | Only same-team bots can be taken. |
+| `yb_takeover_eye` | `1` | Allow takeover in first-person observer mode. |
+| `yb_takeover_chase` | `1` | Allow takeover in free chase observer mode. |
+| `yb_takeover_max_uses` | `0` | Max takeovers per player per round, `0` = unlimited. |
+| `yb_takeover_allow_vip` | `0` | Allow taking VIP bots (as_ maps). Transfers the VIP flag to the player. |
+| `yb_takeover_back_items` | `0` | On round restart, return useful (primary/pistol) weapons from the player back to the bot. Full restart (`m_bCompleteReset`) skips this. |
+| `yb_takeover_chat` | `1` | Announce takeovers in team chat (`TAKEOVER_ANNOUNCE`). |
+| `yb_takeover_bot_chat` | `1` | The consumed bot "reacts" with one of `TAKEOVER_BOT_CHAT1..5`. |
+| `yb_takeover_hud` | `1` | Show observer HUD hints. |
+| `yb_takeover_scoreboard` | `0` | Mirror controlled-bot scoreboard state (dead/alive + health) onto the player. |
+| `yb_takeover_autoswitch` | `0` | After death, auto-spectate a random alive teammate bot so the player can take over faster. |
+| `yb_takeover_log` | `0` | Write `yapb_takeover.log` events (takeover, abort, rollback, simulation on/off). |
+| `yb_takeover_stop_botfeatures` | `1` | Pause the legacy BotFeatures plugin if loaded (avoids double handling). Not a `bind_pcvar`, read once in `plugin_cfg`. |
+
+### Notes for server owners
+
+* Takeover is blocked when the bot is dead, stale, not simulating, already controlled, over the per-round limit, or a disallowed VIP.
+* Grenades in throwing state, active weapon, shield draw state, C4, defuser, armor, NVG, health, and model are all transferred or rolled back on failure - see `transfer_inventory()` / `rollback_transfer()` in the source.
+* Logs go to `addons/amxmodx/logs/yapb_takeover.log` when `yb_takeover_log 1`.
+
+## Chat AI (`yapb_chat_ai.sma`) <Badge text="2.2.0" variant="note" /> <Badge text="needs EasyHttp" variant="caution" />
+
+Intercepts YaPB chat through `yb_chat_pre` / `yb_chat_post` and answers via an **OpenAI-compatible** `POST /v1/chat/completions` endpoint (`{"choices":[{"message":{"content":"..."}}]}`). Supports addressed human chat, dead chat, bot chatter, bot-to-bot followups, a small request queue (depth 8, human messages get priority), per-player cooldown, and short per-bot memory (last 3 turns).
+
+### Dependencies
+
+| Component | Required | Notes |
+|-----------|----------|-------|
+| `yapb.inc` / `yapb_amxx` | Yes | Uses `yb_bot_say` (with `force`), `yb_get_bot_chat` / `YB_CHAT_OFF`, `yb_is_user_bot`, `yb_is_bot_alive`, `yb_is_bot_stale`, `yb_get_bot_personality`, `yb_get_bot_difficulty`, `yb_chat_pre` / `yb_chat_post` forwards. |
+| **AmxxEasyHttp** (`easy_http` module + `<easy_http>`) | Yes | By [Next21Team](https://github.com/Next21Team/AmxxEasyHttp) (MIT). HTTP/HTTPS client + built-in JSON (`EzHttpRequest`, `EzHttpOptions`, `ezhttp_post`, `ezhttp_parse_json_response`, ...). Ships **separately** - download it from [AmxxEasyHttp releases](https://github.com/Next21Team/AmxxEasyHttp/releases) (Linux + Windows builds, latest `1.5.0`), copy the `easy_http` binaries into `addons/amxmodx/modules/` and enable `easy_http` in `modules.ini`. Needs `GLIBC 2.19+` on Linux. |
+| LLM endpoint | Yes | Any server speaking `POST {url}/v1/chat/completions` with `model`, `messages[]`, `temperature`, `max_tokens`, returning OpenAI-style `choices[0].message.content` (falls back to a top-level `reply` field). |
+| `amxmodx` | Yes | Standard include. |
+
+Flow: `yb_chat_pre` blocks the original message (unless `yb_chat_ai_strict 0` and no bot was queued) -> the plugin POSTs `system` (from the prompt cvar) + up to 3 turns of per-bot history + a `user` line with map/player/bot context (names, team, HP, armor, alive, personality, difficulty) -> `on_ai_response` cleans the reply (strips control chars, `"`, `;`, trims to `yb_chat_ai_reply_chars`) -> `yb_bot_say(bot, reply, team_only, true)` -> optional followup bot-to-bot turn.
+
+### Install
+
+<Steps>
+
+1. Download [AmxxEasyHttp](https://github.com/Next21Team/AmxxEasyHttp/releases) and enable the `easy_http` module: module binary in `addons/amxmodx/modules/`, `easy_http` in `modules.ini`, `easy_http.inc` + `easy_http_json.inc` in `scripting/include/`. (Sources and docs: [Next21Team/AmxxEasyHttp](https://github.com/Next21Team/AmxxEasyHttp).)
+2. Copy `yapb_chat_ai.sma` to `addons/amxmodx/scripting/` (needs `yapb.inc` + `easy_http.inc` in `include/`).
+3. Compile with `amxxpc` -> `yapb_chat_ai.amxx` -> `addons/amxmodx/plugins/`, add to `plugins.ini`.
+4. Point `yb_chat_ai_url` at your endpoint (default `http://127.0.0.1:8080/v1/chat/completions`), set `yb_chat_ai_model`, and if needed `yb_chat_ai_api_key`.
+5. Change map / restart. Config is auto-created as `addons/amxmodx/configs/yapb_chat_ai.cfg` via `AutoExecConfig`.
+
+</Steps>
+
+<FileTree>
+
+- cstrike/addons/amxmodx/
+  - modules/
+    - easy_http_i386.so / easy_http.dll # from AmxxEasyHttp releases
+  - configs/
+    - modules.ini # easy_http + yapb_amxx
+    - plugins.ini # yapb_chat_ai.amxx
+    - yapb_chat_ai.cfg # AutoExecConfig output
+
+</FileTree>
+
+### CVARs (`yapb_chat_ai.cfg`)
+
+| CVAR | Default | Meaning |
+|------|---------|---------|
+| `yb_chat_ai_enabled` | `1` | Master switch (when off, the queue is cancelled). |
+| `yb_chat_ai_debug` | `0` | Verbose `yapb_chat_ai.log` tracing (config dump, PRE/SEND/RESPONSE/QUEUE lines). |
+| `yb_chat_ai_override_human` | `1` | Intercept human messages and answer with AI (blocked via `PLUGIN_HANDLED`). |
+| `yb_chat_ai_override_bot` | `0` | Intercept alive-bot chatter and answer with AI. When `0`, alive-bot chatter instead triggers probabilistic followups in `yb_chat_post`. |
+| `yb_chat_ai_override_dead` | `1` | Intercept dead-bot chat (ghost jokes) and answer with AI. |
+| `yb_chat_ai_bot_talk` | `1` | Allow bot->bot chatter/followups. |
+| `yb_chat_ai_addressed` | `1` | Human messages only trigger when they start with `<botname>[ :,;] <text>`. When `0`, the first alive matching bot answers anything. |
+| `yb_chat_ai_bot_chance` | `35` | 0-100% chance for bot->bot turns (`yb_chat_post` path and followups), checked every 6s window. |
+| `yb_chat_ai_strict` | `0` | When `1`, `yb_chat_pre` always blocks the original even if no bot could be queued; when `0`, the original message passes through on failure. |
+| `yb_chat_ai_temperature` | `0.8` | LLM temperature. |
+| `yb_chat_ai_max_tokens` | `512` | Clamped to 16-2048. |
+| `yb_chat_ai_reply_chars` | `160` | Max reply chars after cleanup (`0` = no trim). |
+| `yb_chat_ai_cooldown` | `3.0` | Seconds between AI answers per human sender (negatives treated as 0). |
+| `yb_chat_ai_url` | `http://127.0.0.1:8080/v1/chat/completions` | Endpoint (HTTP timeout 20s, connect timeout 3s). |
+| `yb_chat_ai_model` | `local-model` | `model` field sent in the JSON body. |
+| `yb_chat_ai_api_key` | _(empty)_ | When set, sends `Authorization: Bearer <key>`. |
+| `yb_chat_ai_prompt_human` | _(cocky CS 1.6 bot ...)_ | System prompt for human->bot replies. |
+| `yb_chat_ai_prompt_bot` | _(cocky ... rivalry ...)_ | System prompt for bot->bot replies. |
+| `yb_chat_ai_prompt_dead` | _(dead ... ghost jokes ...)_ | System prompt for dead-chat replies. |
+| `yb_chat_ai_prompt_followup` | _(continue ... one more line ...)_ | System prompt for followup turns. |
+
+<Aside type="tip">
+  Bot stays silent? Set `yb_chat_ai_debug 1` and check `addons/amxmodx/logs/yapb_chat_ai.log` - the log shows the resolved config, blocked reasons, HTTP error codes, and replies.
+</Aside>

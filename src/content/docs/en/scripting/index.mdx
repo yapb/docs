@@ -1,0 +1,172 @@
+---
+title: "Scripting with AMX Mod X"
+description: "Control YaPB bots from Pawn: module setup, yapb.inc, API versioning."
+---
+
+import { Aside, Badge, CardGrid, FileTree, LinkCard, Steps, TabItem, Tabs } from '@astrojs/starlight/components';
+
+YaPB ships a native **AMX Mod X module** (`yapb_amxx`) that exposes the bot core to Pawn plugins through `yapb.inc`. You can inspect bots, move them around the graph, freeze them, read their state, intercept chat, and react to spawn/kill/remove events.
+
+<Badge text="Module API 3.6" variant="tip" /> <Badge text="32-bit (i386) only" variant="caution" />
+
+Source files live in the bot repo and are also shipped inside every release archive under `cfg/`:
+
+* Module source: `ext/amxx/yapb_amxx.cpp` (`ext/amxx/yapb_amxx.h`, `ext/amxx/CMakeLists.txt`)
+* Pawn include (generated, do not edit by hand): `cfg/addons/amxmodx/scripting/include/yapb.inc`
+* Generator: `tools/gen_amxx_inc.py` - run `python3 tools/gen_amxx_inc.py --check` in CI to make sure `yapb.inc` is in sync
+* Bundled plugins: `cfg/addons/amxmodx/scripting/yapb_takeover.sma`, `yapb_chat_ai.sma`
+* Takeover translations: `cfg/addons/amxmodx/data/lang/yapb_takeover.txt`
+
+<CardGrid>
+  <LinkCard title="API Reference" href="/docs/en/scripting/api-reference/" description="Every native, forward, enum, and helper in yapb.inc." />
+  <LinkCard title="Bundled Plugins" href="/docs/en/scripting/plugins/" description="Takeover and Chat AI (EasyHttp): dependencies, install, cvars." />
+</CardGrid>
+
+## Requirements
+
+| Component | Required | Notes |
+|-----------|----------|-------|
+| YaPB bot binary | Yes | The module loads `addons/yapb/bin/yapb.dll` / `yapb.so` at runtime. If it is missing, all natives become unavailable (they raise `Native is unavailable. YaPB binary isn't loaded.`). |
+| AMX Mod X | 1.8.2+ (1.9/1.10 recommended) | Provides the Pawn runtime, `amxmodx`, `amxmisc`, `cstrike` includes. |
+| `yapb_amxx` module binary | Yes | Ships in the release archive under `addons/amxmodx/modules/`: `yapb_amxx.dll` (Windows) / `yapb_amxx_i386.so` (Linux). 32-bit (`i386`) only, like the bot itself. Built with `YAPB_WITH_AMXX=ON` (default). |
+| Compiler | `amxxpc` from AMX Mod X | To build the bundled `.sma` files into `.amxx`. |
+| `yapb.inc` | Yes | Copy `cfg/addons/amxmodx/scripting/include/yapb.inc` to your `addons/amxmodx/scripting/include/` folder. Generated from `ext/amxx/yapb_amxx.cpp` + `inc/module.h`, `inc/graph.h`, `inc/constant.h`, `inc/tasks.h`. |
+
+Plugin-specific extra dependencies are documented on the [Bundled Plugins](/docs/en/scripting/plugins/) page. In short:
+
+* `yapb_takeover.sma` needs **ReAPI** (and therefore ReHLDS/ReGameDLL), plus `fakemeta` and `hamsandwich`.
+* `yapb_chat_ai.sma` needs **AmxxEasyHttp** (`easy_http` module + `easy_http.inc`/`easy_http_json.inc`) by [Next21Team](https://github.com/Next21Team/AmxxEasyHttp), and an OpenAI-compatible `POST /v1/chat/completions` endpoint.
+
+## Installation
+
+<Steps>
+
+1. Install YaPB itself first (see [Installation](/docs/en/getting-started/installation/)). AMX Mod X setups should run the bot **as a MetaMod plugin**.
+2. Check that the release archive already placed the module here:
+
+   <Tabs>
+     <TabItem label="Windows">
+
+     ```text
+     cstrike/addons/amxmodx/modules/yapb_amxx.dll
+     ```
+
+     </TabItem>
+     <TabItem label="Linux">
+
+     ```text
+     cstrike/addons/amxmodx/modules/yapb_amxx_i386.so
+     ```
+
+     </TabItem>
+   </Tabs>
+
+   If you build from source, copy the built file from `build/.../ext/amxx/` there yourself.
+3. Enable the module in `cstrike/addons/amxmodx/configs/modules.ini`:
+
+   ```ini
+   yapb_amxx
+   ```
+
+   On Linux AMXX resolves it to `yapb_amxx_i386.so` automatically.
+4. Copy `yapb.inc` to `cstrike/addons/amxmodx/scripting/include/yapb.inc`.
+5. Compile the plugins you need with `amxxpc` and put the resulting `.amxx` files into `cstrike/addons/amxmodx/plugins/`, then list them in `cstrike/addons/amxmodx/configs/plugins.ini`:
+
+   ```ini
+   yapb_takeover.amxx
+   yapb_chat_ai.amxx
+   ```
+
+6. Restart the map (or the server) and verify:
+
+   ```text
+   amxx modules
+   amxx plugins
+   meta list
+   ```
+
+   `amxx modules` must show the `YaPB API` module as running. If it reports an error, check the AMXX logs - the module logs why it could not find or open the YaPB binary.
+
+</Steps>
+
+<FileTree>
+
+- cstrike/
+  - addons/
+    - amxmodx/
+      - configs/
+        - modules.ini # add `yapb_amxx` here
+        - plugins.ini # add `yapb_takeover.amxx`, `yapb_chat_ai.amxx` here
+      - modules/
+        - yapb_amxx.dll # Windows (shipped)
+        - yapb_amxx_i386.so # Linux (shipped)
+        - easy_http.dll / easy_http_i386.so # only for Chat AI
+      - plugins/
+        - yapb_takeover.amxx # compiled by you
+        - yapb_chat_ai.amxx # compiled by you
+      - scripting/
+        - include/
+          - yapb.inc # shipped source, copy here
+          - easy_http.inc # only for Chat AI
+      - data/
+        - lang/
+          - yapb_takeover.txt # shipped, copy here
+    - yapb/
+      - bin/
+        - yapb.dll / yapb.so # loaded by yapb_amxx at runtime
+
+</FileTree>
+
+<Aside type="caution">
+  The module resolves the bot as `<mod>/addons/yapb/bin/yapb<suffix>` (where `<mod>` is `cstrike`/`czero` and `<suffix>` is `.dll`/`.so`) via `GetModname()`. If you moved the bot elsewhere, the module will load but every native will fail.
+</Aside>
+
+## Quick start
+
+```c
+#include <amxmodx>
+#include <yapb>
+
+public plugin_init ()
+{
+  register_plugin ("My YaPB Plugin", "1.0", "me");
+}
+
+public yb_bot_spawned (index)
+{
+  new version[32];
+  yb_get_bot_version (version, charsmax (version));
+
+  server_print ("bot %d spawned, running %s (api %d)",
+    index, version, yb_get_api_version ());
+}
+```
+
+`yapb.inc` declares `#pragma reqlib yapb` (+ `#pragma loadlib yapb` unless `AMXMODX_NOAUTOLOAD` is defined), so the plugin refuses to run without the module.
+
+## API versioning
+
+The module API is versioned as `major << 16 | minor` (see `kBotModuleApiMajor` / `kBotModuleApiMinor` in `inc/module.h`, currently **3.6**).
+
+* `yb_get_api_version()` returns the packed version, or `0` when the bot is not loaded.
+* `yb_api_at_least(major, minor)` is a stock helper in `yapb.inc` - use it to gate features:
+
+```c
+public plugin_init ()
+{
+  register_plugin ("My YaPB Plugin", "1.0", "me");
+
+  if (!yb_api_at_least (3, 2))
+  {
+    set_fail_state ("YaPB API 3.2 or newer is required");
+  }
+}
+```
+
+The bundled Takeover plugin, for example, requires API 3.2+ because it uses `yb_set_bot_simulation()` / `yb_is_bot_simulating()`.
+
+## How it works
+
+`ext/amxx/yapb_amxx.cpp` implements the thin `AMXX_Query` / `AMXX_Attach` / `AMXX_PluginsLoaded` / `AMXX_Detach` entry points, binds the AMXX core functions (`AddNatives`, `GetAmxAddr`, `GetAmxString`, `RegisterForward`, ...), then `dlopen`s the bot binary, resolves the `GetBotAPI` export and forwards every native to `IBotModule` / `IBotChatAPI` from `inc/module.h`. Bot events (`Spawned`, `Killed`, `Removed`, `ChatPre`, `ChatPost`) are re-emitted as AMXX forwards (`yb_bot_spawned`, `yb_bot_killed`, `yb_bot_removed`, `yb_chat_pre`, `yb_chat_post`).
+
+`yapb_amxx.h` is intentionally self-contained (no AMXX SDK headers) - it defines the minimal `AMX`, `AMX_NATIVE_INFO`, and module ABI itself.
