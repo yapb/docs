@@ -267,6 +267,17 @@ YaPB может быть установлен только на локально
 </TabItem>
 </Tabs>
 
+## Проверка установки
+
+Запустите игру (или сервер), откройте консоль и выполните:
+
+```text
+yb version
+yb list
+```
+
+`yb version` покажет сборку бота. Затем добавьте пару ботов (`yb add` или `yb_quota 5`) и убедитесь, что они видны в `yb list`. Если команды `yb` неизвестны - пройдите шаги выше заново: чаще всего виновата не та запись в `liblist.gam` или пропущенная строка в `plugins.ini` MetaMod. Больше помощи: [Решение проблем](/docs/ru/troubleshooting/).
+
 ## Проверка релизов
 
 Архивы релизов подписаны через `GPG`, отпечаток публичного ключа: `FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24`, найти его можно здесь: [https://keyserver.ubuntu.com/](https://keyserver.ubuntu.com/pks/lookup?search=FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24+&fingerprint=on&op=index).

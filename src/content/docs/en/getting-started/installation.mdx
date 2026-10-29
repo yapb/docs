@@ -265,6 +265,17 @@ Assuming that your Counter-Strike is located at: `/Users/user/Library/Applicatio
 </TabItem>
 </Tabs>
 
+## Verify the installation
+
+Start the game (or the server), open the console and run:
+
+```text
+yb version
+yb list
+```
+
+`yb version` prints the bot build. Then add a few bots (`yb add` or `yb_quota 5`) and check they show up in `yb list`. If `yb` commands are unknown, revisit the steps above - most often the wrong `liblist.gam` entry or a missing MetaMod `plugins.ini` line. More help: [Troubleshooting](/docs/en/troubleshooting/).
+
 ## Verifying releases
 
 Release archives are signed via `GPG`, pubkey fingerprint is: `FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24` and could be found at [https://keyserver.ubuntu.com/](https://keyserver.ubuntu.com/pks/lookup?search=FC03F18A5E7DCE282A4B9D48194F2DA6C5F2FA24+&fingerprint=on&op=index).
