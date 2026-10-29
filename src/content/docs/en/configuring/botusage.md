@@ -48,6 +48,7 @@ Pressing the `=` key in game, a menu with the following options should appear on
 3. **Select personality** -- Adds a bot with the currently set difficulty with personality setting
 4. **Toggle debug mode** -- Enables or disables debug mode
 5. **Command menu** -- Opens the bot command menu
+6. **Fun mode menu** -- Opens the fun mode menu (same modes as `yb fun`)
 
 ![Bot Command Menu](../images/bot_commandmenu.png)
 
@@ -77,9 +78,9 @@ The following main YaPB commands are available:
 | `yb weapons` | Sets the bots weapon mode to use |
 | `yb fun` | Sets the classic fun mode for everyone to enjoy |
 | `yb menu` | Opens the main bot menu |
-| `yb version` | Displays version information about bot build |
-| `yb graphmenu` | Opens the graph editor menu |
-| `yb list` | Lists the bots currently playing on server |
+| `yb version` | Displays version information about bot build (aliases: `ver`, `about`) |
+| `yb graphmenu` | Opens the graph editor menu (aliases: `wpmenu`, `wptmenu`) |
+| `yb list` | Lists the bots currently playing on server (alias: `listbots`) |
 | `yb cvars` | Displays all the CVARs with their descriptions |
 | `yb show_custom` | Shows the current values from `custom.cfg` |
 | `yb graph` | Handles graph operations (see subcommands below) |
@@ -133,7 +134,7 @@ Terrorists:
 |-------|-------|
 | `0` | Random |
 | `1` | Phoenix Connexion |
-| `2` | Elite Crew |
+| `2` | L337 Krew (Elite Crew) |
 | `3` | Arctic Avengers |
 | `4` | Guerilla Warfare |
 | `5` | Midwest Militia **(Condition Zero only!)** |
@@ -249,6 +250,10 @@ To restore the default values of all bot CVARs, type `yb cvars defaults` in cons
 Sets the classic fun mode for everyone to enjoy. Same values as the `yb_fun_mode` CVAR: `imsober|tronisback|itsnewyear|imhaunted|itstoodark|stonedagain|imonmars`.
 
 Example: `yb fun tronisback`
+
+### Following you (radio Follow Me)
+
+Use the radio command "Follow me" and nearby free bots will follow you until you give them another order, they engage an enemy, or you die. How many bots respond is capped by `yb_user_max_followers` (default `1`); a share of bots (`yb_user_follow_percent`, default `20`) also follows leaders on their own - the bomb carrier, the VIP, and human players.
 
 ### yb graph
 

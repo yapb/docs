@@ -220,6 +220,9 @@ Missing sound files are reported to the console. If more than ten files are miss
 | `GoingToCamp` | Bot says that it is going to camp (guard an area) |
 | `Camp` | Bot says that it's camping |
 | `OnARoll` | Bot brags about killing a large number of enemies in a small amount of time |
+| `BehindSmoke` | Bot reports enemies hidden behind smoke |
+| `NewRound` | Bot line played when a new round starts (followed by `YouHeardTheMan`) |
+| `YouHeardTheMan` | Bot's follow-up line to the new round announcement |
 
 ### Example chatter.cfg
 
