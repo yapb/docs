@@ -266,6 +266,7 @@ Handles graph operations. Full reference of subcommands (also available via the 
 | `erase_training` | Erases the training data, leaving graph files |
 | `delete [nearest\|index]` | Deletes a single graph node from the map |
 | `check` | Checks if the graph works correctly |
+| `fix` | Self-repair: merges duplicates, clears dead links, relinks islands, refreshes radius |
 | `cache [nearest\|index]` | Caches a node for future use |
 | `clean [all\|nearest\|index]` | Cleans useless path connections from all or a single node |
 | `setradius [radius] [nearest\|index]` | Sets the radius for a node |
@@ -298,6 +299,7 @@ Debug commands for players:
 | `notarget [id\|name\|host]` | Toggles notarget on a player |
 | `exec [id\|name\|host] [command]` | Executes a client command on a player |
 | `memory` | Displays memory allocation statistics |
+| `http` | Displays http/tls/cacert/graph-url diagnostics |
 | `translate [reset\|write]` | Lists untranslated strings collected during play; `write` appends them to the language config, `reset` clears the list |
 
 Example - execute a command from a bot entity (find the bot id with `yb list` first):
