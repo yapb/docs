@@ -13,7 +13,7 @@ There are several node types that can be used to indicate map goals, rescue zone
 Besides, you don't have to worry about every little detail. The editor that comes with this bot version will do lots of the work for you, and besides, it's graphical and easy to use (no programming/coding skills or anything required). You may very well discover that making nodes can be fun, especially when you see bots roam through the entire map without problems -- and you made it possible!
 
 :::note
-Since YaPB 2.10 version, a new waypoint format named **Graph** has been added, which raised the limit to 2048 nodes (in later builds, when graph auto-analysis feature was introduced, the node limit has been raised again), allows you to set camp directions not only horizontally but also vertically, and also reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. You can save waypoints to PWF format, but it will be automatically converted to graph format when loaded. Waypoints (multicolored stripes) are now named **Nodes** since YaPB 4.x version. Waypoint editor was also renamed to Graph editor.
+Since YaPB 2.10 version, a new waypoint format named **Graph** has been added, which raised the limit to 2048 nodes (later builds raised it again - the current limit is 4096 nodes), allows you to set camp directions not only horizontally but also vertically, and also reduced the size of waypoint files. YaPB also continues to support the old **PWF** format. You can save waypoints to PWF format, but it will be automatically converted to graph format when loaded. Waypoints (multicolored stripes) are now named **Nodes** since YaPB 4.x version. Waypoint editor was also renamed to Graph editor.
 :::
 
 ### What Do Nodes Look Like in the Game?
@@ -27,6 +27,15 @@ Connections between nodes are marked as horizontal lines leading from the center
 ### How Can I Access the Graph Editor?
 
 The graph editor is not a separate program, it is included in the bot DLL (or .so, if you are using Linux). To open it, create a LAN/Listen Server game, select the map you want to create the graph for, and start the game as usual. As soon as you are in the map, you can activate the editing mode from the console by typing `yb graphmenu` or if you have bound a key for it, simply by pressing that key.
+
+Tip: bind editor access to spare keys so you don't have to open the console constantly:
+
+```text
+bind "g" "yb graphmenu"
+bind "h" "yb g cache"
+```
+
+The main bot menu key is `=` by default (`yb_bind_menu_key`).
 
 ### Graph Console Commands
 
@@ -44,10 +53,12 @@ The following Graph commands are available:
 | `yb g off noclip` | Turns off nodes editing with noclip cheat |
 | `yb g add` | Adds a node at the current player location. A Menu will pop up where you have to select the different types of nodes |
 | `yb g addbasic` | Adds basic nodes on map, like spawn points, goals and ladders |
-| `yb g cache` | Remember the nearest node to the player |
-| `yb g clean` | Cleans useless path connections from all or single node |
-| `yb g delete` | Deletes the node nearest to the player |
-| `yb g erase` | Removes the graph and bot experience files from hard drive |
+| `yb g cache [nearest\|index]` | Remember the nearest node to the player |
+| `yb g clean [all\|nearest\|index]` | Cleans useless path connections from all or single node |
+| `yb g delete [nearest\|index]` | Deletes the node nearest to the player |
+| `yb g erase iamsure` | Removes the graph and bot experience files from hard drive |
+| `yb g erase_training` | Erases the training data, leaving graph files |
+| `yb g fix` | Self-repair: merges duplicates, clears dead links, relinks islands, refreshes radius |
 | `yb g flags` | Allows you to manually add/remove Flags to a node |
 | `yb g setradius x` | Manually sets the Wayzone Radius for this node to value x |
 | `yb g teleport x` | Teleports player to node index specified in value x |
@@ -58,7 +69,11 @@ The following Graph commands are available:
 | `yb g load` | Loads the nodes from a graph file |
 | `yb g save` | Saves the current nodes to a file |
 | `yb g save nocheck` | Saves the current nodes to a file without validating |
+| `yb g save old` | Saves the current nodes in the old PODBot (.pwf) format, up to 1023 nodes |
 | `yb g upload` | Uploads created graph file to graph database |
+| `yb g export` / `yb g import` | Exports the graph into a text file (conf format) for version control / imports it back, replacing the current one |
+| `yb g apply` | Saves the current graph and reloads it, so bots can be added after an import |
+| `yb g refresh iamsure` | Deletes the current graph and downloads one from the graph database |
 | `yb g menu` | Show the graph editor menu. Also available via alias `yb graphmenu` |
 | `yb g path_set_autopath` | Opens menu for setting autopath maximum distance |
 | `yb g path_create` | Opens menu for path creation |
@@ -80,17 +95,17 @@ To use the graph commands, you will have to use the console. Use the `~` key to 
 
 **`yb g save`** will save the node data to the graph file. The graph file will have the same name as the current map with an extension of `.graph`. The file will be saved into the `cstrike/addons/yapb/data/graph` Folder. Your current player name will be saved as the graph file author.
 
-You can also save the nodes in `.pwf` format for older versions of YaPB or PODBot by typing in the console `yb g save old`. Please note that you can save nodes in this format only when the number of nodes does not exceed 1024.
+You can also save the nodes in `.pwf` format for older versions of YaPB or PODBot by typing in the console `yb g save old`. Please note that you can save nodes in this format only when the number of nodes is below 1024.
 
 **`yb g load`** will clear out all nodes in the current map and load them from the graph file in the graph folder. This is a good way to "undo" a bunch of nodes that you have created but do not wish to save. There is no way to `undo` a single node. You will have to use the `yb g delete` command to remove nodes one-by-one.
 
-**`yb g on auto`** command allows you to automatically drop nodes as you run around in a map. As you run around the level nodes will be dropped every 200 units automatically. No node will be dropped if another node is already within 200 units of your current position. So if you want to place lots of nodes fairly close together you may have to manually place some of the nodes using the `yb g add` command. Auto node placement keeps track of where the last node was dropped (either manually or from auto node placement) and will place another node when you are 200 units from the last node. If you don't like where auto node placement placed a node and want to move it a little bit, you can delete the node using `yb g delete` (but turn off auto node placement before, since it will place a new node otherwise).
+**`yb g on auto`** command allows you to automatically drop nodes as you run around in a map. As you run around the level nodes will be dropped every 128 units automatically. No node will be dropped if another reachable node is already within 128 units of your current position. So if you want to place lots of nodes fairly close together you may have to manually place some of the nodes using the `yb g add` command. Auto node placement keeps track of where the last node was dropped (either manually or from auto node placement) and will place another node when you are 200 units from the last node. If you don't like where auto node placement placed a node and want to move it a little bit, you can delete the node using `yb g delete` (but turn off auto node placement before, since it will place a new node otherwise).
 
 When using auto node placement, try to stay in the center of narrow hallways and always place a node on BOTH sides of a door. You may have to place some of these nodes manually using `yb g add` since places like intersections of hallways and doorway entrances and exits don't usually fall exactly at the location where auto node placement would want to place a node.
 
 Whenever you get close to a node, yellow, white or green lines will be drawn to all of the other nodes that the bot would consider to be "reachable". If the connection is a two-way connection the line is yellow, one-way connections appear white. These "reachable" nodes would be nodes that are clearly visible from the current location. Certain nodes will be disallowed as reachable for one reason or another. For example, nodes suspended in mid-air above the bot would not be considered reachable since the bot couldn't jump high enough to get to them. Also nodes that are too far away from the current location would not be considered reachable. You may have nodes that are close enough to each other, but across a wide gap that would be too wide to jump. If the far node is close enough and clearly visible, it would still show as "reachable" since currently we have no method to determine if the bot can get to that node or not.
 
-The bots will ONLY go from one node to another if there is a path between them. Get in the habit of checking that paths exist BOTH WAYS between nodes. Just because a path is drawn from point A to point B, doesn't mean that a path exists from point B to point A.
+The bots will go from one node to another **only** if there is a path between them. Get in the habit of checking that paths exist BOTH WAYS between nodes. Just because a path is drawn from point A to point B, doesn't mean that a path exists from point B to point A.
 
 **`yb g path_create`** command allows you to manually assign a path between 2 nodes. This is needed in some cases where the nodes are blocked (by doorways or other objects) and you wish to create a path between these nodes. Move close to the node you wish the path to start from and use the menu to add path.
 
@@ -110,7 +125,7 @@ If you want to install a graph manually, put it in the `*gamedir*/addons/yapb/da
 
 Or if you want to install the old format (PWF) waypoint manually, put it in the `*gamedir*/addons/yapb/data/pwf` folder.
 
-Also you can install the E-BOT (EWP) waypoints in the `*gamedir*/addons/yapb/data/ewp` folder.
+Don't have a graph and don't want to make one by hand? You don't have to: if no graph is found, YaPB downloads one automatically and, as a last resort, builds it itself with the built-in auto-analyzer (see `yb_graph_analyze_auto_start`). It takes a few rounds with bots in game - check the result with `yb graph stats`.
 
 Where `*gamedir*` is the path to the game directory, for example:
 

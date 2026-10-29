@@ -13,7 +13,7 @@ To add a node, simply select **5. Add node**. A new menu will appear, the **Node
 Once you have selected a node type from the "Node Type" menu, you will hear a sound, and the selected node will appear in the map, at the exact position where you stood when you pressed the key.
 
 :::note
-If you are standing while selecting a node, a standing node will be inserted. All bots will run or walk towards this node normally. If you want bots to crouch when approaching a particular position, crouch down when inserting the node. You will notice that the node you just added is only about half as high as normally. As you inserted it when you were crouched down, it automatically carries a **Crouch** flag (see: [Node Types](\/docs\/en/waypointing/node-types/)). Bots will now crouch automatically when trying to reach this node.
+If you are standing while selecting a node, a standing node will be inserted. All bots will run or walk towards this node normally. If you want bots to crouch when approaching a particular position, crouch down when inserting the node. You will notice that the node you just added is only about half as high as normally. As you inserted it when you were crouched down, it automatically carries a **Crouch down** flag (see: [Node Types](/docs/en/waypointing/node-types/)). Bots will now crouch automatically when trying to reach this node.
 :::
 
 Now that you know the basic method used to add a node, let's have a closer look at the node types that exist.

@@ -36,7 +36,7 @@ As with the other team specific nodes, Counter-Terrorist Important nodes should 
 
 ### General Hints for Ladder Nodes
 
-1. Node ladders AFTER you noded the areas above and below them! If you node ladders first, all nodes in reach of a ladder node will be connected with it and have their radius reduced to zero automatically! It doesn't matter whether you place the top or the bottom Ladder node first.
+1. Place ladder nodes only AFTER you have noded the areas above and below them! If you node ladders first, all nodes in reach of a ladder node will be connected with it and have their radius reduced to zero automatically! It doesn't matter whether you place the top or the bottom Ladder node first.
 2. If the ladder is very long, you can place additional Ladder nodes between the bottom and the top end.
 3. The bottom node will automatically get connected with the nearest node, independent of current AutoPath Max Distance settings.
 4. The top node will usually get a connection towards it automatically, but you will have to add a connection leading away from it manually.
@@ -73,7 +73,7 @@ So far, so good. But how to set a working camp node? Follow these steps:
 5. Now point your crosshair at the exact direction and height where you want your bots to end their monitoring
 6. Once again, open the Node Type menu, but now select `7. Camp end`. You will see that the Camp end marker will now be pointed at the direction you specified
 
-That's it! Unless you want to make your Camp node team specific or add another flag (see: [Node Flags](\/docs\/en/waypointing/connections-and-flags/)), you are done! In fact, it sounds much more complicated than it actually is.
+That's it! Unless you want to make your Camp node team specific or add another flag (see: [Node Flags](/docs/en/waypointing/connections-and-flags/)), you are done! In fact, it sounds much more complicated than it actually is.
 
 ### Quick Notes and Hints About Camp Nodes
 
@@ -86,12 +86,12 @@ That's it! Unless you want to make your Camp node team specific or add another f
 
 This node type obviously indicates the **Map Goal**.
 
-- On an As_ map, the **Map Goal** node tells the bots where the VIP escape zone is. Make sure the escape zone symbol is visible on your HUD when you place a map goal node there. Otherwise the VIP may end up reaching the point and running away again just like you would do with Rescue nodes.
+- On an As_ map, the **Map Goal** node tells the bots where the VIP escape zone is. Make sure the escape zone symbol is visible on your HUD when you place a map goal node there. Otherwise the VIP may reach the point without triggering the escape.
 - On a Cs_ map, the **Map Goal** node marks the position of the hostages. It is **NOT** necessary to place one Map Goal node per hostage. Unless the hostages are standing really far away from each other, one point per hostage group will perfectly do.
 - On a De_ map, the **Map Goal** node marks the bomb spots. It must be placed somewhere inside the bomb zone, i.e. the bomb icon must be blinking on your HUD when you place such a node. In contrast to Cs_ maps, on De_ maps it makes sense to set various goal nodes in one bomb zone. This will enable bots to choose from several spots to plant the bomb and make them less predictable.
 - On Es_ maps, the **Map Goal** node marks the escape zone for the Terrorists. You can follow the same rules as for As_ maps.
 
-Now you may wonder how to determine the exact function of the Map Goal node. Don't worry, this is entirely map specific, you don't have to do anything about it. All bots of both participating teams will automatically know what the Map Goal is, they only need the point to guide them there. You can add this type of node by selecting `8. Goal` from the Node Type menu. **The colour of Goal nodes is purple**, as you can see in the pictures below.
+Now you may wonder how to determine the exact function of the Map Goal node. Don't worry, this is entirely map specific, you don't have to do anything about it. All bots of both participating teams will automatically know what the Map Goal is, they only need the point to guide them there. You can add this type of node by selecting `8. Map goal` from the Node Type menu. **The colour of Goal nodes is purple**, as you can see in the pictures below.
 
 ### Examples of Goal Nodes
 
@@ -102,3 +102,7 @@ Now you may wonder how to determine the exact function of the Map Goal node. Don
 ![Bomb place Goal Node (map de_dust2)](../images/bombplace_goal_point.png)
 
 ![Terrorists escape Goal Node (map es_trinity)](../images/terrorists_escape_goal_point.png)
+
+## Jump Nodes
+
+**Jump** nodes mark spots where bots must jump to keep moving - gaps, crates, and ledges that can't be walked over. Unlike other node types, they are not placed directly: select `9. Jump` from the Node Type menu to enter jump-learning mode, then perform the jump yourself. The takeoff point is recorded when you jump (along with your speed), and the landing point is recorded when you touch the ground. The editor connects the two with a jump connection, which is drawn in red. Jump nodes always require exact footing, so their radius is zero and shouldn't be changed.

@@ -48,7 +48,7 @@ You can select the automatic connection distance (AutoPath Max Distance, APMD) b
 
 ![Autopath Distance Menu](../images/autopath_distance_menu.png)
 
-Select the desired distance from this menu. After selecting a distance, connections up to that distance will be drawn automatically. Of course, you can also add and remove connections manually.
+Select the desired distance from this menu. After selecting a distance, connections up to that distance will be drawn automatically. Of course, you can also add and remove connections manually. The default is 250 units; select 0 to disable automatic connections.
 
 ### Two-Way (Bidirectional) Connections
 
