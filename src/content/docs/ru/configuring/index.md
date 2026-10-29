@@ -8,11 +8,11 @@ CVARы можно изменять на лету, вводя их в консо�
 
 См. следующие разделы для подробной справки по настройке:
 
-- [CVARы ботов](\/docs\/ru/configuring/cvars/) -- Полный справочник по всем ~110 CVARам бота
-- [Конфиг для карты](\/docs\/ru/configuring/map-config/) -- Конфигурационные файлы для каждой карты
-- [Пользовательский конфиг](\/docs\/ru/configuring/custom-config/) -- Жёстко заданные настройки в `custom.cfg`
-- [Сложность](\/docs\/ru/configuring/difficulty/) -- Точная настройка уровней сложности ботов
-- [Оружие](\/docs\/ru/configuring/weapons/) -- Флаги покупки оружия, приоритеты и экономика
-- [Локализация](\/docs\/ru/configuring/localization/) -- Поддержка языков и переводы
-- [Персонализация](\/docs\/ru/configuring/customization/) -- Настройка чата, голоса и внешнего вида
-- [Использование ботов](\/docs\/ru/configuring/botusage/) -- Меню в игре, команды и управление ботами
+- [CVARы ботов](/docs/ru/configuring/cvars/) -- Полный справочник по всем ~110 CVARам бота
+- [Конфиг для карты](/docs/ru/configuring/map-config/) -- Конфигурационные файлы для каждой карты
+- [Пользовательский конфиг](/docs/ru/configuring/custom-config/) -- Жёстко заданные настройки в `custom.cfg`
+- [Сложность](/docs/ru/configuring/difficulty/) -- Точная настройка уровней сложности ботов
+- [Оружие](/docs/ru/configuring/weapons/) -- Флаги покупки оружия, приоритеты и экономика
+- [Локализация](/docs/ru/configuring/localization/) -- Поддержка языков и переводы
+- [Персонализация](/docs/ru/configuring/customization/) -- Настройка чата, голоса и внешнего вида
+- [Использование ботов](/docs/ru/configuring/botusage/) -- Меню в игре, команды и управление ботами

@@ -68,7 +68,7 @@ The bot tracks strings that were shown during play but have no translation in th
 
 You just need to create a file `**_chat.cfg` for bot chat in your language. You can use the file `en_chat.cfg` as an example.
 
-See the [Customization](\/docs\/en/configuring/customization/) section for details.
+See the [Customization](/docs/en/configuring/customization/) section for details.
 
 ---
 
