@@ -68,8 +68,8 @@ cmake --build --preset release
 
 Группы пресетов:
 
-- **Локальные пресеты** (компилятор хоста, zig не нужен): `release`, `dist`, `linux-amd64-asan`, `linux-x86-asan`
-- **Кросс-пресеты** (нужен zig в PATH): `ci-linux-x86`, `ci-linux-amd64`, `ci-linux-x86-nosimd`, `ci-linux-arm64`, `ci-linux-riscv64`, `ci-apple-amd64`, `ci-windows-x86-clang`, `ci-windows-amd64`
+- **Локальные пресеты** (компилятор хоста, zig не нужен): `release`, `dist`, `linux-amd64-asan`, `linux-x86-asan`, `vs-x86`, `vs-x64` (Visual Studio), `winxp-mingw`
+- **Кросс-пресеты** (нужен zig в PATH): `ci-linux-x86`, `ci-linux-amd64`, `ci-linux-x86-nosimd`, `ci-linux-arm64`, `ci-linux-riscv64`, `ci-apple-amd64`, `ci-windows-x86-clang`, `ci-windows-x86-mingw`, `ci-windows-amd64`
 - **Пресеты только для CI** (их раннеры, не для локального использования): `ci-apple-arm64`, `ci-windows-x86`, `ci-windows-x86-clang-cl`, `ci-windows-x86-msvc-xp`
 - **Тестовые пресеты** (юнит-тесты, только нативный компилятор): `windows-tests`, `linux-tests`
 
@@ -123,5 +123,5 @@ cmake --build --preset release
 | `YAPB_LTO` | `ON` | Включить link-time оптимизацию |
 | `YAPB_SANITIZE` | (пусто) | Включить санитайзеры, например `address` или `address,undefined` (dev-сборки) |
 | `YAPB_WITH_TLS` | `ON` | Включить поддержку HTTPS через vendored mbedtls |
-| `YAPB_BUILD_TESTS` | `OFF` | Собрать тестовый хост (фейковый движок, только нативный 64-бит) |
+| `YAPB_BUILD_TESTS` | `OFF` | Собрать тестовый хост (фейковый движок, только нативный gcc/clang 64-бит, требует `-DYAPB_64BIT=ON`) |
 | `YAPB_WITH_AMXX` | `ON` | Собрать модуль AMX Mod X (только i386) |

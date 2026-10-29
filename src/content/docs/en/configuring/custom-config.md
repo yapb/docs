@@ -33,7 +33,7 @@ Keys may live either inside their section (as in the shipped config) or at the r
 |---------|---------|-------------|
 | `CustomCSDMSpawnPoint` | `view_spawn` | Sets a custom spawn point classname for CSDM mods that add custom spawn points other than `info_player_start` and `info_player_deathmatch`. So bots will be able to join the game without default spawn entities. |
 | `CSDMDetectCvar` | `csdm_active` | Sets a CVAR to detect the CSDM mod if it is activated in the game. |
-| `ZMDetectCvar` | `zp_delay,zp_on` | Sets a CVAR to detect the Zombie mod. |
+| `ZMDetectCvar` | `zp_delay,zp_on` | Sets CVARs to detect the Zombie mod. Multiple CVARs can be listed comma-separated; the mod is considered active if any of them exists on the server. |
 | `ZMDelayCvar` | `zp_delay` | Sets a CVAR that deals with time before any game mode starts. |
 | `ZMInfectedTeam` | `T` | Determines the team on which infected players are on. Valid values: `T`, `CT`. |
 

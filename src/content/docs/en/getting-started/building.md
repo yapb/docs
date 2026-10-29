@@ -68,8 +68,8 @@ cmake --build --preset release
 
 Preset groups:
 
-- **Local presets** (host compiler, no zig needed): `release`, `dist`, `linux-amd64-asan`, `linux-x86-asan`
-- **Cross presets** (need zig on PATH): `ci-linux-x86`, `ci-linux-amd64`, `ci-linux-x86-nosimd`, `ci-linux-arm64`, `ci-linux-riscv64`, `ci-apple-amd64`, `ci-windows-x86-clang`, `ci-windows-amd64`
+- **Local presets** (host compiler, no zig needed): `release`, `dist`, `linux-amd64-asan`, `linux-x86-asan`, `vs-x86`, `vs-x64` (Visual Studio), `winxp-mingw`
+- **Cross presets** (need zig on PATH): `ci-linux-x86`, `ci-linux-amd64`, `ci-linux-x86-nosimd`, `ci-linux-arm64`, `ci-linux-riscv64`, `ci-apple-amd64`, `ci-windows-x86-clang`, `ci-windows-x86-mingw`, `ci-windows-amd64`
 - **CI-only presets** (their runners, not for local use): `ci-apple-arm64`, `ci-windows-x86`, `ci-windows-x86-clang-cl`, `ci-windows-x86-msvc-xp`
 - **Test presets** (unit tests, native compiler only): `windows-tests`, `linux-tests`
 
@@ -123,5 +123,5 @@ These CMake options can be passed with `-D<Var>=<Val>` (or through `build.sh -D<
 | `YAPB_LTO` | `ON` | Enable link-time optimization |
 | `YAPB_SANITIZE` | (empty) | Enable sanitizers, e.g. `address` or `address,undefined` (dev builds) |
 | `YAPB_WITH_TLS` | `ON` | Enable HTTPS support via vendored mbedtls |
-| `YAPB_BUILD_TESTS` | `OFF` | Build test host (fake engine harness, native 64-bit only) |
+| `YAPB_BUILD_TESTS` | `OFF` | Build test host (fake engine harness, native gcc/clang 64-bit only, requires `-DYAPB_64BIT=ON`) |
 | `YAPB_WITH_AMXX` | `ON` | Build AMX Mod X module (i386 only) |
